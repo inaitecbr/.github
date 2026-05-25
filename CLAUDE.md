@@ -46,3 +46,155 @@ Este projeto segue um sistema de skills por fase — da Discovery ao Deploy. O a
 - Consultar os PDFs em `docs/inputs/` antes de fazer suposições sobre marca, conteúdo ou escopo.
 - **Ao finalizar qualquer tarefa relevante, registrar a decisão tomada em [docs/logs/decisions.md](docs/logs/decisions.md).**
 - [docs/logs/design-tokens.md](docs/logs/design-tokens.md) é atualizado automaticamente quando arquivos CSS/JS com custom properties são editados.
+
+---
+
+## Stack Técnica
+
+- **Framework:** Next.js 16 (App Router) + **TypeScript** (`.ts` / `.tsx`)
+- **i18n:** `next-intl` v4 — locales `pt` (default), `en`, `es` (`localePrefix: 'as-needed'`)
+- **Estilização:** Tailwind CSS v4
+- **Fonte:** Plus Jakarta Sans (via `next/font/google`)
+- **Ícones:** `lucide-react` (manter — não migrar para Phosphor)
+- **CMS:** Sanity (a configurar — ver seção abaixo)
+
+---
+
+## Migração para Sanity CMS — Plano e Padrões
+
+O site atual tem todo o conteúdo hardcoded em três lugares: `messages/{pt,en,es}.json`, `src/data/*.ts` (programas, conteudo, empresas) e arrays inline dentro das `page.tsx` (ex.: conselhos em `sobre/page.tsx`). A meta é migrar todo o **conteúdo editorial** para o Sanity, mantendo o `next-intl` apenas para nav/microcopy fixo.
+
+### Divisão i18n × Sanity (decisão validada)
+
+- **Permanece no `next-intl` (`messages/*.json`):**
+  - Labels de navegação do Header e Footer
+  - Microcopy de UI (botões "Anterior/Próximo", placeholders genéricos, aria-labels, status "Carregando", "min de leitura", labels técnicos)
+  - Qualquer string que não seja conteúdo editorial
+- **Vai para Sanity (botão "Translations" no Studio cuida das versões PT/EN/ES):**
+  - Todo conteúdo editorial: Home (hero, parceiros, ecossistema, programas, chamadas, notícias, contato, resultados, FAQ, CTA banner), páginas internas (Sobre, Fale Conosco, Traga sua Empresa, Banco de Talentos, Soluções), coleções (Programas, Conteúdo/Posts, Empresas)
+
+### i18n no Sanity — 3 idiomas (PT + EN + ES)
+
+O cliente quer suporte aos 3 idiomas no CMS. Usar o plugin `@sanity/document-internationalization`:
+
+- Cada documento existe em **3 versões** com IDs `<schemaType>__i18n_pt`, `<schemaType>__i18n_en`, `<schemaType>__i18n_es`
+- Campo `language` (string, `readOnly`, `hidden`) preenchido em cada versão
+- Documento `translation.metadata` com array `translations` contendo **3 itens** — cada item obrigatoriamente com `_type: "internationalizedArrayReferenceValue"` e o campo `language` correto:
+
+```json
+{
+  "_type": "translation.metadata",
+  "translations": [
+    { "_key": "doc-pt", "_type": "internationalizedArrayReferenceValue", "language": "pt", "value": { "_ref": "ID_PT", "_type": "reference" } },
+    { "_key": "doc-en", "_type": "internationalizedArrayReferenceValue", "language": "en", "value": { "_ref": "ID_EN", "_type": "reference" } },
+    { "_key": "doc-es", "_type": "internationalizedArrayReferenceValue", "language": "es", "value": { "_ref": "ID_ES", "_type": "reference" } }
+  ]
+}
+```
+
+- `sanity.config.ts` configura `supportedLanguages: [{id:'pt',title:'Português'},{id:'en',title:'English'},{id:'es',title:'Español'}]` e `defaultLanguages: ['pt']`
+
+### Estrutura de pastas Sanity
+
+```
+src/sanity/
+├── client.ts                → createClient (next-sanity)
+├── image.ts                 → urlFor (imageUrlBuilder)
+├── lib/
+│   └── live.ts              → sanityFetch helper com tags
+├── queries/
+│   ├── home.ts              → groq + getHome({ locale })
+│   ├── sobre.ts
+│   └── ...                  → uma query por página
+└── schemas/
+    ├── index.ts             → exporta schemaTypes
+    ├── home.ts
+    ├── programa.ts
+    └── ...
+
+sanity.config.ts             → na raiz; plugins: [structureTool(), documentInternationalization(...)]
+
+src/app/studio/[[...tool]]/page.tsx   → Studio embutido em /studio
+```
+
+### Padrão obrigatório por página (3 camadas)
+
+1. **Query** (`src/sanity/queries/[pagina].ts`):
+   ```ts
+   import { sanityFetch } from '@/sanity/lib/live'
+   import { groq } from 'next-sanity'
+
+   export const homeQuery = groq`*[_type == "home" && language == $language][0]{ ... }`
+
+   export async function getHome({ locale }: { locale: string }) {
+     return sanityFetch({ query: homeQuery, params: { language: locale }, tags: ['home'] })
+   }
+   ```
+2. **Page** (`src/app/[locale]/[rota]/page.tsx`) — Server Component **thin**, só faz fetch e passa data. Nada de `'use client'`, nada de render aqui.
+3. **Client Component** (`src/components/[rota]/[Pagina]ClientComponent.tsx`) — recebe `data` como prop, contém `'use client'`, hooks, eventos, render.
+
+### Regras gerais Sanity (espelha o padrão Super Terminais)
+
+- **Sempre** Server Components para fetch — nunca `useEffect` para chamar Sanity
+- **Sempre** filtrar por `language == $language` em queries de documentos com i18n
+- **Sempre** usar projeções GROQ — nunca buscar o documento inteiro
+- **Sempre** `groq\`...\`` template tag (não string simples)
+- **Nunca** fallback de texto hardcoded (`?? "texto fixo"`) — use renderização condicional com `&&`
+- **Nunca** importar `client.fetch` ou queries em Client Components
+- Imagens **sempre** via `urlFor(image).width(N).url()`
+- `apiVersion` fixa (ex.: `"2024-01-01"`) — nunca `new Date().toISOString()`
+- `useCdn: true` em produção; `false` apenas em preview
+- Schemas em `.ts` (não converter para `.js` — projeto é TypeScript)
+- Em produção, trocar `cache: "no-store"` por `{ revalidate: 60 }` no `sanityFetch`
+
+### Variáveis de ambiente (`.env.local`)
+
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01
+SANITY_API_TOKEN=                # somente servidor, NUNCA com NEXT_PUBLIC_
+```
+
+A organização Sanity será nova, criada dentro da conta da empresa (Atomsix) com nome `inaitec-website`, para futura transferência ao cliente.
+
+### Sanity MCP — obrigatório quando configurado
+
+Sempre que for criar/popular conteúdo no Sanity, usar **exclusivamente** as ferramentas `mcp_sanity_*`. Nunca usar scripts manuais ou `sanity import`.
+
+Fluxo obrigatório ao criar documento com i18n:
+1. Criar **3 documentos** (PT, EN, ES) via `mcp_sanity_create_documents_from_json` — o MCP gera UUIDs aleatórios (ignora `_id` proposto)
+2. Consultar os IDs reais via `mcp_sanity_query_documents`
+3. Criar o `translation.metadata` com a estrutura completa (`_type: internationalizedArrayReferenceValue` + `language`)
+4. Publicar com `mcp_sanity_publish_documents`
+5. Se for um documento singleton referenciado por ID no `sanity.config.ts`, atualizar com os UUIDs reais (nunca usar IDs `__i18n_*` planejados sem confirmar que existem)
+
+**Status atual:** MCP **ainda não está configurado**. Antes da primeira criação de schema/documento, adicionar as credenciais MCP no `.claude/settings.json`.
+
+### Ordem de migração (faseada — um passo de cada vez)
+
+1. **Setup base**
+   - Configurar `.env.local` com credenciais da nova org Sanity
+   - Instalar dependências (`next-sanity`, `@sanity/image-url`, `sanity`, `@sanity/document-internationalization`, `styled-components` se necessário pelo Studio)
+   - Criar `sanity.config.ts`, `src/sanity/{client,image,lib/live}.ts`, `src/app/studio/[[...tool]]/page.tsx`
+   - Configurar Sanity MCP no `.claude/settings.json`
+2. **Home** (primeira página a migrar)
+   - Inventário de campos da Home (`InaitecWebsite.tsx` + bloco `Home` do `messages/pt.json`)
+   - Criar schema `home` (com sub-objetos: hero, parceiros, ecossistema, programas, chamadas, noticias, contato, resultados, faq, ctaBanner)
+   - Criar query `getHome`
+   - Refatorar `src/app/[locale]/page.tsx` em Server thin + `HomeClientComponent`
+   - Popular documentos PT/EN/ES via MCP + `translation.metadata`
+   - Remover bloco `Home` do `messages/*.json`
+3. **Demais páginas internas** — uma por vez, mesma sequência (Sobre, Fale Conosco, Traga sua Empresa, Banco de Talentos, Soluções)
+4. **Coleções** — Programas (com slug), Conteúdo/Posts (com autor + slug), Empresas
+5. **Globais** — Header dinâmico (se houver conteúdo editável), Footer dinâmico, CTA global
+6. **Limpeza final** — `messages/*.json` fica só com nav/microcopy; remover `src/data/*.ts` migrados
+
+### Refatoração obrigatória durante a migração
+
+Páginas e componentes grandes precisam ser quebrados ao migrar:
+- `InaitecWebsite.tsx` (994l) → vira `HomeClientComponent` enxuto consumindo `data`
+- `programas/[slug]/page.tsx` (763l) → Server thin (busca programa por slug) + `ProgramaClientComponent`
+- `sobre/page.tsx` (728l) → Server thin + `SobreClientComponent`
+- Arrays inline (`VALORES`, `HISTORIA`, `CONSELHO_DELIBERATIVO`, etc.) viram campos do schema
+- `src/data/programas.ts`, `src/data/empresas.ts`, `src/data/conteudo.ts` são deletados após a migração da coleção correspondente

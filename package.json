@@ -10,12 +10,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/document-internationalization": "^6.2.0",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^5.26.0",
     "@tailwindcss/container-queries": "^0.1.1",
     "lucide-react": "^1.16.0",
     "next": "^16.2.3",
     "next-intl": "^4.12.0",
+    "next-sanity": "^13.0.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sanity": "^5.26.0",
+    "sanity-plugin-internationalized-array": "^5.1.2",
+    "sanity-plugin-utils": "^1.8.0",
+    "styled-components": "^6.4.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
         hostname: 'randomuser.me',
         pathname: '/api/portraits/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        pathname: `/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/**`,
+      },
     ],
   },
   async headers() {
