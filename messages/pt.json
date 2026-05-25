@@ -1,0 +1,489 @@
+{
+  "Header": {
+    "nav": {
+      "sobre": "Sobre",
+      "programas": "Programas",
+      "tragaEmpresa": "Traga sua Empresa",
+      "solucoes": "Soluções",
+      "conteudo": "Portal de Conteúdo"
+    },
+    "cta": {
+      "login": "Fazer login",
+      "contato": "Fale Conosco",
+      "menu": "Menu",
+      "selectLanguage": "Selecionar idioma"
+    },
+    "programsMenu": {
+      "eyebrow": "Quatro pilares · Um ecossistema",
+      "title": "Programas para cada etapa da sua jornada de inovação",
+      "viewAll": "Ver todos",
+      "pillarLabel": "Pilar 0{n}",
+      "footerText": "Não sabe qual programa escolher? Nossa equipe te orienta.",
+      "footerCta": "Falar com especialista",
+      "pillars": {
+        "startups": {
+          "label": "Startups e Pequenas Empresas",
+          "subtitle": "Aceleração & Crescimento",
+          "desc": "Da ideia ao mercado — programas intensivos com mentoria e capital."
+        },
+        "empresas": {
+          "label": "Grandes e Médias Empresas",
+          "subtitle": "Inovação Aberta",
+          "desc": "Conexão com startups disruptivas para co-criar soluções reais."
+        },
+        "universidades": {
+          "label": "Universidades e Governo",
+          "subtitle": "Ciência & Políticas Públicas",
+          "desc": "Pesquisa aplicada, transferência tecnológica e desenvolvimento regional."
+        },
+        "investidores": {
+          "label": "Investidores",
+          "subtitle": "Capital & Oportunidades",
+          "desc": "Deal flow curado e conexão com co-investidores do ecossistema."
+        }
+      }
+    },
+    "solucoesMenu": {
+      "footerText": "Parque Pedra Branca — Palhoça, SC",
+      "footerCta": "Falar com a equipe",
+      "items": {
+        "empresas-instaladas": {
+          "desc": "Conheça as +200 empresas e startups residentes no Parque Pedra Branca.",
+          "metricLabel": "empresas"
+        },
+        "chamadas": {
+          "desc": "Editais e oportunidades de inovação com inscrições vigentes.",
+          "metricLabel": "editais ativos"
+        },
+        "banco-de-talentos": {
+          "desc": "Vagas e profissionais qualificados do ecossistema Inaitec.",
+          "metricLabel": "cadastrados"
+        }
+      }
+    }
+  },
+  "Footer": {
+    "newsletter": {
+      "eyebrow": "Newsletter Inaitec",
+      "title": "Receba novidades do ecossistema",
+      "desc": "Editais, chamadas abertas, eventos e conteúdos relevantes direto no seu e-mail.",
+      "emailPlaceholder": "seu@email.com",
+      "submit": "Assinar"
+    },
+    "brand": {
+      "line1": "Hub de Inovação e Tecnologia",
+      "line2": "Parque Pedra Branca — Palhoça, SC"
+    },
+    "sections": {
+      "programas": "Programas",
+      "institucional": "Institucional",
+      "ecossistema": "Ecossistema"
+    },
+    "links": {
+      "verTodos": "Ver todos",
+      "quemSomos": "Quem Somos",
+      "nossaHistoria": "Nossa História",
+      "relatorio": "Relatório de Atividades",
+      "estrutura": "Estrutura Inaitec",
+      "empresasInstaladas": "Empresas Instaladas",
+      "tragaEmpresa": "Traga sua Empresa",
+      "bancoTalentos": "Banco de Talentos",
+      "chamadas": "Chamadas Abertas",
+      "conteudo": "Portal de Conteúdo"
+    },
+    "bottom": {
+      "copyright": "© {year} Inaitec — Instituto de Inovação do Ecossistema Pedra Branca",
+      "privacidade": "Política de Privacidade",
+      "termos": "Termos de Uso",
+      "criadoPor": "Criado por"
+    }
+  },
+  "Home": {
+    "hero": {
+      "titleStart": "Acelere, conecte",
+      "titleHighlight": "& transforme",
+      "subtitle": "1,7 milhão de m² de ecossistema vivo. Uma destinação única onde startups, corporações e governo constroem os negócios de impacto que movem o Brasil.",
+      "ctaPrimary": "Descubra o Inaitec",
+      "ctaSecondary": "Ver todos os programas",
+      "metrics": {
+        "startups": "startups aceleradas",
+        "empresas": "empresas instaladas",
+        "area": "mil m² de área",
+        "anos": "anos de ecossistema"
+      }
+    },
+    "parceiros": {
+      "eyebrow": "Parceiros",
+      "title": "Quem caminha",
+      "titleHighlight": "com a gente",
+      "desc": "Uma rede de mantenedores e apoiadores que viabilizam nossos programas, infraestrutura e projetos de impacto.",
+      "mantenedores": "Mantenedores",
+      "apoiadores": "Apoiadores"
+    },
+    "ecossistema": {
+      "eyebrow": "O ecossistema",
+      "titleStart": "O único parque tecnológico urbano do Brasil em",
+      "titleHighlight": "plena operação",
+      "p1": "O Parque Tecnológico Pedra Branca é uma cidade planejada dentro de Palhoça (SC): 1,7 milhão de m² onde morar, trabalhar e inovar acontecem no mesmo endereço. Diferente de parques tecnológicos tradicionais, aqui o ecossistema é vivo — com residências, comércio, universidades e empresas de tecnologia convivendo no mesmo quarteirão.",
+      "p2": "O Inaitec nasceu dentro desse ambiente e é o elo que conecta startups, corporações e governo à infraestrutura, às redes e aos programas que transformam ideias em negócios de impacto real.",
+      "cta": "Conheça a história do Inaitec"
+    },
+    "programas": {
+      "eyebrow": "Programas em destaque",
+      "titleStart": "Conheça os",
+      "titleHighlight": "programas",
+      "desc": "Jornadas desenhadas para cada etapa — da ideia à internacionalização. Escolha o programa ideal para o momento da sua empresa.",
+      "verTodos": "Ver todos os programas",
+      "saibaMais": "Saiba mais",
+      "pilares": {
+        "startups": "Startups",
+        "empresas": "Empresas",
+        "universidades": "Universidades",
+        "investidores": "Investidores"
+      },
+      "items": {
+        "acelera": {
+          "name": "Acelera Pedra Branca",
+          "desc": "Programa intensivo de aceleração com mentoria e investimento."
+        },
+        "inovacao": {
+          "name": "Inovação Aberta",
+          "desc": "Conexão entre corporações e startups disruptivas."
+        },
+        "pesquisa": {
+          "name": "Pesquisa Aplicada",
+          "desc": "P&D e transferência tecnológica com a academia."
+        },
+        "catalisa": {
+          "name": "Catalisa Inaitec",
+          "desc": "Deal flow curado e co-investimento no ecossistema."
+        }
+      }
+    },
+    "chamadas": {
+      "titleStart": "Chamadas em",
+      "titleHighlight": "destaque",
+      "desc": "Jornadas desenhadas para cada etapa, da ideia à internacionalização. Escolha o programa ideal para o momento da sua empresa."
+    },
+    "noticias": {
+      "eyebrow": "Portal de conteúdo",
+      "titleStart": "Notícias",
+      "titleHighlight": "recentes",
+      "verTodas": "Ver todas as notícias",
+      "readTime": "{min} min de leitura",
+      "lerArtigo": "Ler artigo completo",
+      "items": [
+        {
+          "date": "18 Abril · 2026",
+          "category": "Aceleração",
+          "title": "Acelera Pedra Branca 2026 recebe mais de 500 inscrições em duas semanas",
+          "readTime": "3 min de leitura"
+        },
+        {
+          "date": "12 Abril · 2026",
+          "category": "Inovação aberta",
+          "title": "Celesc e Inaitec firmam parceria para pilotos de rede elétrica inteligente",
+          "readTime": "5 min de leitura"
+        },
+        {
+          "date": "05 Abril · 2026",
+          "category": "Ecossistema",
+          "title": "Parque Tecnológico Pedra Branca atinge 200 empresas instaladas em 2026",
+          "readTime": "4 min de leitura"
+        },
+        {
+          "date": "28 Março · 2026",
+          "category": "Comunidade",
+          "title": "Meetup Inaitec reúne fundadores e investidores em noite de conexões no Pedra Branca",
+          "readTime": "3 min de leitura"
+        },
+        {
+          "date": "21 Março · 2026",
+          "category": "Investimento",
+          "title": "Fundo de venture capital seleciona 6 startups do ecossistema Pedra Branca para rodada semente",
+          "readTime": "4 min de leitura"
+        }
+      ]
+    },
+    "contato": {
+      "eyebrow": "Fale conosco",
+      "titleStart": "Vamos",
+      "titleHighlight": "conversar",
+      "descPrefix": "Nossa equipe responde em até 48h. Escreva para",
+      "labels": {
+        "nome": "Nome",
+        "sobrenome": "Sobrenome",
+        "email": "E-mail",
+        "telefone": "Telefone",
+        "mensagem": "Mensagem",
+        "perfil": "Perfil"
+      },
+      "placeholders": {
+        "nome": "Primeiro nome",
+        "sobrenome": "Último nome",
+        "email": "seu@email.com",
+        "telefone": "+55 (48) 9 0000-0000",
+        "mensagem": "Como podemos ajudar?"
+      },
+      "perfis": {
+        "startup": "Startup / Pequena empresa",
+        "grande": "Grande ou média empresa",
+        "universidade": "Universidade / Governo",
+        "investidor": "Investidor",
+        "aceleracao": "Aceleração de negócios",
+        "outro": "Outro"
+      },
+      "submit": "Enviar mensagem",
+      "quote": {
+        "text": "O Inaitec mudou o rumo da minha empresa. A mentoria e a rede do ecossistema me deram o suporte que eu precisava para crescer com confiança.",
+        "author": "Naira Oliveira",
+        "role": "Fundadora · AgroSmart — Acelera Pedra Branca 2025"
+      },
+      "imageAlt": "Empreendedor do ecossistema Inaitec"
+    },
+    "resultados": {
+      "eyebrow": "Resultados reais — Empresas instaladas",
+      "titleStart": "Empresas que cresceram",
+      "titleHighlight": "dentro do parque",
+      "ctaInstalar": "Instalar minha empresa",
+      "ctaPartnersStart": "Garanta benefícios",
+      "ctaPartnersHighlight": "exclusivos do ecossistema",
+      "yearRange": "De 2019 a 2025",
+      "prevAria": "Caso anterior",
+      "nextAria": "Próximo caso",
+      "items": [
+        {
+          "company": "NexusHealth",
+          "sector": "Healthtech",
+          "quote": "O Inaitec nos conectou a investidores e hospitais parceiros em tempo recorde. Instalados no Pedra Branca, escalamos de 3 para 40 funcionários em menos de um ano.",
+          "person": "Rodrigo Maia",
+          "role": "CEO · NexusHealth",
+          "metrics": [
+            { "label": "Captados em Série A", "value": "R$50M" },
+            { "label": "Crescimento de time em 12 meses", "value": "13×" }
+          ]
+        },
+        {
+          "company": "AgroSmart",
+          "sector": "Agritech",
+          "quote": "Ter nosso escritório no parque nos deu acesso a talentos da UFSC e Unisul. Fechamos nosso primeiro contrato corporativo 3 meses após a instalação.",
+          "person": "Jorge Dias",
+          "role": "Fundador · AgroSmart",
+          "metrics": [
+            { "label": "Produtores atendidos", "value": "+200" },
+            { "label": "Do MVP ao primeiro contrato", "value": "3 meses" }
+          ]
+        },
+        {
+          "company": "CityFlow",
+          "sector": "Smart City",
+          "quote": "A credibilidade do ecossistema Pedra Branca abriu portas em prefeituras que jamais conseguiríamos sozinhos. O parque é nossa maior vitrine.",
+          "person": "André Luz",
+          "role": "COO · CityFlow",
+          "metrics": [
+            { "label": "Cidades com contratos ativos", "value": "3" },
+            { "label": "Em contratos públicos gerados", "value": "R$12M" }
+          ]
+        },
+        {
+          "company": "EduTech SC",
+          "sector": "Edtech",
+          "quote": "O ambiente do Inaitec acelerou nossa curva de aprendizado. Encontramos aqui os parceiros certos para levar nossa plataforma a mais de 50 instituições.",
+          "person": "Carla Mendes",
+          "role": "CEO · EduTech SC",
+          "metrics": [
+            { "label": "Instituições parceiras", "value": "50+" },
+            { "label": "Alunos impactados", "value": "120K" }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Perguntas frequentes",
+      "titleStart": "Dúvidas",
+      "titleHighlight": "frequentes",
+      "desc": "Não encontrou o que procura? Fale com nossa equipe.",
+      "cta": "Entrar em contato",
+      "items": [
+        {
+          "q": "O que é o Inaitec e como ele funciona?",
+          "a": "O Inaitec é o hub de inovação e tecnologia do Parque Tecnológico Pedra Branca, em Palhoça (SC). Conectamos startups, empresas, universidades e governo por meio de programas estruturados de aceleração, inovação aberta e transferência tecnológica."
+        },
+        {
+          "q": "Como posso participar do Acelera Pedra Branca?",
+          "a": "As inscrições ocorrem por meio de editais públicos divulgados neste site e nas nossas redes sociais. O processo seletivo envolve análise de proposta, entrevistas e pitch. Fique atento às chamadas abertas."
+        },
+        {
+          "q": "Minha empresa pode se instalar no Parque Pedra Branca?",
+          "a": "Sim. O parque conta com espaços para empresas de todos os portes — do coworking ao headquarter. Entre em contato com nossa equipe para conhecer as modalidades de instalação e os benefícios do ecossistema."
+        },
+        {
+          "q": "Como funciona a inovação aberta para médias e grandes empresas?",
+          "a": "Mapeamos desafios estratégicos da sua empresa e conectamos com startups selecionadas do ecossistema para desenvolver pilotos e soluções validadas. Todo o processo é estruturado e acompanhado pela equipe do Inaitec."
+        },
+        {
+          "q": "Há editais de financiamento disponíveis para startups?",
+          "a": "Sim, operamos editais próprios e em parceria com FINEP, BNDES, prefeituras e empresas parceiras. As oportunidades vigentes estão sempre listadas na seção Chamadas Abertas do site."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "eyebrow": "Pronto para começar?",
+      "titleStart": "Faça parte do maior ecossistema de",
+      "titleHighlight": "inovação urbana",
+      "titleEnd": "do Brasil.",
+      "desc": "Startups, empresas e governo em um único endereço — Pedra Branca, SC.",
+      "ctaPrimary": "Fale com o Inaitec",
+      "ctaSecondary": "Ver programas"
+    }
+  },
+  "EcosystemAccordion": {
+    "eyebrow": "Quatro pilares · Um ecossistema",
+    "titleStart": "Onde startups, empresas e cidade",
+    "titleHighlight": "se encontram",
+    "desc": "Cada pilar conecta um público a programas, redes e oportunidades únicas dentro do ecossistema.",
+    "operacaoAtiva": "Operação ativa",
+    "pillarOf": "Pilar 0{n} / 0{total}",
+    "pillarAria": "Pilar {label}",
+    "pillars": [
+      {
+        "label": "Startups e Pequenas Empresas",
+        "subtitle": "Aceleração & Crescimento",
+        "metric": "+300",
+        "metricLabel": "startups aceleradas",
+        "desc": "Programas intensivos que conectam startups em estágio inicial e pequenas empresas a mentoria qualificada, investimento estruturado e rotas diretas para o mercado.",
+        "tags": ["Mentoria", "Investimento", "Go-to-market"],
+        "ctaLabel": "Acelera Pedra Branca"
+      },
+      {
+        "label": "Grandes e Médias Empresas",
+        "subtitle": "Inovação Aberta",
+        "metric": "20",
+        "metricLabel": "corporações parceiras",
+        "desc": "Grandes e médias empresas encontram startups disruptivas para co-criar soluções reais. Da curadoria ao piloto, estruturamos o match e medimos resultados.",
+        "tags": ["Curadoria", "Pilotos", "Co-criação"],
+        "ctaLabel": "Inovação Aberta"
+      },
+      {
+        "label": "Universidades e Governo",
+        "subtitle": "Ciência & Políticas Públicas",
+        "metric": "12",
+        "metricLabel": "instituições parceiras",
+        "desc": "Universidades, institutos de pesquisa e setor público conectados ao ecossistema para transferência de tecnologia, pesquisa aplicada e desenvolvimento regional.",
+        "tags": ["P&D", "Transferência tec.", "Editais"],
+        "ctaLabel": "Pesquisa Aplicada"
+      },
+      {
+        "label": "Investidores",
+        "subtitle": "Capital & Oportunidades",
+        "metric": "R$3,5Bi",
+        "metricLabel": "em negócios gerados",
+        "desc": "Acesso curado a startups validadas, deal flow qualificado e conexão com co-investidores nacionais e internacionais. Do anjo ao venture capital.",
+        "tags": ["Deal flow", "Co-investimento", "Venture capital"],
+        "ctaLabel": "Catalisa Inaitec"
+      }
+    ]
+  },
+  "TimelineCinematic": {
+    "header": {
+      "eyebrow": "Nossa trajetória",
+      "titleStart": "15 anos construindo o",
+      "titleHighlight": "maior ecossistema",
+      "titleEnd": "de inovação do Sul"
+    },
+    "marcoLabel": "Marco {year}",
+    "status": {
+      "playing": "Reproduzindo",
+      "paused": "Pausado"
+    },
+    "aria": {
+      "prev": "Anterior",
+      "next": "Próximo",
+      "play": "Reproduzir",
+      "pause": "Pausar"
+    },
+    "imageAlt": "Parque Tecnológico Pedra Branca",
+    "events": [
+      {
+        "year": "2009",
+        "title": "Fundação do Inaitec",
+        "desc": "Nasce o hub de inovação no Parque Tecnológico Pedra Branca, com a missão de conectar startups, empresas e governo em um ecossistema único.",
+        "metrics": [
+          { "value": "1ª", "label": "sede inaugurada" },
+          { "value": "3", "label": "mantenedores fundadores" },
+          { "value": "20 mil", "label": "m² de operação" }
+        ]
+      },
+      {
+        "year": "2013",
+        "title": "Primeiros programas de aceleração",
+        "desc": "Lançamento das primeiras turmas de aceleração, formando startups com mentoria intensiva e conexão com o mercado catarinense.",
+        "metrics": [
+          { "value": "12", "label": "startups na 1ª turma" },
+          { "value": "8", "label": "mentores ativos" },
+          { "value": "2", "label": "programas lançados" }
+        ]
+      },
+      {
+        "year": "2016",
+        "title": "Missões Internacionais",
+        "desc": "Expansão global com as primeiras missões ao Vale do Silício e Europa, abrindo portas para startups brasileiras em mercados internacionais.",
+        "metrics": [
+          { "value": "3", "label": "países visitados" },
+          { "value": "+40", "label": "startups globalizadas" },
+          { "value": "R$50M", "label": "em negócios gerados" }
+        ]
+      },
+      {
+        "year": "2019",
+        "title": "+100 empresas no ecossistema",
+        "desc": "Marco de 100 empresas instaladas no parque, consolidando o Pedra Branca como o maior ecossistema de inovação urbano do Brasil.",
+        "metrics": [
+          { "value": "+100", "label": "empresas instaladas" },
+          { "value": "R$500M", "label": "em negócios gerados" },
+          { "value": "3 mil", "label": "empregos diretos" }
+        ]
+      },
+      {
+        "year": "2021",
+        "title": "Inovação Aberta com Corporações",
+        "desc": "Estruturação dos programas de inovação aberta, conectando grandes empresas e setor público a soluções desenvolvidas pelas startups do hub.",
+        "metrics": [
+          { "value": "20", "label": "corporações parceiras" },
+          { "value": "+200", "label": "startups aceleradas" },
+          { "value": "R$1,5Bi", "label": "em negócios gerados" }
+        ]
+      },
+      {
+        "year": "2026",
+        "title": "Onde o Inaitec está hoje",
+        "desc": "17 anos de ecossistema consolidado. O Inaitec é hoje o maior hub de inovação urbano do Sul do Brasil, com operação em pleno vapor no Parque Tecnológico Pedra Branca.",
+        "metrics": [
+          { "value": "+300", "label": "startups aceleradas" },
+          { "value": "R$3,5Bi", "label": "em negócios gerados" },
+          { "value": "1,7M m²", "label": "de área de inovação" }
+        ]
+      }
+    ]
+  },
+  "ChamadasAbertasDestaque": {
+    "eyebrow": "Próximas chamadas",
+    "tempoRestante": "Tempo restante para inscrição:",
+    "inscreverAgora": "Inscrever agora",
+    "encerraEm": "Encerra em {date}",
+    "encerraEmBreve": "Encerra em breve · {date}",
+    "inscricoes": "Inscrições",
+    "emBreve": "Em breve",
+    "dias": "dias",
+    "horas": "horas",
+    "aria": {
+      "prev": "Anterior",
+      "next": "Próximo"
+    }
+  },
+  "Languages": {
+    "pt": "Português",
+    "en": "English (International)",
+    "es": "Español"
+  }
+}

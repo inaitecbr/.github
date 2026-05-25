@@ -1,0 +1,489 @@
+{
+  "Header": {
+    "nav": {
+      "sobre": "About",
+      "programas": "Programs",
+      "tragaEmpresa": "Bring Your Company",
+      "solucoes": "Solutions",
+      "conteudo": "Content Hub"
+    },
+    "cta": {
+      "login": "Sign in",
+      "contato": "Contact Us",
+      "menu": "Menu",
+      "selectLanguage": "Select language"
+    },
+    "programsMenu": {
+      "eyebrow": "Four pillars · One ecosystem",
+      "title": "Programs for every stage of your innovation journey",
+      "viewAll": "View all",
+      "pillarLabel": "Pillar 0{n}",
+      "footerText": "Not sure which program is right for you? Our team can help.",
+      "footerCta": "Talk to a specialist",
+      "pillars": {
+        "startups": {
+          "label": "Startups and Small Businesses",
+          "subtitle": "Acceleration & Growth",
+          "desc": "From idea to market — intensive programs with mentorship and capital."
+        },
+        "empresas": {
+          "label": "Large and Medium Enterprises",
+          "subtitle": "Open Innovation",
+          "desc": "Connect with disruptive startups to co-create real solutions."
+        },
+        "universidades": {
+          "label": "Universities and Government",
+          "subtitle": "Science & Public Policy",
+          "desc": "Applied research, technology transfer and regional development."
+        },
+        "investidores": {
+          "label": "Investors",
+          "subtitle": "Capital & Opportunities",
+          "desc": "Curated deal flow and connection with ecosystem co-investors."
+        }
+      }
+    },
+    "solucoesMenu": {
+      "footerText": "Pedra Branca Park — Palhoça, SC, Brazil",
+      "footerCta": "Talk to our team",
+      "items": {
+        "empresas-instaladas": {
+          "desc": "Meet the 200+ companies and startups residing in Pedra Branca Park.",
+          "metricLabel": "companies"
+        },
+        "chamadas": {
+          "desc": "Open calls and innovation opportunities with active applications.",
+          "metricLabel": "active calls"
+        },
+        "banco-de-talentos": {
+          "desc": "Jobs and qualified professionals from the Inaitec ecosystem.",
+          "metricLabel": "registered"
+        }
+      }
+    }
+  },
+  "Footer": {
+    "newsletter": {
+      "eyebrow": "Inaitec Newsletter",
+      "title": "Get ecosystem updates",
+      "desc": "Open calls, events and relevant content delivered straight to your inbox.",
+      "emailPlaceholder": "your@email.com",
+      "submit": "Subscribe"
+    },
+    "brand": {
+      "line1": "Innovation and Technology Hub",
+      "line2": "Pedra Branca Park — Palhoça, SC, Brazil"
+    },
+    "sections": {
+      "programas": "Programs",
+      "institucional": "Institutional",
+      "ecossistema": "Ecosystem"
+    },
+    "links": {
+      "verTodos": "View all",
+      "quemSomos": "Who We Are",
+      "nossaHistoria": "Our History",
+      "relatorio": "Activity Report",
+      "estrutura": "Inaitec Structure",
+      "empresasInstaladas": "Resident Companies",
+      "tragaEmpresa": "Bring Your Company",
+      "bancoTalentos": "Talent Bank",
+      "chamadas": "Open Calls",
+      "conteudo": "Content Hub"
+    },
+    "bottom": {
+      "copyright": "© {year} Inaitec — Pedra Branca Ecosystem Innovation Institute",
+      "privacidade": "Privacy Policy",
+      "termos": "Terms of Use",
+      "criadoPor": "Created by"
+    }
+  },
+  "Home": {
+    "hero": {
+      "titleStart": "Accelerate, connect",
+      "titleHighlight": "& transform",
+      "subtitle": "1.7 million m² of living ecosystem. A unique destination where startups, corporations and government build the impact businesses that move Brazil forward.",
+      "ctaPrimary": "Discover Inaitec",
+      "ctaSecondary": "View all programs",
+      "metrics": {
+        "startups": "startups accelerated",
+        "empresas": "resident companies",
+        "area": "thousand m² of area",
+        "anos": "years of ecosystem"
+      }
+    },
+    "parceiros": {
+      "eyebrow": "Partners",
+      "title": "Walking",
+      "titleHighlight": "with us",
+      "desc": "A network of sponsors and supporters that make our programs, infrastructure and impact projects possible.",
+      "mantenedores": "Sponsors",
+      "apoiadores": "Supporters"
+    },
+    "ecossistema": {
+      "eyebrow": "The ecosystem",
+      "titleStart": "The only urban technology park in Brazil in",
+      "titleHighlight": "full operation",
+      "p1": "Pedra Branca Technology Park is a planned city inside Palhoça (SC): 1.7 million m² where living, working and innovating happen at the same address. Unlike traditional tech parks, here the ecosystem is alive — with homes, retail, universities and tech companies sharing the same block.",
+      "p2": "Inaitec was born within this environment and serves as the link connecting startups, corporations and government to the infrastructure, networks and programs that turn ideas into real impact businesses.",
+      "cta": "Learn the Inaitec story"
+    },
+    "programas": {
+      "eyebrow": "Featured programs",
+      "titleStart": "Meet our",
+      "titleHighlight": "programs",
+      "desc": "Journeys designed for every stage — from idea to internationalization. Choose the right program for your company's moment.",
+      "verTodos": "View all programs",
+      "saibaMais": "Learn more",
+      "pilares": {
+        "startups": "Startups",
+        "empresas": "Companies",
+        "universidades": "Universities",
+        "investidores": "Investors"
+      },
+      "items": {
+        "acelera": {
+          "name": "Acelera Pedra Branca",
+          "desc": "Intensive acceleration program with mentorship and investment."
+        },
+        "inovacao": {
+          "name": "Open Innovation",
+          "desc": "Connection between corporations and disruptive startups."
+        },
+        "pesquisa": {
+          "name": "Applied Research",
+          "desc": "R&D and technology transfer with academia."
+        },
+        "catalisa": {
+          "name": "Catalisa Inaitec",
+          "desc": "Curated deal flow and co-investment within the ecosystem."
+        }
+      }
+    },
+    "chamadas": {
+      "titleStart": "Featured",
+      "titleHighlight": "calls",
+      "desc": "Journeys designed for every stage, from idea to internationalization. Choose the right program for your company's moment."
+    },
+    "noticias": {
+      "eyebrow": "Content hub",
+      "titleStart": "Recent",
+      "titleHighlight": "news",
+      "verTodas": "View all news",
+      "readTime": "{min} min read",
+      "lerArtigo": "Read full article",
+      "items": [
+        {
+          "date": "April 18, 2026",
+          "category": "Acceleration",
+          "title": "Acelera Pedra Branca 2026 receives more than 500 applications in two weeks",
+          "readTime": "3 min read"
+        },
+        {
+          "date": "April 12, 2026",
+          "category": "Open innovation",
+          "title": "Celesc and Inaitec partner to pilot smart grid initiatives",
+          "readTime": "5 min read"
+        },
+        {
+          "date": "April 5, 2026",
+          "category": "Ecosystem",
+          "title": "Pedra Branca Technology Park reaches 200 resident companies in 2026",
+          "readTime": "4 min read"
+        },
+        {
+          "date": "March 28, 2026",
+          "category": "Community",
+          "title": "Inaitec meetup brings founders and investors together for a night of connections at Pedra Branca",
+          "readTime": "3 min read"
+        },
+        {
+          "date": "March 21, 2026",
+          "category": "Investment",
+          "title": "Venture capital fund selects 6 startups from the Pedra Branca ecosystem for seed round",
+          "readTime": "4 min read"
+        }
+      ]
+    },
+    "contato": {
+      "eyebrow": "Contact us",
+      "titleStart": "Let's",
+      "titleHighlight": "talk",
+      "descPrefix": "Our team responds within 48h. Write to",
+      "labels": {
+        "nome": "First name",
+        "sobrenome": "Last name",
+        "email": "Email",
+        "telefone": "Phone",
+        "mensagem": "Message",
+        "perfil": "Profile"
+      },
+      "placeholders": {
+        "nome": "First name",
+        "sobrenome": "Last name",
+        "email": "your@email.com",
+        "telefone": "+55 (48) 9 0000-0000",
+        "mensagem": "How can we help?"
+      },
+      "perfis": {
+        "startup": "Startup / Small business",
+        "grande": "Large or medium enterprise",
+        "universidade": "University / Government",
+        "investidor": "Investor",
+        "aceleracao": "Business acceleration",
+        "outro": "Other"
+      },
+      "submit": "Send message",
+      "quote": {
+        "text": "Inaitec changed the course of my company. The mentorship and ecosystem network gave me the support I needed to grow with confidence.",
+        "author": "Naira Oliveira",
+        "role": "Founder · AgroSmart — Acelera Pedra Branca 2025"
+      },
+      "imageAlt": "Entrepreneur from the Inaitec ecosystem"
+    },
+    "resultados": {
+      "eyebrow": "Real results — Resident companies",
+      "titleStart": "Companies that grew",
+      "titleHighlight": "inside the park",
+      "ctaInstalar": "Install my company",
+      "ctaPartnersStart": "Get",
+      "ctaPartnersHighlight": "exclusive ecosystem benefits",
+      "yearRange": "From 2019 to 2025",
+      "prevAria": "Previous case",
+      "nextAria": "Next case",
+      "items": [
+        {
+          "company": "NexusHealth",
+          "sector": "Healthtech",
+          "quote": "Inaitec connected us with investors and partner hospitals in record time. Based at Pedra Branca, we scaled from 3 to 40 employees in less than a year.",
+          "person": "Rodrigo Maia",
+          "role": "CEO · NexusHealth",
+          "metrics": [
+            { "label": "Raised in Series A", "value": "R$50M" },
+            { "label": "Team growth in 12 months", "value": "13×" }
+          ]
+        },
+        {
+          "company": "AgroSmart",
+          "sector": "Agritech",
+          "quote": "Having our office in the park gave us access to talent from UFSC and Unisul. We closed our first corporate contract 3 months after moving in.",
+          "person": "Jorge Dias",
+          "role": "Founder · AgroSmart",
+          "metrics": [
+            { "label": "Producers served", "value": "+200" },
+            { "label": "From MVP to first contract", "value": "3 months" }
+          ]
+        },
+        {
+          "company": "CityFlow",
+          "sector": "Smart City",
+          "quote": "The credibility of the Pedra Branca ecosystem opened doors at city halls we would never reach on our own. The park is our biggest showcase.",
+          "person": "André Luz",
+          "role": "COO · CityFlow",
+          "metrics": [
+            { "label": "Cities with active contracts", "value": "3" },
+            { "label": "Generated in public contracts", "value": "R$12M" }
+          ]
+        },
+        {
+          "company": "EduTech SC",
+          "sector": "Edtech",
+          "quote": "The Inaitec environment accelerated our learning curve. We found the right partners here to bring our platform to more than 50 institutions.",
+          "person": "Carla Mendes",
+          "role": "CEO · EduTech SC",
+          "metrics": [
+            { "label": "Partner institutions", "value": "50+" },
+            { "label": "Students impacted", "value": "120K" }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Frequently asked questions",
+      "titleStart": "Doubts",
+      "titleHighlight": "answered",
+      "desc": "Didn't find what you were looking for? Talk to our team.",
+      "cta": "Get in touch",
+      "items": [
+        {
+          "q": "What is Inaitec and how does it work?",
+          "a": "Inaitec is the innovation and technology hub of Pedra Branca Technology Park, in Palhoça (SC, Brazil). We connect startups, companies, universities and government through structured programs of acceleration, open innovation and technology transfer."
+        },
+        {
+          "q": "How can I take part in Acelera Pedra Branca?",
+          "a": "Applications happen through public calls announced on this site and our social channels. The selection process includes proposal review, interviews and a pitch. Keep an eye on the open calls."
+        },
+        {
+          "q": "Can my company set up at Pedra Branca Park?",
+          "a": "Yes. The park has spaces for companies of all sizes — from coworking to headquarters. Get in touch with our team to learn about the installation options and ecosystem benefits."
+        },
+        {
+          "q": "How does open innovation work for medium and large companies?",
+          "a": "We map your company's strategic challenges and connect you with selected startups from the ecosystem to develop pilots and validated solutions. The whole process is structured and guided by the Inaitec team."
+        },
+        {
+          "q": "Are there funding opportunities available for startups?",
+          "a": "Yes, we run our own calls and partner with FINEP, BNDES, city governments and partner companies. Current opportunities are always listed in the Open Calls section of the site."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "eyebrow": "Ready to start?",
+      "titleStart": "Join the largest",
+      "titleHighlight": "urban innovation",
+      "titleEnd": "ecosystem in Brazil.",
+      "desc": "Startups, companies and government at a single address — Pedra Branca, SC.",
+      "ctaPrimary": "Talk to Inaitec",
+      "ctaSecondary": "View programs"
+    }
+  },
+  "EcosystemAccordion": {
+    "eyebrow": "Four pillars · One ecosystem",
+    "titleStart": "Where startups, companies and city",
+    "titleHighlight": "come together",
+    "desc": "Each pillar connects an audience to programs, networks and unique opportunities within the ecosystem.",
+    "operacaoAtiva": "Active operation",
+    "pillarOf": "Pillar 0{n} / 0{total}",
+    "pillarAria": "Pillar {label}",
+    "pillars": [
+      {
+        "label": "Startups and Small Businesses",
+        "subtitle": "Acceleration & Growth",
+        "metric": "+300",
+        "metricLabel": "startups accelerated",
+        "desc": "Intensive programs that connect early-stage startups and small businesses to qualified mentorship, structured investment and direct routes to market.",
+        "tags": ["Mentorship", "Investment", "Go-to-market"],
+        "ctaLabel": "Acelera Pedra Branca"
+      },
+      {
+        "label": "Large and Medium Enterprises",
+        "subtitle": "Open Innovation",
+        "metric": "20",
+        "metricLabel": "corporate partners",
+        "desc": "Large and medium enterprises meet disruptive startups to co-create real solutions. From curation to pilot, we structure the match and measure results.",
+        "tags": ["Curation", "Pilots", "Co-creation"],
+        "ctaLabel": "Open Innovation"
+      },
+      {
+        "label": "Universities and Government",
+        "subtitle": "Science & Public Policy",
+        "metric": "12",
+        "metricLabel": "partner institutions",
+        "desc": "Universities, research institutes and the public sector connected to the ecosystem for technology transfer, applied research and regional development.",
+        "tags": ["R&D", "Tech transfer", "Public calls"],
+        "ctaLabel": "Applied Research"
+      },
+      {
+        "label": "Investors",
+        "subtitle": "Capital & Opportunities",
+        "metric": "R$3,5Bi",
+        "metricLabel": "in business generated",
+        "desc": "Curated access to validated startups, qualified deal flow and connection with national and international co-investors. From angels to venture capital.",
+        "tags": ["Deal flow", "Co-investment", "Venture capital"],
+        "ctaLabel": "Catalisa Inaitec"
+      }
+    ]
+  },
+  "TimelineCinematic": {
+    "header": {
+      "eyebrow": "Our journey",
+      "titleStart": "15 years building the",
+      "titleHighlight": "largest innovation",
+      "titleEnd": "ecosystem in the South"
+    },
+    "marcoLabel": "Milestone {year}",
+    "status": {
+      "playing": "Playing",
+      "paused": "Paused"
+    },
+    "aria": {
+      "prev": "Previous",
+      "next": "Next",
+      "play": "Play",
+      "pause": "Pause"
+    },
+    "imageAlt": "Pedra Branca Technology Park",
+    "events": [
+      {
+        "year": "2009",
+        "title": "Inaitec is founded",
+        "desc": "The innovation hub is born at Pedra Branca Technology Park, with the mission of connecting startups, companies and government in a single ecosystem.",
+        "metrics": [
+          { "value": "1ª", "label": "headquarters opened" },
+          { "value": "3", "label": "founding sponsors" },
+          { "value": "20 mil", "label": "m² of operation" }
+        ]
+      },
+      {
+        "year": "2013",
+        "title": "First acceleration programs",
+        "desc": "Launch of the first acceleration cohorts, training startups with intensive mentorship and connection to the Santa Catarina market.",
+        "metrics": [
+          { "value": "12", "label": "startups in the 1st cohort" },
+          { "value": "8", "label": "active mentors" },
+          { "value": "2", "label": "programs launched" }
+        ]
+      },
+      {
+        "year": "2016",
+        "title": "International Missions",
+        "desc": "Global expansion with the first missions to Silicon Valley and Europe, opening doors for Brazilian startups in international markets.",
+        "metrics": [
+          { "value": "3", "label": "countries visited" },
+          { "value": "+40", "label": "globalized startups" },
+          { "value": "R$50M", "label": "in business generated" }
+        ]
+      },
+      {
+        "year": "2019",
+        "title": "+100 companies in the ecosystem",
+        "desc": "Milestone of 100 companies installed in the park, consolidating Pedra Branca as the largest urban innovation ecosystem in Brazil.",
+        "metrics": [
+          { "value": "+100", "label": "resident companies" },
+          { "value": "R$500M", "label": "in business generated" },
+          { "value": "3 mil", "label": "direct jobs" }
+        ]
+      },
+      {
+        "year": "2021",
+        "title": "Open Innovation with Corporations",
+        "desc": "Structuring of open innovation programs, connecting large companies and the public sector to solutions developed by the hub's startups.",
+        "metrics": [
+          { "value": "20", "label": "corporate partners" },
+          { "value": "+200", "label": "startups accelerated" },
+          { "value": "R$1,5Bi", "label": "in business generated" }
+        ]
+      },
+      {
+        "year": "2026",
+        "title": "Where Inaitec is today",
+        "desc": "17 years of a consolidated ecosystem. Inaitec is today the largest urban innovation hub in southern Brazil, in full operation at Pedra Branca Technology Park.",
+        "metrics": [
+          { "value": "+300", "label": "startups accelerated" },
+          { "value": "R$3,5Bi", "label": "in business generated" },
+          { "value": "1,7M m²", "label": "of innovation area" }
+        ]
+      }
+    ]
+  },
+  "ChamadasAbertasDestaque": {
+    "eyebrow": "Upcoming calls",
+    "tempoRestante": "Time left to apply:",
+    "inscreverAgora": "Apply now",
+    "encerraEm": "Closes on {date}",
+    "encerraEmBreve": "Closing soon · {date}",
+    "inscricoes": "Applications",
+    "emBreve": "Coming soon",
+    "dias": "days",
+    "horas": "hours",
+    "aria": {
+      "prev": "Previous",
+      "next": "Next"
+    }
+  },
+  "Languages": {
+    "pt": "Português",
+    "en": "English (International)",
+    "es": "Español"
+  }
+}

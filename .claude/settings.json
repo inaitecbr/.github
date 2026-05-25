@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'python3 \"$PWD/.claude/scripts/log_changes.py\"'"
+          },
+          {
+            "type": "command",
+            "command": "bash -c 'python3 \"$PWD/.claude/scripts/log_design_tokens.py\"'"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'python3 \"$PWD/.claude/scripts/log_tokens.py\"'"
+          }
+        ]
+      }
+    ]
+  }
+}
