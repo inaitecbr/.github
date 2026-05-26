@@ -159,6 +159,164 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'ecossistema',
+      title: 'Ecossistema',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        defineField({
+          name: 'eyebrow',
+          title: 'Eyebrow (label acima do título)',
+          type: 'string',
+        }),
+        defineField({
+          name: 'titleStart',
+          title: 'Título — primeira parte',
+          type: 'string',
+        }),
+        defineField({
+          name: 'titleHighlight',
+          title: 'Título — destaque (itálico laranja)',
+          type: 'string',
+        }),
+        defineField({
+          name: 'p1',
+          title: 'Parágrafo 1',
+          type: 'text',
+          rows: 4,
+        }),
+        defineField({
+          name: 'p2',
+          title: 'Parágrafo 2',
+          type: 'text',
+          rows: 4,
+        }),
+        defineField({
+          name: 'ctaLabel',
+          title: 'CTA — Texto do link',
+          type: 'string',
+        }),
+        defineField({
+          name: 'ctaHref',
+          title: 'CTA — URL (ex.: /sobre)',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'timeline',
+      title: 'Linha do Tempo',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        defineField({
+          name: 'marcoLabel',
+          title: 'Label do marco (use {year} para inserir o ano)',
+          description: 'Ex.: "Marco {year}"',
+          type: 'string',
+        }),
+        defineField({
+          name: 'imageAlt',
+          title: 'Texto alternativo da imagem lateral',
+          type: 'string',
+        }),
+        defineField({
+          name: 'events',
+          title: 'Eventos',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              name: 'timelineEvent',
+              fields: [
+                {
+                  name: 'year',
+                  title: 'Ano',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'title',
+                  title: 'Título do marco',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'desc',
+                  title: 'Descrição',
+                  type: 'text',
+                  rows: 3,
+                },
+                {
+                  name: 'metrics',
+                  title: 'Métricas (3 itens)',
+                  type: 'array',
+                  of: [
+                    {
+                      type: 'object',
+                      name: 'timelineMetric',
+                      fields: [
+                        { name: 'value', title: 'Valor (ex.: "+300")', type: 'string' },
+                        { name: 'label', title: 'Label (ex.: "startups aceleradas")', type: 'string' },
+                      ],
+                      preview: { select: { title: 'value', subtitle: 'label' } },
+                    },
+                  ],
+                  validation: (Rule) => Rule.max(3),
+                },
+              ],
+              preview: {
+                select: { title: 'year', subtitle: 'title' },
+              },
+            },
+          ],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'pilares',
+      title: '4 Pilares do Ecossistema',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        defineField({ name: 'eyebrow', title: 'Eyebrow', type: 'string' }),
+        defineField({ name: 'titleStart', title: 'Título — primeira parte', type: 'string' }),
+        defineField({ name: 'titleHighlight', title: 'Título — destaque (itálico laranja)', type: 'string' }),
+        defineField({ name: 'desc', title: 'Descrição da seção', type: 'text', rows: 2 }),
+        defineField({
+          name: 'pillars',
+          title: 'Pilares (ordem fixa: Startups → Empresas → Universidades → Investidores)',
+          description: 'Não reordene — a ordem define o design visual (cor, ícone, href) de cada pilar.',
+          type: 'array',
+          validation: (Rule) => Rule.length(4),
+          of: [
+            {
+              type: 'object',
+              name: 'ecosystemPillar',
+              fields: [
+                { name: 'label', title: 'Nome do pilar', type: 'string', validation: (Rule) => Rule.required() },
+                { name: 'subtitle', title: 'Subtítulo (categoria)', type: 'string' },
+                { name: 'metric', title: 'Métrica principal (ex.: "+300")', type: 'string' },
+                { name: 'metricLabel', title: 'Label da métrica', type: 'string' },
+                { name: 'desc', title: 'Descrição', type: 'text', rows: 3 },
+                {
+                  name: 'tags',
+                  title: 'Tags (máx. 3)',
+                  type: 'array',
+                  of: [{ type: 'string' }],
+                  validation: (Rule) => Rule.max(3),
+                },
+                { name: 'ctaLabel', title: 'Texto do CTA', type: 'string' },
+              ],
+              preview: {
+                select: { title: 'label', subtitle: 'subtitle' },
+              },
+            },
+          ],
+        }),
+      ],
+    }),
   ],
   preview: {
     select: {

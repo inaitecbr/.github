@@ -1,76 +1,24 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useTranslations } from 'next-intl'
-import { ArrowRight, Check, ChevronLeft, ChevronRight, Plus, Star } from 'lucide-react'
-import BrandPattern from '@/components/BrandPattern'
-import ChamadasAbertasDestaque from '@/components/ChamadasAbertasDestaque'
-import EcosystemAccordion from '@/components/EcosystemAccordion'
-import TimelineCinematic from '@/components/TimelineCinematic'
-import { Section, Container } from '@/components/Section'
+import ChamadasAbertasDestaque from "@/components/ChamadasAbertasDestaque";
+import { Container, Section } from "@/components/Section";
+import { ArrowRight, Check, ChevronLeft, ChevronRight, Plus, Star } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function InaitecWebsite() {
-  const t = useTranslations('Home')
+  const t = useTranslations("Home");
   return (
     <>
-      {/* ── Ecossistema — uma dobra: contexto + linha do tempo ───────────── */}
-      <section className="relative z-10 min-h-dvh flex flex-col justify-center py-20 overflow-hidden">
-        <BrandPattern
-          variant="dots"
-          color="var(--color-brand-orange)"
-          className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
-        />
-
-        <Container className="relative">
-
-          {/* Cabeçalho — contexto do ecossistema */}
-          <div className="mb-4 inline-flex items-center gap-2">
-            <span className="block h-px w-8 bg-brand-orange" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-              {t('ecossistema.eyebrow')}
-            </span>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <h2 className="font-extrabold text-display-lg leading-[1.15] text-white tracking-tight">
-              {t('ecossistema.titleStart')}{' '}
-              <span className="text-brand-orange italic font-medium">{t('ecossistema.titleHighlight')}</span>
-            </h2>
-            <div className="flex flex-col gap-3.5 justify-center">
-              <p className="text-[14px] text-white/70 leading-relaxed">
-                {t('ecossistema.p1')}
-              </p>
-              <p className="text-[14px] text-white/70 leading-relaxed">
-                {t('ecossistema.p2')}
-              </p>
-              <Link
-                href="/sobre"
-                className="inline-flex items-center text-sm font-semibold text-brand-orange hover:text-[#FF9B26] transition-all self-start"
-              >
-                {t('ecossistema.cta')}
-              </Link>
-            </div>
-          </div>
-
-          {/* Linha do tempo cinematográfica */}
-          <div className="mt-10">
-            <TimelineCinematic theme="dark" showHeader={false} />
-          </div>
-
-        </Container>
-      </section>
-
-      {/* ── Ecossistema — 4 pilares ─────────────────────────────────────── */}
-      <EcosystemAccordion />
-
       {/* ══════════════ LIGHT MODE — sessões de conteúdo ══════════════ */}
-      <div id="light-section" data-theme="light" className="relative z-10 bg-[#F5F4EF] overflow-hidden">
-
+      <div
+        id="light-section"
+        data-theme="light"
+        className="relative z-10 bg-[#F5F4EF] overflow-hidden"
+      >
         {/* ── Camada decorativa global do light mode ─────────────────── */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
           {/* Washes de cor — orbs muito suaves nas cores da marca */}
           <div className="absolute top-[4%] -left-[12%] w-[800px] h-[800px] rounded-full bg-brand-orange/[0.07] blur-[160px]" />
           <div className="absolute top-[26%] -right-[15%] w-[900px] h-[900px] rounded-full bg-brand-teal/[0.05] blur-[180px]" />
@@ -82,48 +30,75 @@ export default function InaitecWebsite() {
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: 'radial-gradient(circle, #0D2E38 1px, transparent 1px)',
-              backgroundSize: '36px 36px',
+              backgroundImage: "radial-gradient(circle, #0D2E38 1px, transparent 1px)",
+              backgroundSize: "36px 36px",
               opacity: 0.06,
-              maskImage: 'linear-gradient(to bottom, transparent 0%, black 4%, black 96%, transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 4%, black 96%, transparent 100%)',
+              maskImage:
+                "linear-gradient(to bottom, transparent 0%, black 4%, black 96%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, transparent 0%, black 4%, black 96%, transparent 100%)",
             }}
           />
-
-
         </div>
 
-      {/* ── 1. Conheça os programas ───────────────────────────────────── */}
-      <Section padding="md" className="overflow-hidden" containerClassName="relative">
+        {/* ── 1. Conheça os programas ───────────────────────────────────── */}
+        <Section padding="md" className="overflow-hidden" containerClassName="relative">
           <div className="flex flex-wrap items-end justify-between gap-8 mb-14">
             <div className="max-w-2xl">
               <div className="mb-5 inline-flex items-center gap-2">
                 <span className="block h-px w-8 bg-brand-orange" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-                  {t('programas.eyebrow')}
+                  {t("programas.eyebrow")}
                 </span>
               </div>
               <h2 className="font-extrabold text-brand-navy text-display-2xl leading-[1.2] tracking-tight">
-                {t('programas.titleStart')} <span className="text-brand-orange italic font-medium">{t('programas.titleHighlight')}</span>
+                {t("programas.titleStart")}{" "}
+                <span className="text-brand-orange italic font-medium">
+                  {t("programas.titleHighlight")}
+                </span>
               </h2>
               <p className="mt-5 text-brand-navy/65 text-[15px] leading-relaxed max-w-xl">
-                {t('programas.desc')}
+                {t("programas.desc")}
               </p>
             </div>
             <Link
               href="/programas"
               className="text-sm font-semibold text-brand-navy/70 hover:text-brand-orange transition-colors"
             >
-              {t('programas.verTodos')}
+              {t("programas.verTodos")}
             </Link>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { name: t('programas.items.acelera.name'), pillar: t('programas.pilares.startups'), desc: t('programas.items.acelera.desc'), href: '/programas/acelera-pedra-branca', image: '/acelera-pedrabranca.jpg' },
-              { name: t('programas.items.inovacao.name'), pillar: t('programas.pilares.empresas'), desc: t('programas.items.inovacao.desc'), href: '/programas/inovacao-aberta', image: '/imagens-destaques/inaitec2.jpeg' },
-              { name: t('programas.items.pesquisa.name'), pillar: t('programas.pilares.universidades'), desc: t('programas.items.pesquisa.desc'), href: '/programas/pesquisa-aplicada', image: '/imagens-destaques/inaitec3.jpg' },
-              { name: t('programas.items.catalisa.name'), pillar: t('programas.pilares.investidores'), desc: t('programas.items.catalisa.desc'), href: '/programas/catalisa-inaitec', image: '/imagens-destaques/inaitec4.jpg' },
+              {
+                name: t("programas.items.acelera.name"),
+                pillar: t("programas.pilares.startups"),
+                desc: t("programas.items.acelera.desc"),
+                href: "/programas/acelera-pedra-branca",
+                image: "/acelera-pedrabranca.jpg",
+              },
+              {
+                name: t("programas.items.inovacao.name"),
+                pillar: t("programas.pilares.empresas"),
+                desc: t("programas.items.inovacao.desc"),
+                href: "/programas/inovacao-aberta",
+                image: "/imagens-destaques/inaitec2.jpeg",
+              },
+              {
+                name: t("programas.items.pesquisa.name"),
+                pillar: t("programas.pilares.universidades"),
+                desc: t("programas.items.pesquisa.desc"),
+                href: "/programas/pesquisa-aplicada",
+                image: "/imagens-destaques/inaitec3.jpg",
+              },
+              {
+                name: t("programas.items.catalisa.name"),
+                pillar: t("programas.pilares.investidores"),
+                desc: t("programas.items.catalisa.desc"),
+                href: "/programas/catalisa-inaitec",
+                image: "/imagens-destaques/inaitec4.jpg",
+              },
             ].map((p) => (
               <Link
                 key={p.name}
@@ -141,70 +116,86 @@ export default function InaitecWebsite() {
                   <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
                     {p.pillar}
                   </div>
-                  <h3 className="text-brand-navy text-xl font-extrabold leading-tight">
-                    {p.name}
-                  </h3>
-                  <p className="text-brand-navy/60 text-sm leading-relaxed flex-1">
-                    {p.desc}
-                  </p>
+                  <h3 className="text-brand-navy text-xl font-extrabold leading-tight">{p.name}</h3>
+                  <p className="text-brand-navy/60 text-sm leading-relaxed flex-1">{p.desc}</p>
                   <div className="flex items-center justify-between pt-3 border-t border-border">
                     <span className="text-[11px] font-semibold text-brand-orange uppercase tracking-widest">
-                      {t('programas.saibaMais')}
+                      {t("programas.saibaMais")}
                     </span>
                     <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#F5F4EF] group-hover:bg-brand-orange transition-all">
-                      <ArrowRight strokeWidth={2.5} className="w-3 h-3 text-brand-navy group-hover:text-white transition-colors" />
+                      <ArrowRight
+                        strokeWidth={2.5}
+                        className="w-3 h-3 text-brand-navy group-hover:text-white transition-colors"
+                      />
                     </span>
                   </div>
                 </div>
               </Link>
             ))}
           </div>
-      </Section>
+        </Section>
 
-      {/* ── 2. Chamadas abertas em destaque ───────────────────────────── */}
-      <Section padding="md" className="overflow-hidden" containerClassName="relative">
-
+        {/* ── 2. Chamadas abertas em destaque ───────────────────────────── */}
+        <Section padding="md" className="overflow-hidden" containerClassName="relative">
           {/* Header */}
           <div className="mb-14">
             <h2 className="font-extrabold text-brand-navy text-display-2xl leading-[1.2] tracking-tight">
-              {t('chamadas.titleStart')} <span className="text-brand-orange italic font-medium">{t('chamadas.titleHighlight')}</span>
+              {t("chamadas.titleStart")}{" "}
+              <span className="text-brand-orange italic font-medium">
+                {t("chamadas.titleHighlight")}
+              </span>
             </h2>
             <p className="mt-4 text-brand-navy/65 text-[15px] leading-relaxed max-w-xl">
-              {t('chamadas.desc')}
+              {t("chamadas.desc")}
             </p>
           </div>
 
           <ChamadasAbertasDestaque />
+        </Section>
 
-      </Section>
-
-      {/* ── 4. Notícias recentes ──────────────────────────────────────── */}
-      <Section padding="md" className="overflow-hidden" containerClassName="relative">
+        {/* ── 4. Notícias recentes ──────────────────────────────────────── */}
+        <Section padding="md" className="overflow-hidden" containerClassName="relative">
           <div className="flex flex-wrap items-end justify-between gap-8 mb-14">
             <div>
               <div className="mb-5 inline-flex items-center gap-2">
                 <span className="block h-px w-8 bg-brand-orange" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-                  {t('noticias.eyebrow')}
+                  {t("noticias.eyebrow")}
                 </span>
               </div>
               <h2 className="font-extrabold text-brand-navy text-display-2xl leading-[1.2] tracking-tight">
-                {t('noticias.titleStart')} <span className="text-brand-orange italic font-medium">{t('noticias.titleHighlight')}</span>
+                {t("noticias.titleStart")}{" "}
+                <span className="text-brand-orange italic font-medium">
+                  {t("noticias.titleHighlight")}
+                </span>
               </h2>
             </div>
-            <Link href="/conteudo" className="text-sm font-semibold text-brand-navy/70 hover:text-brand-orange transition-colors">
-              {t('noticias.verTodas')}
+            <Link
+              href="/conteudo"
+              className="text-sm font-semibold text-brand-navy/70 hover:text-brand-orange transition-colors"
+            >
+              {t("noticias.verTodas")}
             </Link>
           </div>
 
           {(() => {
-            const noticiasItems = t.raw('noticias.items') as Array<{ date: string; category: string; title: string; readTime: string }>
-            const noticiasImages = ['/acelera-pedrabranca.jpg', '/noticias-2.jpg', '/noticias-3.png', '/noticias-4.jpg', '/noticias-5.jpg']
-            const noticias = noticiasItems.map((n, i) => ({ ...n, image: noticiasImages[i] }))
-            const [featured, ...rest] = noticias
+            const noticiasItems = t.raw("noticias.items") as Array<{
+              date: string;
+              category: string;
+              title: string;
+              readTime: string;
+            }>;
+            const noticiasImages = [
+              "/acelera-pedrabranca.jpg",
+              "/noticias-2.jpg",
+              "/noticias-3.png",
+              "/noticias-4.jpg",
+              "/noticias-5.jpg",
+            ];
+            const noticias = noticiasItems.map((n, i) => ({ ...n, image: noticiasImages[i] }));
+            const [featured, ...rest] = noticias;
             return (
               <div className="grid lg:grid-cols-2 gap-4 items-stretch">
-
                 {/* Card destaque — grande, imagem de fundo */}
                 <Link
                   href="/conteudo"
@@ -260,39 +251,42 @@ export default function InaitecWebsite() {
                     </Link>
                   ))}
                 </div>
-
               </div>
-            )
+            );
           })()}
-      </Section>
+        </Section>
 
-      {/* ── 5. Traga sua empresa ──────────────────────────────────────── */}
-      <TragaSection />
-
-      </div>{/* fecha wrapper light mode */}
+        {/* ── 5. Traga sua empresa ──────────────────────────────────────── */}
+        <TragaSection />
+      </div>
+      {/* fecha wrapper light mode */}
 
       {/* ══════════════ DARK MODE FINAL — form, FAQ, CTA, footer ══════════════ */}
 
       {/* ── 6. Fale conosco ───────────────────────────────────────────── */}
       <section className="relative py-16 overflow-hidden">
-
         {/* Fundo da seção */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 80% at 60% 50%, #0F3441 0%, transparent 70%)' }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 80% 80% at 60% 50%, #0F3441 0%, transparent 70%)",
+            }}
+          />
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-brand-teal/[0.06] blur-[140px]" />
           <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-brand-orange/[0.07] blur-[140px]" />
         </div>
 
         <Container className="relative">
           <div className="grid lg:grid-cols-[42%_58%] gap-8 min-h-[700px]">
-
             {/* Esquerda — foto + quote (um card único no mobile) */}
             <div className="relative rounded-2xl overflow-hidden bg-white/[0.04] border border-white/10 lg:bg-transparent lg:border-0 lg:min-h-0">
               {/* Imagem — aspect ratio no mobile, fills column no desktop */}
               <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:absolute lg:inset-0">
                 <img
                   src="/form-image.jpg"
-                  alt={t('contato.imageAlt')}
+                  alt={t("contato.imageAlt")}
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent" />
@@ -301,17 +295,26 @@ export default function InaitecWebsite() {
               {/* Quote — parte do mesmo card no mobile, overlay no desktop */}
               <div className="p-6 flex flex-col gap-4 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:m-8 lg:p-6 lg:rounded-2xl lg:bg-white/10 lg:backdrop-blur-md lg:border lg:border-white/15">
                 <p className="text-white text-[13px] leading-relaxed">
-                  &ldquo;{t('contato.quote.text')}&rdquo;
+                  &ldquo;{t("contato.quote.text")}&rdquo;
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-white font-bold text-sm">{t('contato.quote.author')}</div>
-                    <div className="text-white/55 text-[11px] mt-0.5">{t('contato.quote.role')}</div>
+                    <div className="text-white font-bold text-sm">{t("contato.quote.author")}</div>
+                    <div className="text-white/55 text-[11px] mt-0.5">
+                      {t("contato.quote.role")}
+                    </div>
                   </div>
                   <div className="flex items-center gap-0.5">
-                    {Array(5).fill(null).map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 text-brand-orange" fill="currentColor" stroke="none" />
-                    ))}
+                    {Array(5)
+                      .fill(null)
+                      .map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-3.5 h-3.5 text-brand-orange"
+                          fill="currentColor"
+                          stroke="none"
+                        />
+                      ))}
                   </div>
                 </div>
               </div>
@@ -323,15 +326,22 @@ export default function InaitecWebsite() {
                 <div className="mb-4 inline-flex items-center gap-2">
                   <span className="block h-px w-8 bg-brand-orange" />
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-                    {t('contato.eyebrow')}
+                    {t("contato.eyebrow")}
                   </span>
                 </div>
                 <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
-                  {t('contato.titleStart')} <span className="text-brand-orange italic font-medium">{t('contato.titleHighlight')}</span>?
+                  {t("contato.titleStart")}{" "}
+                  <span className="text-brand-orange italic font-medium">
+                    {t("contato.titleHighlight")}
+                  </span>
+                  ?
                 </h2>
                 <p className="mt-3 text-white/55 text-sm leading-relaxed">
-                  {t('contato.descPrefix')}{' '}
-                  <a href="mailto:contato@inaitec.com.br" className="text-brand-orange hover:underline">
+                  {t("contato.descPrefix")}{" "}
+                  <a
+                    href="mailto:contato@inaitec.com.br"
+                    className="text-brand-orange hover:underline"
+                  >
                     contato@inaitec.com.br
                   </a>
                 </p>
@@ -340,18 +350,22 @@ export default function InaitecWebsite() {
               <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4 flex-1">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">{t('contato.labels.nome')}</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">
+                      {t("contato.labels.nome")}
+                    </label>
                     <input
                       type="text"
-                      placeholder={t('contato.placeholders.nome')}
+                      placeholder={t("contato.placeholders.nome")}
                       className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">{t('contato.labels.sobrenome')}</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">
+                      {t("contato.labels.sobrenome")}
+                    </label>
                     <input
                       type="text"
-                      placeholder={t('contato.placeholders.sobrenome')}
+                      placeholder={t("contato.placeholders.sobrenome")}
                       className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all"
                     />
                   </div>
@@ -359,36 +373,53 @@ export default function InaitecWebsite() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">{t('contato.labels.email')}</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">
+                      {t("contato.labels.email")}
+                    </label>
                     <input
                       type="email"
-                      placeholder={t('contato.placeholders.email')}
+                      placeholder={t("contato.placeholders.email")}
                       className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">{t('contato.labels.telefone')}</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">
+                      {t("contato.labels.telefone")}
+                    </label>
                     <input
                       type="tel"
-                      placeholder={t('contato.placeholders.telefone')}
+                      placeholder={t("contato.placeholders.telefone")}
                       className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">{t('contato.labels.mensagem')}</label>
+                  <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">
+                    {t("contato.labels.mensagem")}
+                  </label>
                   <textarea
                     rows={3}
-                    placeholder={t('contato.placeholders.mensagem')}
+                    placeholder={t("contato.placeholders.mensagem")}
                     className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all resize-none"
                   />
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-3">{t('contato.labels.perfil')}</label>
+                  <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-3">
+                    {t("contato.labels.perfil")}
+                  </label>
                   <div className="grid grid-cols-2 gap-2">
-                    {(['startup', 'grande', 'universidade', 'investidor', 'aceleracao', 'outro'] as const).map((key) => (
+                    {(
+                      [
+                        "startup",
+                        "grande",
+                        "universidade",
+                        "investidor",
+                        "aceleracao",
+                        "outro",
+                      ] as const
+                    ).map((key) => (
                       <label key={key} className="flex items-center gap-2.5 cursor-pointer group">
                         <div className="relative shrink-0 w-[18px] h-[18px]">
                           <input
@@ -412,11 +443,10 @@ export default function InaitecWebsite() {
                   type="submit"
                   className="mt-6 w-full rounded-full bg-brand-orange text-white text-sm font-bold py-4 hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
                 >
-                  {t('contato.submit')}
+                  {t("contato.submit")}
                 </button>
               </form>
             </div>
-
           </div>
         </Container>
       </section>
@@ -429,10 +459,9 @@ export default function InaitecWebsite() {
         <div
           className="relative rounded-2xl overflow-hidden px-8 py-10 sm:px-12 sm:py-12 md:px-16 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8 ring-1 ring-white/15 shadow-2xl shadow-black/30"
           style={{
-            background: 'linear-gradient(135deg, #144556 0%, #0F3441 45%, #0D2E38 100%)',
+            background: "linear-gradient(135deg, #144556 0%, #0F3441 45%, #0D2E38 100%)",
           }}
         >
-
           {/* Glow laranja principal (bottom-left) */}
           <div className="pointer-events-none absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-brand-orange/25 blur-[120px]" />
 
@@ -447,17 +476,17 @@ export default function InaitecWebsite() {
             <div className="mb-4 inline-flex items-center gap-2">
               <span className="block h-px w-8 bg-brand-orange" />
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
-                {t('ctaBanner.eyebrow')}
+                {t("ctaBanner.eyebrow")}
               </span>
             </div>
             <h2 className="font-extrabold text-white text-[1.85rem] md:text-[2.4rem] leading-[1.2] tracking-tight">
-              {t('ctaBanner.titleStart')}{' '}
-              <span className="text-brand-orange italic font-medium">{t('ctaBanner.titleHighlight')}</span>{' '}
-              {t('ctaBanner.titleEnd')}
+              {t("ctaBanner.titleStart")}{" "}
+              <span className="text-brand-orange italic font-medium">
+                {t("ctaBanner.titleHighlight")}
+              </span>{" "}
+              {t("ctaBanner.titleEnd")}
             </h2>
-            <p className="mt-4 text-white/65 text-sm leading-relaxed">
-              {t('ctaBanner.desc')}
-            </p>
+            <p className="mt-4 text-white/65 text-sm leading-relaxed">{t("ctaBanner.desc")}</p>
           </div>
 
           {/* Botões */}
@@ -466,30 +495,27 @@ export default function InaitecWebsite() {
               href="/fale-conosco"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange text-white text-sm font-bold px-7 py-4 hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
             >
-              {t('ctaBanner.ctaPrimary')}
+              {t("ctaBanner.ctaPrimary")}
             </Link>
             <Link
               href="/programas"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/[0.06] backdrop-blur-sm text-white text-sm font-semibold px-7 py-4 hover:bg-white/15 hover:border-white/40 transition-all"
             >
-              {t('ctaBanner.ctaSecondary')}
+              {t("ctaBanner.ctaSecondary")}
             </Link>
           </div>
-
         </div>
       </Section>
-
     </>
-  )
+  );
 }
 
 function FaqSection() {
-  const t = useTranslations('Home')
-  const [open, setOpen] = useState<number | null>(0)
-  const faqs = t.raw('faq.items') as Array<{ q: string; a: string }>
+  const t = useTranslations("Home");
+  const [open, setOpen] = useState<number | null>(0);
+  const faqs = t.raw("faq.items") as Array<{ q: string; a: string }>;
   return (
     <section className="relative py-16 overflow-hidden">
-
       {/* Ambiente de fundo */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-1/2 -translate-y-1/2 -right-40 w-[600px] h-[600px] rounded-full bg-[#004E69]/30 blur-[140px]" />
@@ -497,337 +523,337 @@ function FaqSection() {
 
       <Container className="relative">
         <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
-
           <div className="lg:sticky lg:top-24">
             <div className="mb-5 inline-flex items-center gap-2">
               <span className="block h-px w-8 bg-brand-orange" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">{t('faq.eyebrow')}</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+                {t("faq.eyebrow")}
+              </span>
             </div>
             <h2 className="font-extrabold text-white text-[2.5rem] leading-[1.2] tracking-tight">
-              {t('faq.titleStart')} <span className="text-brand-orange italic font-medium">{t('faq.titleHighlight')}</span>
+              {t("faq.titleStart")}{" "}
+              <span className="text-brand-orange italic font-medium">
+                {t("faq.titleHighlight")}
+              </span>
             </h2>
-            <p className="mt-4 text-white/60 text-sm leading-relaxed max-w-xs">
-              {t('faq.desc')}
-            </p>
+            <p className="mt-4 text-white/60 text-sm leading-relaxed max-w-xs">{t("faq.desc")}</p>
             <Link
               href="/fale-conosco"
               className="mt-6 inline-flex items-center text-sm font-semibold text-brand-orange hover:text-[#FF9B26] transition-all"
             >
-              {t('faq.cta')}
+              {t("faq.cta")}
             </Link>
           </div>
 
           <div>
             {faqs.map((item, i) => {
-              const isOpen = open === i
-              const isFirst = i === 0
-              const isLast = i === faqs.length - 1
+              const isOpen = open === i;
+              const isFirst = i === 0;
+              const isLast = i === faqs.length - 1;
               return (
                 <div
                   key={i}
                   className={[
-                    'border-b border-white/[0.06] last:border-b-0 transition-all duration-300',
-                    isOpen ? 'bg-white/[0.02]' : 'hover:bg-white/[0.015]',
-                    isOpen && isFirst ? 'rounded-t-2xl' : '',
-                    isOpen && isLast ? 'rounded-b-2xl' : '',
-                  ].filter(Boolean).join(' ')}
+                    "border-b border-white/[0.06] last:border-b-0 transition-all duration-300",
+                    isOpen ? "bg-white/[0.02]" : "hover:bg-white/[0.015]",
+                    isOpen && isFirst ? "rounded-t-2xl" : "",
+                    isOpen && isLast ? "rounded-b-2xl" : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
                 >
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="w-full flex items-center justify-between gap-4 px-4 py-5 sm:px-7 sm:py-6 text-left group"
                   >
-                    <span className={`text-[16px] font-semibold transition-colors ${isOpen ? 'text-white' : 'text-white/85 group-hover:text-white'}`}>
+                    <span
+                      className={`text-[16px] font-semibold transition-colors ${isOpen ? "text-white" : "text-white/85 group-hover:text-white"}`}
+                    >
                       {item.q}
                     </span>
-                    <span className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-brand-orange text-white rotate-45 shadow-lg shadow-brand-orange/30' : 'bg-white/[0.08] text-white/70 group-hover:bg-white/15 group-hover:text-white border border-white/10'}`}>
+                    <span
+                      className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? "bg-brand-orange text-white rotate-45 shadow-lg shadow-brand-orange/30" : "bg-white/[0.08] text-white/70 group-hover:bg-white/15 group-hover:text-white border border-white/10"}`}
+                    >
                       <Plus strokeWidth={2.5} className="w-3.5 h-3.5" />
                     </span>
                   </button>
                   {isOpen && (
                     <div className="px-4 pb-5 sm:px-7 sm:pb-6 -mt-2">
-                      <p className="text-sm text-white/65 leading-relaxed max-w-2xl">
-                        {item.a}
-                      </p>
+                      <p className="text-sm text-white/65 leading-relaxed max-w-2xl">{item.a}</p>
                     </div>
                   )}
                 </div>
-              )
+              );
             })}
           </div>
-
         </div>
       </Container>
     </section>
-  )
+  );
 }
 
-type CaseMetric = { label: string; value: string }
+type CaseMetric = { label: string; value: string };
 type CaseTranslated = {
-  company: string
-  sector: string
-  quote: string
-  person: string
-  role: string
-  metrics: CaseMetric[]
-}
-type CaseFull = CaseTranslated & { logo: string; photo: string; accent: string }
+  company: string;
+  sector: string;
+  quote: string;
+  person: string;
+  role: string;
+  metrics: CaseMetric[];
+};
+type CaseFull = CaseTranslated & { logo: string; photo: string; accent: string };
 
 const CASE_ASSETS = [
   {
-    logo: '/logo1.png',
-    photo: '/imagens-pessoas/close-up-labor-union-member%201.png',
-    accent: 'var(--color-brand-orange)',
+    logo: "/logo1.png",
+    photo: "/imagens-pessoas/close-up-labor-union-member%201.png",
+    accent: "var(--color-brand-orange)",
   },
   {
-    logo: '/logo2.png',
-    photo: '/imagens-pessoas/low-angle-businessman%201.png',
-    accent: 'var(--color-brand-teal)',
+    logo: "/logo2.png",
+    photo: "/imagens-pessoas/low-angle-businessman%201.png",
+    accent: "var(--color-brand-teal)",
   },
   {
-    logo: '/logo3.png',
-    photo: '/imagens-pessoas/portrait-smiling-man-sitting-cafe-bar-with-his-laptop-computer%201.png',
-    accent: '#FFB560',
+    logo: "/logo3.png",
+    photo:
+      "/imagens-pessoas/portrait-smiling-man-sitting-cafe-bar-with-his-laptop-computer%201.png",
+    accent: "#FFB560",
   },
   {
-    logo: '/logo1.png',
-    photo: '/imagens-pessoas/portrait-smiling-businesswoman-with-arms-crossed-smiling-looking-away-office%201.png',
-    accent: '#004E69',
+    logo: "/logo1.png",
+    photo:
+      "/imagens-pessoas/portrait-smiling-businesswoman-with-arms-crossed-smiling-looking-away-office%201.png",
+    accent: "#004E69",
   },
-] as const
+] as const;
 
 const partnerLogos = [
-  { src: '/logos/logo-hubspot.png', alt: 'HubSpot' },
-  { src: '/logos/logo-ibm.png', alt: 'IBM' },
-  { src: '/logos/logo-influx%201.png', alt: 'InfluxDB' },
-  { src: '/logos/logo-miro%201.png', alt: 'Miro' },
-  { src: '/logos/logo-notion%201.png', alt: 'Notion' },
-  { src: '/logos/logo-pipedrive%201.png', alt: 'Pipedrive' },
-  { src: '/logos/logo-tally%201.png', alt: 'Tally' },
-  { src: '/logos/logo-zendesk%201.png', alt: 'Zendesk' },
-]
+  { src: "/logos/logo-hubspot.png", alt: "HubSpot" },
+  { src: "/logos/logo-ibm.png", alt: "IBM" },
+  { src: "/logos/logo-influx%201.png", alt: "InfluxDB" },
+  { src: "/logos/logo-miro%201.png", alt: "Miro" },
+  { src: "/logos/logo-notion%201.png", alt: "Notion" },
+  { src: "/logos/logo-pipedrive%201.png", alt: "Pipedrive" },
+  { src: "/logos/logo-tally%201.png", alt: "Tally" },
+  { src: "/logos/logo-zendesk%201.png", alt: "Zendesk" },
+];
 
 function TragaSection() {
-  const t = useTranslations('Home')
-  const [active, setActive] = useState(0)
-  const [visible, setVisible] = useState(true)
+  const t = useTranslations("Home");
+  const [active, setActive] = useState(0);
+  const [visible, setVisible] = useState(true);
 
-  const translatedCases = t.raw('resultados.items') as CaseTranslated[]
+  const translatedCases = t.raw("resultados.items") as CaseTranslated[];
   const cases: CaseFull[] = translatedCases.map((c, i) => ({
     ...c,
-    logo: CASE_ASSETS[i]?.logo ?? '/logo1.png',
-    photo: CASE_ASSETS[i]?.photo ?? '',
-    accent: CASE_ASSETS[i]?.accent ?? 'var(--color-brand-orange)',
-  }))
+    logo: CASE_ASSETS[i]?.logo ?? "/logo1.png",
+    photo: CASE_ASSETS[i]?.photo ?? "",
+    accent: CASE_ASSETS[i]?.accent ?? "var(--color-brand-orange)",
+  }));
 
   const goTo = (resolver: (current: number) => number) => {
-    setVisible(false)
+    setVisible(false);
     setTimeout(() => {
-      setActive((i) => resolver(i))
-      setVisible(true)
-    }, 400)
-  }
+      setActive((i) => resolver(i));
+      setVisible(true);
+    }, 400);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      goTo((i) => (i + 1) % cases.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [cases.length])
+      goTo((i) => (i + 1) % cases.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [cases.length]);
 
-  const c = cases[active]
+  const c = cases[active];
 
   return (
     <Section padding="md" className="overflow-hidden" containerClassName="relative">
-
-        {/* Header */}
-        <div className="flex flex-col gap-6 mb-10 md:flex-row md:items-end md:justify-between md:gap-8">
-          <div className="max-w-2xl">
-            <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-brand-orange" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-                {t('resultados.eyebrow')}
-              </span>
-            </div>
-            <h2 className="font-extrabold text-brand-navy text-display-2xl leading-[1.2] tracking-tight">
-              {t('resultados.titleStart')}{' '}
-              <span className="text-brand-orange italic font-medium">{t('resultados.titleHighlight')}</span>
-            </h2>
+      {/* Header */}
+      <div className="flex flex-col gap-6 mb-10 md:flex-row md:items-end md:justify-between md:gap-8">
+        <div className="max-w-2xl">
+          <div className="mb-5 inline-flex items-center gap-2">
+            <span className="block h-px w-8 bg-brand-orange" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+              {t("resultados.eyebrow")}
+            </span>
           </div>
-          <Link
-            href="/traga-sua-empresa"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25 shrink-0"
-          >
-            {t('resultados.ctaInstalar')}
-          </Link>
+          <h2 className="font-extrabold text-brand-navy text-display-2xl leading-[1.2] tracking-tight">
+            {t("resultados.titleStart")}{" "}
+            <span className="text-brand-orange italic font-medium">
+              {t("resultados.titleHighlight")}
+            </span>
+          </h2>
         </div>
-
-        {/* Mobile: 1 card consolidado por empresa em scroll horizontal */}
-        <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          {cases.map((caseItem) => (
-            <article
-              key={caseItem.company}
-              className="snap-start shrink-0 w-[88%] sm:w-[420px] rounded-2xl bg-brand-navy p-7 flex flex-col gap-6"
-            >
-              {/* Pessoa */}
-              <div className="flex items-center gap-4">
-                <img
-                  src={caseItem.photo}
-                  alt={caseItem.person}
-                  className="w-14 h-14 rounded-full object-cover object-top shrink-0"
-                />
-                <div className="min-w-0">
-                  <div className="text-white font-bold text-base leading-tight truncate">
-                    {caseItem.person}
-                  </div>
-                  <div className="text-white/55 text-sm mt-0.5 truncate">
-                    {caseItem.role}
-                  </div>
-                </div>
-              </div>
-
-              {/* Logo */}
-              <img
-                src={caseItem.logo}
-                alt={caseItem.company}
-                className="h-7 w-auto object-contain object-left brightness-0 invert opacity-90"
-              />
-
-              {/* Quote */}
-              <p className="text-white/80 text-[14px] leading-relaxed">
-                "{caseItem.quote}"
-              </p>
-
-              {/* Métricas — divididas por linha */}
-              <div className="divide-y divide-white/10 border-t border-white/10 -mx-1">
-                {caseItem.metrics.map((m) => (
-                  <div key={m.label} className="px-1 py-4">
-                    <div className="text-white font-bold text-[14px] leading-snug">
-                      {m.label}
-                    </div>
-                    <div className="text-white/50 text-[12px] mt-0.5">
-                      {t('resultados.yearRange')}
-                    </div>
-                    <div className="text-white text-[1.75rem] font-extrabold leading-none tracking-tight mt-3 whitespace-nowrap">
-                      {m.value}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {/* Desktop (md+): grid 2x2 ou 1x4 — mostra apenas o caso ativo */}
-        <div
-          className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch transition-opacity duration-400"
-          style={{ opacity: visible ? 1 : 0 }}
+        <Link
+          href="/traga-sua-empresa"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25 shrink-0"
         >
+          {t("resultados.ctaInstalar")}
+        </Link>
+      </div>
 
-          {/* Card foto */}
-          <div className="relative rounded-2xl overflow-hidden bg-white min-h-[380px]">
-            <img
-              src={c.photo}
-              alt={c.person}
-              className="absolute inset-0 w-full h-full object-cover object-top"
-            />
-          </div>
+      {/* Mobile: 1 card consolidado por empresa em scroll horizontal */}
+      <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        {cases.map((caseItem) => (
+          <article
+            key={caseItem.company}
+            className="snap-start shrink-0 w-[88%] sm:w-[420px] rounded-2xl bg-brand-navy p-7 flex flex-col gap-6"
+          >
+            {/* Pessoa */}
+            <div className="flex items-center gap-4">
+              <img
+                src={caseItem.photo}
+                alt={caseItem.person}
+                className="w-14 h-14 rounded-full object-cover object-top shrink-0"
+              />
+              <div className="min-w-0">
+                <div className="text-white font-bold text-base leading-tight truncate">
+                  {caseItem.person}
+                </div>
+                <div className="text-white/55 text-sm mt-0.5 truncate">{caseItem.role}</div>
+              </div>
+            </div>
 
-          {/* Card quote escuro */}
-          <div className="rounded-2xl bg-brand-navy p-7 flex flex-col gap-5 min-h-[380px]">
+            {/* Logo */}
             <img
-              src={c.logo}
-              alt={c.company}
+              src={caseItem.logo}
+              alt={caseItem.company}
               className="h-7 w-auto object-contain object-left brightness-0 invert opacity-90"
             />
-            <p className="text-white/80 text-[14px] leading-relaxed flex-1">
-              "{c.quote}"
-            </p>
-            <div className="pt-5 border-t border-white/10">
-              <div className="text-white font-bold text-sm">{c.person}</div>
-              <div className="text-white/50 text-[12px] mt-0.5">{c.role}</div>
-            </div>
-          </div>
 
-          {/* Métricas */}
-          {c.metrics.map((m) => (
-            <div key={m.label} className="rounded-2xl bg-white p-7 flex flex-col justify-between min-h-[380px]">
-              <div>
-                <div className="text-brand-navy font-bold text-[15px] leading-snug">
-                  {m.label}
-                </div>
-                <div className="text-brand-navy/50 text-[13px] mt-1">
-                  {t('resultados.yearRange')}
-                </div>
-              </div>
-              <div className="text-brand-orange text-[3.5rem] font-extrabold leading-none tracking-tight">
-                {m.value}
-              </div>
-            </div>
-          ))}
+            {/* Quote */}
+            <p className="text-white/80 text-[14px] leading-relaxed">"{caseItem.quote}"</p>
 
+            {/* Métricas — divididas por linha */}
+            <div className="divide-y divide-white/10 border-t border-white/10 -mx-1">
+              {caseItem.metrics.map((m) => (
+                <div key={m.label} className="px-1 py-4">
+                  <div className="text-white font-bold text-[14px] leading-snug">{m.label}</div>
+                  <div className="text-white/50 text-[12px] mt-0.5">
+                    {t("resultados.yearRange")}
+                  </div>
+                  <div className="text-white text-[1.75rem] font-extrabold leading-none tracking-tight mt-3 whitespace-nowrap">
+                    {m.value}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {/* Desktop (md+): grid 2x2 ou 1x4 — mostra apenas o caso ativo */}
+      <div
+        className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch transition-opacity duration-400"
+        style={{ opacity: visible ? 1 : 0 }}
+      >
+        {/* Card foto */}
+        <div className="relative rounded-2xl overflow-hidden bg-white min-h-[380px]">
+          <img
+            src={c.photo}
+            alt={c.person}
+            className="absolute inset-0 w-full h-full object-cover object-top"
+          />
         </div>
 
-        {/* Indicadores + navegação (só desktop — mobile usa scroll) */}
-        <div className="hidden md:flex items-center justify-between mt-5">
-          <div className="flex gap-2">
-            {cases.map((_, i) => (
-              <button
+        {/* Card quote escuro */}
+        <div className="rounded-2xl bg-brand-navy p-7 flex flex-col gap-5 min-h-[380px]">
+          <img
+            src={c.logo}
+            alt={c.company}
+            className="h-7 w-auto object-contain object-left brightness-0 invert opacity-90"
+          />
+          <p className="text-white/80 text-[14px] leading-relaxed flex-1">"{c.quote}"</p>
+          <div className="pt-5 border-t border-white/10">
+            <div className="text-white font-bold text-sm">{c.person}</div>
+            <div className="text-white/50 text-[12px] mt-0.5">{c.role}</div>
+          </div>
+        </div>
+
+        {/* Métricas */}
+        {c.metrics.map((m) => (
+          <div
+            key={m.label}
+            className="rounded-2xl bg-white p-7 flex flex-col justify-between min-h-[380px]"
+          >
+            <div>
+              <div className="text-brand-navy font-bold text-[15px] leading-snug">{m.label}</div>
+              <div className="text-brand-navy/50 text-[13px] mt-1">{t("resultados.yearRange")}</div>
+            </div>
+            <div className="text-brand-orange text-[3.5rem] font-extrabold leading-none tracking-tight">
+              {m.value}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Indicadores + navegação (só desktop — mobile usa scroll) */}
+      <div className="hidden md:flex items-center justify-between mt-5">
+        <div className="flex gap-2">
+          {cases.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(() => i)}
+              className={`h-1 rounded-full transition-all duration-300 ${i === active ? "w-8 bg-brand-orange" : "w-4 bg-brand-navy/20 hover:bg-brand-navy/40"}`}
+              aria-label={cases[i].company}
+            />
+          ))}
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={() => goTo((i) => (i - 1 + cases.length) % cases.length)}
+            aria-label={t("resultados.prevAria")}
+            className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-[#004E69] hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 transition-all"
+          >
+            <ChevronLeft strokeWidth={2.5} className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => goTo((i) => (i + 1) % cases.length)}
+            aria-label={t("resultados.nextAria")}
+            className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-[#004E69] hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 transition-all"
+          >
+            <ChevronRight strokeWidth={2.5} className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* Logos parceiros */}
+      <div className="mt-12 flex flex-col gap-6 md:flex-row md:items-center md:gap-0 md:overflow-hidden">
+        {/* Título */}
+        <div className="md:shrink-0 md:w-[38%] md:pr-8">
+          <p className="text-brand-navy font-extrabold text-[1.4rem] md:text-[1.6rem] leading-tight tracking-tight">
+            {t("resultados.ctaPartnersStart")}{" "}
+            <span className="text-brand-orange italic font-medium">
+              {t("resultados.ctaPartnersHighlight")}
+            </span>
+          </p>
+        </div>
+
+        {/* Marquee com fade */}
+        <div
+          className="overflow-hidden md:flex-1"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+          }}
+        >
+          <div className="flex animate-marquee gap-10 items-center w-max">
+            {[...partnerLogos, ...partnerLogos].map((l, i) => (
+              <img
                 key={i}
-                onClick={() => goTo(() => i)}
-                className={`h-1 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-brand-orange' : 'w-4 bg-brand-navy/20 hover:bg-brand-navy/40'}`}
-                aria-label={cases[i].company}
+                src={l.src}
+                alt={l.alt}
+                className="h-6 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all shrink-0"
               />
             ))}
           </div>
-          <div className="flex gap-2">
-            <button
-              onClick={() => goTo((i) => (i - 1 + cases.length) % cases.length)}
-              aria-label={t('resultados.prevAria')}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-[#004E69] hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 transition-all"
-            >
-              <ChevronLeft strokeWidth={2.5} className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => goTo((i) => (i + 1) % cases.length)}
-              aria-label={t('resultados.nextAria')}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-[#004E69] hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 transition-all"
-            >
-              <ChevronRight strokeWidth={2.5} className="w-4 h-4" />
-            </button>
-          </div>
         </div>
-
-        {/* Logos parceiros */}
-        <div className="mt-12 flex flex-col gap-6 md:flex-row md:items-center md:gap-0 md:overflow-hidden">
-
-          {/* Título */}
-          <div className="md:shrink-0 md:w-[38%] md:pr-8">
-            <p className="text-brand-navy font-extrabold text-[1.4rem] md:text-[1.6rem] leading-tight tracking-tight">
-              {t('resultados.ctaPartnersStart')}{' '}
-              <span className="text-brand-orange italic font-medium">{t('resultados.ctaPartnersHighlight')}</span>
-            </p>
-          </div>
-
-          {/* Marquee com fade */}
-          <div
-            className="overflow-hidden md:flex-1"
-            style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)' }}
-          >
-            <div className="flex animate-marquee gap-10 items-center w-max">
-              {[...partnerLogos, ...partnerLogos].map((l, i) => (
-                <img
-                  key={i}
-                  src={l.src}
-                  alt={l.alt}
-                  className="h-6 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all shrink-0"
-                />
-              ))}
-            </div>
-          </div>
-
-        </div>
-
-      </Section>
-  )
+      </div>
+    </Section>
+  );
 }
-

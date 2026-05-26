@@ -25,6 +25,27 @@ export const homeQuery = groq`
           "imageUrl": image.asset->url
         }
       }
+    },
+    ecossistema {
+      eyebrow,
+      titleStart,
+      titleHighlight,
+      p1,
+      p2,
+      ctaLabel,
+      ctaHref
+    },
+    pilares {
+      eyebrow,
+      titleStart,
+      titleHighlight,
+      desc,
+      pillars[]{ _key, label, subtitle, metric, metricLabel, desc, tags, ctaLabel }
+    },
+    timeline {
+      marcoLabel,
+      imageAlt,
+      events[]{ _key, year, title, desc, metrics[]{ _key, value, label } }
     }
   }
 `
@@ -67,10 +88,62 @@ export type HomeParceiros = {
   groups?: HomeParceiroGroup[]
 }
 
+export type HomePilarItem = {
+  _key?: string
+  label?: string
+  subtitle?: string
+  metric?: string
+  metricLabel?: string
+  desc?: string
+  tags?: string[]
+  ctaLabel?: string
+}
+
+export type HomePilares = {
+  eyebrow?: string
+  titleStart?: string
+  titleHighlight?: string
+  desc?: string
+  pillars?: HomePilarItem[]
+}
+
+export type HomeTimelineMetric = {
+  _key?: string
+  value?: string
+  label?: string
+}
+
+export type HomeTimelineEvent = {
+  _key?: string
+  year?: string
+  title?: string
+  desc?: string
+  metrics?: HomeTimelineMetric[]
+}
+
+export type HomeTimeline = {
+  marcoLabel?: string
+  imageAlt?: string
+  events?: HomeTimelineEvent[]
+}
+
+export type HomeEcossistema = {
+  eyebrow?: string
+  titleStart?: string
+  titleHighlight?: string
+  p1?: string
+  p2?: string
+  ctaLabel?: string
+  ctaHref?: string
+}
+
 export type HomeData = {
   language?: string
   hero?: HomeHero
   parceiros?: HomeParceiros
+  ecossistema?: HomeEcossistema
+  pilares?: HomePilares
+  timeline?: HomeTimeline
 } | null
 
 export async function getHome({ locale }: { locale: string }) {

@@ -186,6 +186,44 @@ src/app/studio/[[...tool]]/page.tsx   → Studio embutido em /studio
 2. **Page** (`src/app/[locale]/[rota]/page.tsx`) — Server Component **thin**, só faz fetch e passa data. Nada de `'use client'`, nada de render aqui.
 3. **Client Component** (`src/components/[rota]/[Pagina]ClientComponent.tsx`) — recebe `data` como prop, contém `'use client'`, hooks, eventos, render.
 
+### Uma seção Sanity = um componente próprio (obrigatório)
+
+Para cada seção/bloco que vem do Sanity, criar um componente dedicado em `src/components/[rota]/[NomeDaSecao]Section.tsx`. O `[Pagina]ClientComponent.tsx` vira **apenas um orquestrador thin** que importa e compõe as seções, passando a fatia de `data` correspondente como prop.
+
+```tsx
+// src/components/home/HeroSection.tsx
+'use client'
+import type { HomeHero } from '@/sanity/queries/home'
+
+type Props = { hero?: HomeHero }
+
+export default function HeroSection({ hero }: Props) {
+  return <section>...</section>
+}
+
+// src/components/home/HomeClientComponent.tsx — orquestrador
+'use client'
+import HeroSection from './HeroSection'
+import ParceirosSection from './ParceirosSection'
+import type { HomeData } from '@/sanity/queries/home'
+
+export default function HomeClientComponent({ data }: { data: HomeData }) {
+  return (
+    <main>
+      <HeroSection hero={data?.hero} />
+      <ParceirosSection parceiros={data?.parceiros} />
+    </main>
+  )
+}
+```
+
+**Regras:**
+- Cada componente recebe **apenas a fatia de `data`** de que precisa (`hero`, `parceiros`, `ecossistema`, etc.), não o `data` inteiro
+- Os tipos do prop vêm de `@/sanity/queries/[pagina]` (`HomeHero`, `HomeParceiros`, etc.)
+- Cada componente é responsável pelo seu próprio early-return quando a fatia de data está vazia (`if (!parceiros) return null`)
+- O `[Pagina]ClientComponent.tsx` fica enxuto — só `<main>` (ou wrapper equivalente) + lista de seções + elementos decorativos que pertencem ao container (orbs, gradientes globais, etc.)
+- Nomenclatura: `<NomeDaSecao>Section.tsx` (ex.: `HeroSection`, `ParceirosSection`, `EcossistemaSection`)
+
 ### Regras gerais Sanity (espelha o padrão Super Terminais)
 
 - **Sempre** Server Components para fetch — nunca `useEffect` para chamar Sanity

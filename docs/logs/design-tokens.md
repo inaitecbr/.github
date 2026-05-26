@@ -375,3 +375,257 @@ Visual design tokens for the Inaitec project (colors, typography, spacing, etc.)
 - `--font-sans);
     font-size: 16px`
 - `--font-sans: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+        className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
+      />
+
+      <Container className="relative">
+        {ecossistema.eyebrow && (
+          <div className="mb-4 inline-flex items-center gap-2">
+            <span className="block h-px w-8 bg-brand-orange" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+              {ecossistema.eyebrow}
+            </span>
+          </div>
+        )}
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+          className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
+        />
+
+        <Container className="relative">
+          {/* Cabeçalho — contexto do ecossistema */}
+          <div className="mb-4 inline-flex items-center gap-2">
+            <span className="block h-px w-8 bg-brand-orange" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+              {t("ecossistema.eyebrow")}
+            </span>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">`
+- `--color-brand-orange)",
+  }));
+
+  const goTo = (resolver: (current: number) => number) => {`
+- `--color-brand-orange)",
+  },
+  {
+    logo: "/logo2.png",`
+- `--color-brand-teal)",
+  },
+  {
+    logo: "/logo3.png",`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)",
+  }));
+
+  const goTo = (resolver: (current: number) => number) => {`
+- `--color-brand-orange)",
+  },
+  {
+    logo: "/logo2.png",`
+- `--color-brand-teal)",
+  },
+  {
+    logo: "/logo3.png",`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_CIRCUMFERENCE}
+                        strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                        style={{ transition: isPaused ? 'stroke-dashoffset 0.3s' : 'none'`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_CIRCUMFERENCE}
+                        strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                        style={{ transition: isPaused ? 'stroke-dashoffset 0.3s' : 'none'`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_CIRCUMFERENCE}
+                        strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                        style={{ transition: isPaused ? 'stroke-dashoffset 0.3s' : 'none'`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_CIRCUMFERENCE}
+                        strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                        style={{ transition: isPaused ? 'stroke-dashoffset 0.3s' : 'none'`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_CIRCUMFERENCE}
+                        strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                        style={{ transition: isPaused ? 'stroke-dashoffset 0.3s' : 'none'`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_CIRCUMFERENCE}
+                        strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                        style={{ transition: isPaused ? 'stroke-dashoffset 0.3s' : 'none'`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_CIRCUMFERENCE}
+                        strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                        style={{ transition: isPaused ? 'stroke-dashoffset 0.3s' : 'none'`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+        className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
+      />
+
+      <Container className="relative">
+        {ecossistema.eyebrow && (
+          <div className="mb-4 inline-flex items-center gap-2">
+            <span className="block h-px w-8 bg-brand-orange" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+              {ecossistema.eyebrow}
+            </span>
+          </div>
+        )}
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+        className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
+      />
+
+      <Container className="relative">
+        {ecossistema.eyebrow && (
+          <div className="mb-4 inline-flex items-center gap-2">
+            <span className="block h-px w-8 bg-brand-orange" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+              {ecossistema.eyebrow}
+            </span>
+          </div>
+        )}
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+        className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
+      />
+
+      <Container className="relative">
+        {ecossistema.eyebrow && (
+          <div className="mb-4 inline-flex items-center gap-2">
+            <span className="block h-px w-8 bg-brand-orange" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+              {ecossistema.eyebrow}
+            </span>
+          </div>
+        )}
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeDasharray={RING_CIRCUMFERENCE}
+                          strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                          style={{ transition: isPaused ? "stroke-dashoffset 0.3s" : "none"`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeDasharray={RING_CIRCUMFERENCE}
+                          strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                          style={{ transition: isPaused ? "stroke-dashoffset 0.3s" : "none"`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)"
+        className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
+      />
+
+      <Container className="relative">
+        {ecossistema.eyebrow && (
+          <div className="mb-4 inline-flex items-center gap-2">
+            <span className="block h-px w-8 bg-brand-orange" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+              {ecossistema.eyebrow}
+            </span>
+          </div>
+        )}
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)',
+    orbPos: 'top-[-20%] right-[-15%]',`
+- `--color-brand-orange)',
+    orbPos: 'top-[-25%] right-[-10%]',`
+- `--color-brand-teal)',
+    orbPos: 'top-[-20%] left-[-15%]',`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)",
+  }));
+
+  const goTo = (resolver: (current: number) => number) => {`
+- `--color-brand-orange)",
+  },
+  {
+    logo: "/logo2.png",`
+- `--color-brand-teal)",
+  },
+  {
+    logo: "/logo3.png",`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)",
+  }));
+
+  const goTo = (resolver: (current: number) => number) => {`
+- `--color-brand-orange)",
+  },
+  {
+    logo: "/logo2.png",`
+- `--color-brand-teal)",
+  },
+  {
+    logo: "/logo3.png",`

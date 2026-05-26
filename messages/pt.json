@@ -112,14 +112,6 @@
         "anos": "anos de ecossistema"
       }
     },
-    "ecossistema": {
-      "eyebrow": "O ecossistema",
-      "titleStart": "O único parque tecnológico urbano do Brasil em",
-      "titleHighlight": "plena operação",
-      "p1": "O Parque Tecnológico Pedra Branca é uma cidade planejada dentro de Palhoça (SC): 1,7 milhão de m² onde morar, trabalhar e inovar acontecem no mesmo endereço. Diferente de parques tecnológicos tradicionais, aqui o ecossistema é vivo — com residências, comércio, universidades e empresas de tecnologia convivendo no mesmo quarteirão.",
-      "p2": "O Inaitec nasceu dentro desse ambiente e é o elo que conecta startups, corporações e governo à infraestrutura, às redes e aos programas que transformam ideias em negócios de impacto real.",
-      "cta": "Conheça a história do Inaitec"
-    },
     "programas": {
       "eyebrow": "Programas em destaque",
       "titleStart": "Conheça os",
@@ -354,76 +346,11 @@
     }
   },
   "EcosystemAccordion": {
-    "eyebrow": "Quatro pilares · Um ecossistema",
-    "titleStart": "Onde startups, empresas e cidade",
-    "titleHighlight": "se encontram",
-    "desc": "Cada pilar conecta um público a programas, redes e oportunidades únicas dentro do ecossistema.",
     "operacaoAtiva": "Operação ativa",
     "pillarOf": "Pilar 0{n} / 0{total}",
-    "pillarAria": "Pilar {label}",
-    "pillars": [
-      {
-        "label": "Startups e Pequenas Empresas",
-        "subtitle": "Aceleração & Crescimento",
-        "metric": "+300",
-        "metricLabel": "startups aceleradas",
-        "desc": "Programas intensivos que conectam startups em estágio inicial e pequenas empresas a mentoria qualificada, investimento estruturado e rotas diretas para o mercado.",
-        "tags": [
-          "Mentoria",
-          "Investimento",
-          "Go-to-market"
-        ],
-        "ctaLabel": "Acelera Pedra Branca"
-      },
-      {
-        "label": "Grandes e Médias Empresas",
-        "subtitle": "Inovação Aberta",
-        "metric": "20",
-        "metricLabel": "corporações parceiras",
-        "desc": "Grandes e médias empresas encontram startups disruptivas para co-criar soluções reais. Da curadoria ao piloto, estruturamos o match e medimos resultados.",
-        "tags": [
-          "Curadoria",
-          "Pilotos",
-          "Co-criação"
-        ],
-        "ctaLabel": "Inovação Aberta"
-      },
-      {
-        "label": "Universidades e Governo",
-        "subtitle": "Ciência & Políticas Públicas",
-        "metric": "12",
-        "metricLabel": "instituições parceiras",
-        "desc": "Universidades, institutos de pesquisa e setor público conectados ao ecossistema para transferência de tecnologia, pesquisa aplicada e desenvolvimento regional.",
-        "tags": [
-          "P&D",
-          "Transferência tec.",
-          "Editais"
-        ],
-        "ctaLabel": "Pesquisa Aplicada"
-      },
-      {
-        "label": "Investidores",
-        "subtitle": "Capital & Oportunidades",
-        "metric": "R$3,5Bi",
-        "metricLabel": "em negócios gerados",
-        "desc": "Acesso curado a startups validadas, deal flow qualificado e conexão com co-investidores nacionais e internacionais. Do anjo ao venture capital.",
-        "tags": [
-          "Deal flow",
-          "Co-investimento",
-          "Venture capital"
-        ],
-        "ctaLabel": "Catalisa Inaitec"
-      }
-    ]
+    "pillarAria": "Pilar {label}"
   },
   "TimelineCinematic": {
-    "header": {
-      "eyebrow": "Nossa trajetória",
-      "titleStart": "15 anos construindo o",
-      "titleHighlight": "maior ecossistema",
-      "titleEnd": "de inovação do Sul"
-    },
-    "marcoLabel": "Marco {year}",
     "status": {
       "playing": "Reproduzindo",
       "paused": "Pausado"
@@ -433,124 +360,7 @@
       "next": "Próximo",
       "play": "Reproduzir",
       "pause": "Pausar"
-    },
-    "imageAlt": "Parque Tecnológico Pedra Branca",
-    "events": [
-      {
-        "year": "2009",
-        "title": "Fundação do Inaitec",
-        "desc": "Nasce o hub de inovação no Parque Tecnológico Pedra Branca, com a missão de conectar startups, empresas e governo em um ecossistema único.",
-        "metrics": [
-          {
-            "value": "1ª",
-            "label": "sede inaugurada"
-          },
-          {
-            "value": "3",
-            "label": "mantenedores fundadores"
-          },
-          {
-            "value": "20 mil",
-            "label": "m² de operação"
-          }
-        ]
-      },
-      {
-        "year": "2013",
-        "title": "Primeiros programas de aceleração",
-        "desc": "Lançamento das primeiras turmas de aceleração, formando startups com mentoria intensiva e conexão com o mercado catarinense.",
-        "metrics": [
-          {
-            "value": "12",
-            "label": "startups na 1ª turma"
-          },
-          {
-            "value": "8",
-            "label": "mentores ativos"
-          },
-          {
-            "value": "2",
-            "label": "programas lançados"
-          }
-        ]
-      },
-      {
-        "year": "2016",
-        "title": "Missões Internacionais",
-        "desc": "Expansão global com as primeiras missões ao Vale do Silício e Europa, abrindo portas para startups brasileiras em mercados internacionais.",
-        "metrics": [
-          {
-            "value": "3",
-            "label": "países visitados"
-          },
-          {
-            "value": "+40",
-            "label": "startups globalizadas"
-          },
-          {
-            "value": "R$50M",
-            "label": "em negócios gerados"
-          }
-        ]
-      },
-      {
-        "year": "2019",
-        "title": "+100 empresas no ecossistema",
-        "desc": "Marco de 100 empresas instaladas no parque, consolidando o Pedra Branca como o maior ecossistema de inovação urbano do Brasil.",
-        "metrics": [
-          {
-            "value": "+100",
-            "label": "empresas instaladas"
-          },
-          {
-            "value": "R$500M",
-            "label": "em negócios gerados"
-          },
-          {
-            "value": "3 mil",
-            "label": "empregos diretos"
-          }
-        ]
-      },
-      {
-        "year": "2021",
-        "title": "Inovação Aberta com Corporações",
-        "desc": "Estruturação dos programas de inovação aberta, conectando grandes empresas e setor público a soluções desenvolvidas pelas startups do hub.",
-        "metrics": [
-          {
-            "value": "20",
-            "label": "corporações parceiras"
-          },
-          {
-            "value": "+200",
-            "label": "startups aceleradas"
-          },
-          {
-            "value": "R$1,5Bi",
-            "label": "em negócios gerados"
-          }
-        ]
-      },
-      {
-        "year": "2026",
-        "title": "Onde o Inaitec está hoje",
-        "desc": "17 anos de ecossistema consolidado. O Inaitec é hoje o maior hub de inovação urbano do Sul do Brasil, com operação em pleno vapor no Parque Tecnológico Pedra Branca.",
-        "metrics": [
-          {
-            "value": "+300",
-            "label": "startups aceleradas"
-          },
-          {
-            "value": "R$3,5Bi",
-            "label": "em negócios gerados"
-          },
-          {
-            "value": "1,7M m²",
-            "label": "de área de inovação"
-          }
-        ]
-      }
-    ]
+    }
   },
   "ChamadasAbertasDestaque": {
     "eyebrow": "Próximas chamadas",
