@@ -39,7 +39,7 @@ export default function ResultadosSection({ resultados }: Props) {
   const c = cases[active]!;
 
   return (
-    <Section padding="md" className="overflow-hidden bg-[#F5F4EF]" containerClassName="relative">
+    <Section padding="md" className="overflow-hidden" containerClassName="relative">
       {/* Header */}
       <div className="flex flex-col gap-6 mb-10 md:flex-row md:items-end md:justify-between md:gap-8">
         <div className="max-w-2xl">
