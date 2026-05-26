@@ -66,13 +66,13 @@ export default function ProgramaStickyBar({
       }`}
       aria-hidden={!visible}
     >
-      <div className="bg-[#0D2E38]/95 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20">
+      <div className="bg-brand-navy/95 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20">
         <Container className="py-3 flex items-center justify-between gap-4">
 
           {/* Left: status + nome */}
           <div className="flex items-center gap-3 min-w-0">
-            <span className="block w-2 h-2 rounded-full bg-[#00C08B] animate-pulse shrink-0" />
-            <span className="hidden sm:inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] text-[#00C08B] leading-none shrink-0">
+            <span className="block w-2 h-2 rounded-full bg-brand-teal animate-pulse shrink-0" />
+            <span className="hidden sm:inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] text-brand-teal leading-none shrink-0">
               Inscrições abertas
             </span>
             <span className="inline-flex items-center text-white text-sm font-semibold leading-none truncate">
@@ -89,7 +89,7 @@ export default function ProgramaStickyBar({
             </div>
             <Link
               href={ctaHref}
-              className="inline-flex h-10 items-center justify-center rounded-full bg-[#FA8400] text-white text-xs sm:text-sm font-semibold leading-none px-5 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+              className="inline-flex h-10 items-center justify-center rounded-full bg-brand-orange text-white text-xs sm:text-sm font-semibold leading-none px-5 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
             >
               Inscrever agora
             </Link>

@@ -73,8 +73,8 @@ export default function ChamadasAbertasDestaque() {
     <>
       {/* Cabeçalho da subseção */}
       <div className="flex items-center gap-3 mb-6">
-        <span className="inline-flex w-2 h-2 rounded-full bg-[#00C08B] animate-pulse" />
-        <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#00C08B]">
+        <span className="inline-flex w-2 h-2 rounded-full bg-brand-teal animate-pulse" />
+        <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-teal">
           {t('eyebrow')}
         </span>
       </div>
@@ -94,24 +94,24 @@ export default function ChamadasAbertasDestaque() {
           </div>
           <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-between gap-6">
             <div className="flex flex-col gap-4">
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400]">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
                 {hero.publico}
               </span>
-              <h3 className="text-[#0D2E38] text-[1.8rem] font-extrabold leading-tight">
+              <h3 className="text-brand-navy text-[1.8rem] font-extrabold leading-tight">
                 {hero.name}
               </h3>
-              <p className="text-[#0D2E38]/60 text-sm leading-relaxed">
+              <p className="text-brand-navy/60 text-sm leading-relaxed">
                 {hero.desc}
               </p>
             </div>
             <div className="flex flex-col gap-5">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-[#0D2E38]/45 mb-3">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-brand-navy/45 mb-3">
                   {t('tempoRestante')}
                 </p>
                 {heroTarget && <CountdownTimer target={heroTarget} />}
               </div>
-              <span className="inline-flex items-center gap-2 self-start rounded-full bg-[#FA8400] text-white text-sm font-bold px-7 py-4 shadow-lg shadow-[#FA8400]/25 group-hover:shadow-xl group-hover:shadow-[#FA8400]/40 transition-all">
+              <span className="inline-flex items-center gap-2 self-start rounded-full bg-brand-orange text-white text-sm font-bold px-7 py-4 shadow-lg shadow-brand-orange/25 group-hover:shadow-xl group-hover:shadow-brand-orange/40 transition-all">
                 {t('inscreverAgora')}
               </span>
             </div>
@@ -137,9 +137,9 @@ export default function ChamadasAbertasDestaque() {
                 <Link
                   key={p.slug}
                   href={p.href}
-                  className="group snap-start flex-none w-[280px] sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-48px)/4)] rounded-2xl bg-white border border-[#E8E6E1] overflow-hidden flex flex-col hover:border-[#FA8400]/40 hover:shadow-lg hover:shadow-black/[0.06] hover:-translate-y-1 transition-all duration-300"
+                  className="group snap-start flex-none w-[280px] sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-48px)/4)] rounded-2xl bg-white border border-border overflow-hidden flex flex-col hover:border-brand-orange/40 hover:shadow-lg hover:shadow-black/[0.06] hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="relative h-44 overflow-hidden bg-[#E8E6E1] shrink-0">
+                  <div className="relative h-44 overflow-hidden bg-border shrink-0">
                     <img
                       src={p.image}
                       alt={p.name}
@@ -158,18 +158,18 @@ export default function ChamadasAbertasDestaque() {
                       </span>
                     </div>
 
-                    <h3 className="text-[#0D2E38] text-[1.1rem] font-extrabold leading-snug group-hover:text-[#FA8400] transition-colors">
+                    <h3 className="text-brand-navy text-[1.1rem] font-extrabold leading-snug group-hover:text-brand-orange transition-colors">
                       {p.name}
                     </h3>
 
-                    <p className="text-[#0D2E38]/55 text-[13px] leading-relaxed line-clamp-2">
+                    <p className="text-brand-navy/55 text-[13px] leading-relaxed line-clamp-2">
                       {p.desc}
                     </p>
 
                     <div className="mt-auto pt-5 border-t border-[#F0EFEA]">
                       {isAberta ? (
                         <>
-                          <p className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-2 ${isUrgent ? 'text-red-500' : 'text-[#0D2E38]/45'}`}>
+                          <p className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-2 ${isUrgent ? 'text-red-500' : 'text-brand-navy/45'}`}>
                             {isUrgent
                               ? t('encerraEmBreve', { date: formatDeadline(p.deadline!, locale) })
                               : t('encerraEm', { date: formatDeadline(p.deadline!, locale) })}
@@ -177,39 +177,39 @@ export default function ChamadasAbertasDestaque() {
                           <div className="flex items-end justify-between gap-3">
                             <div className="flex items-baseline gap-4">
                               <div className="flex items-baseline gap-1.5">
-                                <span className={`text-[1.65rem] font-extrabold tabular-nums leading-none ${isUrgent ? 'text-red-500' : 'text-[#0D2E38]'}`}>
+                                <span className={`text-[1.65rem] font-extrabold tabular-nums leading-none ${isUrgent ? 'text-red-500' : 'text-brand-navy'}`}>
                                   {String(tl!.dias).padStart(2, '0')}
                                 </span>
-                                <span className={`text-[11px] font-bold ${isUrgent ? 'text-red-500/75' : 'text-[#0D2E38]/55'}`}>
+                                <span className={`text-[11px] font-bold ${isUrgent ? 'text-red-500/75' : 'text-brand-navy/55'}`}>
                                   {t('dias')}
                                 </span>
                               </div>
                               <div className="flex items-baseline gap-1.5">
-                                <span className={`text-[1.15rem] font-bold tabular-nums leading-none ${isUrgent ? 'text-red-500/85' : 'text-[#0D2E38]/65'}`}>
+                                <span className={`text-[1.15rem] font-bold tabular-nums leading-none ${isUrgent ? 'text-red-500/85' : 'text-brand-navy/65'}`}>
                                   {String(tl!.hrs).padStart(2, '0')}
                                 </span>
-                                <span className={`text-[11px] font-bold ${isUrgent ? 'text-red-500/60' : 'text-[#0D2E38]/45'}`}>
+                                <span className={`text-[11px] font-bold ${isUrgent ? 'text-red-500/60' : 'text-brand-navy/45'}`}>
                                   {t('horas')}
                                 </span>
                               </div>
                             </div>
-                            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#F5F4EF] group-hover:bg-[#FA8400] transition-all shrink-0">
-                              <ArrowRight strokeWidth={2.5} className="w-3 h-3 text-[#0D2E38] group-hover:text-white transition-colors" />
+                            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#F5F4EF] group-hover:bg-brand-orange transition-all shrink-0">
+                              <ArrowRight strokeWidth={2.5} className="w-3 h-3 text-brand-navy group-hover:text-white transition-colors" />
                             </span>
                           </div>
                         </>
                       ) : (
                         <div className="flex items-end justify-between gap-3">
                           <div>
-                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2 text-[#0D2E38]/45">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2 text-brand-navy/45">
                               {t('inscricoes')}
                             </p>
-                            <p className="text-[1.15rem] font-extrabold leading-none text-[#0D2E38]">
+                            <p className="text-[1.15rem] font-extrabold leading-none text-brand-navy">
                               {t('emBreve')}
                             </p>
                           </div>
-                          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#F5F4EF] group-hover:bg-[#FA8400] transition-all shrink-0">
-                            <ArrowRight strokeWidth={2.5} className="w-3 h-3 text-[#0D2E38] group-hover:text-white transition-colors" />
+                          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#F5F4EF] group-hover:bg-brand-orange transition-all shrink-0">
+                            <ArrowRight strokeWidth={2.5} className="w-3 h-3 text-brand-navy group-hover:text-white transition-colors" />
                           </span>
                         </div>
                       )}
@@ -225,7 +225,7 @@ export default function ChamadasAbertasDestaque() {
               onClick={() => scroll(-1)}
               disabled={!canPrev}
               aria-label={t('aria.prev')}
-              className="w-10 h-10 rounded-full border border-[#E8E6E1] flex items-center justify-center text-[#004E69] hover:border-[#FA8400] hover:text-[#FA8400] hover:bg-[#FA8400]/5 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-[#004E69] hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
               <ChevronLeft strokeWidth={2.5} className="w-4 h-4" />
             </button>
@@ -233,7 +233,7 @@ export default function ChamadasAbertasDestaque() {
               onClick={() => scroll(1)}
               disabled={!canNext}
               aria-label={t('aria.next')}
-              className="w-10 h-10 rounded-full border border-[#E8E6E1] flex items-center justify-center text-[#004E69] hover:border-[#FA8400] hover:text-[#FA8400] hover:bg-[#FA8400]/5 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-[#004E69] hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
               <ChevronRight strokeWidth={2.5} className="w-4 h-4" />
             </button>

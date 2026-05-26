@@ -102,13 +102,13 @@ const ESTRUTURA = [
 
 export default function SobrePage() {
   return (
-    <main className="relative bg-[#0D2E38] overflow-x-clip">
+    <main className="relative bg-brand-navy overflow-x-clip">
 
       {/* ── Fundo orgânico unificado ──────────────────────────────────── */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute top-[40vh] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-[#FA8400]/[0.10] blur-[160px]" />
-        <div className="absolute top-[180vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-[#00C08B]/[0.06] blur-[160px]" />
-        <div className="absolute top-[320vh] left-[15%] w-[900px] h-[900px] rounded-full bg-[#FA8400]/[0.08] blur-[160px]" />
+        <div className="absolute top-[40vh] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />
+        <div className="absolute top-[180vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-brand-teal/[0.06] blur-[160px]" />
+        <div className="absolute top-[320vh] left-[15%] w-[900px] h-[900px] rounded-full bg-brand-orange/[0.08] blur-[160px]" />
         <div className="absolute top-[460vh] right-[-10%] w-[800px] h-[800px] rounded-full bg-[#004E69]/40 blur-[150px]" />
 
         {/* Grid sutil global — só aparece após a hero */}
@@ -130,22 +130,22 @@ export default function SobrePage() {
       <section className="relative z-10 min-h-[640px] lg:h-[700px] pt-[108px] pb-16 overflow-hidden">
         <BrandPattern
           variant="dots"
-          color="#FA8400"
+          color="var(--color-brand-orange)"
           className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
         />
 
         <Container className="relative h-full grid lg:grid-cols-[1.1fr_1fr] gap-16 items-stretch">
           <div className="flex flex-col justify-center">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Sobre o Inaitec
               </span>
             </div>
 
             <h1 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
               15 anos construindo o ecossistema<br />
-              <span className="italic font-medium text-[#FA8400]">que move o Brasil</span>
+              <span className="italic font-medium text-brand-orange">que move o Brasil</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-white/70 text-base leading-relaxed">
@@ -155,15 +155,15 @@ export default function SobrePage() {
 
             {/* Quick links — navegação interna do Sobre */}
             <nav aria-label="Navegação da página" className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] font-semibold text-white/55">
-              <a href="#quem-somos" className="hover:text-[#FA8400] transition-colors">Quem somos</a>
+              <a href="#quem-somos" className="hover:text-brand-orange transition-colors">Quem somos</a>
               <span className="block w-1 h-1 rounded-full bg-white/20" />
-              <a href="#nossa-historia" className="hover:text-[#FA8400] transition-colors">História</a>
+              <a href="#nossa-historia" className="hover:text-brand-orange transition-colors">História</a>
               <span className="block w-1 h-1 rounded-full bg-white/20" />
-              <a href="#lideranca" className="hover:text-[#FA8400] transition-colors">Liderança</a>
+              <a href="#lideranca" className="hover:text-brand-orange transition-colors">Liderança</a>
               <span className="block w-1 h-1 rounded-full bg-white/20" />
-              <a href="#relatorio" className="hover:text-[#FA8400] transition-colors">Relatório</a>
+              <a href="#relatorio" className="hover:text-brand-orange transition-colors">Relatório</a>
               <span className="block w-1 h-1 rounded-full bg-white/20" />
-              <a href="#estrutura" className="hover:text-[#FA8400] transition-colors">Estrutura</a>
+              <a href="#estrutura" className="hover:text-brand-orange transition-colors">Estrutura</a>
             </nav>
           </div>
 
@@ -176,7 +176,7 @@ export default function SobrePage() {
               className="object-cover"
               sizes="(min-width: 1024px) 45vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0D2E38]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/60 via-transparent to-transparent" />
           </div>
         </Container>
       </section>
@@ -186,15 +186,15 @@ export default function SobrePage() {
           <div className="grid lg:grid-cols-[420px_1fr] gap-16">
             <div>
               <div className="mb-5 inline-flex items-center gap-2">
-                <span className="block h-px w-8 bg-[#FA8400]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                <span className="block h-px w-8 bg-brand-orange" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                   Quem somos
                 </span>
               </div>
               <h2 className="font-extrabold text-display-xl leading-[1.2] tracking-tight">
-                O ponto de encontro entre quem cria, quem investe e <span className="italic font-medium text-[#FA8400]">quem decide</span>.
+                O ponto de encontro entre quem cria, quem investe e <span className="italic font-medium text-brand-orange">quem decide</span>.
               </h2>
-              <p className="mt-6 text-[#0D2E38]/70 text-base leading-relaxed">
+              <p className="mt-6 text-brand-navy/70 text-base leading-relaxed">
                 Damos infraestrutura, mentoria e acesso a capital para quem está construindo.
                 Estruturamos desafios reais para corporações que precisam inovar fora da própria
                 caixa. E articulamos governo, academia e iniciativa privada em torno de uma agenda
@@ -204,8 +204,8 @@ export default function SobrePage() {
 
             {/* Missão / Visão / Valores */}
             <div className="grid gap-4">
-              <div className="rounded-2xl bg-white p-8 border border-[#E8E6E1]">
-                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-2">
+              <div className="rounded-2xl bg-white p-8 border border-border">
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-2">
                   Missão
                 </div>
                 <p className="text-lg leading-relaxed">
@@ -213,8 +213,8 @@ export default function SobrePage() {
                   Pedra Branca a referência nacional de inovação aplicada.
                 </p>
               </div>
-              <div className="rounded-2xl bg-white p-8 border border-[#E8E6E1]">
-                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-2">
+              <div className="rounded-2xl bg-white p-8 border border-border">
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-2">
                   Visão
                 </div>
                 <p className="text-lg leading-relaxed">
@@ -222,17 +222,17 @@ export default function SobrePage() {
                   em negócios gerados, capital atraído e impacto social entregue.
                 </p>
               </div>
-              <div className="rounded-2xl bg-white p-8 border border-[#E8E6E1]">
-                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-4">
+              <div className="rounded-2xl bg-white p-8 border border-border">
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-4">
                   Valores
                 </div>
                 <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                   {VALORES.map((v) => (
                     <li key={v.titulo} className="flex gap-3">
-                      <span className="mt-2 block h-1.5 w-1.5 rounded-full bg-[#FA8400] shrink-0" />
+                      <span className="mt-2 block h-1.5 w-1.5 rounded-full bg-brand-orange shrink-0" />
                       <div>
-                        <div className="font-semibold text-[#0D2E38]">{v.titulo}</div>
-                        <div className="text-sm text-[#0D2E38]/65 leading-relaxed">{v.desc}</div>
+                        <div className="font-semibold text-brand-navy">{v.titulo}</div>
+                        <div className="text-sm text-brand-navy/65 leading-relaxed">{v.desc}</div>
                       </div>
                     </li>
                   ))}
@@ -249,21 +249,21 @@ export default function SobrePage() {
       >
         <BrandPattern
           variant="dots"
-          color="#FA8400"
+          color="var(--color-brand-orange)"
           className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
         />
 
         <Container className="relative">
           <div className="max-w-2xl mb-16">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Nossa história
               </span>
             </div>
             <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
               De 2010 a hoje:{' '}
-              <span className="italic font-medium text-[#FA8400]">15 anos</span> que mudaram o mapa
+              <span className="italic font-medium text-brand-orange">15 anos</span> que mudaram o mapa
               da inovação no Sul.
             </h2>
             <p className="mt-6 text-white/65 text-base leading-relaxed">
@@ -281,13 +281,13 @@ export default function SobrePage() {
                   <div
                     className={`relative z-10 mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full font-extrabold text-sm tracking-tight transition-all duration-300 ${
                       i === HISTORIA.length - 1
-                        ? 'bg-[#FA8400] text-white shadow-lg shadow-[#FA8400]/30 group-hover:scale-105'
-                        : 'bg-[#0D2E38] border border-white/15 text-white group-hover:border-[#FA8400]/60 group-hover:bg-[#FA8400]/10'
+                        ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/30 group-hover:scale-105'
+                        : 'bg-brand-navy border border-white/15 text-white group-hover:border-brand-orange/60 group-hover:bg-brand-orange/10'
                     }`}
                   >
                     {item.ano}
                   </div>
-                  <h3 className="text-white font-semibold text-base mb-2 group-hover:text-[#FA8400] transition-colors">
+                  <h3 className="text-white font-semibold text-base mb-2 group-hover:text-brand-orange transition-colors">
                     {item.titulo}
                   </h3>
                   <p className="text-white/55 text-sm leading-relaxed">{item.desc}</p>
@@ -303,15 +303,15 @@ export default function SobrePage() {
           <div className="flex flex-wrap items-end justify-between gap-8 mb-16">
             <div className="max-w-2xl">
               <div className="mb-5 inline-flex items-center gap-2">
-                <span className="block h-px w-8 bg-[#FA8400]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                <span className="block h-px w-8 bg-brand-orange" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                   Presidência e Conselho
                 </span>
               </div>
               <h2 className="font-extrabold text-display-xl leading-[1.2] tracking-tight">
-                Governança que une <span className="italic font-medium text-[#FA8400]">instituição, capital e ecossistema</span>.
+                Governança que une <span className="italic font-medium text-brand-orange">instituição, capital e ecossistema</span>.
               </h2>
-              <p className="mt-6 text-[#0D2E38]/70 text-base leading-relaxed">
+              <p className="mt-6 text-brand-navy/70 text-base leading-relaxed">
                 Conselho de Administração renovado a cada 4 anos, com assento de mantenedores,
                 governo e sociedade civil. Decisão pública, prestação de contas pública — porque
                 instituição séria não opera no escuro.
@@ -323,14 +323,14 @@ export default function SobrePage() {
           <div className="mb-20">
             <div className="flex items-end justify-between flex-wrap gap-4 mb-8">
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400] mb-2">
+                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange mb-2">
                   Diretoria Executiva e Gerências
                 </div>
                 <h3 className="font-extrabold text-2xl md:text-3xl leading-tight">
                   Quem opera o dia a dia
                 </h3>
               </div>
-              <p className="text-sm text-[#0D2E38]/55 max-w-md leading-relaxed">
+              <p className="text-sm text-brand-navy/55 max-w-md leading-relaxed">
                 Time executivo responsável pela execução dos programas, comunicação e relação com
                 empresas residentes.
               </p>
@@ -347,14 +347,14 @@ export default function SobrePage() {
           <div>
             <div className="flex items-end justify-between flex-wrap gap-4 mb-8">
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400] mb-2">
+                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange mb-2">
                   Conselhos
                 </div>
                 <h3 className="font-extrabold text-2xl md:text-3xl leading-tight">
                   Direção estratégica e conselhos de apoio
                 </h3>
               </div>
-              <p className="text-sm text-[#0D2E38]/55 max-w-md leading-relaxed">
+              <p className="text-sm text-brand-navy/55 max-w-md leading-relaxed">
                 O Conselho Deliberativo define rumos institucionais e zela pela governança,
                 apoiado pelos conselhos Fiscal, Técnico e Jurídico.
               </p>
@@ -365,14 +365,14 @@ export default function SobrePage() {
                 titulo="Conselho Deliberativo"
                 desc="Define rumos institucionais, aprova orçamento e zela pela governança."
                 membros={CONSELHO_DELIBERATIVO}
-                accent="#FA8400"
+                accent="var(--color-brand-orange)"
                 destaque
               />
               <ConselhoCompacto
                 titulo="Conselho Fiscal"
                 desc="Acompanha contas, auditoria e prestação pública."
                 membros={CONSELHO_FISCAL}
-                accent="#00C08B"
+                accent="var(--color-brand-teal)"
               />
               <ConselhoCompacto
                 titulo="Conselho Técnico"
@@ -394,14 +394,14 @@ export default function SobrePage() {
       <Section id="relatorio" padding="md" className="scroll-mt-24">
           <div className="max-w-2xl mb-16">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Relatório de atividades
               </span>
             </div>
             <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
               O que prometemos.<br />
-              <span className="italic font-medium text-[#FA8400]">O que entregamos</span>.
+              <span className="italic font-medium text-brand-orange">O que entregamos</span>.
             </h2>
             <p className="mt-6 text-white/65 text-base leading-relaxed">
               Todo ano publicamos quanto capital movimentamos, quantas empresas aceleramos e quantos
@@ -413,8 +413,8 @@ export default function SobrePage() {
           {/* Big numbers — destaque agregado em card glass */}
           <div className="relative mb-16 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md overflow-hidden">
             {/* Glow interno sutil */}
-            <div className="pointer-events-none absolute -top-32 -left-20 w-[400px] h-[400px] rounded-full bg-[#FA8400]/[0.08] blur-[120px]" />
-            <div className="pointer-events-none absolute -bottom-32 -right-20 w-[400px] h-[400px] rounded-full bg-[#00C08B]/[0.06] blur-[120px]" />
+            <div className="pointer-events-none absolute -top-32 -left-20 w-[400px] h-[400px] rounded-full bg-brand-orange/[0.08] blur-[120px]" />
+            <div className="pointer-events-none absolute -bottom-32 -right-20 w-[400px] h-[400px] rounded-full bg-brand-teal/[0.06] blur-[120px]" />
 
             <div className="relative grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
               {[
@@ -444,13 +444,13 @@ export default function SobrePage() {
               <a
                 key={r.ano}
                 href="#"
-                className="group relative rounded-2xl border border-white/10 bg-white/[0.03] p-8 hover:bg-white/[0.06] hover:border-[#FA8400]/40 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                className="group relative rounded-2xl border border-white/10 bg-white/[0.03] p-8 hover:bg-white/[0.06] hover:border-brand-orange/40 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
                 {/* Glow interno no hover */}
-                <span className="pointer-events-none absolute -top-20 -right-20 w-[200px] h-[200px] rounded-full bg-[#FA8400]/0 group-hover:bg-[#FA8400]/15 blur-[60px] transition-all duration-500" />
+                <span className="pointer-events-none absolute -top-20 -right-20 w-[200px] h-[200px] rounded-full bg-brand-orange/0 group-hover:bg-brand-orange/15 blur-[60px] transition-all duration-500" />
 
                 <div className="relative flex items-baseline justify-between mb-6">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400]">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
                     Relatório
                   </span>
                   <span className="text-3xl font-extrabold text-white tracking-tight">
@@ -461,7 +461,7 @@ export default function SobrePage() {
                   {r.destaque}
                 </div>
                 <p className="relative text-sm text-white/55 leading-relaxed mb-6">{r.resumo}</p>
-                <span className="relative inline-flex items-center text-xs font-semibold text-[#FA8400] group-hover:text-[#FF9B26] transition-all">
+                <span className="relative inline-flex items-center text-xs font-semibold text-brand-orange group-hover:text-[#FF9B26] transition-all">
                   Baixar PDF
                 </span>
               </a>
@@ -472,18 +472,18 @@ export default function SobrePage() {
       {/* ── 5b. Media Kit ─────────────────────────────────────────────── */}
       <Section padding="md">
           <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-8 sm:p-10 lg:p-12">
-            <div className="pointer-events-none absolute -top-24 -right-16 w-[360px] h-[360px] rounded-full bg-[#FA8400]/[0.10] blur-[120px]" />
+            <div className="pointer-events-none absolute -top-24 -right-16 w-[360px] h-[360px] rounded-full bg-brand-orange/[0.10] blur-[120px]" />
 
             <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-xl">
                 <div className="mb-4 inline-flex items-center gap-2">
-                  <span className="block h-px w-8 bg-[#FA8400]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                  <span className="block h-px w-8 bg-brand-orange" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                     Imprensa & marca
                   </span>
                 </div>
                 <h2 className="font-extrabold text-white text-display-lg leading-[1.2] tracking-tight">
-                  Baixe o <span className="italic font-medium text-[#FA8400]">media kit</span>
+                  Baixe o <span className="italic font-medium text-brand-orange">media kit</span>
                 </h2>
                 <p className="mt-4 text-white/65 text-base leading-relaxed">
                   Logos, guia de marca, fotos em alta resolução e dados institucionais — tudo o
@@ -493,7 +493,7 @@ export default function SobrePage() {
 
               <a
                 href="#"
-                className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 shadow-lg shadow-[#FA8400]/25 transition-all hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 lg:w-auto shrink-0"
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 shadow-lg shadow-brand-orange/25 transition-all hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 lg:w-auto shrink-0"
               >
                 <Download strokeWidth={2} className="w-4 h-4" />
                 Baixar media kit (.zip)
@@ -506,11 +506,11 @@ export default function SobrePage() {
       <section
         id="estrutura"
         data-theme="light"
-        className="relative z-10 scroll-mt-24 bg-[#F5F4EF] text-[#0D2E38] overflow-hidden"
+        className="relative z-10 scroll-mt-24 bg-[#F5F4EF] text-brand-navy overflow-hidden"
       >
         <BrandPattern
           variant="dots"
-          color="#0D2E38"
+          color="var(--color-brand-navy)"
           className="absolute -top-10 left-[5%] w-80 h-80 opacity-[0.08] pointer-events-none"
         />
 
@@ -518,7 +518,7 @@ export default function SobrePage() {
           <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-stretch">
 
             {/* Imagem do edifício com endereço flutuante */}
-            <div className="relative rounded-3xl overflow-hidden bg-[#0D2E38] min-h-[480px] lg:min-h-[600px]">
+            <div className="relative rounded-3xl overflow-hidden bg-brand-navy min-h-[480px] lg:min-h-[600px]">
               <Image
                 src="/imagens-destaques/inaitec7.jpg"
                 alt="Edifício Inaitec — Parque Pedra Branca"
@@ -526,11 +526,11 @@ export default function SobrePage() {
                 className="object-cover"
                 sizes="(min-width: 1024px) 50vw, 100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E38]/75 via-[#0D2E38]/15 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/75 via-brand-navy/15 to-transparent" />
 
               {/* Badge "nova ala em obras" no topo */}
               <div className="absolute top-6 left-6">
-                <span className="rounded-full bg-[#FA8400] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white inline-flex items-center gap-1.5 shadow-lg shadow-[#FA8400]/30">
+                <span className="rounded-full bg-brand-orange px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white inline-flex items-center gap-1.5 shadow-lg shadow-brand-orange/30">
                   <span className="block w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   Nova ala em obras
                 </span>
@@ -554,28 +554,28 @@ export default function SobrePage() {
             {/* Conteúdo + métricas */}
             <div className="flex flex-col justify-center">
               <div className="mb-5 inline-flex items-center gap-2">
-                <span className="block h-px w-8 bg-[#FA8400]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                <span className="block h-px w-8 bg-brand-orange" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                   Estrutura Inaitec
                 </span>
               </div>
               <h2 className="font-extrabold text-display-xl leading-[1.2] tracking-tight">
-                12 mil m² para a <span className="italic font-medium text-[#FA8400]">inovação acontecer</span>.
+                12 mil m² para a <span className="italic font-medium text-brand-orange">inovação acontecer</span>.
               </h2>
-              <p className="mt-6 text-[#0D2E38]/70 text-base leading-relaxed">
+              <p className="mt-6 text-brand-navy/70 text-base leading-relaxed">
                 Coworking, salas privativas, laboratórios de prototipagem e auditório para 200
                 pessoas — no coração do Parque Pedra Branca. Em 2027, +5 mil m² entram em operação
                 para labs especializados e novos investidores.
               </p>
 
               {/* Métricas em grid limpo */}
-              <dl className="mt-10 pt-8 border-t border-[#0D2E38]/10 grid grid-cols-2 gap-x-8 gap-y-8">
+              <dl className="mt-10 pt-8 border-t border-brand-navy/10 grid grid-cols-2 gap-x-8 gap-y-8">
                 {ESTRUTURA.map((e) => (
                   <div key={e.area} className="flex flex-col gap-1.5">
-                    <dt className="text-3xl md:text-4xl font-extrabold text-[#0D2E38] tracking-tight">
+                    <dt className="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight">
                       {e.area}
                     </dt>
-                    <dd className="text-sm text-[#0D2E38]/65 leading-relaxed">{e.desc}</dd>
+                    <dd className="text-sm text-brand-navy/65 leading-relaxed">{e.desc}</dd>
                   </div>
                 ))}
               </dl>
@@ -586,21 +586,21 @@ export default function SobrePage() {
 
       {/* ── 7. CTA final — Fale conosco ───────────────────────────────── */}
       <Section padding="md">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0D2E38] via-[#004E69] to-[#0D2E38] p-8 sm:p-12 md:p-20">
-            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-[#FA8400]/20 blur-[140px]" />
-            <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full bg-[#00C08B]/10 blur-[120px]" />
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-navy via-[#004E69] to-brand-navy p-8 sm:p-12 md:p-20">
+            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-brand-orange/20 blur-[140px]" />
+            <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full bg-brand-teal/10 blur-[120px]" />
 
             <div className="relative grid lg:grid-cols-[1fr_auto] gap-10 items-center">
               <div>
                 <div className="mb-5 inline-flex items-center gap-2">
-                  <span className="block h-px w-8 bg-[#FA8400]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                  <span className="block h-px w-8 bg-brand-orange" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                     Vamos conversar
                   </span>
                 </div>
                 <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight max-w-2xl">
                   Pronto para fazer parte do{' '}
-                  <span className="italic font-medium text-[#FA8400]">próximo capítulo</span>?
+                  <span className="italic font-medium text-brand-orange">próximo capítulo</span>?
                 </h2>
                 <p className="mt-5 text-white/70 text-base leading-relaxed max-w-xl">
                   Traga sua empresa, proponha uma parceria ou agende uma visita. A próxima onda de
@@ -610,7 +610,7 @@ export default function SobrePage() {
               <div className="w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                 <Link
                   href="/traga-sua-empresa"
-                  className="inline-flex items-center justify-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+                  className="inline-flex items-center justify-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
                 >
                   Traga sua empresa
                 </Link>
@@ -636,8 +636,8 @@ function PessoaCard({ pessoa, destaque = false }: { pessoa: Pessoa; destaque?: b
   return (
     <article
       className={[
-        'group relative rounded-2xl bg-white border overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#0D2E38]/10 hover:-translate-y-1',
-        destaque ? 'border-[#FA8400]/40 ring-1 ring-[#FA8400]/30' : 'border-[#E8E6E1] hover:border-[#FA8400]/30',
+        'group relative rounded-2xl bg-white border overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-navy/10 hover:-translate-y-1',
+        destaque ? 'border-brand-orange/40 ring-1 ring-brand-orange/30' : 'border-border hover:border-brand-orange/30',
       ].join(' ')}
     >
       <div className="relative aspect-[4/5] bg-[#F5F4EF] overflow-hidden">
@@ -650,29 +650,29 @@ function PessoaCard({ pessoa, destaque = false }: { pessoa: Pessoa; destaque?: b
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
           />
         ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[#0D2E38]/[0.04] via-[#FA8400]/[0.06] to-[#004E69]/[0.05]">
-            <span className="text-5xl font-extrabold tracking-tight text-[#0D2E38]/35">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-brand-navy/[0.04] via-brand-orange/[0.06] to-[#004E69]/[0.05]">
+            <span className="text-5xl font-extrabold tracking-tight text-brand-navy/35">
               {getInitials(pessoa.nome)}
             </span>
-            <span className="mt-3 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#0D2E38]/30">
+            <span className="mt-3 text-[9px] font-semibold uppercase tracking-[0.25em] text-brand-navy/30">
               Foto em breve
             </span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E38]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
       <div className="p-6">
         <div
           className={[
             'text-[10px] font-bold uppercase tracking-[0.2em] mb-2',
-            destaque ? 'text-[#FA8400]' : 'text-[#0D2E38]/55',
+            destaque ? 'text-brand-orange' : 'text-brand-navy/55',
           ].join(' ')}
         >
           {pessoa.cargo}
         </div>
         <h4 className="font-bold text-lg leading-tight">{pessoa.nome}</h4>
       </div>
-      <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FA8400] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+      <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-brand-orange origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
     </article>
   )
 }
@@ -692,17 +692,17 @@ function ConselhoCompacto({
 }) {
   return (
     <div
-      className={`rounded-2xl p-7 flex flex-col ${destaque ? 'bg-[#0D2E38] text-white' : 'bg-white border border-[#E8E6E1] text-[#0D2E38]'}`}
+      className={`rounded-2xl p-7 flex flex-col ${destaque ? 'bg-brand-navy text-white' : 'bg-white border border-border text-brand-navy'}`}
     >
       <div className="mb-5">
         <span className="block h-px w-8 mb-3" style={{ backgroundColor: accent }} />
         <h4 className="font-bold text-lg leading-tight mb-2">{titulo}</h4>
-        <p className={`text-[13px] leading-relaxed ${destaque ? 'text-white/60' : 'text-[#0D2E38]/60'}`}>
+        <p className={`text-[13px] leading-relaxed ${destaque ? 'text-white/60' : 'text-brand-navy/60'}`}>
           {desc}
         </p>
       </div>
       <ul
-        className={`flex-1 -mx-2 ${destaque ? 'divide-y divide-white/10' : 'divide-y divide-[#E8E6E1]/70'}`}
+        className={`flex-1 -mx-2 ${destaque ? 'divide-y divide-white/10' : 'divide-y divide-border/70'}`}
       >
         {membros.map((m) => (
           <li key={m.nome} className="flex items-center gap-3 px-2 py-3">
@@ -715,7 +715,7 @@ function ConselhoCompacto({
             <div className="min-w-0">
               <div className="font-semibold text-sm leading-tight truncate">{m.nome}</div>
               <div
-                className={`text-[11px] leading-tight mt-0.5 ${destaque ? 'text-white/55' : 'text-[#0D2E38]/55'}`}
+                className={`text-[11px] leading-tight mt-0.5 ${destaque ? 'text-white/55' : 'text-brand-navy/55'}`}
               >
                 {m.cargo}
               </div>

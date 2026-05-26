@@ -61,8 +61,8 @@ export type Programa = {
 }
 
 export const PUBLICO_COLORS: Record<Publico, string> = {
-  'Startups e Pequenas Empresas': '#FA8400', // laranja
-  'Grandes e Médias Empresas': '#00C08B', // verde
+  'Startups e Pequenas Empresas': 'var(--color-brand-orange)', // laranja
+  'Grandes e Médias Empresas': 'var(--color-brand-teal)', // verde
   'Universidades e Governo': '#4A9EE0', // azul institucional
   Investidores: '#E9A84A', // âmbar dourado
 }
@@ -357,8 +357,8 @@ export const STATUS_SHORT: Record<StatusInscricao, string> = {
 }
 
 export const STATUS_COLOR: Record<StatusInscricao, string> = {
-  aberta: '#00C08B',
-  'em-breve': '#FA8400',
+  aberta: 'var(--color-brand-teal)',
+  'em-breve': 'var(--color-brand-orange)',
   fechada: '#94A3B8',
-  'fluxo-continuo': '#FA8400',
+  'fluxo-continuo': 'var(--color-brand-orange)',
 }

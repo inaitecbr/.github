@@ -27,7 +27,7 @@ export default function CadastroCTA({
 
   const variantCls =
     variant === 'solid'
-      ? 'bg-[#FA8400] text-white hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 shadow-lg shadow-[#FA8400]/25'
+      ? 'bg-brand-orange text-white hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 shadow-lg shadow-brand-orange/25'
       : 'border border-white/30 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/50'
 
   return (

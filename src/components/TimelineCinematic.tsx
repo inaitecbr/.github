@@ -76,13 +76,13 @@ export default function TimelineCinematic({
       {showHeader && (
         <>
           <div className="mb-4 inline-flex items-center gap-2">
-            <span className="block h-px w-8 bg-[#FA8400]" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+            <span className="block h-px w-8 bg-brand-orange" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
               {t('header.eyebrow')}
             </span>
           </div>
           <h3 className={`font-extrabold text-display-lg leading-tight mb-10 tracking-tight max-w-2xl ${isDark ? 'text-white' : 'text-text-heading'}`}>
-            {t('header.titleStart')} <span className="text-[#FA8400]">{t('header.titleHighlight')}</span> {t('header.titleEnd')}
+            {t('header.titleStart')} <span className="text-brand-orange">{t('header.titleHighlight')}</span> {t('header.titleEnd')}
           </h3>
         </>
       )}
@@ -95,7 +95,7 @@ export default function TimelineCinematic({
         >
           <div className="relative flex w-max sm:w-auto sm:justify-between">
             {/* Linha base — guia visual apenas */}
-            <div className={`absolute top-[26px] left-0 right-0 h-[2px] rounded-full ${isDark ? 'bg-white/10' : 'bg-[#E8E6E1]'}`} />
+            <div className={`absolute top-[26px] left-0 right-0 h-[2px] rounded-full ${isDark ? 'bg-white/10' : 'bg-border'}`} />
 
             {events.map((e, i) => {
               const isActive = i === active
@@ -112,7 +112,7 @@ export default function TimelineCinematic({
                   {/* Pulse ring quando ativo */}
                   {isActive && (
                     <div
-                      className="absolute inset-0 rounded-full bg-[#FA8400]/30"
+                      className="absolute inset-0 rounded-full bg-brand-orange/30"
                       style={{ animation: 'pulse-ring 2s ease-in-out infinite' }}
                     />
                   )}
@@ -132,7 +132,7 @@ export default function TimelineCinematic({
                       <circle
                         cx="27" cy="27" r={RING_RADIUS}
                         fill="none"
-                        stroke="#FA8400"
+                        stroke="var(--color-brand-orange)"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeDasharray={RING_CIRCUMFERENCE}
@@ -147,10 +147,10 @@ export default function TimelineCinematic({
                     className={[
                       'relative w-9 h-9 rounded-full border-2 flex items-center justify-center transition-all duration-300',
                       isActive
-                        ? 'bg-[#FA8400] border-[#FA8400] scale-110 shadow-lg shadow-[#FA8400]/40'
+                        ? 'bg-brand-orange border-brand-orange scale-110 shadow-lg shadow-brand-orange/40'
                         : isDark
-                          ? 'bg-[#0D2E38] border-white/25 group-hover:border-[#FA8400] group-hover:bg-[#FA8400]/10'
-                          : 'bg-white border-[#E8E6E1] group-hover:border-[#FA8400] group-hover:bg-[#FA8400]/5',
+                          ? 'bg-brand-navy border-white/25 group-hover:border-brand-orange group-hover:bg-brand-orange/10'
+                          : 'bg-white border-border group-hover:border-brand-orange group-hover:bg-brand-orange/5',
                     ].join(' ')}
                   >
                     {isActive && (
@@ -164,7 +164,7 @@ export default function TimelineCinematic({
                   className={[
                     'text-sm font-bold transition-colors tracking-wide',
                     isActive
-                      ? 'text-[#FA8400]'
+                      ? 'text-brand-orange'
                       : isDark
                         ? 'text-white/50 group-hover:text-white'
                         : 'text-text-muted group-hover:text-[#004E69]',
@@ -196,8 +196,8 @@ export default function TimelineCinematic({
           {/* Topo: eyebrow + título */}
           <div className="relative">
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-orange">
                 {t('marcoLabel', { year: events[active].year })}
               </span>
             </div>
@@ -212,10 +212,10 @@ export default function TimelineCinematic({
           </p>
 
           {/* Rodapé: métricas do período — grandes e destacadas */}
-          <div className={`relative grid grid-cols-3 gap-3 sm:gap-6 pt-5 border-t mt-5 ${isDark ? 'border-white/10' : 'border-[#E8E6E1]/80'}`}>
+          <div className={`relative grid grid-cols-3 gap-3 sm:gap-6 pt-5 border-t mt-5 ${isDark ? 'border-white/10' : 'border-border/80'}`}>
             {events[active].metrics.map((m) => (
               <div key={m.label} className="flex flex-col gap-1.5 min-w-0">
-                <span className={`text-lg sm:text-2xl md:text-display-lg font-extrabold leading-none tracking-tight whitespace-nowrap ${isDark ? 'text-[#FA8400]' : 'text-[#004E69]'}`}>
+                <span className={`text-lg sm:text-2xl md:text-display-lg font-extrabold leading-none tracking-tight whitespace-nowrap ${isDark ? 'text-brand-orange' : 'text-[#004E69]'}`}>
                   <AnimatedCounter key={`${active}-${m.label}`} value={m.value} />
                 </span>
                 <span className={`text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.15em] leading-tight ${isDark ? 'text-white/55' : 'text-text-muted'}`}>
@@ -227,14 +227,14 @@ export default function TimelineCinematic({
         </div>
 
         {/* Imagem */}
-        <div className="hidden md:block w-[35%] shrink-0 bg-[#0D2E38] relative overflow-hidden">
+        <div className="hidden md:block w-[35%] shrink-0 bg-brand-navy relative overflow-hidden">
           <img
             src="/hero-pedra-branca.jpg"
             alt={t('imageAlt')}
             className="absolute inset-0 w-full h-full object-cover opacity-75 scale-105 transition-transform duration-[3000ms] hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#004E69]/70 via-transparent to-[#FA8400]/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E38]/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#004E69]/70 via-transparent to-brand-orange/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
         </div>
       </div>
 
@@ -256,7 +256,7 @@ export default function TimelineCinematic({
           {/* Play/Pause */}
           <button
             onClick={() => setIsPaused((p) => !p)}
-            className={`w-11 h-11 rounded-full flex items-center justify-center transition-all ${isDark ? 'bg-[#FA8400] text-white hover:bg-[#FFB560]' : 'bg-[#004E69] text-white hover:bg-[#FA8400]'}`}
+            className={`w-11 h-11 rounded-full flex items-center justify-center transition-all ${isDark ? 'bg-brand-orange text-white hover:bg-[#FFB560]' : 'bg-[#004E69] text-white hover:bg-brand-orange'}`}
             aria-label={isPaused ? t('aria.play') : t('aria.pause')}
           >
             {isPaused ? (
@@ -270,7 +270,7 @@ export default function TimelineCinematic({
           <button
             onClick={() => goto(Math.max(0, active - 1))}
             disabled={active === 0}
-            className={`w-11 h-11 rounded-full border flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#FA8400] hover:text-[#FA8400] hover:bg-[#FA8400]/10 transition-all ${isDark ? 'border-white/20 text-white' : 'border-[#E8E6E1] text-[#004E69]'}`}
+            className={`w-11 h-11 rounded-full border flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/10 transition-all ${isDark ? 'border-white/20 text-white' : 'border-border text-[#004E69]'}`}
             aria-label={t('aria.prev')}
           >
             <ChevronLeft strokeWidth={2.5} className="w-4 h-4" />
@@ -280,7 +280,7 @@ export default function TimelineCinematic({
           <button
             onClick={() => goto(Math.min(events.length - 1, active + 1))}
             disabled={active === events.length - 1}
-            className={`w-11 h-11 rounded-full border flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#FA8400] hover:text-[#FA8400] hover:bg-[#FA8400]/10 transition-all ${isDark ? 'border-white/20 text-white' : 'border-[#E8E6E1] text-[#004E69]'}`}
+            className={`w-11 h-11 rounded-full border flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/10 transition-all ${isDark ? 'border-white/20 text-white' : 'border-border text-[#004E69]'}`}
             aria-label={t('aria.next')}
           >
             <ChevronRight strokeWidth={2.5} className="w-4 h-4" />

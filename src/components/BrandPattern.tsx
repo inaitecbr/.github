@@ -6,7 +6,7 @@ type Props = {
 
 export default function BrandPattern({
   className = '',
-  color = '#FA8400',
+  color = 'var(--color-brand-orange)',
   variant = 'dots',
 }: Props) {
   if (variant === 'arc') {

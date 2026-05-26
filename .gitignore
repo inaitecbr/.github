@@ -3,6 +3,8 @@ node_modules
 
 # Sensitive / local-only
 .claude/settings.local.json
+.mcp.json
+!.mcp.json.example
 docs/inputs/
 
 # Build artifacts

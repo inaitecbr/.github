@@ -1,186 +1,25 @@
 'use client'
 
-import { useState, useEffect, Fragment } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { ArrowRight, Check, ChevronLeft, ChevronRight, Plus, Star } from 'lucide-react'
-import AnimatedCounter from '@/components/AnimatedCounter'
 import BrandPattern from '@/components/BrandPattern'
 import ChamadasAbertasDestaque from '@/components/ChamadasAbertasDestaque'
 import EcosystemAccordion from '@/components/EcosystemAccordion'
 import TimelineCinematic from '@/components/TimelineCinematic'
 import { Section, Container } from '@/components/Section'
 
-const PARCEIRO_GROUPS = [
-  {
-    key: 'mantenedores',
-    logos: [
-      { slug: 'hurbana', alt: 'Hurbana' },
-      { slug: 'eurotec', alt: 'Eurotec' },
-    ],
-  },
-  {
-    key: 'apoiadores',
-    logos: [
-      { slug: 'fapesc', alt: 'Fapesc' },
-      { slug: 'finep', alt: 'Finep' },
-    ],
-  },
-] as const
-
 export default function InaitecWebsite() {
   const t = useTranslations('Home')
   return (
-    <main className="relative bg-[#0D2E38] overflow-x-clip">
-
-      {/* ── Fundo orgânico unificado — orbs flutuantes através de todas as seções ── */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        {/* Luzes-âncora laranjas — pontos de destaque ao longo do scroll */}
-        <div className="absolute top-[110vh] left-[-10%] w-[1100px] h-[1100px] rounded-full bg-[#FA8400]/[0.10] blur-[160px]" />
-        <div className="absolute top-[310vh] right-[-10%] w-[1100px] h-[1100px] rounded-full bg-[#FA8400]/[0.10] blur-[160px]" />
-        <div className="absolute top-[520vh] left-[20%] w-[1100px] h-[1100px] rounded-full bg-[#FA8400]/[0.10] blur-[160px]" />
-
-        {/* Orbs secundários — textura ambiente */}
-        <div className="absolute top-[160vh] right-[-20%] w-[900px] h-[900px] rounded-full bg-[#004E69]/30 blur-[140px]" />
-        <div className="absolute top-[420vh] left-[-10%] w-[800px] h-[800px] rounded-full bg-[#00C08B]/[0.05] blur-[140px]" />
-
-        {/* Grid sutil global — só aparece após a hero */}
-        <div
-          className="absolute top-[100vh] left-0 right-0 bottom-0 opacity-[0.025]"
-          style={{
-            backgroundImage:
-              'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
-            maskImage:
-              'linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)',
-            WebkitMaskImage:
-              'linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)',
-          }}
-        />
-
-        {/* Véu escuro para manter legibilidade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0D2E38]/20 to-[#0D2E38]/40" />
-      </div>
-
-      {/* ── Hero full-screen com vídeo ──────────────────────────────────── */}
-      <section className="relative h-dvh w-full overflow-hidden z-10">
-
-        <video
-          src="/hero-inaitec.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D2E38]/70 via-[#0D2E38]/50 to-[#0D2E38]/90 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.5))] pointer-events-none" />
-        {/* Scrim central para legibilidade do texto */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_52%,rgba(13,46,56,0.55)_0%,transparent_100%)] pointer-events-none" />
-
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-[68px] pb-32">
-
-          <h1 className="font-extrabold text-white text-display-3xl leading-[0.95] tracking-tight max-w-5xl drop-shadow-xl">
-            {t('hero.titleStart')}{' '}
-            <span className="italic font-medium text-[#FA8400] tracking-tight">{t('hero.titleHighlight')}</span>
-          </h1>
-
-          <p className="mt-8 max-w-2xl text-white/80 text-[15px] md:text-base leading-relaxed">
-            {t('hero.subtitle')}
-          </p>
-
-          <div className="mt-10 w-full flex flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
-            <Link
-              href="/programas"
-              className="group inline-flex items-center justify-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
-            >
-              {t('hero.ctaPrimary')}
-            </Link>
-            <Link
-              href="/programas"
-              className="group inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold px-7 py-4 hover:bg-white hover:text-[#0D2E38] hover:border-white transition-all duration-300"
-            >
-              {t('hero.ctaSecondary')}
-            </Link>
-          </div>
-
-        </div>
-
-        {/* Barra de métricas fixa no fundo da hero */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-[#0D2E38]/50 backdrop-blur-md">
-          <Container className="py-6 grid grid-cols-2 gap-y-6 md:grid-cols-4 md:gap-y-0 md:divide-x md:divide-white/10">
-            {[
-              { value: '+300', label: t('hero.metrics.startups') },
-              { value: '+200', label: t('hero.metrics.empresas') },
-              { value: '1334', label: t('hero.metrics.area') },
-              { value: '15', label: t('hero.metrics.anos') },
-            ].map((m) => (
-              <div
-                key={m.label}
-                className="flex flex-col items-center gap-1 md:py-0 md:px-6"
-              >
-                <span className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                  <AnimatedCounter value={m.value} />
-                </span>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 text-center">
-                  {m.label}
-                </span>
-              </div>
-            ))}
-          </Container>
-        </div>
-      </section>
-
-      {/* ── Parceiros — Mantenedores + Apoiadores ───────────────────────── */}
-      <Section
-        padding="md"
-        containerClassName="grid lg:grid-cols-[auto_1fr] gap-10 lg:gap-16 items-center"
-      >
-        <h2 className="font-extrabold text-white text-display-lg tracking-tight text-center lg:text-left">
-          {t('parceiros.title')}
-          <br />
-          <span className="italic font-medium text-[#FA8400]">
-            {t('parceiros.titleHighlight')}
-          </span>
-          .
-        </h2>
-
-        <ul className="flex flex-col items-center gap-10 sm:flex-row sm:items-center sm:justify-center sm:gap-12 lg:justify-end lg:gap-16">
-          {PARCEIRO_GROUPS.map((group, i) => (
-            <Fragment key={group.key}>
-              {i > 0 && (
-                <li aria-hidden className="hidden sm:block w-px h-10 bg-white/15 shrink-0" />
-              )}
-              <li className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6 lg:gap-8">
-                <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/45 shrink-0">
-                  {t(`parceiros.${group.key}`)}
-                </span>
-                <div className="flex items-center gap-8 sm:gap-10">
-                  {group.logos.map((logo) => (
-                    <Image
-                      key={logo.slug}
-                      src={`/apoiadores-mantenedores/${logo.slug}.png`}
-                      alt={logo.alt}
-                      width={180}
-                      height={48}
-                      className="h-16 sm:h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
-                      style={{ filter: 'brightness(0) invert(1)' }}
-                    />
-                  ))}
-                </div>
-              </li>
-            </Fragment>
-          ))}
-        </ul>
-      </Section>
-
+    <>
       {/* ── Ecossistema — uma dobra: contexto + linha do tempo ───────────── */}
       <section className="relative z-10 min-h-dvh flex flex-col justify-center py-20 overflow-hidden">
         <BrandPattern
           variant="dots"
-          color="#FA8400"
+          color="var(--color-brand-orange)"
           className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
         />
 
@@ -188,8 +27,8 @@ export default function InaitecWebsite() {
 
           {/* Cabeçalho — contexto do ecossistema */}
           <div className="mb-4 inline-flex items-center gap-2">
-            <span className="block h-px w-8 bg-[#FA8400]" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+            <span className="block h-px w-8 bg-brand-orange" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
               {t('ecossistema.eyebrow')}
             </span>
           </div>
@@ -197,7 +36,7 @@ export default function InaitecWebsite() {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
             <h2 className="font-extrabold text-display-lg leading-[1.15] text-white tracking-tight">
               {t('ecossistema.titleStart')}{' '}
-              <span className="text-[#FA8400] italic font-medium">{t('ecossistema.titleHighlight')}</span>
+              <span className="text-brand-orange italic font-medium">{t('ecossistema.titleHighlight')}</span>
             </h2>
             <div className="flex flex-col gap-3.5 justify-center">
               <p className="text-[14px] text-white/70 leading-relaxed">
@@ -208,7 +47,7 @@ export default function InaitecWebsite() {
               </p>
               <Link
                 href="/sobre"
-                className="inline-flex items-center text-sm font-semibold text-[#FA8400] hover:text-[#FF9B26] transition-all self-start"
+                className="inline-flex items-center text-sm font-semibold text-brand-orange hover:text-[#FF9B26] transition-all self-start"
               >
                 {t('ecossistema.cta')}
               </Link>
@@ -233,11 +72,11 @@ export default function InaitecWebsite() {
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
           {/* Washes de cor — orbs muito suaves nas cores da marca */}
-          <div className="absolute top-[4%] -left-[12%] w-[800px] h-[800px] rounded-full bg-[#FA8400]/[0.07] blur-[160px]" />
-          <div className="absolute top-[26%] -right-[15%] w-[900px] h-[900px] rounded-full bg-[#00C08B]/[0.05] blur-[180px]" />
+          <div className="absolute top-[4%] -left-[12%] w-[800px] h-[800px] rounded-full bg-brand-orange/[0.07] blur-[160px]" />
+          <div className="absolute top-[26%] -right-[15%] w-[900px] h-[900px] rounded-full bg-brand-teal/[0.05] blur-[180px]" />
           <div className="absolute top-[52%] -left-[15%] w-[800px] h-[800px] rounded-full bg-[#004E69]/[0.05] blur-[160px]" />
-          <div className="absolute top-[74%] -right-[10%] w-[700px] h-[700px] rounded-full bg-[#FA8400]/[0.06] blur-[150px]" />
-          <div className="absolute top-[92%] left-[15%] w-[700px] h-[700px] rounded-full bg-[#00C08B]/[0.04] blur-[160px]" />
+          <div className="absolute top-[74%] -right-[10%] w-[700px] h-[700px] rounded-full bg-brand-orange/[0.06] blur-[150px]" />
+          <div className="absolute top-[92%] left-[15%] w-[700px] h-[700px] rounded-full bg-brand-teal/[0.04] blur-[160px]" />
 
           {/* Padrão de pontos sutil */}
           <div
@@ -259,21 +98,21 @@ export default function InaitecWebsite() {
           <div className="flex flex-wrap items-end justify-between gap-8 mb-14">
             <div className="max-w-2xl">
               <div className="mb-5 inline-flex items-center gap-2">
-                <span className="block h-px w-8 bg-[#FA8400]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                <span className="block h-px w-8 bg-brand-orange" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                   {t('programas.eyebrow')}
                 </span>
               </div>
-              <h2 className="font-extrabold text-[#0D2E38] text-display-2xl leading-[1.2] tracking-tight">
-                {t('programas.titleStart')} <span className="text-[#FA8400] italic font-medium">{t('programas.titleHighlight')}</span>
+              <h2 className="font-extrabold text-brand-navy text-display-2xl leading-[1.2] tracking-tight">
+                {t('programas.titleStart')} <span className="text-brand-orange italic font-medium">{t('programas.titleHighlight')}</span>
               </h2>
-              <p className="mt-5 text-[#0D2E38]/65 text-[15px] leading-relaxed max-w-xl">
+              <p className="mt-5 text-brand-navy/65 text-[15px] leading-relaxed max-w-xl">
                 {t('programas.desc')}
               </p>
             </div>
             <Link
               href="/programas"
-              className="text-sm font-semibold text-[#0D2E38]/70 hover:text-[#FA8400] transition-colors"
+              className="text-sm font-semibold text-brand-navy/70 hover:text-brand-orange transition-colors"
             >
               {t('programas.verTodos')}
             </Link>
@@ -291,7 +130,7 @@ export default function InaitecWebsite() {
                 href={p.href}
                 className="group rounded-2xl bg-white overflow-hidden flex flex-col hover:shadow-lg hover:shadow-black/[0.06] transition-all"
               >
-                <div className="relative h-48 overflow-hidden bg-[#E8E6E1]">
+                <div className="relative h-48 overflow-hidden bg-border">
                   <img
                     src={p.image}
                     alt={p.name}
@@ -299,21 +138,21 @@ export default function InaitecWebsite() {
                   />
                 </div>
                 <div className="p-6 flex flex-col gap-3 flex-1">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400]">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
                     {p.pillar}
                   </div>
-                  <h3 className="text-[#0D2E38] text-xl font-extrabold leading-tight">
+                  <h3 className="text-brand-navy text-xl font-extrabold leading-tight">
                     {p.name}
                   </h3>
-                  <p className="text-[#0D2E38]/60 text-sm leading-relaxed flex-1">
+                  <p className="text-brand-navy/60 text-sm leading-relaxed flex-1">
                     {p.desc}
                   </p>
-                  <div className="flex items-center justify-between pt-3 border-t border-[#E8E6E1]">
-                    <span className="text-[11px] font-semibold text-[#FA8400] uppercase tracking-widest">
+                  <div className="flex items-center justify-between pt-3 border-t border-border">
+                    <span className="text-[11px] font-semibold text-brand-orange uppercase tracking-widest">
                       {t('programas.saibaMais')}
                     </span>
-                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#F5F4EF] group-hover:bg-[#FA8400] transition-all">
-                      <ArrowRight strokeWidth={2.5} className="w-3 h-3 text-[#0D2E38] group-hover:text-white transition-colors" />
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#F5F4EF] group-hover:bg-brand-orange transition-all">
+                      <ArrowRight strokeWidth={2.5} className="w-3 h-3 text-brand-navy group-hover:text-white transition-colors" />
                     </span>
                   </div>
                 </div>
@@ -327,10 +166,10 @@ export default function InaitecWebsite() {
 
           {/* Header */}
           <div className="mb-14">
-            <h2 className="font-extrabold text-[#0D2E38] text-display-2xl leading-[1.2] tracking-tight">
-              {t('chamadas.titleStart')} <span className="text-[#FA8400] italic font-medium">{t('chamadas.titleHighlight')}</span>
+            <h2 className="font-extrabold text-brand-navy text-display-2xl leading-[1.2] tracking-tight">
+              {t('chamadas.titleStart')} <span className="text-brand-orange italic font-medium">{t('chamadas.titleHighlight')}</span>
             </h2>
-            <p className="mt-4 text-[#0D2E38]/65 text-[15px] leading-relaxed max-w-xl">
+            <p className="mt-4 text-brand-navy/65 text-[15px] leading-relaxed max-w-xl">
               {t('chamadas.desc')}
             </p>
           </div>
@@ -344,16 +183,16 @@ export default function InaitecWebsite() {
           <div className="flex flex-wrap items-end justify-between gap-8 mb-14">
             <div>
               <div className="mb-5 inline-flex items-center gap-2">
-                <span className="block h-px w-8 bg-[#FA8400]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                <span className="block h-px w-8 bg-brand-orange" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                   {t('noticias.eyebrow')}
                 </span>
               </div>
-              <h2 className="font-extrabold text-[#0D2E38] text-display-2xl leading-[1.2] tracking-tight">
-                {t('noticias.titleStart')} <span className="text-[#FA8400] italic font-medium">{t('noticias.titleHighlight')}</span>
+              <h2 className="font-extrabold text-brand-navy text-display-2xl leading-[1.2] tracking-tight">
+                {t('noticias.titleStart')} <span className="text-brand-orange italic font-medium">{t('noticias.titleHighlight')}</span>
               </h2>
             </div>
-            <Link href="/conteudo" className="text-sm font-semibold text-[#0D2E38]/70 hover:text-[#FA8400] transition-colors">
+            <Link href="/conteudo" className="text-sm font-semibold text-brand-navy/70 hover:text-brand-orange transition-colors">
               {t('noticias.verTodas')}
             </Link>
           </div>
@@ -378,10 +217,10 @@ export default function InaitecWebsite() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                   <div className="relative p-8 flex flex-col gap-4">
-                    <div className="inline-flex self-start items-center rounded-full bg-[#FA8400] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                    <div className="inline-flex self-start items-center rounded-full bg-brand-orange px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
                       {featured.category}
                     </div>
-                    <h3 className="text-white text-2xl md:text-3xl font-extrabold leading-tight max-w-md group-hover:text-[#FA8400] transition-colors">
+                    <h3 className="text-white text-2xl md:text-3xl font-extrabold leading-tight max-w-md group-hover:text-brand-orange transition-colors">
                       {featured.title}
                     </h3>
                     <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-widest text-white/50">
@@ -406,15 +245,15 @@ export default function InaitecWebsite() {
                           alt={n.title}
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        <div className="absolute top-3 left-3 inline-flex items-center rounded-full bg-[#FA8400] px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-white">
+                        <div className="absolute top-3 left-3 inline-flex items-center rounded-full bg-brand-orange px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-white">
                           {n.category}
                         </div>
                       </div>
                       <div className="p-4 flex flex-col gap-2 flex-1">
-                        <h3 className="text-[#0D2E38] text-sm font-extrabold leading-snug group-hover:text-[#FA8400] transition-colors flex-1">
+                        <h3 className="text-brand-navy text-sm font-extrabold leading-snug group-hover:text-brand-orange transition-colors flex-1">
                           {n.title}
                         </h3>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-[#0D2E38]/50">
+                        <span className="text-[10px] font-semibold uppercase tracking-widest text-brand-navy/50">
                           {n.date}
                         </span>
                       </div>
@@ -440,8 +279,8 @@ export default function InaitecWebsite() {
         {/* Fundo da seção */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 80% at 60% 50%, #0F3441 0%, transparent 70%)' }} />
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#00C08B]/[0.06] blur-[140px]" />
-          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#FA8400]/[0.07] blur-[140px]" />
+          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-brand-teal/[0.06] blur-[140px]" />
+          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-brand-orange/[0.07] blur-[140px]" />
         </div>
 
         <Container className="relative">
@@ -456,7 +295,7 @@ export default function InaitecWebsite() {
                   alt={t('contato.imageAlt')}
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E38] via-[#0D2E38]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent" />
               </div>
 
               {/* Quote — parte do mesmo card no mobile, overlay no desktop */}
@@ -471,7 +310,7 @@ export default function InaitecWebsite() {
                   </div>
                   <div className="flex items-center gap-0.5">
                     {Array(5).fill(null).map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 text-[#FA8400]" fill="currentColor" stroke="none" />
+                      <Star key={i} className="w-3.5 h-3.5 text-brand-orange" fill="currentColor" stroke="none" />
                     ))}
                   </div>
                 </div>
@@ -482,17 +321,17 @@ export default function InaitecWebsite() {
             <div className="px-0 py-6 sm:p-8 lg:p-14 flex flex-col">
               <div className="mb-8">
                 <div className="mb-4 inline-flex items-center gap-2">
-                  <span className="block h-px w-8 bg-[#FA8400]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                  <span className="block h-px w-8 bg-brand-orange" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                     {t('contato.eyebrow')}
                   </span>
                 </div>
                 <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
-                  {t('contato.titleStart')} <span className="text-[#FA8400] italic font-medium">{t('contato.titleHighlight')}</span>?
+                  {t('contato.titleStart')} <span className="text-brand-orange italic font-medium">{t('contato.titleHighlight')}</span>?
                 </h2>
                 <p className="mt-3 text-white/55 text-sm leading-relaxed">
                   {t('contato.descPrefix')}{' '}
-                  <a href="mailto:contato@inaitec.com.br" className="text-[#FA8400] hover:underline">
+                  <a href="mailto:contato@inaitec.com.br" className="text-brand-orange hover:underline">
                     contato@inaitec.com.br
                   </a>
                 </p>
@@ -505,7 +344,7 @@ export default function InaitecWebsite() {
                     <input
                       type="text"
                       placeholder={t('contato.placeholders.nome')}
-                      className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-[#FA8400]/60 transition-all"
+                      className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all"
                     />
                   </div>
                   <div>
@@ -513,7 +352,7 @@ export default function InaitecWebsite() {
                     <input
                       type="text"
                       placeholder={t('contato.placeholders.sobrenome')}
-                      className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-[#FA8400]/60 transition-all"
+                      className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all"
                     />
                   </div>
                 </div>
@@ -524,7 +363,7 @@ export default function InaitecWebsite() {
                     <input
                       type="email"
                       placeholder={t('contato.placeholders.email')}
-                      className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-[#FA8400]/60 transition-all"
+                      className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all"
                     />
                   </div>
                   <div>
@@ -532,7 +371,7 @@ export default function InaitecWebsite() {
                     <input
                       type="tel"
                       placeholder={t('contato.placeholders.telefone')}
-                      className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-[#FA8400]/60 transition-all"
+                      className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all"
                     />
                   </div>
                 </div>
@@ -542,7 +381,7 @@ export default function InaitecWebsite() {
                   <textarea
                     rows={3}
                     placeholder={t('contato.placeholders.mensagem')}
-                    className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-[#FA8400]/60 transition-all resize-none"
+                    className="w-full rounded-xl bg-white/[0.06] border border-white/10 px-4 py-3 text-white placeholder:text-white/25 text-sm focus:outline-none focus:border-brand-orange/60 transition-all resize-none"
                   />
                 </div>
 
@@ -554,7 +393,7 @@ export default function InaitecWebsite() {
                         <div className="relative shrink-0 w-[18px] h-[18px]">
                           <input
                             type="checkbox"
-                            className="peer appearance-none w-full h-full rounded-[4px] bg-white/[0.06] border border-white/10 checked:bg-[#FA8400] checked:border-[#FA8400] cursor-pointer transition-all"
+                            className="peer appearance-none w-full h-full rounded-[4px] bg-white/[0.06] border border-white/10 checked:bg-brand-orange checked:border-brand-orange cursor-pointer transition-all"
                           />
                           <Check
                             strokeWidth={2.5}
@@ -571,7 +410,7 @@ export default function InaitecWebsite() {
 
                 <button
                   type="submit"
-                  className="mt-6 w-full rounded-full bg-[#FA8400] text-white text-sm font-bold py-4 hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+                  className="mt-6 w-full rounded-full bg-brand-orange text-white text-sm font-bold py-4 hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
                 >
                   {t('contato.submit')}
                 </button>
@@ -595,10 +434,10 @@ export default function InaitecWebsite() {
         >
 
           {/* Glow laranja principal (bottom-left) */}
-          <div className="pointer-events-none absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-[#FA8400]/25 blur-[120px]" />
+          <div className="pointer-events-none absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-brand-orange/25 blur-[120px]" />
 
           {/* Glow secundário teal (top-right) */}
-          <div className="pointer-events-none absolute -top-40 -right-32 w-[450px] h-[450px] rounded-full bg-[#00C08B]/15 blur-[120px]" />
+          <div className="pointer-events-none absolute -top-40 -right-32 w-[450px] h-[450px] rounded-full bg-brand-teal/15 blur-[120px]" />
 
           {/* Highlight superior — dá profundidade ao card */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
@@ -606,14 +445,14 @@ export default function InaitecWebsite() {
           {/* Texto */}
           <div className="relative max-w-xl">
             <div className="mb-4 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
                 {t('ctaBanner.eyebrow')}
               </span>
             </div>
             <h2 className="font-extrabold text-white text-[1.85rem] md:text-[2.4rem] leading-[1.2] tracking-tight">
               {t('ctaBanner.titleStart')}{' '}
-              <span className="text-[#FA8400] italic font-medium">{t('ctaBanner.titleHighlight')}</span>{' '}
+              <span className="text-brand-orange italic font-medium">{t('ctaBanner.titleHighlight')}</span>{' '}
               {t('ctaBanner.titleEnd')}
             </h2>
             <p className="mt-4 text-white/65 text-sm leading-relaxed">
@@ -625,7 +464,7 @@ export default function InaitecWebsite() {
           <div className="relative w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:shrink-0">
             <Link
               href="/fale-conosco"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FA8400] text-white text-sm font-bold px-7 py-4 hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange text-white text-sm font-bold px-7 py-4 hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
             >
               {t('ctaBanner.ctaPrimary')}
             </Link>
@@ -640,7 +479,7 @@ export default function InaitecWebsite() {
         </div>
       </Section>
 
-    </main>
+    </>
   )
 }
 
@@ -661,18 +500,18 @@ function FaqSection() {
 
           <div className="lg:sticky lg:top-24">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">{t('faq.eyebrow')}</span>
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">{t('faq.eyebrow')}</span>
             </div>
             <h2 className="font-extrabold text-white text-[2.5rem] leading-[1.2] tracking-tight">
-              {t('faq.titleStart')} <span className="text-[#FA8400] italic font-medium">{t('faq.titleHighlight')}</span>
+              {t('faq.titleStart')} <span className="text-brand-orange italic font-medium">{t('faq.titleHighlight')}</span>
             </h2>
             <p className="mt-4 text-white/60 text-sm leading-relaxed max-w-xs">
               {t('faq.desc')}
             </p>
             <Link
               href="/fale-conosco"
-              className="mt-6 inline-flex items-center text-sm font-semibold text-[#FA8400] hover:text-[#FF9B26] transition-all"
+              className="mt-6 inline-flex items-center text-sm font-semibold text-brand-orange hover:text-[#FF9B26] transition-all"
             >
               {t('faq.cta')}
             </Link>
@@ -700,7 +539,7 @@ function FaqSection() {
                     <span className={`text-[16px] font-semibold transition-colors ${isOpen ? 'text-white' : 'text-white/85 group-hover:text-white'}`}>
                       {item.q}
                     </span>
-                    <span className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-[#FA8400] text-white rotate-45 shadow-lg shadow-[#FA8400]/30' : 'bg-white/[0.08] text-white/70 group-hover:bg-white/15 group-hover:text-white border border-white/10'}`}>
+                    <span className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-brand-orange text-white rotate-45 shadow-lg shadow-brand-orange/30' : 'bg-white/[0.08] text-white/70 group-hover:bg-white/15 group-hover:text-white border border-white/10'}`}>
                       <Plus strokeWidth={2.5} className="w-3.5 h-3.5" />
                     </span>
                   </button>
@@ -737,12 +576,12 @@ const CASE_ASSETS = [
   {
     logo: '/logo1.png',
     photo: '/imagens-pessoas/close-up-labor-union-member%201.png',
-    accent: '#FA8400',
+    accent: 'var(--color-brand-orange)',
   },
   {
     logo: '/logo2.png',
     photo: '/imagens-pessoas/low-angle-businessman%201.png',
-    accent: '#00C08B',
+    accent: 'var(--color-brand-teal)',
   },
   {
     logo: '/logo3.png',
@@ -777,7 +616,7 @@ function TragaSection() {
     ...c,
     logo: CASE_ASSETS[i]?.logo ?? '/logo1.png',
     photo: CASE_ASSETS[i]?.photo ?? '',
-    accent: CASE_ASSETS[i]?.accent ?? '#FA8400',
+    accent: CASE_ASSETS[i]?.accent ?? 'var(--color-brand-orange)',
   }))
 
   const goTo = (resolver: (current: number) => number) => {
@@ -804,19 +643,19 @@ function TragaSection() {
         <div className="flex flex-col gap-6 mb-10 md:flex-row md:items-end md:justify-between md:gap-8">
           <div className="max-w-2xl">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 {t('resultados.eyebrow')}
               </span>
             </div>
-            <h2 className="font-extrabold text-[#0D2E38] text-display-2xl leading-[1.2] tracking-tight">
+            <h2 className="font-extrabold text-brand-navy text-display-2xl leading-[1.2] tracking-tight">
               {t('resultados.titleStart')}{' '}
-              <span className="text-[#FA8400] italic font-medium">{t('resultados.titleHighlight')}</span>
+              <span className="text-brand-orange italic font-medium">{t('resultados.titleHighlight')}</span>
             </h2>
           </div>
           <Link
             href="/traga-sua-empresa"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25 shrink-0"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25 shrink-0"
           >
             {t('resultados.ctaInstalar')}
           </Link>
@@ -827,7 +666,7 @@ function TragaSection() {
           {cases.map((caseItem) => (
             <article
               key={caseItem.company}
-              className="snap-start shrink-0 w-[88%] sm:w-[420px] rounded-2xl bg-[#0D2E38] p-7 flex flex-col gap-6"
+              className="snap-start shrink-0 w-[88%] sm:w-[420px] rounded-2xl bg-brand-navy p-7 flex flex-col gap-6"
             >
               {/* Pessoa */}
               <div className="flex items-center gap-4">
@@ -894,7 +733,7 @@ function TragaSection() {
           </div>
 
           {/* Card quote escuro */}
-          <div className="rounded-2xl bg-[#0D2E38] p-7 flex flex-col gap-5 min-h-[380px]">
+          <div className="rounded-2xl bg-brand-navy p-7 flex flex-col gap-5 min-h-[380px]">
             <img
               src={c.logo}
               alt={c.company}
@@ -913,14 +752,14 @@ function TragaSection() {
           {c.metrics.map((m) => (
             <div key={m.label} className="rounded-2xl bg-white p-7 flex flex-col justify-between min-h-[380px]">
               <div>
-                <div className="text-[#0D2E38] font-bold text-[15px] leading-snug">
+                <div className="text-brand-navy font-bold text-[15px] leading-snug">
                   {m.label}
                 </div>
-                <div className="text-[#0D2E38]/50 text-[13px] mt-1">
+                <div className="text-brand-navy/50 text-[13px] mt-1">
                   {t('resultados.yearRange')}
                 </div>
               </div>
-              <div className="text-[#FA8400] text-[3.5rem] font-extrabold leading-none tracking-tight">
+              <div className="text-brand-orange text-[3.5rem] font-extrabold leading-none tracking-tight">
                 {m.value}
               </div>
             </div>
@@ -935,7 +774,7 @@ function TragaSection() {
               <button
                 key={i}
                 onClick={() => goTo(() => i)}
-                className={`h-1 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-[#FA8400]' : 'w-4 bg-[#0D2E38]/20 hover:bg-[#0D2E38]/40'}`}
+                className={`h-1 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-brand-orange' : 'w-4 bg-brand-navy/20 hover:bg-brand-navy/40'}`}
                 aria-label={cases[i].company}
               />
             ))}
@@ -944,14 +783,14 @@ function TragaSection() {
             <button
               onClick={() => goTo((i) => (i - 1 + cases.length) % cases.length)}
               aria-label={t('resultados.prevAria')}
-              className="w-10 h-10 rounded-full border border-[#E8E6E1] flex items-center justify-center text-[#004E69] hover:border-[#FA8400] hover:text-[#FA8400] hover:bg-[#FA8400]/5 transition-all"
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-[#004E69] hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 transition-all"
             >
               <ChevronLeft strokeWidth={2.5} className="w-4 h-4" />
             </button>
             <button
               onClick={() => goTo((i) => (i + 1) % cases.length)}
               aria-label={t('resultados.nextAria')}
-              className="w-10 h-10 rounded-full border border-[#E8E6E1] flex items-center justify-center text-[#004E69] hover:border-[#FA8400] hover:text-[#FA8400] hover:bg-[#FA8400]/5 transition-all"
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-[#004E69] hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 transition-all"
             >
               <ChevronRight strokeWidth={2.5} className="w-4 h-4" />
             </button>
@@ -963,9 +802,9 @@ function TragaSection() {
 
           {/* Título */}
           <div className="md:shrink-0 md:w-[38%] md:pr-8">
-            <p className="text-[#0D2E38] font-extrabold text-[1.4rem] md:text-[1.6rem] leading-tight tracking-tight">
+            <p className="text-brand-navy font-extrabold text-[1.4rem] md:text-[1.6rem] leading-tight tracking-tight">
               {t('resultados.ctaPartnersStart')}{' '}
-              <span className="text-[#FA8400] italic font-medium">{t('resultados.ctaPartnersHighlight')}</span>
+              <span className="text-brand-orange italic font-medium">{t('resultados.ctaPartnersHighlight')}</span>
             </p>
           </div>
 

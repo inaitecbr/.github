@@ -39,7 +39,7 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
               <span
                 className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
                   isOpen
-                    ? 'bg-[#FA8400] text-white rotate-45 shadow-lg shadow-[#FA8400]/30'
+                    ? 'bg-brand-orange text-white rotate-45 shadow-lg shadow-brand-orange/30'
                     : 'bg-white/[0.08] text-white/70 group-hover:bg-white/15 group-hover:text-white border border-white/10'
                 }`}
               >

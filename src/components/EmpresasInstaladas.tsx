@@ -100,7 +100,7 @@ export default function EmpresasInstaladas() {
         placeholder="Buscar empresa..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-full pl-9 pr-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-white text-[12px] placeholder:text-white/30 focus:outline-none focus:border-[#FA8400]/50 transition-colors"
+        className="w-full pl-9 pr-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-white text-[12px] placeholder:text-white/30 focus:outline-none focus:border-brand-orange/50 transition-colors"
       />
     </div>
   )
@@ -113,7 +113,7 @@ export default function EmpresasInstaladas() {
   )
 
   return (
-    <Section padding="md" className="bg-[#0D2E38]">
+    <Section padding="md" className="bg-brand-navy">
 
         <div className="grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-12 items-start">
 
@@ -125,7 +125,7 @@ export default function EmpresasInstaladas() {
                 <span className="text-sm font-semibold text-white inline-flex items-center gap-2">
                   Filtros
                   {filtrosAtivos > 0 && (
-                    <span className="inline-flex items-center justify-center min-w-[20px] h-5 rounded-full bg-[#FA8400] text-white text-[10px] font-bold px-1.5">
+                    <span className="inline-flex items-center justify-center min-w-[20px] h-5 rounded-full bg-brand-orange text-white text-[10px] font-bold px-1.5">
                       {filtrosAtivos}
                     </span>
                   )}
@@ -141,7 +141,7 @@ export default function EmpresasInstaladas() {
                 {filtrosAtivos > 0 && (
                   <button
                     onClick={limparFiltros}
-                    className="mt-1 text-[12px] font-semibold text-[#FA8400] hover:underline self-start"
+                    className="mt-1 text-[12px] font-semibold text-brand-orange hover:underline self-start"
                   >
                     Limpar filtros
                   </button>
@@ -158,7 +158,7 @@ export default function EmpresasInstaladas() {
                 <button
                   onClick={limparFiltros}
                   disabled={filtrosAtivos === 0}
-                  className="text-[12px] font-semibold text-white/45 hover:text-[#FA8400] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-white/45 transition-colors"
+                  className="text-[12px] font-semibold text-white/45 hover:text-brand-orange disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-white/45 transition-colors"
                 >
                   Limpar tudo
                 </button>
@@ -177,7 +177,7 @@ export default function EmpresasInstaladas() {
             {/* Header com contador */}
             <div className="flex items-baseline justify-between mb-6 pb-4 border-b border-white/10">
               <h2 className="text-base font-bold text-white">
-                <span className="text-[#FA8400]">{filtered.length}</span>{' '}
+                <span className="text-brand-orange">{filtered.length}</span>{' '}
                 empresa{filtered.length === 1 ? '' : 's'}
               </h2>
               <span className="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/45">
@@ -195,7 +195,7 @@ export default function EmpresasInstaladas() {
                       type="button"
                       onClick={() => setSelected(empresa)}
                       aria-label={`Ver detalhes de ${empresa.nome}`}
-                      className="group relative flex items-center justify-center h-[180px] rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FA8400]/60"
+                      className="group relative flex items-center justify-center h-[180px] rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
                     >
                       <span className="absolute top-4 right-5 text-[10px] font-bold uppercase tracking-[0.18em] text-white/30 transition-colors duration-300 group-hover:text-white/55">
                         {empresa.setor}
@@ -222,7 +222,7 @@ export default function EmpresasInstaladas() {
                 </p>
                 <button
                   onClick={limparFiltros}
-                  className="inline-flex items-center rounded-full border border-white/20 bg-white/5 text-white text-sm font-semibold px-5 py-3 hover:border-[#FA8400] hover:text-[#FA8400] transition-all"
+                  className="inline-flex items-center rounded-full border border-white/20 bg-white/5 text-white text-sm font-semibold px-5 py-3 hover:border-brand-orange hover:text-brand-orange transition-all"
                 >
                   Limpar filtros
                 </button>
@@ -282,7 +282,7 @@ export default function EmpresasInstaladas() {
                   <div className="mt-auto pt-8 flex flex-wrap items-center gap-4">
                     <Link
                       href="/fale-conosco"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FA8400] text-white text-sm font-semibold px-6 py-3 shadow-lg shadow-[#FA8400]/20 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/30 transition-all"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange text-white text-sm font-semibold px-6 py-3 shadow-lg shadow-brand-orange/20 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/30 transition-all"
                     >
                       Entrar em contato
                     </Link>
@@ -290,7 +290,7 @@ export default function EmpresasInstaladas() {
                       href={details.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[14px] font-semibold text-neutral-900 hover:text-[#FA8400] transition-colors"
+                      className="inline-flex items-center gap-2 text-[14px] font-semibold text-neutral-900 hover:text-brand-orange transition-colors"
                     >
                       Visitar site
                       <ArrowRight strokeWidth={2} className="w-4 h-4" />
@@ -321,8 +321,8 @@ export default function EmpresasInstaladas() {
                   { label: 'Investidores', value: details.investors.join(', ') },
                 ].map((info) => (
                   <div key={info.label} className="bg-white px-8 md:px-10 py-6">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">{info.label}</p>
-                    <p className="mt-2 text-[15px] font-bold" style={{ color: info.color ?? '#0D2E38' }}>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">{info.label}</p>
+                    <p className="mt-2 text-[15px] font-bold" style={{ color: info.color ?? 'var(--color-brand-navy)' }}>
                       {info.value}
                     </p>
                   </div>

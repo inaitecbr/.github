@@ -18,13 +18,13 @@ type PillarAsset = {
 
 const PILLAR_ASSETS: PillarAsset[] = [
   {
-    accent: '#FA8400',
+    accent: 'var(--color-brand-orange)',
     orbPos: 'top-[-20%] right-[-15%]',
     href: '/programas/acelera-pedra-branca',
     icon: <Zap strokeWidth={2} className="w-full h-full" />,
   },
   {
-    accent: '#00C08B',
+    accent: 'var(--color-brand-teal)',
     orbPos: 'top-[-20%] left-[-15%]',
     href: '/programas/inovacao-aberta',
     icon: <Workflow strokeWidth={2} className="w-full h-full" />,
@@ -36,7 +36,7 @@ const PILLAR_ASSETS: PillarAsset[] = [
     icon: <GraduationCap strokeWidth={2} className="w-full h-full" />,
   },
   {
-    accent: '#FA8400',
+    accent: 'var(--color-brand-orange)',
     orbPos: 'top-[-25%] right-[-10%]',
     href: '/programas/catalisa-inaitec',
     icon: <TrendingUp strokeWidth={2} className="w-full h-full" />,
@@ -109,14 +109,14 @@ export default function EcosystemAccordion() {
         <div className="flex flex-wrap items-end justify-between gap-8 mb-8">
           <div className="max-w-3xl">
             <div className="mb-4 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 {t('eyebrow')}
               </span>
             </div>
             <h2 className="font-extrabold text-white text-display-xl leading-[1.15] tracking-tight">
               {t('titleStart')}{' '}
-              <em className="italic font-medium text-[#FA8400] tracking-tight">{t('titleHighlight')}</em>
+              <em className="italic font-medium text-brand-orange tracking-tight">{t('titleHighlight')}</em>
             </h2>
           </div>
           <p className="text-white/60 text-[14px] leading-relaxed max-w-sm">

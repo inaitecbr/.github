@@ -70,7 +70,7 @@ export function Section({
       data-theme={theme}
       className={cn(
         'relative z-10',
-        theme === 'light' && 'bg-[#F5F4EF] text-[#0D2E38]',
+        theme === 'light' && 'bg-[#F5F4EF] text-brand-navy',
         PADDING_MAP[padding],
         className,
       )}

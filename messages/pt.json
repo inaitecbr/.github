@@ -112,14 +112,6 @@
         "anos": "anos de ecossistema"
       }
     },
-    "parceiros": {
-      "eyebrow": "Parceiros",
-      "title": "Quem caminha",
-      "titleHighlight": "com a gente",
-      "desc": "Uma rede de mantenedores e apoiadores que viabilizam nossos programas, infraestrutura e projetos de impacto.",
-      "mantenedores": "Mantenedores",
-      "apoiadores": "Apoiadores"
-    },
     "ecossistema": {
       "eyebrow": "O ecossistema",
       "titleStart": "O único parque tecnológico urbano do Brasil em",
@@ -259,8 +251,14 @@
           "person": "Rodrigo Maia",
           "role": "CEO · NexusHealth",
           "metrics": [
-            { "label": "Captados em Série A", "value": "R$50M" },
-            { "label": "Crescimento de time em 12 meses", "value": "13×" }
+            {
+              "label": "Captados em Série A",
+              "value": "R$50M"
+            },
+            {
+              "label": "Crescimento de time em 12 meses",
+              "value": "13×"
+            }
           ]
         },
         {
@@ -270,8 +268,14 @@
           "person": "Jorge Dias",
           "role": "Fundador · AgroSmart",
           "metrics": [
-            { "label": "Produtores atendidos", "value": "+200" },
-            { "label": "Do MVP ao primeiro contrato", "value": "3 meses" }
+            {
+              "label": "Produtores atendidos",
+              "value": "+200"
+            },
+            {
+              "label": "Do MVP ao primeiro contrato",
+              "value": "3 meses"
+            }
           ]
         },
         {
@@ -281,8 +285,14 @@
           "person": "André Luz",
           "role": "COO · CityFlow",
           "metrics": [
-            { "label": "Cidades com contratos ativos", "value": "3" },
-            { "label": "Em contratos públicos gerados", "value": "R$12M" }
+            {
+              "label": "Cidades com contratos ativos",
+              "value": "3"
+            },
+            {
+              "label": "Em contratos públicos gerados",
+              "value": "R$12M"
+            }
           ]
         },
         {
@@ -292,8 +302,14 @@
           "person": "Carla Mendes",
           "role": "CEO · EduTech SC",
           "metrics": [
-            { "label": "Instituições parceiras", "value": "50+" },
-            { "label": "Alunos impactados", "value": "120K" }
+            {
+              "label": "Instituições parceiras",
+              "value": "50+"
+            },
+            {
+              "label": "Alunos impactados",
+              "value": "120K"
+            }
           ]
         }
       ]
@@ -352,7 +368,11 @@
         "metric": "+300",
         "metricLabel": "startups aceleradas",
         "desc": "Programas intensivos que conectam startups em estágio inicial e pequenas empresas a mentoria qualificada, investimento estruturado e rotas diretas para o mercado.",
-        "tags": ["Mentoria", "Investimento", "Go-to-market"],
+        "tags": [
+          "Mentoria",
+          "Investimento",
+          "Go-to-market"
+        ],
         "ctaLabel": "Acelera Pedra Branca"
       },
       {
@@ -361,7 +381,11 @@
         "metric": "20",
         "metricLabel": "corporações parceiras",
         "desc": "Grandes e médias empresas encontram startups disruptivas para co-criar soluções reais. Da curadoria ao piloto, estruturamos o match e medimos resultados.",
-        "tags": ["Curadoria", "Pilotos", "Co-criação"],
+        "tags": [
+          "Curadoria",
+          "Pilotos",
+          "Co-criação"
+        ],
         "ctaLabel": "Inovação Aberta"
       },
       {
@@ -370,7 +394,11 @@
         "metric": "12",
         "metricLabel": "instituições parceiras",
         "desc": "Universidades, institutos de pesquisa e setor público conectados ao ecossistema para transferência de tecnologia, pesquisa aplicada e desenvolvimento regional.",
-        "tags": ["P&D", "Transferência tec.", "Editais"],
+        "tags": [
+          "P&D",
+          "Transferência tec.",
+          "Editais"
+        ],
         "ctaLabel": "Pesquisa Aplicada"
       },
       {
@@ -379,7 +407,11 @@
         "metric": "R$3,5Bi",
         "metricLabel": "em negócios gerados",
         "desc": "Acesso curado a startups validadas, deal flow qualificado e conexão com co-investidores nacionais e internacionais. Do anjo ao venture capital.",
-        "tags": ["Deal flow", "Co-investimento", "Venture capital"],
+        "tags": [
+          "Deal flow",
+          "Co-investimento",
+          "Venture capital"
+        ],
         "ctaLabel": "Catalisa Inaitec"
       }
     ]
@@ -409,9 +441,18 @@
         "title": "Fundação do Inaitec",
         "desc": "Nasce o hub de inovação no Parque Tecnológico Pedra Branca, com a missão de conectar startups, empresas e governo em um ecossistema único.",
         "metrics": [
-          { "value": "1ª", "label": "sede inaugurada" },
-          { "value": "3", "label": "mantenedores fundadores" },
-          { "value": "20 mil", "label": "m² de operação" }
+          {
+            "value": "1ª",
+            "label": "sede inaugurada"
+          },
+          {
+            "value": "3",
+            "label": "mantenedores fundadores"
+          },
+          {
+            "value": "20 mil",
+            "label": "m² de operação"
+          }
         ]
       },
       {
@@ -419,9 +460,18 @@
         "title": "Primeiros programas de aceleração",
         "desc": "Lançamento das primeiras turmas de aceleração, formando startups com mentoria intensiva e conexão com o mercado catarinense.",
         "metrics": [
-          { "value": "12", "label": "startups na 1ª turma" },
-          { "value": "8", "label": "mentores ativos" },
-          { "value": "2", "label": "programas lançados" }
+          {
+            "value": "12",
+            "label": "startups na 1ª turma"
+          },
+          {
+            "value": "8",
+            "label": "mentores ativos"
+          },
+          {
+            "value": "2",
+            "label": "programas lançados"
+          }
         ]
       },
       {
@@ -429,9 +479,18 @@
         "title": "Missões Internacionais",
         "desc": "Expansão global com as primeiras missões ao Vale do Silício e Europa, abrindo portas para startups brasileiras em mercados internacionais.",
         "metrics": [
-          { "value": "3", "label": "países visitados" },
-          { "value": "+40", "label": "startups globalizadas" },
-          { "value": "R$50M", "label": "em negócios gerados" }
+          {
+            "value": "3",
+            "label": "países visitados"
+          },
+          {
+            "value": "+40",
+            "label": "startups globalizadas"
+          },
+          {
+            "value": "R$50M",
+            "label": "em negócios gerados"
+          }
         ]
       },
       {
@@ -439,9 +498,18 @@
         "title": "+100 empresas no ecossistema",
         "desc": "Marco de 100 empresas instaladas no parque, consolidando o Pedra Branca como o maior ecossistema de inovação urbano do Brasil.",
         "metrics": [
-          { "value": "+100", "label": "empresas instaladas" },
-          { "value": "R$500M", "label": "em negócios gerados" },
-          { "value": "3 mil", "label": "empregos diretos" }
+          {
+            "value": "+100",
+            "label": "empresas instaladas"
+          },
+          {
+            "value": "R$500M",
+            "label": "em negócios gerados"
+          },
+          {
+            "value": "3 mil",
+            "label": "empregos diretos"
+          }
         ]
       },
       {
@@ -449,9 +517,18 @@
         "title": "Inovação Aberta com Corporações",
         "desc": "Estruturação dos programas de inovação aberta, conectando grandes empresas e setor público a soluções desenvolvidas pelas startups do hub.",
         "metrics": [
-          { "value": "20", "label": "corporações parceiras" },
-          { "value": "+200", "label": "startups aceleradas" },
-          { "value": "R$1,5Bi", "label": "em negócios gerados" }
+          {
+            "value": "20",
+            "label": "corporações parceiras"
+          },
+          {
+            "value": "+200",
+            "label": "startups aceleradas"
+          },
+          {
+            "value": "R$1,5Bi",
+            "label": "em negócios gerados"
+          }
         ]
       },
       {
@@ -459,9 +536,18 @@
         "title": "Onde o Inaitec está hoje",
         "desc": "17 anos de ecossistema consolidado. O Inaitec é hoje o maior hub de inovação urbano do Sul do Brasil, com operação em pleno vapor no Parque Tecnológico Pedra Branca.",
         "metrics": [
-          { "value": "+300", "label": "startups aceleradas" },
-          { "value": "R$3,5Bi", "label": "em negócios gerados" },
-          { "value": "1,7M m²", "label": "de área de inovação" }
+          {
+            "value": "+300",
+            "label": "startups aceleradas"
+          },
+          {
+            "value": "R$3,5Bi",
+            "label": "em negócios gerados"
+          },
+          {
+            "value": "1,7M m²",
+            "label": "de área de inovação"
+          }
         ]
       }
     ]

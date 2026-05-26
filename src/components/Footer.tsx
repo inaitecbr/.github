@@ -60,12 +60,12 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-[#0D2E38]">
+    <footer className="bg-brand-navy">
       <div className="px-[clamp(1.25rem,4vw+0.5rem,6.75rem)] pt-14 pb-10">
         <div className="mb-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
           <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <div className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#FA8400]">
+              <div className="mb-2 text-[10px] font-bold uppercase tracking-widest text-brand-orange">
                 {t('newsletter.eyebrow')}
               </div>
               <h3 className="text-white text-xl font-extrabold leading-tight">
@@ -83,11 +83,11 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder={t('newsletter.emailPlaceholder')}
-                className="h-11 min-w-[260px] rounded-full border border-white/15 bg-white/[0.04] px-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[#FA8400]/60"
+                className="h-11 min-w-[260px] rounded-full border border-white/15 bg-white/[0.04] px-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-brand-orange/60"
               />
               <button
                 type="submit"
-                className="h-11 rounded-full bg-[#FA8400] px-6 text-sm font-semibold text-white transition-all hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-[#FA8400]/25"
+                className="h-11 rounded-full bg-brand-orange px-6 text-sm font-semibold text-white transition-all hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-brand-orange/25"
               >
                 {t('newsletter.submit')}
               </button>
@@ -119,7 +119,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.name}
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 hover:bg-[#FA8400] hover:text-white transition-all"
+                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 hover:bg-brand-orange hover:text-white transition-all"
                 >
                   {item.icon}
                 </a>
@@ -128,7 +128,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="mb-4 text-[10px] font-bold uppercase tracking-widest text-[#FA8400]">
+            <div className="mb-4 text-[10px] font-bold uppercase tracking-widest text-brand-orange">
               {t('sections.programas')}
             </div>
             <ul className="space-y-2.5">
@@ -143,7 +143,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="mb-4 text-[10px] font-bold uppercase tracking-widest text-[#FA8400]">
+            <div className="mb-4 text-[10px] font-bold uppercase tracking-widest text-brand-orange">
               {t('sections.institucional')}
             </div>
             <ul className="space-y-2.5">
@@ -158,7 +158,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="mb-4 text-[10px] font-bold uppercase tracking-widest text-[#FA8400]">
+            <div className="mb-4 text-[10px] font-bold uppercase tracking-widest text-brand-orange">
               {t('sections.ecossistema')}
             </div>
             <ul className="space-y-2.5">

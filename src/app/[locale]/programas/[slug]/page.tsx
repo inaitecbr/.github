@@ -216,7 +216,7 @@ export default async function ProgramaPage({ params }: Props) {
   const programa = getPrograma(slug)
   if (!programa) notFound()
 
-  const accent = '#FA8400'
+  const accent = 'var(--color-brand-orange)'
   const statusLabel = STATUS_LABEL[programa.status]
   const statusColor = STATUS_COLOR[programa.status]
   const isAberta = programa.status === 'aberta' && programa.deadline
@@ -244,7 +244,7 @@ export default async function ProgramaPage({ params }: Props) {
       : 'Manifestar interesse'
 
   return (
-    <main className="relative bg-[#0D2E38] overflow-x-clip">
+    <main className="relative bg-brand-navy overflow-x-clip">
 
       {/* Sticky bar — só quando aberta com deadline */}
       {isAberta && programa.deadline && (
@@ -257,9 +257,9 @@ export default async function ProgramaPage({ params }: Props) {
 
       {/* ── Fundo orgânico ─────────────────────────────────────────────── */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute top-[40vh] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-[#FA8400]/[0.10] blur-[160px]" />
-        <div className="absolute top-[180vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-[#00C08B]/[0.06] blur-[160px]" />
-        <div className="absolute top-[320vh] left-[15%] w-[900px] h-[900px] rounded-full bg-[#FA8400]/[0.08] blur-[160px]" />
+        <div className="absolute top-[40vh] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />
+        <div className="absolute top-[180vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-brand-teal/[0.06] blur-[160px]" />
+        <div className="absolute top-[320vh] left-[15%] w-[900px] h-[900px] rounded-full bg-brand-orange/[0.08] blur-[160px]" />
 
         <div
           className="absolute top-[700px] left-0 right-0 bottom-0 opacity-[0.025]"
@@ -279,7 +279,7 @@ export default async function ProgramaPage({ params }: Props) {
       <section className="relative z-10 pt-[108px] pb-16 overflow-hidden">
         <BrandPattern
           variant="dots"
-          color="#FA8400"
+          color="var(--color-brand-orange)"
           className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
         />
 
@@ -315,7 +315,7 @@ export default async function ProgramaPage({ params }: Props) {
             <div className="mt-10 w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <Link
                 href="#inscricao"
-                className="inline-flex items-center justify-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+                className="inline-flex items-center justify-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
               >
                 {ctaPrimario}
               </Link>
@@ -331,8 +331,8 @@ export default async function ProgramaPage({ params }: Props) {
             {isAberta && programa.deadline && (
               <div className="mt-10 pt-8 border-t border-white/10 max-w-md">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="block w-1.5 h-1.5 rounded-full bg-[#00C08B] animate-pulse" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#00C08B]">
+                  <span className="block w-1.5 h-1.5 rounded-full bg-brand-teal animate-pulse" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-teal">
                     Inscrições abertas · prazo
                   </span>
                 </div>
@@ -354,7 +354,7 @@ export default async function ProgramaPage({ params }: Props) {
               className="object-cover"
               sizes="(min-width: 1024px) 45vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0D2E38]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/60 via-transparent to-transparent" />
           </div>
         </Container>
       </section>
@@ -363,11 +363,11 @@ export default async function ProgramaPage({ params }: Props) {
       <section
         id="o-que-e"
         data-theme="light"
-        className="relative z-10 scroll-mt-24 bg-[#F5F4EF] text-[#0D2E38] overflow-hidden"
+        className="relative z-10 scroll-mt-24 bg-[#F5F4EF] text-brand-navy overflow-hidden"
       >
         <BrandPattern
           variant="dots"
-          color="#0D2E38"
+          color="var(--color-brand-navy)"
           className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
         />
 
@@ -392,7 +392,7 @@ export default async function ProgramaPage({ params }: Props) {
               </h2>
             </div>
 
-            <div className="flex flex-col gap-6 text-[#0D2E38]/75 text-[17px] leading-relaxed">
+            <div className="flex flex-col gap-6 text-brand-navy/75 text-[17px] leading-relaxed">
               {oQueE.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -400,7 +400,7 @@ export default async function ProgramaPage({ params }: Props) {
               {/* Highlight callout */}
               {programa.highlight && (
                 <blockquote
-                  className="mt-2 border-l-4 pl-6 py-3 rounded-r-lg text-[#0D2E38] font-semibold text-xl leading-snug"
+                  className="mt-2 border-l-4 pl-6 py-3 rounded-r-lg text-brand-navy font-semibold text-xl leading-snug"
                   style={{ borderColor: accent, backgroundColor: `${accent}0F` }}
                 >
                   {programa.highlight}
@@ -488,8 +488,8 @@ export default async function ProgramaPage({ params }: Props) {
           </div>
 
           <div className="relative rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md overflow-hidden">
-            <div className="pointer-events-none absolute -top-32 -left-20 w-[400px] h-[400px] rounded-full bg-[#FA8400]/[0.08] blur-[120px]" />
-            <div className="pointer-events-none absolute -bottom-32 -right-20 w-[400px] h-[400px] rounded-full bg-[#00C08B]/[0.06] blur-[120px]" />
+            <div className="pointer-events-none absolute -top-32 -left-20 w-[400px] h-[400px] rounded-full bg-brand-orange/[0.08] blur-[120px]" />
+            <div className="pointer-events-none absolute -bottom-32 -right-20 w-[400px] h-[400px] rounded-full bg-brand-teal/[0.06] blur-[120px]" />
 
             <div className="relative grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
               {stats.map((m) => (
@@ -526,7 +526,7 @@ export default async function ProgramaPage({ params }: Props) {
                 </span>{' '}
                 se…
               </h2>
-              <p className="mt-6 text-[#0D2E38]/65 text-base leading-relaxed">
+              <p className="mt-6 text-brand-navy/65 text-base leading-relaxed">
                 Confira se sua empresa atende ao perfil antes de se inscrever. Critérios objetivos,
                 sem letra miúda.
               </p>
@@ -536,7 +536,7 @@ export default async function ProgramaPage({ params }: Props) {
               {paraQuem.map((c, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-3 rounded-2xl bg-white border border-[#E8E6E1] p-5"
+                  className="flex items-start gap-3 rounded-2xl bg-white border border-border p-5"
                 >
                   <span
                     className="mt-0.5 shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full"
@@ -544,7 +544,7 @@ export default async function ProgramaPage({ params }: Props) {
                   >
                     <Check strokeWidth={3} className="w-3.5 h-3.5" style={{ color: accent }} />
                   </span>
-                  <p className="text-[#0D2E38]/85 text-[15px] leading-relaxed">{c}</p>
+                  <p className="text-brand-navy/85 text-[15px] leading-relaxed">{c}</p>
                 </li>
               ))}
             </ul>
@@ -597,11 +597,11 @@ export default async function ProgramaPage({ params }: Props) {
       <section
         id="como-funciona"
         data-theme="light"
-        className="relative z-10 scroll-mt-24 bg-[#F5F4EF] text-[#0D2E38] overflow-hidden"
+        className="relative z-10 scroll-mt-24 bg-[#F5F4EF] text-brand-navy overflow-hidden"
       >
         <BrandPattern
           variant="dots"
-          color="#0D2E38"
+          color="var(--color-brand-navy)"
           className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
         />
 
@@ -623,7 +623,7 @@ export default async function ProgramaPage({ params }: Props) {
               </span>
               .
             </h2>
-            <p className="mt-6 text-[#0D2E38]/70 text-base leading-relaxed">
+            <p className="mt-6 text-brand-navy/70 text-base leading-relaxed">
               Etapas claras, com critérios objetivos em cada fase. Sem surpresa, sem caixa-preta.
             </p>
           </div>
@@ -702,15 +702,15 @@ export default async function ProgramaPage({ params }: Props) {
 
       {/* ══════════════ 9. CTA FINAL DE INSCRIÇÃO ══════════════ */}
       <Section id="inscricao" padding="md" className="scroll-mt-24">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0D2E38] via-[#004E69] to-[#0D2E38] p-8 sm:p-12 md:p-20">
-            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-[#FA8400]/20 blur-[140px]" />
-            <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full bg-[#00C08B]/10 blur-[120px]" />
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-navy via-[#004E69] to-brand-navy p-8 sm:p-12 md:p-20">
+            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-brand-orange/20 blur-[140px]" />
+            <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full bg-brand-teal/10 blur-[120px]" />
 
             <div className="relative grid lg:grid-cols-[1fr_auto] gap-10 items-center">
               <div>
                 <div className="mb-5 inline-flex items-center gap-2">
-                  <span className="block h-px w-8 bg-[#FA8400]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                  <span className="block h-px w-8 bg-brand-orange" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                     {programa.status === 'aberta'
                       ? 'Inscreva-se'
                       : programa.status === 'em-breve'
@@ -725,7 +725,7 @@ export default async function ProgramaPage({ params }: Props) {
                   {programa.status === 'em-breve' && 'A próxima turma está chegando. '}
                   {programa.status === 'fechada' && 'Esta turma já fechou. '}
                   {programa.status === 'fluxo-continuo' && 'Aceitamos manifestações o ano todo. '}
-                  <span className="italic font-medium text-[#FA8400]">
+                  <span className="italic font-medium text-brand-orange">
                     {programa.status === 'fechada' ? 'Fique na lista da próxima.' : 'Vamos conversar?'}
                   </span>
                 </h2>
@@ -744,7 +744,7 @@ export default async function ProgramaPage({ params }: Props) {
               <div className="w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                 <Link
                   href="/fale-conosco"
-                  className="inline-flex items-center justify-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+                  className="inline-flex items-center justify-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
                 >
                   {ctaPrimario}
                 </Link>

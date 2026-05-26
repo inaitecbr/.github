@@ -5,13 +5,13 @@ import { Check, ChevronDown } from 'lucide-react'
 
 const THEMES = {
   light: {
-    border: 'border-[#0D2E38]/10',
-    headingText: 'text-[#0D2E38]',
-    optionInactive: 'text-[#0D2E38]/65 group-hover:text-[#0D2E38]',
-    optionActive: 'text-[#0D2E38] font-semibold',
-    chevron: 'text-[#0D2E38]/40 group-hover:text-[#0D2E38]',
-    countText: 'text-[#0D2E38]/40',
-    boxInactive: 'border-[#0D2E38]/25 group-hover:border-[#FA8400]/60 bg-white',
+    border: 'border-brand-navy/10',
+    headingText: 'text-brand-navy',
+    optionInactive: 'text-brand-navy/65 group-hover:text-brand-navy',
+    optionActive: 'text-brand-navy font-semibold',
+    chevron: 'text-brand-navy/40 group-hover:text-brand-navy',
+    countText: 'text-brand-navy/40',
+    boxInactive: 'border-brand-navy/25 group-hover:border-brand-orange/60 bg-white',
   },
   dark: {
     border: 'border-white/10',
@@ -20,7 +20,7 @@ const THEMES = {
     optionActive: 'text-white font-semibold',
     chevron: 'text-white/40 group-hover:text-white',
     countText: 'text-white/40',
-    boxInactive: 'border-white/25 group-hover:border-[#FA8400]/60 bg-transparent',
+    boxInactive: 'border-white/25 group-hover:border-brand-orange/60 bg-transparent',
   },
 } as const
 
@@ -56,7 +56,7 @@ export default function SidebarFilter({
         <span className={`text-[14px] font-bold inline-flex items-center gap-2 ${t.headingText}`}>
           {label}
           {active.length > 0 && (
-            <span className="inline-flex items-center justify-center min-w-[18px] h-[18px] rounded-full bg-[#FA8400] text-white text-[10px] font-bold px-1.5">
+            <span className="inline-flex items-center justify-center min-w-[18px] h-[18px] rounded-full bg-brand-orange text-white text-[10px] font-bold px-1.5">
               {active.length}
             </span>
           )}
@@ -79,7 +79,7 @@ export default function SidebarFilter({
                 >
                   <span
                     className={`relative shrink-0 w-[16px] h-[16px] rounded-[4px] border transition-all ${
-                      isActive ? 'bg-[#FA8400] border-[#FA8400]' : t.boxInactive
+                      isActive ? 'bg-brand-orange border-brand-orange' : t.boxInactive
                     }`}
                   >
                     {isActive && (

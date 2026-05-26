@@ -112,14 +112,6 @@
         "anos": "years of ecosystem"
       }
     },
-    "parceiros": {
-      "eyebrow": "Partners",
-      "title": "Walking",
-      "titleHighlight": "with us",
-      "desc": "A network of sponsors and supporters that make our programs, infrastructure and impact projects possible.",
-      "mantenedores": "Sponsors",
-      "apoiadores": "Supporters"
-    },
     "ecossistema": {
       "eyebrow": "The ecosystem",
       "titleStart": "The only urban technology park in Brazil in",
@@ -259,8 +251,14 @@
           "person": "Rodrigo Maia",
           "role": "CEO · NexusHealth",
           "metrics": [
-            { "label": "Raised in Series A", "value": "R$50M" },
-            { "label": "Team growth in 12 months", "value": "13×" }
+            {
+              "label": "Raised in Series A",
+              "value": "R$50M"
+            },
+            {
+              "label": "Team growth in 12 months",
+              "value": "13×"
+            }
           ]
         },
         {
@@ -270,8 +268,14 @@
           "person": "Jorge Dias",
           "role": "Founder · AgroSmart",
           "metrics": [
-            { "label": "Producers served", "value": "+200" },
-            { "label": "From MVP to first contract", "value": "3 months" }
+            {
+              "label": "Producers served",
+              "value": "+200"
+            },
+            {
+              "label": "From MVP to first contract",
+              "value": "3 months"
+            }
           ]
         },
         {
@@ -281,8 +285,14 @@
           "person": "André Luz",
           "role": "COO · CityFlow",
           "metrics": [
-            { "label": "Cities with active contracts", "value": "3" },
-            { "label": "Generated in public contracts", "value": "R$12M" }
+            {
+              "label": "Cities with active contracts",
+              "value": "3"
+            },
+            {
+              "label": "Generated in public contracts",
+              "value": "R$12M"
+            }
           ]
         },
         {
@@ -292,8 +302,14 @@
           "person": "Carla Mendes",
           "role": "CEO · EduTech SC",
           "metrics": [
-            { "label": "Partner institutions", "value": "50+" },
-            { "label": "Students impacted", "value": "120K" }
+            {
+              "label": "Partner institutions",
+              "value": "50+"
+            },
+            {
+              "label": "Students impacted",
+              "value": "120K"
+            }
           ]
         }
       ]
@@ -352,7 +368,11 @@
         "metric": "+300",
         "metricLabel": "startups accelerated",
         "desc": "Intensive programs that connect early-stage startups and small businesses to qualified mentorship, structured investment and direct routes to market.",
-        "tags": ["Mentorship", "Investment", "Go-to-market"],
+        "tags": [
+          "Mentorship",
+          "Investment",
+          "Go-to-market"
+        ],
         "ctaLabel": "Acelera Pedra Branca"
       },
       {
@@ -361,7 +381,11 @@
         "metric": "20",
         "metricLabel": "corporate partners",
         "desc": "Large and medium enterprises meet disruptive startups to co-create real solutions. From curation to pilot, we structure the match and measure results.",
-        "tags": ["Curation", "Pilots", "Co-creation"],
+        "tags": [
+          "Curation",
+          "Pilots",
+          "Co-creation"
+        ],
         "ctaLabel": "Open Innovation"
       },
       {
@@ -370,7 +394,11 @@
         "metric": "12",
         "metricLabel": "partner institutions",
         "desc": "Universities, research institutes and the public sector connected to the ecosystem for technology transfer, applied research and regional development.",
-        "tags": ["R&D", "Tech transfer", "Public calls"],
+        "tags": [
+          "R&D",
+          "Tech transfer",
+          "Public calls"
+        ],
         "ctaLabel": "Applied Research"
       },
       {
@@ -379,7 +407,11 @@
         "metric": "R$3,5Bi",
         "metricLabel": "in business generated",
         "desc": "Curated access to validated startups, qualified deal flow and connection with national and international co-investors. From angels to venture capital.",
-        "tags": ["Deal flow", "Co-investment", "Venture capital"],
+        "tags": [
+          "Deal flow",
+          "Co-investment",
+          "Venture capital"
+        ],
         "ctaLabel": "Catalisa Inaitec"
       }
     ]
@@ -409,9 +441,18 @@
         "title": "Inaitec is founded",
         "desc": "The innovation hub is born at Pedra Branca Technology Park, with the mission of connecting startups, companies and government in a single ecosystem.",
         "metrics": [
-          { "value": "1ª", "label": "headquarters opened" },
-          { "value": "3", "label": "founding sponsors" },
-          { "value": "20 mil", "label": "m² of operation" }
+          {
+            "value": "1ª",
+            "label": "headquarters opened"
+          },
+          {
+            "value": "3",
+            "label": "founding sponsors"
+          },
+          {
+            "value": "20 mil",
+            "label": "m² of operation"
+          }
         ]
       },
       {
@@ -419,9 +460,18 @@
         "title": "First acceleration programs",
         "desc": "Launch of the first acceleration cohorts, training startups with intensive mentorship and connection to the Santa Catarina market.",
         "metrics": [
-          { "value": "12", "label": "startups in the 1st cohort" },
-          { "value": "8", "label": "active mentors" },
-          { "value": "2", "label": "programs launched" }
+          {
+            "value": "12",
+            "label": "startups in the 1st cohort"
+          },
+          {
+            "value": "8",
+            "label": "active mentors"
+          },
+          {
+            "value": "2",
+            "label": "programs launched"
+          }
         ]
       },
       {
@@ -429,9 +479,18 @@
         "title": "International Missions",
         "desc": "Global expansion with the first missions to Silicon Valley and Europe, opening doors for Brazilian startups in international markets.",
         "metrics": [
-          { "value": "3", "label": "countries visited" },
-          { "value": "+40", "label": "globalized startups" },
-          { "value": "R$50M", "label": "in business generated" }
+          {
+            "value": "3",
+            "label": "countries visited"
+          },
+          {
+            "value": "+40",
+            "label": "globalized startups"
+          },
+          {
+            "value": "R$50M",
+            "label": "in business generated"
+          }
         ]
       },
       {
@@ -439,9 +498,18 @@
         "title": "+100 companies in the ecosystem",
         "desc": "Milestone of 100 companies installed in the park, consolidating Pedra Branca as the largest urban innovation ecosystem in Brazil.",
         "metrics": [
-          { "value": "+100", "label": "resident companies" },
-          { "value": "R$500M", "label": "in business generated" },
-          { "value": "3 mil", "label": "direct jobs" }
+          {
+            "value": "+100",
+            "label": "resident companies"
+          },
+          {
+            "value": "R$500M",
+            "label": "in business generated"
+          },
+          {
+            "value": "3 mil",
+            "label": "direct jobs"
+          }
         ]
       },
       {
@@ -449,9 +517,18 @@
         "title": "Open Innovation with Corporations",
         "desc": "Structuring of open innovation programs, connecting large companies and the public sector to solutions developed by the hub's startups.",
         "metrics": [
-          { "value": "20", "label": "corporate partners" },
-          { "value": "+200", "label": "startups accelerated" },
-          { "value": "R$1,5Bi", "label": "in business generated" }
+          {
+            "value": "20",
+            "label": "corporate partners"
+          },
+          {
+            "value": "+200",
+            "label": "startups accelerated"
+          },
+          {
+            "value": "R$1,5Bi",
+            "label": "in business generated"
+          }
         ]
       },
       {
@@ -459,9 +536,18 @@
         "title": "Where Inaitec is today",
         "desc": "17 years of a consolidated ecosystem. Inaitec is today the largest urban innovation hub in southern Brazil, in full operation at Pedra Branca Technology Park.",
         "metrics": [
-          { "value": "+300", "label": "startups accelerated" },
-          { "value": "R$3,5Bi", "label": "in business generated" },
-          { "value": "1,7M m²", "label": "of innovation area" }
+          {
+            "value": "+300",
+            "label": "startups accelerated"
+          },
+          {
+            "value": "R$3,5Bi",
+            "label": "in business generated"
+          },
+          {
+            "value": "1,7M m²",
+            "label": "of innovation area"
+          }
         ]
       }
     ]

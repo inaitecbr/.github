@@ -91,13 +91,13 @@ const NUMEROS = [
 
 export default function BancoDeTalentosPage() {
   return (
-    <main className="relative bg-[#0D2E38] overflow-x-clip">
+    <main className="relative bg-brand-navy overflow-x-clip">
 
       {/* ── Fundo orgânico ─────────────────────────────────────────────── */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute top-[40vh] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-[#4A9EE0]/[0.10] blur-[160px]" />
-        <div className="absolute top-[170vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-[#FA8400]/[0.08] blur-[160px]" />
-        <div className="absolute top-[300vh] left-[15%] w-[900px] h-[900px] rounded-full bg-[#00C08B]/[0.06] blur-[160px]" />
+        <div className="absolute top-[170vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-brand-orange/[0.08] blur-[160px]" />
+        <div className="absolute top-[300vh] left-[15%] w-[900px] h-[900px] rounded-full bg-brand-teal/[0.06] blur-[160px]" />
         <div className="absolute top-[440vh] right-[-10%] w-[800px] h-[800px] rounded-full bg-[#004E69]/40 blur-[150px]" />
       </div>
 
@@ -106,14 +106,14 @@ export default function BancoDeTalentosPage() {
         <Container className="h-full grid lg:grid-cols-[1.1fr_1fr] gap-16 items-stretch">
           <div className="flex flex-col justify-center">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Capacitação e empregabilidade
               </span>
             </div>
             <h1 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
               Conectando{' '}
-              <span className="italic font-medium text-[#FA8400]">talento e oportunidade</span>{' '}
+              <span className="italic font-medium text-brand-orange">talento e oportunidade</span>{' '}
               no ecossistema Inaitec.
             </h1>
 
@@ -126,7 +126,7 @@ export default function BancoDeTalentosPage() {
             <div className="mt-8 w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <a
                 href="#para-candidatos"
-                className="inline-flex items-center justify-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+                className="inline-flex items-center justify-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
               >
                 Sou candidato
               </a>
@@ -149,9 +149,9 @@ export default function BancoDeTalentosPage() {
               className="object-cover"
               sizes="(min-width: 1024px) 45vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0D2E38]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/60 via-transparent to-transparent" />
             <div className="absolute top-6 left-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/30 backdrop-blur-md px-3 py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00C08B] animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal animate-pulse" />
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
                 Vagas abertas
               </span>
@@ -165,19 +165,19 @@ export default function BancoDeTalentosPage() {
           <div className="grid lg:grid-cols-[1fr_1fr] gap-16 items-start">
             <div>
               <div className="mb-5 inline-flex items-center gap-2">
-                <span className="block h-px w-8 bg-[#FA8400]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                <span className="block h-px w-8 bg-brand-orange" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                   O que é
                 </span>
               </div>
               <h2 className="font-extrabold text-display-xl leading-[1.2] tracking-tight">
                 Um programa de{' '}
-                <span className="italic font-medium text-[#FA8400]">capacitação e empregabilidade</span>{' '}
+                <span className="italic font-medium text-brand-orange">capacitação e empregabilidade</span>{' '}
                 do ecossistema.
               </h2>
             </div>
 
-            <div className="space-y-6 text-[#0D2E38]/75 text-base leading-relaxed">
+            <div className="space-y-6 text-brand-navy/75 text-base leading-relaxed">
               <p>
                 O Banco de Talentos Inaitec é a ponte entre profissionais da Grande Florianópolis
                 e as empresas residentes no Parque Pedra Branca. Cobre todas as áreas — de
@@ -189,14 +189,14 @@ export default function BancoDeTalentosPage() {
                 qualificada de talentos locais — sem o ruído dos grandes portais.
               </p>
 
-              <div className="mt-10 pt-8 border-t border-[#E8E6E1]">
-                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-4">
+              <div className="mt-10 pt-8 border-t border-border">
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-4">
                   Perfis mais buscados
                 </div>
                 <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
                   {PERFIS_BUSCADOS.map((p) => (
-                    <li key={p} className="flex items-start gap-3 text-sm text-[#0D2E38]/80">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#FA8400] shrink-0" />
+                    <li key={p} className="flex items-start gap-3 text-sm text-brand-navy/80">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-orange shrink-0" />
                       {p}
                     </li>
                   ))}
@@ -213,14 +213,14 @@ export default function BancoDeTalentosPage() {
             {/* Texto introdutório */}
             <div className="lg:sticky lg:top-32">
               <div className="mb-5 inline-flex items-center gap-2">
-                <span className="block h-px w-8 bg-[#FA8400]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                <span className="block h-px w-8 bg-brand-orange" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                   Para candidatos
                 </span>
               </div>
               <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
                 Sua próxima oportunidade está{' '}
-                <span className="italic font-medium text-[#FA8400]">no ecossistema</span>.
+                <span className="italic font-medium text-brand-orange">no ecossistema</span>.
               </h2>
               <p className="mt-6 text-white/65 text-base leading-relaxed">
                 Cadastre-se gratuitamente, atualize seu perfil e seja descoberto por empresas que
@@ -234,7 +234,7 @@ export default function BancoDeTalentosPage() {
                   className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 backdrop-blur-sm text-white text-sm font-semibold px-6 py-4 hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
                   Ver vagas
-                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#FA8400] bg-[#FA8400]/10 border border-[#FA8400]/30 rounded-full px-2 py-0.5">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-brand-orange bg-brand-orange/10 border border-brand-orange/30 rounded-full px-2 py-0.5">
                     Em breve
                   </span>
                 </Link>
@@ -245,7 +245,7 @@ export default function BancoDeTalentosPage() {
             <ol className="divide-y divide-white/10">
               {PASSOS_CANDIDATO.map((p) => (
                 <li key={p.num} className="grid grid-cols-[auto_1fr] gap-8 py-8 first:pt-0 last:pb-0">
-                  <div className="text-[#FA8400] font-extrabold text-3xl tracking-tight tabular-nums">
+                  <div className="text-brand-orange font-extrabold text-3xl tracking-tight tabular-nums">
                     {p.num}
                   </div>
                   <div>
@@ -262,16 +262,16 @@ export default function BancoDeTalentosPage() {
       <Section id="para-empresas" theme="light" padding="md" className="scroll-mt-24">
           <div className="max-w-2xl mb-16">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Para empresas
               </span>
             </div>
             <h2 className="font-extrabold text-display-xl leading-[1.2] tracking-tight">
               Anuncie vagas e conecte-se com{' '}
-              <span className="italic font-medium text-[#FA8400]">talentos locais</span>.
+              <span className="italic font-medium text-brand-orange">talentos locais</span>.
             </h2>
-            <p className="mt-6 text-[#0D2E38]/70 text-base leading-relaxed">
+            <p className="mt-6 text-brand-navy/70 text-base leading-relaxed">
               Empresas instaladas no Parque Pedra Branca e parceiros do ecossistema podem publicar
               vagas, receber candidatos triados e contratar mais rápido — sem custo extra.
             </p>
@@ -282,12 +282,12 @@ export default function BancoDeTalentosPage() {
           {/* 3 passos */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
             {PASSOS_EMPRESA.map((p) => (
-              <div key={p.num} className="rounded-2xl bg-white border border-[#E8E6E1] p-8">
-                <div className="text-[#FA8400] font-extrabold text-3xl tracking-tight tabular-nums mb-5">
+              <div key={p.num} className="rounded-2xl bg-white border border-border p-8">
+                <div className="text-brand-orange font-extrabold text-3xl tracking-tight tabular-nums mb-5">
                   {p.num}
                 </div>
                 <h3 className="font-bold text-lg mb-2 leading-tight">{p.titulo}</h3>
-                <p className="text-sm text-[#0D2E38]/65 leading-relaxed">{p.desc}</p>
+                <p className="text-sm text-brand-navy/65 leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -295,12 +295,12 @@ export default function BancoDeTalentosPage() {
           {/* Vantagens */}
           <div className="grid lg:grid-cols-3 gap-4">
             {VANTAGENS_EMPRESA.map((v) => (
-              <div key={v.titulo} className="rounded-2xl bg-white border border-[#E8E6E1] p-8">
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FA8400]/10 text-[#FA8400] mb-5">
+              <div key={v.titulo} className="rounded-2xl bg-white border border-border p-8">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange mb-5">
                   <Check strokeWidth={2} className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2 leading-tight">{v.titulo}</h3>
-                <p className="text-sm text-[#0D2E38]/65 leading-relaxed">{v.desc}</p>
+                <p className="text-sm text-brand-navy/65 leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -310,14 +310,14 @@ export default function BancoDeTalentosPage() {
       <Section id="numeros" padding="md" className="scroll-mt-24">
           <div className="max-w-2xl mb-16">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Números do programa
               </span>
             </div>
             <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
               O Banco de Talentos{' '}
-              <span className="italic font-medium text-[#FA8400]">em movimento</span>.
+              <span className="italic font-medium text-brand-orange">em movimento</span>.
             </h2>
             <p className="mt-6 text-white/65 text-base leading-relaxed">
               Indicadores atualizados trimestralmente com os times de RH das empresas residentes.
@@ -341,15 +341,15 @@ export default function BancoDeTalentosPage() {
 
       {/* ── 6. CTA final ──────────────────────────────────────────────── */}
       <Section padding="md">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0D2E38] via-[#004E69] to-[#0D2E38] p-8 sm:p-12 md:p-20">
-            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-[#FA8400]/20 blur-[140px]" />
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-navy via-[#004E69] to-brand-navy p-8 sm:p-12 md:p-20">
+            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-brand-orange/20 blur-[140px]" />
             <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full bg-[#4A9EE0]/15 blur-[120px]" />
 
             <div className="relative grid lg:grid-cols-[1fr_auto] gap-10 items-center">
               <div>
                 <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
                   Pronto para entrar?{' '}
-                  <span className="italic font-medium text-[#FA8400]">Cadastre seu perfil</span>{' '}
+                  <span className="italic font-medium text-brand-orange">Cadastre seu perfil</span>{' '}
                   ou anuncie sua vaga.
                 </h2>
                 <p className="mt-6 text-white/65 text-base leading-relaxed">

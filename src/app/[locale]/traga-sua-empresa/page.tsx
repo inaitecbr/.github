@@ -114,13 +114,13 @@ const RAZOES = [
 
 export default function TragaSuaEmpresaPage() {
   return (
-    <main className="relative bg-[#0D2E38] overflow-x-clip">
+    <main className="relative bg-brand-navy overflow-x-clip">
 
       {/* ── Fundo orgânico ─────────────────────────────────────────────── */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute top-[40vh] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-[#FA8400]/[0.10] blur-[160px]" />
-        <div className="absolute top-[170vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-[#00C08B]/[0.06] blur-[160px]" />
-        <div className="absolute top-[300vh] left-[15%] w-[900px] h-[900px] rounded-full bg-[#FA8400]/[0.08] blur-[160px]" />
+        <div className="absolute top-[40vh] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />
+        <div className="absolute top-[170vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-brand-teal/[0.06] blur-[160px]" />
+        <div className="absolute top-[300vh] left-[15%] w-[900px] h-[900px] rounded-full bg-brand-orange/[0.08] blur-[160px]" />
         <div className="absolute top-[440vh] right-[-10%] w-[800px] h-[800px] rounded-full bg-[#004E69]/40 blur-[150px]" />
       </div>
 
@@ -130,7 +130,7 @@ export default function TragaSuaEmpresaPage() {
           <div className="flex flex-col justify-center">
             <h1 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
               Instale sua empresa{' '}
-              <span className="italic font-medium text-[#FA8400]">no maior hub urbano</span>{' '}
+              <span className="italic font-medium text-brand-orange">no maior hub urbano</span>{' '}
               de inovação do sul do{' '}Brasil.
             </h1>
 
@@ -142,7 +142,7 @@ export default function TragaSuaEmpresaPage() {
             <div className="mt-8 w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <Link
                 href="/fale-conosco"
-                className="inline-flex items-center justify-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+                className="inline-flex items-center justify-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
               >
                 Agendar visita
               </Link>
@@ -165,9 +165,9 @@ export default function TragaSuaEmpresaPage() {
               className="object-cover"
               sizes="(min-width: 1024px) 45vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0D2E38]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/60 via-transparent to-transparent" />
             <div className="absolute top-6 left-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/30 backdrop-blur-md px-3 py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00C08B] animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal animate-pulse" />
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
                 Vagas disponíveis
               </span>
@@ -182,16 +182,16 @@ export default function TragaSuaEmpresaPage() {
           {/* Bloco perks */}
           <div className="max-w-2xl mb-16">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Perks exclusivos
               </span>
             </div>
             <h2 className="font-extrabold text-display-xl leading-[1.2] tracking-tight">
-              Mais de <span className="italic font-medium text-[#FA8400]">R$ 800 mil</span>{' '}
+              Mais de <span className="italic font-medium text-brand-orange">R$ 800 mil</span>{' '}
               em ferramentas e créditos.
             </h2>
-            <p className="mt-6 text-[#0D2E38]/70 text-base leading-relaxed">
+            <p className="mt-6 text-brand-navy/70 text-base leading-relaxed">
               Empresas instaladas no Parque Pedra Branca têm acesso a um catálogo crescente de
               acordos com plataformas que startups e times de inovação realmente usam.
             </p>
@@ -202,7 +202,7 @@ export default function TragaSuaEmpresaPage() {
             {PERKS.map((p) => (
               <div
                 key={p.nome}
-                className="group rounded-2xl bg-white border border-[#E8E6E1] p-8 flex flex-col items-start gap-6 transition-shadow hover:shadow-md hover:shadow-[#0D2E38]/10"
+                className="group rounded-2xl bg-white border border-border p-8 flex flex-col items-start gap-6 transition-shadow hover:shadow-md hover:shadow-brand-navy/10"
               >
                 <div className="relative h-8 w-32">
                   <Image
@@ -213,7 +213,7 @@ export default function TragaSuaEmpresaPage() {
                     sizes="128px"
                   />
                 </div>
-                <p className="text-sm text-[#0D2E38]/65 leading-relaxed">{p.desc}</p>
+                <p className="text-sm text-brand-navy/65 leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -221,14 +221,14 @@ export default function TragaSuaEmpresaPage() {
           {/* Bloco benefícios */}
           <div className="max-w-2xl mb-12">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Benefícios da residência
               </span>
             </div>
             <h2 className="font-extrabold text-display-xl leading-[1.2] tracking-tight">
               O que está incluído ao{' '}
-              <span className="italic font-medium text-[#FA8400]">se instalar aqui</span>.
+              <span className="italic font-medium text-brand-orange">se instalar aqui</span>.
             </h2>
           </div>
 
@@ -236,13 +236,13 @@ export default function TragaSuaEmpresaPage() {
             {BENEFICIOS.map((b) => (
               <div
                 key={b.titulo}
-                className="rounded-2xl bg-white border border-[#E8E6E1] p-8"
+                className="rounded-2xl bg-white border border-border p-8"
               >
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FA8400]/10 text-[#FA8400] mb-5">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange mb-5">
                   <Check strokeWidth={2} className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2 leading-tight">{b.titulo}</h3>
-                <p className="text-sm text-[#0D2E38]/65 leading-relaxed">{b.desc}</p>
+                <p className="text-sm text-brand-navy/65 leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -253,14 +253,14 @@ export default function TragaSuaEmpresaPage() {
           <div className="flex flex-wrap items-end justify-between gap-8 mb-16">
             <div className="max-w-2xl">
               <div className="mb-5 inline-flex items-center gap-2">
-                <span className="block h-px w-8 bg-[#FA8400]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                <span className="block h-px w-8 bg-brand-orange" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                   Infraestrutura
                 </span>
               </div>
               <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
                 Estrutura completa para{' '}
-                <span className="italic font-medium text-[#FA8400]">empresas em qualquer estágio</span>.
+                <span className="italic font-medium text-brand-orange">empresas em qualquer estágio</span>.
               </h2>
               <p className="mt-6 text-white/65 text-base leading-relaxed">
                 12 mil m² ativos no edifício principal, distribuídos entre coworking, salas
@@ -270,7 +270,7 @@ export default function TragaSuaEmpresaPage() {
             </div>
             <Link
               href="/fale-conosco"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-[#FA8400] transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-brand-orange transition-colors"
             >
               Solicitar tour 360º            </Link>
           </div>
@@ -289,8 +289,8 @@ export default function TragaSuaEmpresaPage() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E38] via-[#0D2E38]/30 to-transparent" />
-                  <span className="absolute top-4 left-4 rounded-full bg-[#FA8400] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent" />
+                  <span className="absolute top-4 left-4 rounded-full bg-brand-orange px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
                     {e.metragem}
                   </span>
                 </div>
@@ -304,11 +304,11 @@ export default function TragaSuaEmpresaPage() {
 
           {/* Localização */}
           <div className="mt-16 rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-12 grid md:grid-cols-[auto_1fr_auto] gap-8 items-center">
-            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#FA8400]/15 text-[#FA8400]">
+            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-orange/15 text-brand-orange">
               <MapPin strokeWidth={1.8} className="w-7 h-7" />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-2">
+              <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-2">
                 Localização privilegiada
               </div>
               <div className="text-white text-lg font-semibold leading-snug">
@@ -331,14 +331,14 @@ export default function TragaSuaEmpresaPage() {
       <Section id="por-que" theme="light" padding="md" className="scroll-mt-24">
           <div className="max-w-2xl mb-16">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Por que estar aqui
               </span>
             </div>
             <h2 className="font-extrabold text-display-xl leading-[1.2] tracking-tight">
               Cinco motivos para fazer parte do{' '}
-              <span className="italic font-medium text-[#FA8400]">ecossistema Inaitec</span>.
+              <span className="italic font-medium text-brand-orange">ecossistema Inaitec</span>.
             </h2>
           </div>
 
@@ -352,7 +352,7 @@ export default function TragaSuaEmpresaPage() {
                 className="object-cover"
                 sizes="(min-width: 1024px) 33vw, 100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E38]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/70 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-5">
                   <p className="text-white text-sm leading-relaxed">
@@ -370,15 +370,15 @@ export default function TragaSuaEmpresaPage() {
             </div>
 
             {/* Lista 5 razões */}
-            <ol className="order-1 lg:order-2 divide-y divide-[#E8E6E1] -mt-2">
+            <ol className="order-1 lg:order-2 divide-y divide-border -mt-2">
               {RAZOES.map((r) => (
                 <li key={r.num} className="grid grid-cols-[auto_1fr] gap-8 py-8 first:pt-0 last:pb-0">
-                  <div className="text-[#FA8400] font-extrabold text-3xl tracking-tight tabular-nums">
+                  <div className="text-brand-orange font-extrabold text-3xl tracking-tight tabular-nums">
                     {r.num}
                   </div>
                   <div>
                     <h3 className="font-bold text-xl mb-2 leading-tight">{r.titulo}</h3>
-                    <p className="text-[#0D2E38]/65 leading-relaxed">{r.desc}</p>
+                    <p className="text-brand-navy/65 leading-relaxed">{r.desc}</p>
                   </div>
                 </li>
               ))}
@@ -388,15 +388,15 @@ export default function TragaSuaEmpresaPage() {
 
       {/* ── 5. CTA final ──────────────────────────────────────────────── */}
       <Section padding="md">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0D2E38] via-[#004E69] to-[#0D2E38] p-8 sm:p-12 md:p-20">
-            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-[#FA8400]/20 blur-[140px]" />
-            <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full bg-[#00C08B]/10 blur-[120px]" />
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-navy via-[#004E69] to-brand-navy p-8 sm:p-12 md:p-20">
+            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-brand-orange/20 blur-[140px]" />
+            <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full bg-brand-teal/10 blur-[120px]" />
 
             <div className="relative grid lg:grid-cols-[1fr_auto] gap-10 items-center">
               <div>
                 <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
                   Vagas limitadas para 2026.{' '}
-                  <span className="italic font-medium text-[#FA8400]">Agende uma visita</span>{' '}
+                  <span className="italic font-medium text-brand-orange">Agende uma visita</span>{' '}
                   e conheça o espaço.
                 </h2>
                 <p className="mt-6 text-white/65 text-base leading-relaxed">
@@ -407,7 +407,7 @@ export default function TragaSuaEmpresaPage() {
               <div className="w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:shrink-0">
                 <Link
                   href="/fale-conosco"
-                  className="inline-flex items-center justify-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+                  className="inline-flex items-center justify-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
                 >
                   Agendar visita
                 </Link>

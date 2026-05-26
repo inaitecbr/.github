@@ -11,7 +11,7 @@ import { Building2, Megaphone, Users, ChevronDown, ArrowRight, Menu, X } from 'l
 
 const programsMenu = {
   startups: {
-    accent: '#FA8400',
+    accent: 'var(--color-brand-orange)',
     items: [
       { name: 'Acelera Pedra Branca', href: '/programas/acelera-pedra-branca' },
       { name: 'Impulse Inaitec', href: '/programas/impulse-inaitec' },
@@ -21,7 +21,7 @@ const programsMenu = {
     ],
   },
   empresas: {
-    accent: '#00C08B',
+    accent: 'var(--color-brand-teal)',
     items: [
       { name: 'Inovação Aberta', href: '/programas/inovacao-aberta' },
       { name: 'Laboratório Cidade', href: '/programas/laboratorio-cidade' },
@@ -57,7 +57,7 @@ const solucoesMenu = [
     name: 'Empresas Instaladas',
     href: '/solucoes/empresas-instaladas',
     metric: '+200',
-    accent: '#FA8400',
+    accent: 'var(--color-brand-orange)',
     icon: <Building2 strokeWidth={1.5} className="w-6 h-6" />,
   },
   {
@@ -65,7 +65,7 @@ const solucoesMenu = [
     name: 'Chamadas Abertas',
     href: '/chamadas',
     metric: '8',
-    accent: '#00C08B',
+    accent: 'var(--color-brand-teal)',
     icon: <Megaphone strokeWidth={1.5} className="w-6 h-6" />,
   },
   {
@@ -208,11 +208,11 @@ export default function Header() {
         hidden && !activeMenu && !mobileOpen ? '-translate-y-full' : 'translate-y-0',
         isGlass
           ? 'bg-white/10 backdrop-blur-xl border-transparent'
-          : 'bg-white border-[#E8E6E1]',
+          : 'bg-white border-border',
       ].join(' ')}
     >
       {activeMenu && (
-        <div className="fixed inset-0 top-[68px] -z-10 bg-[#0D2E38]/40 backdrop-blur-xl pointer-events-none animate-[fade-in_200ms_ease-out]" />
+        <div className="fixed inset-0 top-[68px] -z-10 bg-brand-navy/40 backdrop-blur-xl pointer-events-none animate-[fade-in_200ms_ease-out]" />
       )}
 
       <div className="flex h-[68px] items-center justify-between px-[clamp(1.25rem,4vw+0.5rem,6.75rem)]">
@@ -238,7 +238,7 @@ export default function Header() {
             >
               <Link
                 href={item.href ?? '#'}
-                className={`relative flex items-center gap-1 rounded-lg px-2.5 py-2 text-sm font-medium transition-colors hover:text-[#FA8400] ${isGlass ? 'text-white' : 'text-[#004E69]'} ${isActive(item.href, item.key) ? 'text-[#FA8400]' : ''}`}
+                className={`relative flex items-center gap-1 rounded-lg px-2.5 py-2 text-sm font-medium transition-colors hover:text-brand-orange ${isGlass ? 'text-white' : 'text-[#004E69]'} ${isActive(item.href, item.key) ? 'text-brand-orange' : ''}`}
               >
                 {item.label}
                 {item.hasMenu && (
@@ -246,14 +246,14 @@ export default function Header() {
                     strokeWidth={2.5}
                     className={[
                       'h-3 w-3 transition-transform duration-200',
-                      activeMenu === item.key ? 'rotate-180 text-[#FA8400]' : 'opacity-50',
+                      activeMenu === item.key ? 'rotate-180 text-brand-orange' : 'opacity-50',
                     ].join(' ')}
                   />
                 )}
                 {isActive(item.href, item.key) && (
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute left-2.5 right-2.5 -bottom-[2px] h-[2px] rounded-full bg-[#FA8400]"
+                    className="pointer-events-none absolute left-2.5 right-2.5 -bottom-[2px] h-[2px] rounded-full bg-brand-orange"
                   />
                 )}
               </Link>
@@ -264,9 +264,9 @@ export default function Header() {
                   onMouseEnter={() => openMenu('programas')}
                   onMouseLeave={scheduleCloseMenu}
                 >
-                  <div className={`w-[min(1080px,calc(100vw-32px))] rounded-2xl shadow-2xl overflow-hidden ${isGlass ? 'bg-[#0D2E38] border border-white/15' : 'border border-[#E8E6E1] bg-white'}`}>
+                  <div className={`w-[min(1080px,calc(100vw-32px))] rounded-2xl shadow-2xl overflow-hidden ${isGlass ? 'bg-brand-navy border border-white/15' : 'border border-border bg-white'}`}>
 
-                    <div className="relative h-32 bg-[#0D2E38] overflow-hidden">
+                    <div className="relative h-32 bg-brand-navy overflow-hidden">
                       <video
                         src="/hero-inaitec.mp4"
                         autoPlay
@@ -275,10 +275,10 @@ export default function Header() {
                         playsInline
                         className="absolute inset-0 w-full h-full object-cover opacity-40"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#0D2E38] via-[#0D2E38]/70 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 to-transparent" />
                       <div className="relative h-full flex items-center justify-between px-6 gap-6">
                         <div>
-                          <div className="text-[10px] font-bold uppercase tracking-widest text-[#FA8400] mb-1">
+                          <div className="text-[10px] font-bold uppercase tracking-widest text-brand-orange mb-1">
                             {t('programsMenu.eyebrow')}
                           </div>
                           <h3 className="text-white font-extrabold text-xl leading-tight">
@@ -287,7 +287,7 @@ export default function Header() {
                         </div>
                         <Link
                           href="/programas"
-                          className="hidden md:inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 hover:bg-[#FA8400] hover:border-[#FA8400] transition-all shrink-0"
+                          className="hidden md:inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 hover:bg-brand-orange hover:border-brand-orange transition-all shrink-0"
                         >
                           {t('programsMenu.viewAll')}
                         </Link>
@@ -305,7 +305,7 @@ export default function Header() {
                               idx > 0 ? 'lg:border-l' : '',
                               idx % 2 === 1 ? 'border-l' : '',
                               idx >= 2 ? 'border-t lg:border-t-0' : '',
-                              isGlass ? 'border-white/10' : 'border-[#E8E6E1]',
+                              isGlass ? 'border-white/10' : 'border-border',
                             ].join(' ')}
                           >
                             <div className="mb-2 flex items-center gap-2">
@@ -314,7 +314,7 @@ export default function Header() {
                                 {t('programsMenu.pillarLabel', { n: idx + 1 })}
                               </span>
                             </div>
-                            <div className={`mb-1 text-[13px] font-extrabold tracking-tight leading-tight ${isGlass ? 'text-white' : 'text-[#0D2E38]'}`}>
+                            <div className={`mb-1 text-[13px] font-extrabold tracking-tight leading-tight ${isGlass ? 'text-white' : 'text-brand-navy'}`}>
                               {t(`programsMenu.pillars.${key}.label`)}
                             </div>
                             <p className={`text-[11px] leading-snug mb-3 ${isGlass ? 'text-white/50' : 'text-text-muted'}`}>
@@ -328,7 +328,7 @@ export default function Header() {
                                     className={`group/item block rounded-lg px-2.5 py-1.5 transition-colors ${isGlass ? 'hover:bg-white/10' : 'hover:bg-[#F5F4EF]'}`}
                                   >
                                     <div
-                                      className={`text-[13px] font-semibold transition-colors ${isGlass ? 'text-white group-hover/item:text-[#FA8400]' : 'text-[#004E69] group-hover/item:text-[#FA8400]'}`}
+                                      className={`text-[13px] font-semibold transition-colors ${isGlass ? 'text-white group-hover/item:text-brand-orange' : 'text-[#004E69] group-hover/item:text-brand-orange'}`}
                                     >
                                       {it.name}
                                     </div>
@@ -341,13 +341,13 @@ export default function Header() {
                       })}
                     </div>
 
-                    <div className={`border-t px-5 py-3 flex items-center justify-between ${isGlass ? 'border-white/10 bg-white/5' : 'border-[#E8E6E1] bg-[#F5F4EF]'}`}>
+                    <div className={`border-t px-5 py-3 flex items-center justify-between ${isGlass ? 'border-white/10 bg-white/5' : 'border-border bg-[#F5F4EF]'}`}>
                       <span className={`text-xs ${isGlass ? 'text-white/60' : 'text-text-muted'}`}>
                         {t('programsMenu.footerText')}
                       </span>
                       <Link
                         href="/fale-conosco"
-                        className="inline-flex items-center gap-2 text-sm font-bold text-[#FA8400] transition-all"
+                        className="inline-flex items-center gap-2 text-sm font-bold text-brand-orange transition-all"
                       >
                         {t('programsMenu.footerCta')}
                       </Link>
@@ -362,9 +362,9 @@ export default function Header() {
                   onMouseEnter={() => openMenu('solucoes')}
                   onMouseLeave={scheduleCloseMenu}
                 >
-                  <div className={`w-[min(660px,calc(100vw-32px))] rounded-2xl shadow-2xl overflow-hidden ${isGlass ? 'border border-white/10 bg-[#0D2E38]' : 'border border-[#E8E6E1] bg-white'}`}>
+                  <div className={`w-[min(660px,calc(100vw-32px))] rounded-2xl shadow-2xl overflow-hidden ${isGlass ? 'border border-white/10 bg-brand-navy' : 'border border-border bg-white'}`}>
 
-                    <div className={`grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x ${isGlass ? 'divide-white/10' : 'divide-[#E8E6E1]'}`}>
+                    <div className={`grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x ${isGlass ? 'divide-white/10' : 'divide-border'}`}>
                       {solucoesMenu.map((it) => (
                         <Link
                           key={it.href}
@@ -388,10 +388,10 @@ export default function Header() {
                             {it.icon}
                           </div>
                           <div className="relative flex-1">
-                            <div className={`text-[13px] font-bold leading-tight mb-1.5 transition-colors ${isGlass ? 'text-white' : 'text-[#0D2E38]'}`}>
+                            <div className={`text-[13px] font-bold leading-tight mb-1.5 transition-colors ${isGlass ? 'text-white' : 'text-brand-navy'}`}>
                               {it.name}
                             </div>
-                            <p className={`text-[11px] leading-relaxed ${isGlass ? 'text-white/45' : 'text-[#0D2E38]/50'}`}>
+                            <p className={`text-[11px] leading-relaxed ${isGlass ? 'text-white/45' : 'text-brand-navy/50'}`}>
                               {t(`solucoesMenu.items.${it.key}.desc`)}
                             </p>
                           </div>
@@ -399,13 +399,13 @@ export default function Header() {
                       ))}
                     </div>
 
-                    <div className={`border-t px-5 py-3 flex items-center justify-between ${isGlass ? 'border-white/10 bg-white/[0.03]' : 'border-[#E8E6E1] bg-[#F5F4EF]'}`}>
-                      <span className={`text-[11px] ${isGlass ? 'text-white/40' : 'text-[#0D2E38]/45'}`}>
+                    <div className={`border-t px-5 py-3 flex items-center justify-between ${isGlass ? 'border-white/10 bg-white/[0.03]' : 'border-border bg-[#F5F4EF]'}`}>
+                      <span className={`text-[11px] ${isGlass ? 'text-white/40' : 'text-brand-navy/45'}`}>
                         {t('solucoesMenu.footerText')}
                       </span>
                       <Link
                         href="/fale-conosco"
-                        className="inline-flex items-center gap-1.5 text-[12px] font-bold text-[#FA8400] hover:gap-2.5 transition-all duration-200"
+                        className="inline-flex items-center gap-1.5 text-[12px] font-bold text-brand-orange hover:gap-2.5 transition-all duration-200"
                       >
                         {t('solucoesMenu.footerCta')}
                         <ArrowRight strokeWidth={2.5} className="w-3 h-3" />
@@ -424,7 +424,7 @@ export default function Header() {
             href="/login"
             className={[
               'inline-flex items-center text-sm font-semibold transition-all',
-              isGlass ? 'text-white hover:text-[#FA8400]' : 'text-[#0D2E38] hover:text-[#FA8400]',
+              isGlass ? 'text-white hover:text-brand-orange' : 'text-brand-navy hover:text-brand-orange',
             ].join(' ')}
           >
             {t('cta.login')}
@@ -434,8 +434,8 @@ export default function Header() {
             className={[
               'group inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition-all',
               isGlass
-                ? 'bg-white/15 border border-white/30 text-white backdrop-blur-sm hover:bg-[#FA8400] hover:border-[#FA8400]'
-                : 'bg-[#0D2E38] text-white hover:bg-[#FA8400] hover:shadow-lg hover:shadow-[#FA8400]/20',
+                ? 'bg-white/15 border border-white/30 text-white backdrop-blur-sm hover:bg-brand-orange hover:border-brand-orange'
+                : 'bg-brand-navy text-white hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/20',
             ].join(' ')}
           >
             {t('cta.contato')}
@@ -452,7 +452,7 @@ export default function Header() {
                 'inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold transition-all',
                 isGlass
                   ? 'border border-white/30 text-white hover:bg-white/10'
-                  : 'border border-[#0D2E38]/20 text-[#0D2E38] hover:border-[#FA8400] hover:text-[#FA8400]',
+                  : 'border border-brand-navy/20 text-brand-navy hover:border-brand-orange hover:text-brand-orange',
               ].join(' ')}
             >
               <span className="text-base leading-none" aria-hidden="true">
@@ -468,7 +468,7 @@ export default function Header() {
             {langOpen && (
               <div
                 role="listbox"
-                className="absolute right-0 z-30 mt-2 min-w-[220px] rounded-xl border border-white/10 bg-[#0D2E38] shadow-2xl shadow-black/50 overflow-hidden"
+                className="absolute right-0 z-30 mt-2 min-w-[220px] rounded-xl border border-white/10 bg-brand-navy shadow-2xl shadow-black/50 overflow-hidden"
               >
                 {routing.locales.map((code) => (
                   <button
@@ -479,7 +479,7 @@ export default function Header() {
                     onClick={() => switchLocale(code)}
                     className={`w-full text-left px-4 py-3 text-sm transition flex items-center gap-3 ${
                       code === locale
-                        ? 'bg-[#FA8400]/15 text-[#FA8400]'
+                        ? 'bg-brand-orange/15 text-brand-orange'
                         : 'text-white/80 hover:bg-white/5'
                     }`}
                   >
@@ -508,7 +508,7 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-[#E8E6E1] bg-white px-[clamp(1.25rem,4vw+0.5rem,6.75rem)] py-6 md:hidden">
+        <div className="border-t border-border bg-white px-[clamp(1.25rem,4vw+0.5rem,6.75rem)] py-6 md:hidden">
           <nav className="flex flex-col">
             {/* Nav items */}
             {navItems.map((it) => {
@@ -519,13 +519,13 @@ export default function Header() {
               // Soluções com submenu expansível
               if (isSolucoes) {
                 return (
-                  <div key={it.label} className="border-b border-[#E8E6E1]/60 last:border-b-0">
+                  <div key={it.label} className="border-b border-border/60 last:border-b-0">
                     <button
                       type="button"
                       onClick={() => setMobileExpanded(expanded ? null : it.key!)}
                       aria-expanded={expanded}
                       className={`flex w-full items-center justify-between py-4 text-base font-medium transition-colors ${
-                        active ? 'text-[#FA8400]' : 'text-[#0D2E38] hover:text-[#FA8400]'
+                        active ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'
                       }`}
                     >
                       {it.label}
@@ -540,7 +540,7 @@ export default function Header() {
                           <Link
                             key={sub.key}
                             href={sub.href}
-                            className="py-2.5 text-sm text-[#0D2E38] hover:text-[#FA8400] transition-colors"
+                            className="py-2.5 text-sm text-brand-navy hover:text-brand-orange transition-colors"
                             onClick={() => setMobileOpen(false)}
                           >
                             {sub.name}
@@ -556,10 +556,10 @@ export default function Header() {
                 <Link
                   key={it.label}
                   href={it.href ?? '#'}
-                  className={`flex items-center justify-between border-b border-[#E8E6E1]/60 py-4 text-base font-medium transition-colors last:border-b-0 ${
+                  className={`flex items-center justify-between border-b border-border/60 py-4 text-base font-medium transition-colors last:border-b-0 ${
                     active
-                      ? 'text-[#FA8400]'
-                      : 'text-[#0D2E38] hover:text-[#FA8400]'
+                      ? 'text-brand-orange'
+                      : 'text-brand-navy hover:text-brand-orange'
                   }`}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -572,14 +572,14 @@ export default function Header() {
             <div className="mt-6 flex flex-col gap-3">
               <Link
                 href="/login"
-                className="inline-flex w-full items-center justify-center rounded-full border border-[#0D2E38]/15 px-5 py-3 text-sm font-semibold text-[#0D2E38] transition-colors hover:border-[#FA8400] hover:text-[#FA8400]"
+                className="inline-flex w-full items-center justify-center rounded-full border border-brand-navy/15 px-5 py-3 text-sm font-semibold text-brand-navy transition-colors hover:border-brand-orange hover:text-brand-orange"
                 onClick={() => setMobileOpen(false)}
               >
                 {t('cta.login')}
               </Link>
               <Link
                 href="/fale-conosco"
-                className="inline-flex w-full items-center justify-center rounded-full bg-[#0D2E38] px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-[#FA8400] hover:shadow-lg hover:shadow-[#FA8400]/20"
+                className="inline-flex w-full items-center justify-center rounded-full bg-brand-navy px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/20"
                 onClick={() => setMobileOpen(false)}
               >
                 {t('cta.contato')}
@@ -587,8 +587,8 @@ export default function Header() {
             </div>
 
             {/* Language switcher */}
-            <div className="mt-6 pt-6 border-t border-[#E8E6E1]">
-              <div className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#0D2E38]/45 text-center">
+            <div className="mt-6 pt-6 border-t border-border">
+              <div className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-navy/45 text-center">
                 {t('cta.selectLanguage')}
               </div>
               <div className="flex items-center justify-center gap-2">
@@ -600,8 +600,8 @@ export default function Header() {
                     aria-pressed={code === locale}
                     className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition ${
                       code === locale
-                        ? 'border-[#FA8400] bg-[#FA8400]/10 text-[#FA8400]'
-                        : 'border-[#0D2E38]/15 text-[#4B6472] hover:border-[#0D2E38]/30 hover:text-[#0D2E38]'
+                        ? 'border-brand-orange bg-brand-orange/10 text-brand-orange'
+                        : 'border-brand-navy/15 text-[#4B6472] hover:border-brand-navy/30 hover:text-brand-navy'
                     }`}
                   >
                     <span className="text-sm leading-none" aria-hidden="true">

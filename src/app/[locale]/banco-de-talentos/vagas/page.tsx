@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function VagasPage() {
   return (
-    <main className="relative bg-[#0D2E38] min-h-dvh overflow-x-clip">
+    <main className="relative bg-brand-navy min-h-dvh overflow-x-clip">
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute top-[20vh] left-[-10%] w-[800px] h-[800px] rounded-full bg-[#FA8400]/[0.10] blur-[160px]" />
+        <div className="absolute top-[20vh] left-[-10%] w-[800px] h-[800px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />
         <div className="absolute bottom-[10vh] right-[-15%] w-[900px] h-[900px] rounded-full bg-[#4A9EE0]/[0.08] blur-[160px]" />
       </div>
 
@@ -21,15 +21,15 @@ export default function VagasPage() {
         <Container>
           <div className="max-w-2xl">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Banco de Talentos · Vagas
               </span>
             </div>
 
             <h1 className="font-extrabold text-white text-display-2xl leading-[1.15] tracking-tight">
               Vagas abertas{' '}
-              <span className="italic font-medium text-[#FA8400]">em breve</span>.
+              <span className="italic font-medium text-brand-orange">em breve</span>.
             </h1>
 
             <p className="mt-8 text-white/65 text-base leading-relaxed max-w-xl">
@@ -46,7 +46,7 @@ export default function VagasPage() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href="/banco-de-talentos"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
               >
                 <ArrowLeft strokeWidth={2.5} className="w-4 h-4" />
                 Voltar ao Banco de Talentos

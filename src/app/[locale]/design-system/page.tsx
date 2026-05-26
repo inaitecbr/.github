@@ -38,14 +38,14 @@ function Swatch({ name, hex, pantone, desc, textOnTop = 'light' }: SwatchProps) 
       >
         <span
           className={`text-[10px] font-bold uppercase tracking-[0.2em] ${
-            textOnTop === 'light' ? 'text-white/85' : 'text-[#0D2E38]/70'
+            textOnTop === 'light' ? 'text-white/85' : 'text-brand-navy/70'
           }`}
         >
           {pantone ?? ' '}
         </span>
         <span
           className={`text-[10px] font-semibold opacity-0 group-hover:opacity-100 transition ${
-            textOnTop === 'light' ? 'text-white' : 'text-[#0D2E38]'
+            textOnTop === 'light' ? 'text-white' : 'text-brand-navy'
           }`}
         >
           {copied ? 'copiado!' : 'clique p/ copiar'}
@@ -65,8 +65,8 @@ function SectionTitle({ kicker, title }: { kicker?: string; title: string }) {
     <div className="mb-10">
       {kicker && (
         <div className="mb-3 inline-flex items-center gap-2">
-          <span className="block h-px w-8 bg-[#FA8400]" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400]">
+          <span className="block h-px w-8 bg-brand-orange" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
             {kicker}
           </span>
         </div>
@@ -123,16 +123,16 @@ export default function DesignSystemPage() {
   }
 
   return (
-    <main className="relative min-h-dvh bg-[#0D2E38] text-white selection:bg-[#FA8400]/40">
+    <main className="relative min-h-dvh bg-brand-navy text-white selection:bg-brand-orange/40">
       {/* Fundo orgânico */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute top-[10vh] left-[-10%] w-[900px] h-[900px] rounded-full bg-[#FA8400]/[0.10] blur-[160px]" />
-        <div className="absolute top-[80vh] right-[-15%] w-[900px] h-[900px] rounded-full bg-[#00C08B]/[0.06] blur-[160px]" />
+        <div className="absolute top-[10vh] left-[-10%] w-[900px] h-[900px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />
+        <div className="absolute top-[80vh] right-[-15%] w-[900px] h-[900px] rounded-full bg-brand-teal/[0.06] blur-[160px]" />
         <div className="absolute top-[160vh] left-[10%] w-[800px] h-[800px] rounded-full bg-[#004E69]/40 blur-[150px]" />
       </div>
 
       {/* Top bar minimalista — sticky */}
-      <div className="sticky top-0 z-30 h-16 border-b border-white/10 bg-[#0D2E38]/85 backdrop-blur-md">
+      <div className="sticky top-0 z-30 h-16 border-b border-white/10 bg-brand-navy/85 backdrop-blur-md">
         <div className="mx-auto max-w-[1280px] h-full px-6 lg:px-10 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Image
@@ -160,7 +160,7 @@ export default function DesignSystemPage() {
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-12 lg:gap-16">
         {/* Sidebar de navegação — sticky 40px abaixo do header (64px) */}
         <aside className="hidden lg:block sticky top-[104px] self-start max-h-[calc(100dvh-104px-24px)] overflow-auto pt-8">
-          <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-4">
+          <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-4">
             Sumário
           </div>
           <nav className="flex flex-col gap-1.5">
@@ -181,8 +181,8 @@ export default function DesignSystemPage() {
           {/* Hero */}
           <header className="pt-24 pb-12">
             <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
                 Manual de Marca · Inaitec
               </span>
             </div>
@@ -192,7 +192,7 @@ export default function DesignSystemPage() {
             <p className="max-w-2xl text-base md:text-lg text-white/70 leading-relaxed">
               Fonte única de verdade para cores, tipografia, componentes e padrões visuais usados
               no site institucional do Inaitec. Tudo aqui é derivado dos tokens definidos em{' '}
-              <code className="text-[#FA8400]">globals.css</code>.
+              <code className="text-brand-orange">globals.css</code>.
             </p>
 
             {/* Tabs do hero (exemplo de Tabs em ação) */}
@@ -209,7 +209,7 @@ export default function DesignSystemPage() {
                   onClick={() => setTab(id)}
                   className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
                     tab === id
-                      ? 'bg-[#FA8400] text-white shadow-lg shadow-[#FA8400]/20'
+                      ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/20'
                       : 'text-white/60 hover:text-white'
                   }`}
                 >
@@ -223,7 +223,7 @@ export default function DesignSystemPage() {
                 <>
                   Hub brasileiro de inovação. Visual baseado em{' '}
                   <strong className="text-white/80">deep teal</strong> + acentos{' '}
-                  <strong className="text-[#FA8400]">laranja vivo</strong>, tipografia humanista
+                  <strong className="text-brand-orange">laranja vivo</strong>, tipografia humanista
                   (Plus Jakarta Sans) e marca em Campton.
                 </>
               )}
@@ -237,7 +237,7 @@ export default function DesignSystemPage() {
               )}
               {tab === 'uso' && (
                 <>
-                  Use <code>bg-[#FA8400]</code> e <code>text-[#004E69]</code> no Tailwind, ou
+                  Use <code>bg-brand-orange</code> e <code>text-[#004E69]</code> no Tailwind, ou
                   prefira <code>var(--color-brand-orange)</code> em CSS custom. Tipografia: classe
                   default já aplica <code>font-sans</code> (Plus Jakarta).
                 </>
@@ -256,13 +256,13 @@ export default function DesignSystemPage() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <Swatch
                   name="Brand Orange"
-                  hex="#FA8400"
+                  hex="var(--color-brand-orange)"
                   pantone="PANTONE 1505 C"
                   desc="Primária. CTAs, eyebrows e destaques."
                 />
                 <Swatch
                   name="Brand Teal"
-                  hex="#00C08B"
+                  hex="var(--color-brand-teal)"
                   pantone="PANTONE 335 C"
                   desc="Secundária. Sucesso e brilhos secundários."
                 />
@@ -282,7 +282,7 @@ export default function DesignSystemPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <Swatch
                   name="Hero Dark"
-                  hex="#0D2E38"
+                  hex="var(--color-brand-navy)"
                   desc="Fundo escuro principal do site."
                 />
                 <Swatch
@@ -299,7 +299,7 @@ export default function DesignSystemPage() {
                 />
                 <Swatch
                   name="Border"
-                  hex="#E8E6E1"
+                  hex="var(--color-border)"
                   desc="Bordas sutis em superfícies claras."
                   textOnTop="dark"
                 />
@@ -324,12 +324,12 @@ export default function DesignSystemPage() {
 
             <div className="grid md:grid-cols-2 gap-10">
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
-                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-3">
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-3">
                   Display · Plus Jakarta Sans
                 </div>
                 <p className="text-5xl font-extrabold leading-[1.05] tracking-tight">
                   Acelere, conecte{' '}
-                  <span className="italic font-medium text-[#FA8400]">& transforme</span>
+                  <span className="italic font-medium text-brand-orange">& transforme</span>
                 </p>
                 <div className="mt-6 text-xs text-white/50">
                   Variable · 200–800 · normal & italic
@@ -337,7 +337,7 @@ export default function DesignSystemPage() {
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
-                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-3">
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-3">
                   Body · Plus Jakarta Sans
                 </div>
                 <p className="text-base text-white/80 leading-relaxed">
@@ -400,7 +400,7 @@ export default function DesignSystemPage() {
                   <div key={token as string} className="flex items-center gap-4">
                     <div className="w-12 text-[11px] font-mono text-white/50">{token}</div>
                     <div
-                      className="h-3 rounded-sm bg-[#FA8400]"
+                      className="h-3 rounded-sm bg-brand-orange"
                       style={{ width: `${w}px` }}
                     />
                     <div className="text-[11px] font-mono text-white/40">{px}</div>
@@ -452,7 +452,7 @@ export default function DesignSystemPage() {
               ].map(([name, cls]) => (
                 <div
                   key={name}
-                  className={`h-28 rounded-xl bg-white text-[#0D2E38] flex items-center justify-center text-xs font-semibold ${cls}`}
+                  className={`h-28 rounded-xl bg-white text-brand-navy flex items-center justify-center text-xs font-semibold ${cls}`}
                 >
                   {name}
                 </div>
@@ -470,13 +470,13 @@ export default function DesignSystemPage() {
                   Sobre fundo escuro
                 </div>
                 <div className="flex flex-wrap items-center gap-4">
-                  <button className="inline-flex items-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-2xl shadow-black/40">
+                  <button className="inline-flex items-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-2xl shadow-black/40">
                     Botão primário
                   </button>
-                  <button className="inline-flex items-center rounded-full border border-white/40 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold px-7 py-4 hover:bg-white hover:text-[#0D2E38] hover:border-white transition-all duration-300">
+                  <button className="inline-flex items-center rounded-full border border-white/40 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold px-7 py-4 hover:bg-white hover:text-brand-navy hover:border-white transition-all duration-300">
                     Botão secundário
                   </button>
-                  <button className="inline-flex items-center text-sm font-semibold text-[#FA8400] hover:text-[#FF9B26] transition-all">
+                  <button className="inline-flex items-center text-sm font-semibold text-brand-orange hover:text-[#FF9B26] transition-all">
                     Botão terciário
                   </button>
                   <button
@@ -490,17 +490,17 @@ export default function DesignSystemPage() {
 
               {/* Primário / Secundário sobre light */}
               <div className="rounded-2xl border border-white/10 bg-[#F5F4EF] p-8">
-                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#0D2E38]/50 mb-5">
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-navy/50 mb-5">
                   Sobre fundo claro
                 </div>
                 <div className="flex flex-wrap items-center gap-4">
-                  <button className="inline-flex items-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/20">
+                  <button className="inline-flex items-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/20">
                     Botão primário
                   </button>
-                  <button className="inline-flex items-center rounded-full border border-[#0D2E38]/20 bg-white text-[#0D2E38] text-sm font-semibold px-7 py-4 hover:bg-[#0D2E38] hover:text-white hover:border-[#0D2E38] transition-all duration-300">
+                  <button className="inline-flex items-center rounded-full border border-brand-navy/20 bg-white text-brand-navy text-sm font-semibold px-7 py-4 hover:bg-brand-navy hover:text-white hover:border-brand-navy transition-all duration-300">
                     Botão secundário
                   </button>
-                  <button className="inline-flex items-center text-sm font-semibold text-[#0D2E38] hover:text-[#FA8400] transition-all">
+                  <button className="inline-flex items-center text-sm font-semibold text-brand-navy hover:text-brand-orange transition-all">
                     Botão terciário
                   </button>
                 </div>
@@ -512,13 +512,13 @@ export default function DesignSystemPage() {
                   Tamanhos
                 </div>
                 <div className="flex flex-wrap items-center gap-4">
-                  <button className="inline-flex items-center rounded-full bg-[#FA8400] text-white text-xs font-semibold px-4 py-2">
+                  <button className="inline-flex items-center rounded-full bg-brand-orange text-white text-xs font-semibold px-4 py-2">
                     SM
                   </button>
-                  <button className="inline-flex items-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4">
+                  <button className="inline-flex items-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4">
                     MD (default)
                   </button>
-                  <button className="inline-flex items-center rounded-full bg-[#FA8400] text-white text-base font-semibold px-9 py-4">
+                  <button className="inline-flex items-center rounded-full bg-brand-orange text-white text-base font-semibold px-9 py-4">
                     LG
                   </button>
                 </div>
@@ -530,17 +530,17 @@ export default function DesignSystemPage() {
           <Section id="badges">
             <SectionTitle kicker="07" title="Badges" />
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 flex flex-wrap gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#FA8400]/40 bg-[#FA8400]/10 px-3 py-1 text-[11px] font-semibold text-[#FA8400]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#FA8400] animate-pulse" />
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-orange/40 bg-brand-orange/10 px-3 py-1 text-[11px] font-semibold text-brand-orange">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
                 Inscrições abertas
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#00C08B]/40 bg-[#00C08B]/10 px-3 py-1 text-[11px] font-semibold text-[#00C08B]">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-teal/40 bg-brand-teal/10 px-3 py-1 text-[11px] font-semibold text-brand-teal">
                 Sucesso
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/80">
                 Neutra
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#FA8400] px-3 py-1 text-[11px] font-bold text-white">
+              <span className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-3 py-1 text-[11px] font-bold text-white">
                 Sólida
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-red-400/40 bg-red-400/10 px-3 py-1 text-[11px] font-semibold text-red-300">
@@ -558,8 +558,8 @@ export default function DesignSystemPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
                 <div className="inline-flex items-center gap-2 mb-4">
-                  <span className="block h-px w-8 bg-[#FA8400]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                  <span className="block h-px w-8 bg-brand-orange" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                     Acelera Pedra Branca
                   </span>
                 </div>
@@ -569,8 +569,8 @@ export default function DesignSystemPage() {
               </div>
               <div className="rounded-2xl border border-white/10 bg-[#F5F4EF] p-8">
                 <div className="inline-flex items-center gap-2 mb-4">
-                  <span className="block h-px w-8 bg-[#FA8400]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                  <span className="block h-px w-8 bg-brand-orange" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                     Sobre fundo claro
                   </span>
                 </div>
@@ -587,24 +587,24 @@ export default function DesignSystemPage() {
             <div className="grid md:grid-cols-3 gap-5">
               {/* Card translúcido sobre dark */}
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 hover:bg-white/[0.06] transition">
-                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-3">
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-3">
                   Programa
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Acelera Pedra Branca</h3>
                 <p className="text-sm text-white/60 leading-relaxed">
                   Programa de aceleração de startups com mentoria, capital e acesso ao ecossistema.
                 </p>
-                <button className="mt-5 inline-flex items-center text-xs font-semibold text-[#FA8400] hover:text-[#FF9B26] transition-all">
+                <button className="mt-5 inline-flex items-center text-xs font-semibold text-brand-orange hover:text-[#FF9B26] transition-all">
                   Saiba mais
                 </button>
               </div>
 
               {/* Card claro sobre dark */}
-              <div className="rounded-2xl bg-white p-6 text-[#0D2E38] shadow-2xl shadow-black/30">
-                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400] mb-3">
+              <div className="rounded-2xl bg-white p-6 text-brand-navy shadow-2xl shadow-black/30">
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-3">
                   Métrica
                 </div>
-                <div className="text-5xl font-extrabold tracking-tight text-[#0D2E38]">+300</div>
+                <div className="text-5xl font-extrabold tracking-tight text-brand-navy">+300</div>
                 <div className="mt-2 text-sm text-[#4B6472]">startups aceleradas</div>
               </div>
 
@@ -633,7 +633,7 @@ export default function DesignSystemPage() {
                   <input
                     type="text"
                     placeholder="Seu nome"
-                    className="mt-2 w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-[#FA8400] focus:bg-white/[0.06]"
+                    className="mt-2 w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-brand-orange focus:bg-white/[0.06]"
                   />
                 </label>
                 <label className="block">
@@ -643,9 +643,9 @@ export default function DesignSystemPage() {
                   <input
                     type="email"
                     defaultValue="contato@inaitec.org"
-                    className="mt-2 w-full rounded-xl border border-[#00C08B]/50 bg-[#00C08B]/[0.05] px-4 py-3 text-sm text-white outline-none focus:border-[#00C08B]"
+                    className="mt-2 w-full rounded-xl border border-brand-teal/50 bg-brand-teal/[0.05] px-4 py-3 text-sm text-white outline-none focus:border-brand-teal"
                   />
-                  <span className="mt-1.5 inline-block text-[11px] text-[#00C08B]">
+                  <span className="mt-1.5 inline-block text-[11px] text-brand-teal">
                     ✓ válido
                   </span>
                 </label>
@@ -669,7 +669,7 @@ export default function DesignSystemPage() {
                   <textarea
                     rows={4}
                     placeholder="Conte-nos sobre o seu projeto…"
-                    className="mt-2 w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-[#FA8400] focus:bg-white/[0.06] resize-none"
+                    className="mt-2 w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-brand-orange focus:bg-white/[0.06] resize-none"
                   />
                 </label>
               </div>
@@ -677,26 +677,26 @@ export default function DesignSystemPage() {
               {/* Light variant */}
               <div className="rounded-2xl bg-[#F5F4EF] p-8 space-y-5">
                 <label className="block">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0D2E38]/60">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-navy/60">
                     Nome completo
                   </span>
                   <input
                     type="text"
                     placeholder="Seu nome"
-                    className="mt-2 w-full rounded-xl border border-[#E8E6E1] bg-white px-4 py-3 text-sm text-[#0D2E38] placeholder:text-[#8A9FAD] outline-none transition focus:border-[#FA8400]"
+                    className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-brand-navy placeholder:text-[#8A9FAD] outline-none transition focus:border-brand-orange"
                   />
                 </label>
                 <label className="block">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0D2E38]/60">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-navy/60">
                     Empresa
                   </span>
                   <input
                     type="text"
                     placeholder="Nome da empresa"
-                    className="mt-2 w-full rounded-xl border border-[#E8E6E1] bg-white px-4 py-3 text-sm text-[#0D2E38] placeholder:text-[#8A9FAD] outline-none transition focus:border-[#FA8400]"
+                    className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-brand-navy placeholder:text-[#8A9FAD] outline-none transition focus:border-brand-orange"
                   />
                 </label>
-                <button className="w-full rounded-full bg-[#FA8400] text-white text-sm font-semibold py-4 hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-[#FA8400]/40 transition-all">
+                <button className="w-full rounded-full bg-brand-orange text-white text-sm font-semibold py-4 hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-brand-orange/40 transition-all">
                   Enviar mensagem
                 </button>
               </div>
@@ -718,7 +718,7 @@ export default function DesignSystemPage() {
                     aria-pressed={on as boolean}
                     className={`h-5 w-5 rounded-md border flex items-center justify-center transition ${
                       on
-                        ? 'bg-[#FA8400] border-[#FA8400]'
+                        ? 'bg-brand-orange border-brand-orange'
                         : 'border-white/30 group-hover:border-white/60'
                     }`}
                   >
@@ -752,7 +752,7 @@ export default function DesignSystemPage() {
                     role="switch"
                     aria-checked={on as boolean}
                     className={`relative h-6 w-11 rounded-full transition ${
-                      on ? 'bg-[#FA8400]' : 'bg-white/15'
+                      on ? 'bg-brand-orange' : 'bg-white/15'
                     }`}
                   >
                     <span
@@ -777,7 +777,7 @@ export default function DesignSystemPage() {
                     onClick={() => setActiveTabDemo(i)}
                     className={`px-5 py-3 text-sm font-semibold border-b-2 transition ${
                       i === activeTabDemo
-                        ? 'border-[#FA8400] text-white'
+                        ? 'border-brand-orange text-white'
                         : 'border-transparent text-white/50 hover:text-white'
                     }`}
                   >
@@ -810,7 +810,7 @@ export default function DesignSystemPage() {
                   />
                 </button>
                 {dropdownOpen && (
-                  <div className="absolute z-10 left-0 right-0 mt-2 rounded-xl border border-white/10 bg-[#0D2E38] shadow-2xl shadow-black/50 overflow-hidden">
+                  <div className="absolute z-10 left-0 right-0 mt-2 rounded-xl border border-white/10 bg-brand-navy shadow-2xl shadow-black/50 overflow-hidden">
                     {['Acelera Pedra Branca', 'Inova Conexões', 'Lab Open Innovation', 'Trilha Investidor'].map(
                       (opt) => (
                         <button
@@ -821,7 +821,7 @@ export default function DesignSystemPage() {
                           }}
                           className={`w-full text-left px-4 py-3 text-sm transition ${
                             opt === dropdownValue
-                              ? 'bg-[#FA8400]/15 text-[#FA8400]'
+                              ? 'bg-brand-orange/15 text-brand-orange'
                               : 'text-white/80 hover:bg-white/5'
                           }`}
                         >
@@ -841,14 +841,14 @@ export default function DesignSystemPage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 space-y-5">
               <button
                 onClick={triggerToast}
-                className="inline-flex items-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-[#FA8400]/40 transition"
+                className="inline-flex items-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-brand-orange/40 transition"
               >
                 Disparar toast
               </button>
 
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3 rounded-xl border border-[#00C08B]/30 bg-[#00C08B]/[0.08] px-4 py-3">
-                  <span className="mt-0.5 h-2 w-2 rounded-full bg-[#00C08B]" />
+                <div className="flex items-start gap-3 rounded-xl border border-brand-teal/30 bg-brand-teal/[0.08] px-4 py-3">
+                  <span className="mt-0.5 h-2 w-2 rounded-full bg-brand-teal" />
                   <div>
                     <div className="text-sm font-semibold text-white">Inscrição confirmada!</div>
                     <div className="text-xs text-white/60 mt-0.5">
@@ -874,8 +874,8 @@ export default function DesignSystemPage() {
             <SectionTitle kicker="16" title="Alertas & Feedbacks" />
             <div className="space-y-3">
               {[
-                ['info', '#FA8400', 'Inscrições do próximo ciclo abrem em 12 de junho.'],
-                ['success', '#00C08B', 'Sua candidatura foi recebida com sucesso.'],
+                ['info', 'var(--color-brand-orange)', 'Inscrições do próximo ciclo abrem em 12 de junho.'],
+                ['success', 'var(--color-brand-teal)', 'Sua candidatura foi recebida com sucesso.'],
                 ['warning', '#F5C84B', 'Seu perfil ainda está incompleto — finalize para concorrer.'],
                 ['danger', '#F87171', 'Sessão expirada. Faça login novamente.'],
               ].map(([type, color, msg]) => (
@@ -908,7 +908,7 @@ export default function DesignSystemPage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
               <button
                 onClick={() => setShowModal(true)}
-                className="inline-flex items-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-[#FA8400]/40 transition"
+                className="inline-flex items-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-brand-orange/40 transition"
               >
                 Abrir modal
               </button>
@@ -929,7 +929,7 @@ export default function DesignSystemPage() {
               </div>
               <div>
                 <div className="text-[11px] font-mono text-white/40 mb-2">Brand stripe</div>
-                <div className="h-px bg-[#FA8400]" />
+                <div className="h-px bg-brand-orange" />
               </div>
               <div>
                 <div className="text-[11px] font-mono text-white/40 mb-2">Eyebrow inline</div>
@@ -951,8 +951,8 @@ export default function DesignSystemPage() {
                 Inaitec · Design System
               </div>
               <div className="text-xs text-white/30">
-                Tokens em <code className="text-[#FA8400]">src/app/globals.css</code> · rota oculta{' '}
-                <code className="text-[#FA8400]">/design-system</code>
+                Tokens em <code className="text-brand-orange">src/app/globals.css</code> · rota oculta{' '}
+                <code className="text-brand-orange">/design-system</code>
               </div>
             </div>
             <div className="flex items-center gap-2 text-xs text-white/30 shrink-0">
@@ -975,8 +975,8 @@ export default function DesignSystemPage() {
           showToast ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
       >
-        <div className="flex items-center gap-3 rounded-xl border border-[#FA8400]/40 bg-[#0D2E38] shadow-2xl shadow-black/50 px-5 py-3">
-          <span className="h-2 w-2 rounded-full bg-[#FA8400] animate-pulse" />
+        <div className="flex items-center gap-3 rounded-xl border border-brand-orange/40 bg-brand-navy shadow-2xl shadow-black/50 px-5 py-3">
+          <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
           <div className="text-sm font-semibold text-white">Token copiado para a área de transferência</div>
         </div>
       </div>
@@ -989,12 +989,12 @@ export default function DesignSystemPage() {
         >
           <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
           <div
-            className="relative max-w-md w-full rounded-2xl bg-[#0D2E38] border border-white/10 p-8 shadow-2xl"
+            className="relative max-w-md w-full rounded-2xl bg-brand-navy border border-white/10 p-8 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-3 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FA8400]">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
                 Confirmação
               </span>
             </div>

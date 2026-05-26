@@ -32,7 +32,7 @@ export default async function AutorPage({ params }: Props) {
   return (
     <main>
       {/* ── Hero do autor ── */}
-      <Section padding="none" className="bg-[#0D2E38] pt-[108px] pb-16">
+      <Section padding="none" className="bg-brand-navy pt-[108px] pb-16">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-[11px] text-white/40 pt-14 mb-12">
             <Link href="/conteudo" className="hover:text-white/70 transition-colors">
@@ -57,7 +57,7 @@ export default async function AutorPage({ params }: Props) {
 
             {/* Info */}
             <div className="flex-1">
-              <span className="inline-flex items-center rounded-full bg-[#FA8400]/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400] mb-4">
+              <span className="inline-flex items-center rounded-full bg-brand-orange/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange mb-4">
                 {autor.cargo}
               </span>
               <h1 className="font-extrabold text-white text-display-xl leading-[1.1] tracking-tight mb-5">
@@ -76,7 +76,7 @@ export default async function AutorPage({ params }: Props) {
 
       {/* ── Artigos do autor ── */}
       <Section theme="light" padding="md">
-          <h2 className="font-extrabold text-[#0D2E38] text-[1.5rem] md:text-[1.75rem] tracking-tight mb-8">
+          <h2 className="font-extrabold text-brand-navy text-[1.5rem] md:text-[1.75rem] tracking-tight mb-8">
             Publicações
           </h2>
 
@@ -86,7 +86,7 @@ export default async function AutorPage({ params }: Props) {
                 <Link
                   key={post.id}
                   href={`/conteudo/${post.slug}`}
-                  className="group rounded-2xl overflow-hidden border border-[#E8E6E1] bg-white hover:border-[#FA8400]/25 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/[0.06] transition-all duration-300"
+                  className="group rounded-2xl overflow-hidden border border-border bg-white hover:border-brand-orange/25 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/[0.06] transition-all duration-300"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image
@@ -99,15 +99,15 @@ export default async function AutorPage({ params }: Props) {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="inline-flex items-center rounded-full bg-[#FA8400]/10 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+                      <span className="inline-flex items-center rounded-full bg-brand-orange/10 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                         {post.categoria}
                       </span>
-                      <span className="text-[11px] text-[#0D2E38]/40">{post.data}</span>
+                      <span className="text-[11px] text-brand-navy/40">{post.data}</span>
                     </div>
-                    <h3 className="font-extrabold text-[#0D2E38] text-[15px] leading-snug mb-2 group-hover:text-[#FA8400] transition-colors duration-200">
+                    <h3 className="font-extrabold text-brand-navy text-[15px] leading-snug mb-2 group-hover:text-brand-orange transition-colors duration-200">
                       {post.titulo}
                     </h3>
-                    <p className="text-[#0D2E38]/55 text-sm leading-relaxed line-clamp-2">
+                    <p className="text-brand-navy/55 text-sm leading-relaxed line-clamp-2">
                       {post.excerpt}
                     </p>
                   </div>
@@ -115,22 +115,22 @@ export default async function AutorPage({ params }: Props) {
               ))}
             </div>
           ) : (
-            <p className="text-[#0D2E38]/40 text-sm py-16 text-center">
+            <p className="text-brand-navy/40 text-sm py-16 text-center">
               Nenhuma publicação encontrada.
             </p>
           )}
       </Section>
 
       {/* ── CTA ── */}
-      <Section padding="md" className="bg-[#0D2E38]">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0D2E38] via-[#004E69] to-[#0D2E38] p-8 sm:p-12 md:p-20">
-            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-[#FA8400]/20 blur-[140px]" />
-            <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full bg-[#00C08B]/10 blur-[120px]" />
+      <Section padding="md" className="bg-brand-navy">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-navy via-[#004E69] to-brand-navy p-8 sm:p-12 md:p-20">
+            <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-brand-orange/20 blur-[140px]" />
+            <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full bg-brand-teal/10 blur-[120px]" />
             <div className="relative grid lg:grid-cols-[1fr_auto] gap-10 items-center">
               <div>
                 <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
                   Quer fazer parte das{' '}
-                  <span className="italic font-medium text-[#FA8400]">próximas histórias</span>?
+                  <span className="italic font-medium text-brand-orange">próximas histórias</span>?
                 </h2>
                 <p className="mt-6 text-white/65 text-base leading-relaxed">
                   Conheça os programas de aceleração e descubra como o Inaitec pode impulsionar
@@ -140,7 +140,7 @@ export default async function AutorPage({ params }: Props) {
               <div className="w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:shrink-0">
                 <Link
                   href="/programas"
-                  className="inline-flex items-center justify-center rounded-full bg-[#FA8400] text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-[#FA8400]/40 transition-all duration-300 shadow-lg shadow-[#FA8400]/25"
+                  className="inline-flex items-center justify-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
                 >
                   Ver programas
                 </Link>

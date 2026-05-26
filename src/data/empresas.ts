@@ -42,14 +42,14 @@ export const SETOR_COLORS: Record<Setor, string> = {
   'B2B SaaS': '#0891b2',
   CleanTech: '#15803d',
   LogTech: '#9333ea',
-  GovTech: '#0D2E38',
+  GovTech: 'var(--color-brand-navy)',
   Cibersegurança: '#1e3a5f',
 }
 
 export const ESTAGIO_CONFIG: Record<Estagio, { bg: string; text: string }> = {
-  Startup: { bg: '#FA840018', text: '#FA8400' },
-  'Scale-up': { bg: '#00C08B18', text: '#00C08B' },
-  Corporação: { bg: '#0D2E3818', text: '#0D2E38' },
+  Startup: { bg: '#FA840018', text: 'var(--color-brand-orange)' },
+  'Scale-up': { bg: '#00C08B18', text: 'var(--color-brand-teal)' },
+  Corporação: { bg: '#0D2E3818', text: 'var(--color-brand-navy)' },
 }
 
 export const EMPRESAS: Empresa[] = [
@@ -132,7 +132,7 @@ export const EMPRESAS: Empresa[] = [
     estagio: 'Startup',
     desc: 'Analytics e painel de BI para prefeituras de médio porte monitorarem KPIs urbanos.',
     fundada: 2021,
-    cor: '#0D2E38',
+    cor: 'var(--color-brand-navy)',
   },
   {
     slug: 'shieldlayer',

@@ -50,13 +50,13 @@ export default function Timeline({ theme = 'light' }: { theme?: 'light' | 'dark'
   return (
     <div className="mt-24">
       <div className="mb-4 inline-flex items-center gap-2">
-        <span className="block h-px w-8 bg-[#FA8400]" />
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FA8400]">
+        <span className="block h-px w-8 bg-brand-orange" />
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
           Nossa trajetória
         </span>
       </div>
       <h3 className={`font-extrabold text-display-lg leading-tight mb-10 tracking-tight max-w-2xl ${isDark ? 'text-white' : 'text-text-heading'}`}>
-        15 anos construindo o <span className="text-[#FA8400]">maior ecossistema</span> de inovação do Sul
+        15 anos construindo o <span className="text-brand-orange">maior ecossistema</span> de inovação do Sul
       </h3>
 
       {/* Linha do tempo — anos */}
@@ -65,10 +65,10 @@ export default function Timeline({ theme = 'light' }: { theme?: 'light' | 'dark'
         {/* Trilho dos pontos — ocupa ~90% da largura */}
         <div className="relative flex-1">
           {/* Linha base */}
-          <div className={`absolute top-[18px] left-0 right-0 h-px ${isDark ? 'bg-white/15' : 'bg-[#E8E6E1]'}`} />
+          <div className={`absolute top-[18px] left-0 right-0 h-px ${isDark ? 'bg-white/15' : 'bg-border'}`} />
           {/* Linha de progresso */}
           <div
-            className={`absolute top-[18px] left-0 h-px transition-all duration-500 ${isDark ? 'bg-[#FA8400]' : 'bg-[#004E69]'}`}
+            className={`absolute top-[18px] left-0 h-px transition-all duration-500 ${isDark ? 'bg-brand-orange' : 'bg-[#004E69]'}`}
             style={{ width: `${(active / (events.length - 1)) * 100}%` }}
           />
 
@@ -88,11 +88,11 @@ export default function Timeline({ theme = 'light' }: { theme?: 'light' | 'dark'
                     'w-9 h-9 rounded-full border-2 flex items-center justify-center transition-all duration-300 z-10',
                     isDark
                       ? i <= active
-                        ? 'bg-[#FA8400] border-[#FA8400]'
-                        : 'bg-[#0D2E38] border-white/25 group-hover:border-[#FA8400]'
+                        ? 'bg-brand-orange border-brand-orange'
+                        : 'bg-brand-navy border-white/25 group-hover:border-brand-orange'
                       : i <= active
                         ? 'bg-[#004E69] border-[#004E69]'
-                        : 'bg-white border-[#E8E6E1] group-hover:border-[#004E69]',
+                        : 'bg-white border-border group-hover:border-[#004E69]',
                   ].join(' ')}
                 >
                   {i < active && (
@@ -135,8 +135,8 @@ export default function Timeline({ theme = 'light' }: { theme?: 'light' | 'dark'
           {/* Topo: eyebrow + título */}
           <div className="relative">
             <div className="inline-flex items-center gap-2 mb-3">
-              <span className="block h-px w-6 bg-[#FA8400]" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#FA8400]">
+              <span className="block h-px w-6 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-orange">
                 {events[active].year}
               </span>
             </div>
@@ -151,18 +151,18 @@ export default function Timeline({ theme = 'light' }: { theme?: 'light' | 'dark'
           </p>
 
           {/* Rodapé: métrica */}
-          <div className={`relative flex flex-col gap-1 pt-5 border-t mt-6 ${isDark ? 'border-white/10' : 'border-[#E8E6E1]/80'}`}>
+          <div className={`relative flex flex-col gap-1 pt-5 border-t mt-6 ${isDark ? 'border-white/10' : 'border-border/80'}`}>
             <span className={`text-[10px] font-semibold uppercase tracking-widest ${isDark ? 'text-white/50' : 'text-text-muted'}`}>
               marco do período
             </span>
-            <span className={`text-3xl font-extrabold ${isDark ? 'text-[#FA8400]' : 'text-[#004E69]'}`}>
+            <span className={`text-3xl font-extrabold ${isDark ? 'text-brand-orange' : 'text-[#004E69]'}`}>
               <AnimatedCounter key={active} value={events[active].metric} />
             </span>
           </div>
         </div>
 
         {/* Imagem */}
-        <div className="w-[35%] shrink-0 bg-[#0D2E38] relative overflow-hidden">
+        <div className="w-[35%] shrink-0 bg-brand-navy relative overflow-hidden">
           <img
             src="/hero-pedra-branca.jpg"
             alt="Parque Tecnológico Pedra Branca"
@@ -184,7 +184,7 @@ export default function Timeline({ theme = 'light' }: { theme?: 'light' | 'dark'
           <button
             onClick={() => setActive(Math.max(0, active - 1))}
             disabled={active === 0}
-            className={`w-10 h-10 rounded-full border flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#FA8400] hover:text-[#FA8400] hover:bg-[#FA8400]/5 transition-all ${isDark ? 'border-white/20 text-white' : 'border-[#E8E6E1] text-[#004E69]'}`}
+            className={`w-10 h-10 rounded-full border flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 transition-all ${isDark ? 'border-white/20 text-white' : 'border-border text-[#004E69]'}`}
             aria-label="Ano anterior"
           >
             <ChevronLeft strokeWidth={2} className="w-4 h-4" />
@@ -192,7 +192,7 @@ export default function Timeline({ theme = 'light' }: { theme?: 'light' | 'dark'
           <button
             onClick={() => setActive(Math.min(events.length - 1, active + 1))}
             disabled={active === events.length - 1}
-            className={`w-10 h-10 rounded-full border flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#FA8400] hover:text-[#FA8400] hover:bg-[#FA8400]/5 transition-all ${isDark ? 'border-white/20 text-white' : 'border-[#E8E6E1] text-[#004E69]'}`}
+            className={`w-10 h-10 rounded-full border flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/5 transition-all ${isDark ? 'border-white/20 text-white' : 'border-border text-[#004E69]'}`}
             aria-label="Próximo ano"
           >
             <ChevronRight strokeWidth={2} className="w-4 h-4" />

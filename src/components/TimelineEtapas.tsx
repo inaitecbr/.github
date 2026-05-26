@@ -41,7 +41,7 @@ export default function TimelineEtapas({ etapas, accent }: Props) {
       {/* Linha vertical — desenha do topo pra base junto com a animação */}
       <span
         aria-hidden
-        className="absolute left-6 top-2 bottom-2 w-px bg-[#0D2E38]/15 origin-top transition-transform ease-out"
+        className="absolute left-6 top-2 bottom-2 w-px bg-brand-navy/15 origin-top transition-transform ease-out"
         style={{
           transform: visible ? 'scaleY(1)' : 'scaleY(0)',
           transitionDuration: `${lineDurationMs}ms`,
@@ -67,7 +67,7 @@ export default function TimelineEtapas({ etapas, accent }: Props) {
             </span>
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h3 className="text-[#0D2E38] text-xl font-extrabold leading-tight">
+                <h3 className="text-brand-navy text-xl font-extrabold leading-tight">
                   {e.titulo}
                 </h3>
                 {e.duracao && (
@@ -79,7 +79,7 @@ export default function TimelineEtapas({ etapas, accent }: Props) {
                   </span>
                 )}
               </div>
-              <p className="text-[#0D2E38]/65 text-[15px] leading-relaxed">{e.desc}</p>
+              <p className="text-brand-navy/65 text-[15px] leading-relaxed">{e.desc}</p>
             </div>
           </div>
         </li>

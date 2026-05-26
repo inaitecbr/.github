@@ -60,6 +60,59 @@ Este projeto segue um sistema de skills por fase — da Discovery ao Deploy. O a
 
 ---
 
+## Design Tokens — Cores
+
+Todas as cores principais ficam como CSS variables no `@theme` do Tailwind v4, em [src/app/globals.css](src/app/globals.css). **Mudar uma cor é uma única edição** — todas as ocorrências no site refletem.
+
+### Tokens disponíveis (`@theme`)
+
+| Variável CSS | Valor | Uso |
+|---|---|---|
+| `--color-brand-orange` | `#FA8400` | Cor principal de destaque, CTAs, highlights italic |
+| `--color-brand-teal` | `#00C08B` | Verde da marca (pilar empresas) |
+| `--color-brand-dark` | `#004E69` | Dark navy-teal (textos de heading no light mode) |
+| `--color-brand-navy` | `#0D2E38` | Fundo escuro principal |
+| `--color-surface` | `#FFFFFF` | Branco |
+| `--color-surface-soft` | `#F5F4EF` | Fundo claro (light sections) |
+| `--color-border` | `#E8E6E1` | Borda padrão (light mode) |
+| `--color-text-heading` | `#004E69` | Títulos no light mode |
+| `--color-text-body` | `#4B6472` | Corpo de texto |
+| `--color-text-muted` | `#8A9FAD` | Labels, metadados |
+
+### Convenção de uso no Tailwind
+
+Cada variável `--color-X` vira automaticamente classes utilitárias:
+
+```tsx
+// ✅ Use a classe nomeada — consome a variável CSS
+<div className="bg-brand-orange text-white" />
+<p className="text-brand-navy/65">  {/* opacidade funciona */}
+<span className="border-border" />
+
+// ✅ Em inline styles, use a variável CSS
+<div style={{ background: 'var(--color-brand-orange)' }} />
+
+// ❌ Nunca use bracket notation com hex direto
+<div className="bg-[#FA8400]" />   // bypass do @theme
+<div style={{ color: '#FA8400' }} />
+```
+
+### Regras
+
+- **Adicionar nova cor recorrente:** edita [globals.css:63-78](src/app/globals.css#L63) (bloco `@theme`) e adiciona `--color-<nome>: #RRGGBB;`. Depois use `bg-<nome>`, `text-<nome>`, `border-<nome>` etc.
+- **Mudar uma cor existente:** edita o valor da variável em `globals.css` — todas as ocorrências refletem.
+- **Cores semânticas únicas** (verde sucesso `#15803d`, vermelho erro `#dc2626`, paleta categórica como pilares Universidades `#4A9EE0` / Investidores `#E9A84A`) podem ficar como bracket notation até virarem recorrentes — quando passarem de ~10 usos, promover ao `@theme`.
+
+### Casos especiais (refactor pendente)
+
+Esses casos ainda usam hex literal porque exigem lógica mais elaborada — não bloqueiam, mas vale lembrar pra futura limpeza:
+
+- **Alpha-hex de 8 dígitos** (`#FA840018`) — `var()` não suporta esse formato concatenado. Ver [src/data/empresas.ts:50-52](src/data/empresas.ts#L50-L52). Alternativa: separar `bg` (com alpha) de `text` (cor sólida via var).
+- **Gradients em inline style** (`'radial-gradient(circle, #FA8400 0%, transparent 65%)'`) — string composta dificulta o swap. Ver [EcosystemAccordion.tsx](src/components/EcosystemAccordion.tsx) e [InaitecWebsite.tsx](src/components/InaitecWebsite.tsx).
+- **Documentação visual** (`<code>#FA8400</code>` em [design-system/page.tsx](src/app/[locale]/design-system/page.tsx)) — intencional, mostra a paleta literal.
+
+---
+
 ## Migração para Sanity CMS — Plano e Padrões
 
 O site atual tem todo o conteúdo hardcoded em três lugares: `messages/{pt,en,es}.json`, `src/data/*.ts` (programas, conteudo, empresas) e arrays inline dentro das `page.tsx` (ex.: conselhos em `sobre/page.tsx`). A meta é migrar todo o **conteúdo editorial** para o Sanity, mantendo o `next-intl` apenas para nav/microcopy fixo.

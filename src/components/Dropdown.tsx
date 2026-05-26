@@ -52,7 +52,7 @@ export default function Dropdown({
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="w-full h-12 flex items-center justify-between rounded-xl border border-white/15 bg-white/[0.04] px-4 text-sm text-white hover:bg-white/[0.06] outline-none transition focus:border-[#FA8400] focus:bg-white/[0.06]"
+        className="w-full h-12 flex items-center justify-between rounded-xl border border-white/15 bg-white/[0.04] px-4 text-sm text-white hover:bg-white/[0.06] outline-none transition focus:border-brand-orange focus:bg-white/[0.06]"
       >
         <span className={selected ? '' : 'text-white/40'}>
           {selected ? selected.label : placeholder}
@@ -66,7 +66,7 @@ export default function Dropdown({
       {open && (
         <div
           role="listbox"
-          className="absolute z-20 left-0 right-0 mt-2 rounded-xl border border-white/10 bg-[#0D2E38] shadow-2xl shadow-black/50 overflow-hidden"
+          className="absolute z-20 left-0 right-0 mt-2 rounded-xl border border-white/10 bg-brand-navy shadow-2xl shadow-black/50 overflow-hidden"
         >
           {options.map((opt) => (
             <button
@@ -80,7 +80,7 @@ export default function Dropdown({
               }}
               className={`w-full text-left px-4 py-3 text-sm transition ${
                 opt.value === value
-                  ? 'bg-[#FA8400]/15 text-[#FA8400]'
+                  ? 'bg-brand-orange/15 text-brand-orange'
                   : 'text-white/80 hover:bg-white/5'
               }`}
             >

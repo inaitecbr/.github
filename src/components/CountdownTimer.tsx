@@ -49,14 +49,14 @@ export default function CountdownTimer({
           <div key={u.label} className="flex flex-col items-start gap-1.5">
             <span
               className={`text-[1.75rem] md:text-[2rem] font-extrabold leading-none tabular-nums ${
-                isDark ? 'text-white' : 'text-[#0D2E38]'
+                isDark ? 'text-white' : 'text-brand-navy'
               }`}
             >
               {u.val}
             </span>
             <span
               className={`text-[9px] font-bold uppercase tracking-[0.2em] ${
-                isDark ? 'text-white/55' : 'text-[#0D2E38]/45'
+                isDark ? 'text-white/55' : 'text-brand-navy/45'
               }`}
             >
               {u.label}
@@ -74,14 +74,14 @@ export default function CountdownTimer({
           <div className="flex flex-col items-center">
             <span
               className={`text-[1.75rem] font-extrabold leading-none tabular-nums ${
-                isDark ? 'text-white' : 'text-[#0D2E38]'
+                isDark ? 'text-white' : 'text-brand-navy'
               }`}
             >
               {u.val}
             </span>
             <span
               className={`text-[9px] font-semibold uppercase tracking-widest mt-1.5 ${
-                isDark ? 'text-white/55' : 'text-[#0D2E38]/40'
+                isDark ? 'text-white/55' : 'text-brand-navy/40'
               }`}
             >
               {u.label}
@@ -90,7 +90,7 @@ export default function CountdownTimer({
           {i < units.length - 1 && (
             <span
               className={`text-lg font-bold mb-5 px-0.5 ${
-                isDark ? 'text-white/30' : 'text-[#0D2E38]/25'
+                isDark ? 'text-white/30' : 'text-brand-navy/25'
               }`}
             >
               :

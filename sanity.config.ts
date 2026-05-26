@@ -3,6 +3,7 @@ import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { documentInternationalization } from '@sanity/document-internationalization'
 import { schemaTypes } from './src/sanity/schemas'
+import { structure } from './src/sanity/structure'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
@@ -16,7 +17,7 @@ export const supportedLanguages = [
 
 // Nomes dos schemas que terão suporte a i18n (PT/EN/ES via botão "Translations").
 // Adicionar aqui cada novo schema editorial conforme for criado.
-const i18nSchemaTypes: string[] = []
+const i18nSchemaTypes: string[] = ['home']
 
 export default defineConfig({
   name: 'inaitec-website',
@@ -25,7 +26,7 @@ export default defineConfig({
   dataset,
   basePath: '/studio',
   plugins: [
-    structureTool(),
+    structureTool({ structure }),
     ...(i18nSchemaTypes.length > 0
       ? [
           documentInternationalization({
