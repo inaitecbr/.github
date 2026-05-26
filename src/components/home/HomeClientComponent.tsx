@@ -5,6 +5,8 @@ import HeroSection from './HeroSection'
 import ParceirosSection from './ParceirosSection'
 import EcossistemaSection from './EcossistemaSection'
 import PilaresSection from './PilaresSection'
+import ProgramasSection from './ProgramasSection'
+import ChamadasSection from './ChamadasSection'
 import type { HomeData } from '@/sanity/queries/home'
 
 type Props = {
@@ -44,6 +46,8 @@ export default function HomeClientComponent({ data }: Props) {
       <ParceirosSection parceiros={data?.parceiros} />
       <EcossistemaSection ecossistema={data?.ecossistema} timeline={data?.timeline} />
       <PilaresSection pilares={data?.pilares} />
+      <ProgramasSection programas={data?.programas} />
+      <ChamadasSection chamadas={data?.chamadas} />
 
       {/* Seções ainda hardcoded — migradas seção por seção */}
       <InaitecWebsite />

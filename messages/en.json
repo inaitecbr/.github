@@ -112,43 +112,6 @@
         "anos": "years of ecosystem"
       }
     },
-    "programas": {
-      "eyebrow": "Featured programs",
-      "titleStart": "Meet our",
-      "titleHighlight": "programs",
-      "desc": "Journeys designed for every stage — from idea to internationalization. Choose the right program for your company's moment.",
-      "verTodos": "View all programs",
-      "saibaMais": "Learn more",
-      "pilares": {
-        "startups": "Startups",
-        "empresas": "Companies",
-        "universidades": "Universities",
-        "investidores": "Investors"
-      },
-      "items": {
-        "acelera": {
-          "name": "Acelera Pedra Branca",
-          "desc": "Intensive acceleration program with mentorship and investment."
-        },
-        "inovacao": {
-          "name": "Open Innovation",
-          "desc": "Connection between corporations and disruptive startups."
-        },
-        "pesquisa": {
-          "name": "Applied Research",
-          "desc": "R&D and technology transfer with academia."
-        },
-        "catalisa": {
-          "name": "Catalisa Inaitec",
-          "desc": "Curated deal flow and co-investment within the ecosystem."
-        }
-      }
-    },
-    "chamadas": {
-      "titleStart": "Featured",
-      "titleHighlight": "calls",
-      "desc": "Journeys designed for every stage, from idea to internationalization. Choose the right program for your company's moment."
-    },
     "noticias": {
       "eyebrow": "Content hub",
       "titleStart": "Recent",
@@ -363,7 +326,6 @@
     }
   },
   "ChamadasAbertasDestaque": {
-    "eyebrow": "Upcoming calls",
     "tempoRestante": "Time left to apply:",
     "inscreverAgora": "Apply now",
     "encerraEm": "Closes on {date}",
@@ -381,5 +343,48 @@
     "pt": "Português",
     "en": "English (International)",
     "es": "Español"
+  },
+  "Programa": {
+    "saibaMais": "Learn more",
+    "verTodos": "View all programs",
+    "publico": {
+      "startups": "Startups and Small Businesses",
+      "empresas": "Large and Medium Enterprises",
+      "universidades": "Universities and Government",
+      "investidores": "Investors"
+    },
+    "publicoShort": {
+      "startups": "Startups",
+      "empresas": "Companies",
+      "universidades": "Universities",
+      "investidores": "Investors"
+    },
+    "estagio": {
+      "ideacao": "Ideation",
+      "pre-aceleracao": "Pre-acceleration",
+      "aceleracao": "Acceleration",
+      "crescimento": "Growth",
+      "internacionalizacao": "Internationalization",
+      "pesquisa": "Research",
+      "operacao": "Operation"
+    },
+    "entrada": {
+      "edital": "Public call",
+      "inscricao-continua": "Rolling application",
+      "convite": "By invitation",
+      "parceria": "Partnership"
+    },
+    "statusLabel": {
+      "aberta": "Applications open",
+      "em-breve": "Coming soon",
+      "fechada": "Applications closed",
+      "fluxo-continuo": "Continuous flow"
+    },
+    "statusShort": {
+      "aberta": "Open",
+      "em-breve": "Soon",
+      "fechada": "Closed",
+      "fluxo-continuo": "Continuous"
+    }
   }
 }

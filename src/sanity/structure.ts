@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { DocumentsIcon, HomeIcon } from '@sanity/icons'
+import { DocumentsIcon, HomeIcon, RocketIcon } from '@sanity/icons'
 
 /**
  * Estrutura customizada do Studio.
@@ -7,10 +7,11 @@ import { DocumentsIcon, HomeIcon } from '@sanity/icons'
  * Páginas singleton com i18n: cada item abre direto o editor do doc PT
  * (versão canônica). O botão "Translations" no topo do editor abre as
  * versões EN/ES em split-view.
+ *
+ * Coleções com i18n: lista filtrada por language=='pt' — o editor abre
+ * a versão PT e usa "Translations" para acessar EN/ES.
  */
 
-// IDs dos documentos singleton (versão PT — canônica).
-// Os outros idiomas são acessados via botão "Translations".
 const SINGLETONS = {
   home: '08a4cb0a-f98b-4dd7-9185-8c5516c39943',
 } as const
@@ -35,8 +36,16 @@ export const structure: StructureResolver = (S) =>
                     .documentId(SINGLETONS.home)
                     .schemaType('home'),
                 ),
-              // Adicionar próximas páginas aqui: Sobre, Fale Conosco, etc.
             ]),
         ),
-      // Futuros grupos: Vagas, Candidaturas, Programas, Conteúdo (posts), Empresas
+
+      // ── Coleção: Programas (lista PT — Translations no editor) ────────
+      S.listItem()
+        .title('Programas')
+        .icon(RocketIcon)
+        .child(
+          S.documentTypeList('programa')
+            .title('Programas (PT)')
+            .filter('_type == "programa" && language == "pt"'),
+        ),
     ])

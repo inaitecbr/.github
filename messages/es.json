@@ -112,43 +112,6 @@
         "anos": "años de ecosistema"
       }
     },
-    "programas": {
-      "eyebrow": "Programas destacados",
-      "titleStart": "Conoce los",
-      "titleHighlight": "programas",
-      "desc": "Trayectos diseñados para cada etapa — de la idea a la internacionalización. Elige el programa ideal para el momento de tu empresa.",
-      "verTodos": "Ver todos los programas",
-      "saibaMais": "Saber más",
-      "pilares": {
-        "startups": "Startups",
-        "empresas": "Empresas",
-        "universidades": "Universidades",
-        "investidores": "Inversionistas"
-      },
-      "items": {
-        "acelera": {
-          "name": "Acelera Pedra Branca",
-          "desc": "Programa intensivo de aceleración con mentoría e inversión."
-        },
-        "inovacao": {
-          "name": "Innovación Abierta",
-          "desc": "Conexión entre corporaciones y startups disruptivas."
-        },
-        "pesquisa": {
-          "name": "Investigación Aplicada",
-          "desc": "I+D y transferencia tecnológica con la academia."
-        },
-        "catalisa": {
-          "name": "Catalisa Inaitec",
-          "desc": "Deal flow curado y co-inversión en el ecosistema."
-        }
-      }
-    },
-    "chamadas": {
-      "titleStart": "Convocatorias",
-      "titleHighlight": "destacadas",
-      "desc": "Trayectos diseñados para cada etapa, de la idea a la internacionalización. Elige el programa ideal para el momento de tu empresa."
-    },
     "noticias": {
       "eyebrow": "Portal de contenido",
       "titleStart": "Noticias",
@@ -363,7 +326,6 @@
     }
   },
   "ChamadasAbertasDestaque": {
-    "eyebrow": "Próximas convocatorias",
     "tempoRestante": "Tiempo restante para postular:",
     "inscreverAgora": "Postular ahora",
     "encerraEm": "Cierra el {date}",
@@ -381,5 +343,48 @@
     "pt": "Português",
     "en": "English (International)",
     "es": "Español"
+  },
+  "Programa": {
+    "saibaMais": "Saber más",
+    "verTodos": "Ver todos los programas",
+    "publico": {
+      "startups": "Startups y Pequeñas Empresas",
+      "empresas": "Grandes y Medianas Empresas",
+      "universidades": "Universidades y Gobierno",
+      "investidores": "Inversionistas"
+    },
+    "publicoShort": {
+      "startups": "Startups",
+      "empresas": "Empresas",
+      "universidades": "Universidades",
+      "investidores": "Inversionistas"
+    },
+    "estagio": {
+      "ideacao": "Ideación",
+      "pre-aceleracao": "Pre-aceleración",
+      "aceleracao": "Aceleración",
+      "crescimento": "Crecimiento",
+      "internacionalizacao": "Internacionalización",
+      "pesquisa": "Investigación",
+      "operacao": "Operación"
+    },
+    "entrada": {
+      "edital": "Convocatoria",
+      "inscricao-continua": "Inscripción continua",
+      "convite": "Por invitación",
+      "parceria": "Alianza"
+    },
+    "statusLabel": {
+      "aberta": "Inscripciones abiertas",
+      "em-breve": "Próximamente",
+      "fechada": "Inscripciones cerradas",
+      "fluxo-continuo": "Flujo continuo"
+    },
+    "statusShort": {
+      "aberta": "Abierto",
+      "em-breve": "Pronto",
+      "fechada": "Cerrado",
+      "fluxo-continuo": "Continuo"
+    }
   }
 }

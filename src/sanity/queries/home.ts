@@ -1,5 +1,6 @@
 import { groq } from 'next-sanity'
 import { sanityFetch } from '@/sanity/lib/live'
+import type { ProgramaCard } from './programa'
 
 export const homeQuery = groq`
   *[_type == "home" && language == $language][0]{
@@ -46,6 +47,41 @@ export const homeQuery = groq`
       marcoLabel,
       imageAlt,
       events[]{ _key, year, title, desc, metrics[]{ _key, value, label } }
+    },
+    programas {
+      eyebrow,
+      titleStart,
+      titleHighlight,
+      desc,
+      verTodosLabel,
+      destaques[]->{
+        _id,
+        "slug": slug.current,
+        name,
+        desc,
+        publicoKey,
+        statusKey,
+        "imageUrl": image.asset->url
+      }
+    },
+    chamadas {
+      eyebrow,
+      titleStart,
+      titleHighlight,
+      desc,
+      "items": *[_type == "programa" && language == $language && statusKey in ["aberta", "em-breve"]] | order(
+        select(statusKey == "aberta" => 0, 1) asc,
+        deadline asc
+      ){
+        _id,
+        "slug": slug.current,
+        name,
+        desc,
+        publicoKey,
+        statusKey,
+        deadline,
+        "imageUrl": image.asset->url
+      }
     }
   }
 `
@@ -137,6 +173,23 @@ export type HomeEcossistema = {
   ctaHref?: string
 }
 
+export type HomeProgramas = {
+  eyebrow?: string
+  titleStart?: string
+  titleHighlight?: string
+  desc?: string
+  verTodosLabel?: string
+  destaques?: ProgramaCard[]
+}
+
+export type HomeChamadas = {
+  eyebrow?: string
+  titleStart?: string
+  titleHighlight?: string
+  desc?: string
+  items?: ProgramaCard[]
+}
+
 export type HomeData = {
   language?: string
   hero?: HomeHero
@@ -144,6 +197,8 @@ export type HomeData = {
   ecossistema?: HomeEcossistema
   pilares?: HomePilares
   timeline?: HomeTimeline
+  programas?: HomeProgramas
+  chamadas?: HomeChamadas
 } | null
 
 export async function getHome({ locale }: { locale: string }) {

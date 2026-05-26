@@ -26,9 +26,11 @@ export default function CountdownTimer({
   theme?: Theme
   variant?: Variant
 }) {
-  const [time, setTime] = useState<TimeLeft>(calcTimeLeft(target))
+  // SSR-safe: initial state is zeros (deterministic). Real countdown starts on client.
+  const [time, setTime] = useState<TimeLeft>({ dias: 0, hrs: 0, min: 0, seg: 0 })
 
   useEffect(() => {
+    setTime(calcTimeLeft(target))
     const id = setInterval(() => setTime(calcTimeLeft(target)), 1000)
     return () => clearInterval(id)
   }, [target])

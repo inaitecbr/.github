@@ -317,6 +317,51 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'programas',
+      title: 'Conheça nossos Programas (seção)',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        defineField({ name: 'eyebrow', title: 'Eyebrow', type: 'string' }),
+        defineField({ name: 'titleStart', title: 'Título — primeira parte', type: 'string' }),
+        defineField({ name: 'titleHighlight', title: 'Título — destaque (itálico laranja)', type: 'string' }),
+        defineField({ name: 'desc', title: 'Descrição da seção', type: 'text', rows: 2 }),
+        defineField({ name: 'verTodosLabel', title: 'Texto do link "Ver todos"', type: 'string' }),
+        defineField({
+          name: 'destaques',
+          title: 'Programas em destaque (4 referências)',
+          description: 'Selecione exatamente 4 programas — o filtro mostra apenas programas do mesmo idioma desta home.',
+          type: 'array',
+          validation: (Rule) => Rule.length(4),
+          of: [
+            {
+              type: 'reference',
+              to: [{ type: 'programa' }],
+              options: {
+                filter: ({ document }: { document: { language?: string } }) => ({
+                  filter: '_type == "programa" && language == $lang',
+                  params: { lang: document.language ?? 'pt' },
+                }),
+              },
+            },
+          ],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'chamadas',
+      title: 'Chamadas em destaque (seção)',
+      description: 'A lista de chamadas é montada automaticamente a partir dos programas com status "aberta" ou "em breve".',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        defineField({ name: 'eyebrow', title: 'Eyebrow (ex.: "Próximas chamadas")', type: 'string' }),
+        defineField({ name: 'titleStart', title: 'Título — primeira parte', type: 'string' }),
+        defineField({ name: 'titleHighlight', title: 'Título — destaque (itálico laranja)', type: 'string' }),
+        defineField({ name: 'desc', title: 'Descrição da seção', type: 'text', rows: 2 }),
+      ],
+    }),
   ],
   preview: {
     select: {

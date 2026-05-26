@@ -629,3 +629,67 @@ Visual design tokens for the Inaitec project (colors, typography, spacing, etc.)
   },
   {
     logo: "/logo3.png",`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)',
+  empresas: 'var(--color-brand-teal)',`
+- `--color-brand-teal)',
+  'em-breve': 'var(--color-brand-orange)',`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)'
+              const isAberta = p.statusKey === 'aberta' && !!p.deadline
+              const tl = isAberta ? timeLeft(p.deadline!) : null`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)",
+  }));
+
+  const goTo = (resolver: (current: number) => number) => {`
+- `--color-brand-orange)",
+  },
+  {
+    logo: "/logo2.png",`
+- `--color-brand-teal)",
+  },
+  {
+    logo: "/logo3.png",`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)",
+  }));
+
+  const goTo = (resolver: (current: number) => number) => {`
+- `--color-brand-orange)",
+  },
+  {
+    logo: "/logo2.png",`
+- `--color-brand-teal)",
+  },
+  {
+    logo: "/logo3.png",`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)",
+  }));
+
+  const goTo = (resolver: (current: number) => number) => {`
+- `--color-brand-orange)",
+  },
+  {
+    logo: "/logo2.png",`
+- `--color-brand-teal)",
+  },
+  {
+    logo: "/logo3.png",`
+
+### Cores — detectados em 2026-05-26
+
+- `--color-brand-orange)'
+              const isAberta = p.statusKey === 'aberta' && !!p.deadline
+              const tl = isAberta ? timeLeft(p.deadline!) : null`

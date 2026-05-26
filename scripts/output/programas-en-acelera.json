@@ -1,0 +1,550 @@
+[
+  {
+    "_type": "programa",
+    "language": "en",
+    "slug": {
+      "_type": "slug",
+      "current": "acelera-pedra-branca"
+    },
+    "name": "Acelera Pedra Branca",
+    "desc": "Intensive acceleration program with mentorship and investment.",
+    "publicoKey": "startups",
+    "estagioKey": "aceleracao",
+    "entradaKey": "edital",
+    "statusKey": "aberta",
+    "deadline": "2026-05-30T23:59:59.000Z",
+    "longDesc": "O programa de aceleração mais maduro do Sul do Brasil. Em 6 meses, sua startup ganha mentoria de quem já operou e vendeu empresas, conexão direta com fundos parceiros e acesso à estrutura do Parque Pedra Branca.",
+    "highlight": "70% das startups saem do programa com ao menos uma carta de intenção de aporte.",
+    "quickFacts": [
+      {
+        "_key": "3c97a179c97e",
+        "label": "Duração",
+        "value": "6 meses"
+      },
+      {
+        "_key": "6f5e1c4e80ab",
+        "label": "Vagas",
+        "value": "12 startups"
+      },
+      {
+        "_key": "9aa3bcbd0d0c",
+        "label": "Modalidade",
+        "value": "Híbrida · SC"
+      },
+      {
+        "_key": "27b9055c57be",
+        "label": "Aporte",
+        "value": "Até R$ 200K"
+      }
+    ],
+    "oQueE": [
+      "O Acelera Pedra Branca é um programa intensivo desenhado para startups que já validaram o produto e estão prontas para escalar. Em 6 meses, mentoria 1:1, infraestrutura no parque e acesso à rede de investidores do ecossistema.",
+      "A jornada combina trilhas estruturadas (gestão, vendas, captação, governança) com encontros sob medida pra resolver os bloqueios específicos de cada startup. Tudo presencial em Palhoça, com 2 imersões internacionais.",
+      "No fim do programa, Demo Day fechado com 60+ investidores nacionais e internacionais — historicamente, 70% das startups saem com ao menos uma carta de intenção."
+    ],
+    "paraQuem": [
+      "Startups com produto validado e pelo menos 6 meses de tração no mercado.",
+      "Time fundador com dedicação integral durante os 6 meses.",
+      "Receita ativa ou pipeline de contratos comprovado.",
+      "Tese de negócio com potencial de escala nacional ou internacional.",
+      "Disponibilidade para encontros presenciais semanais no Parque Pedra Branca.",
+      "Governança mínima estabelecida — CNPJ, contrato social, sócios formalizados."
+    ],
+    "beneficios": [
+      {
+        "_key": "5ab3044f2cef",
+        "titulo": "Mentoria 1:1 semanal",
+        "desc": "Encontros estruturados com mentores que já operaram, captaram e venderam empresas no setor da sua startup."
+      },
+      {
+        "_key": "007d5a4df63c",
+        "titulo": "Aporte de até R$ 200K",
+        "desc": "Capital direto via Fundo Anjo Pedra Branca + matching com co-investidores parceiros."
+      },
+      {
+        "_key": "36e782c38bd6",
+        "titulo": "Infraestrutura no parque",
+        "desc": "Sala privativa, coworking, laboratórios e auditório no Parque Pedra Branca durante e após o programa."
+      },
+      {
+        "_key": "8941d5d261fa",
+        "titulo": "Demo Day exclusivo",
+        "desc": "Apresentação fechada para 60+ investidores nacionais, com follow-up estruturado pelo Inaitec."
+      },
+      {
+        "_key": "49bf458063a4",
+        "titulo": "Imersões internacionais",
+        "desc": "Duas missões guiadas em hubs globais (Boston, Berlim ou Tel Aviv) durante o programa."
+      },
+      {
+        "_key": "ad68892a25dc",
+        "titulo": "Comunidade vitalícia",
+        "desc": "Acesso permanente à rede de alumni — encontros, follow-on e oportunidades de co-investimento."
+      }
+    ],
+    "etapas": [
+      {
+        "_key": "259f3edaf10e",
+        "titulo": "Inscrição",
+        "desc": "Envio do formulário com pitch deck, métricas e plano de uso do programa.",
+        "duracao": "15 dias"
+      },
+      {
+        "_key": "eb92236d9508",
+        "titulo": "Triagem",
+        "desc": "Análise de fit, tese e potencial de impacto pelo time Inaitec + mentores externos.",
+        "duracao": "2 semanas"
+      },
+      {
+        "_key": "6eb9d4bf9fe3",
+        "titulo": "Entrevista",
+        "desc": "Conversa estruturada de 45 min com banca avaliadora — tese, time e tração.",
+        "duracao": "1 semana"
+      },
+      {
+        "_key": "8eece7fc5712",
+        "titulo": "Pitch final",
+        "desc": "Apresentação ao vivo para banca de mentores, parceiros e investidores.",
+        "duracao": "1 dia"
+      },
+      {
+        "_key": "64da2122b2ee",
+        "titulo": "Onboarding",
+        "desc": "Kickoff coletivo com a turma + plano individual de jornada.",
+        "duracao": "1 semana"
+      },
+      {
+        "_key": "c8267ecda665",
+        "titulo": "Programa",
+        "desc": "6 meses de mentoria, infraestrutura, imersões e construção de Demo Day.",
+        "duracao": "6 meses"
+      }
+    ],
+    "stats": [
+      {
+        "_key": "972cc1536ca3",
+        "value": "+120",
+        "label": "startups aceleradas"
+      },
+      {
+        "_key": "acbb0c3648eb",
+        "value": "R$ 80M",
+        "label": "em capital captado"
+      },
+      {
+        "_key": "5dfc66abd039",
+        "value": "70%",
+        "label": "recebem oferta no Demo Day"
+      },
+      {
+        "_key": "6db102040cf5",
+        "value": "11",
+        "label": "turmas concluídas"
+      }
+    ],
+    "cases": [
+      {
+        "_key": "2630993052c6",
+        "nome": "NexusHealth",
+        "setor": "Healthtech",
+        "quote": "O Inaitec nos conectou a investidores e hospitais parceiros em tempo recorde. Crescemos 13× em 12 meses.",
+        "pessoa": "Rodrigo Maia",
+        "cargo": "CEO",
+        "metricas": [
+          {
+            "_key": "db76b38fc174",
+            "label": "Crescimento",
+            "value": "13×"
+          },
+          {
+            "_key": "b236cfdc4206",
+            "label": "Série A",
+            "value": "R$ 50M"
+          },
+          {
+            "_key": "0ba9c5ef1822",
+            "label": "Hospitais",
+            "value": "8"
+          }
+        ]
+      },
+      {
+        "_key": "30853c7d3b0c",
+        "nome": "AgroSmart",
+        "setor": "Agritech",
+        "quote": "O ecossistema do parque me abriu portas que sozinho eu nunca acharia. Fechamos contrato corporativo em 3 meses.",
+        "pessoa": "Jorge Dias",
+        "cargo": "Fundador",
+        "metricas": [
+          {
+            "_key": "e327ad161e0b",
+            "label": "Produtores",
+            "value": "+200"
+          },
+          {
+            "_key": "11d71a065697",
+            "label": "MRR",
+            "value": "R$ 80k"
+          },
+          {
+            "_key": "08d6409633b2",
+            "label": "Estados",
+            "value": "5"
+          }
+        ]
+      },
+      {
+        "_key": "3dc90330a6e6",
+        "nome": "CityFlow",
+        "setor": "Smart City",
+        "quote": "A credibilidade do programa abriu portas em prefeituras. O Inaitec é nossa maior vitrine institucional.",
+        "pessoa": "André Luz",
+        "cargo": "COO",
+        "metricas": [
+          {
+            "_key": "ebaedafe79fa",
+            "label": "Em contratos",
+            "value": "R$ 12M"
+          },
+          {
+            "_key": "4ec712d89727",
+            "label": "Cidades",
+            "value": "7"
+          },
+          {
+            "_key": "35b2be672b3e",
+            "label": "ROI público",
+            "value": "3,2×"
+          }
+        ]
+      },
+      {
+        "_key": "21a0c914fb5c",
+        "nome": "EduSpark",
+        "setor": "Edtech",
+        "quote": "Em 6 meses dobramos nossa base de alunos. As mentorias de growth foram decisivas para a nossa estratégia de escala.",
+        "pessoa": "Carla Mendes",
+        "cargo": "CPO & Co-fundadora",
+        "metricas": [
+          {
+            "_key": "80c893588b9a",
+            "label": "Base de alunos",
+            "value": "2×"
+          },
+          {
+            "_key": "46fd36abb600",
+            "label": "NPS",
+            "value": "78"
+          },
+          {
+            "_key": "705de037042b",
+            "label": "Redução de churn",
+            "value": "-35%"
+          }
+        ]
+      },
+      {
+        "_key": "72220efc1456",
+        "nome": "LogisTek",
+        "setor": "Logística",
+        "quote": "As mentorias nos ajudaram a pivotar no momento certo. Economizamos 6 meses de desenvolvimento no caminho errado.",
+        "pessoa": "Felipe Torres",
+        "cargo": "CTO",
+        "metricas": [
+          {
+            "_key": "29ddc1f6098d",
+            "label": "Custo operacional",
+            "value": "-40%"
+          },
+          {
+            "_key": "c0d04fad1d53",
+            "label": "Entregas/mês",
+            "value": "18k"
+          },
+          {
+            "_key": "a7657619ab04",
+            "label": "Clientes B2B",
+            "value": "14"
+          }
+        ]
+      },
+      {
+        "_key": "68950121717e",
+        "nome": "FinLab",
+        "setor": "Fintech",
+        "quote": "Captamos nossa primeira rodada seed graças às conexões diretas com investidores da rede do Inaitec.",
+        "pessoa": "Mariana Costa",
+        "cargo": "CEO",
+        "metricas": [
+          {
+            "_key": "9f9571dd0516",
+            "label": "Rodada seed",
+            "value": "R$ 2,5M"
+          },
+          {
+            "_key": "a2abbaf88a1f",
+            "label": "Usuários",
+            "value": "+12k"
+          },
+          {
+            "_key": "2d18a80eed24",
+            "label": "TPV mensal",
+            "value": "R$ 4M"
+          }
+        ]
+      },
+      {
+        "_key": "1362345dafa7",
+        "nome": "GreenBuild",
+        "setor": "Construtech",
+        "quote": "A infraestrutura do parque foi essencial para desenvolver e testar nossos protótipos com clientes reais ainda no programa.",
+        "pessoa": "Lucas Ramos",
+        "cargo": "Fundador & CEO",
+        "metricas": [
+          {
+            "_key": "39bcd709c2fb",
+            "label": "Contratos B2B",
+            "value": "3"
+          },
+          {
+            "_key": "8ef7bd35d8b7",
+            "label": "Redução de CO₂",
+            "value": "28%"
+          },
+          {
+            "_key": "0d717fee09dc",
+            "label": "Ticket médio",
+            "value": "R$ 320k"
+          }
+        ]
+      },
+      {
+        "_key": "8c30b5d8c369",
+        "nome": "MedConnect",
+        "setor": "Healthtech",
+        "quote": "Conseguimos validar nosso produto com 4 hospitais parceiros ainda dentro do programa. Saímos com tração real.",
+        "pessoa": "Ana Figueiredo",
+        "cargo": "CEO & Fundadora",
+        "metricas": [
+          {
+            "_key": "0b7fb271cff7",
+            "label": "Hospitais parceiros",
+            "value": "4"
+          },
+          {
+            "_key": "c0caa67273ee",
+            "label": "Pacientes impactados",
+            "value": "+5k"
+          },
+          {
+            "_key": "c316a0bc1f5d",
+            "label": "Tempo de diagnóstico",
+            "value": "-60%"
+          }
+        ]
+      },
+      {
+        "_key": "f222d2f0abbc",
+        "nome": "DataSphere",
+        "setor": "Data & AI",
+        "quote": "O ecossistema do Inaitec nos deu acesso a dados e cases reais para treinar nossos modelos com qualidade de enterprise.",
+        "pessoa": "Bruno Leal",
+        "cargo": "CDO & Co-fundador",
+        "metricas": [
+          {
+            "_key": "10dc2ec56eb3",
+            "label": "Acurácia",
+            "value": "87%"
+          },
+          {
+            "_key": "4dd0735ae397",
+            "label": "Datasets",
+            "value": "+40"
+          },
+          {
+            "_key": "d2d22312a6e1",
+            "label": "Clientes enterprise",
+            "value": "6"
+          }
+        ]
+      },
+      {
+        "_key": "963038285a8b",
+        "nome": "RetailAI",
+        "setor": "Varejo",
+        "quote": "Implementamos nossa solução em 12 redes varejistas durante o programa. O acesso à rede do Inaitec foi determinante.",
+        "pessoa": "Isabela Nunes",
+        "cargo": "CEO",
+        "metricas": [
+          {
+            "_key": "827b07dacc3b",
+            "label": "Redes varejistas",
+            "value": "12"
+          },
+          {
+            "_key": "2e160cbae9f4",
+            "label": "Aumento em vendas",
+            "value": "+22%"
+          },
+          {
+            "_key": "9c7bc1cb3aa7",
+            "label": "ROI médio",
+            "value": "4,5×"
+          }
+        ]
+      },
+      {
+        "_key": "2f2427f11014",
+        "nome": "SafeGuard",
+        "setor": "Segurança",
+        "quote": "As mentorias técnicas nos ajudaram a superar os desafios de compliance e lançar em escala nacional.",
+        "pessoa": "Ricardo Barros",
+        "cargo": "CTO & Fundador",
+        "metricas": [
+          {
+            "_key": "664373acaeb5",
+            "label": "Clientes ativos",
+            "value": "+300"
+          },
+          {
+            "_key": "0f1069fb2b3b",
+            "label": "Incidentes evitados",
+            "value": "98%"
+          },
+          {
+            "_key": "5cae67f708ff",
+            "label": "Expansão",
+            "value": "8 estados"
+          }
+        ]
+      },
+      {
+        "_key": "c945779c5474",
+        "nome": "ClimaTech",
+        "setor": "Cleantech",
+        "quote": "O Inaitec nos conectou a parceiros institucionais que abriram portas para financiamento climático internacional.",
+        "pessoa": "Fernanda Souza",
+        "cargo": "CEO & Co-fundadora",
+        "metricas": [
+          {
+            "_key": "7a0f61ec4ae9",
+            "label": "CO₂ compensado",
+            "value": "12kt"
+          },
+          {
+            "_key": "18158b7005f8",
+            "label": "Financiamento",
+            "value": "R$ 6M"
+          },
+          {
+            "_key": "7d6b31d7607f",
+            "label": "Municípios",
+            "value": "15"
+          }
+        ]
+      },
+      {
+        "_key": "3c2f216ee5c0",
+        "nome": "HRFlow",
+        "setor": "RH Tech",
+        "quote": "Saímos do programa com produto validado, equipe estruturada e os primeiros 50 clientes pagantes.",
+        "pessoa": "Thiago Alves",
+        "cargo": "Co-fundador",
+        "metricas": [
+          {
+            "_key": "a31eb897ad05",
+            "label": "Clientes pagantes",
+            "value": "50"
+          },
+          {
+            "_key": "b87c457e2497",
+            "label": "Redução de turnover",
+            "value": "-28%"
+          },
+          {
+            "_key": "7d91fe2bab9e",
+            "label": "NPS",
+            "value": "82"
+          }
+        ]
+      },
+      {
+        "_key": "e74bb8718c84",
+        "nome": "MobilityX",
+        "setor": "Mobilidade",
+        "quote": "O ecossistema do parque nos deu infraestrutura para testar nossa frota antes de escalar. Economizamos 8 meses.",
+        "pessoa": "Carolina Lima",
+        "cargo": "COO",
+        "metricas": [
+          {
+            "_key": "969cf0bd81d9",
+            "label": "Veículos na frota",
+            "value": "120"
+          },
+          {
+            "_key": "baabe31ca0e0",
+            "label": "Cidades operando",
+            "value": "4"
+          },
+          {
+            "_key": "19f0ac2fd087",
+            "label": "Emissão zero",
+            "value": "100%"
+          }
+        ]
+      },
+      {
+        "_key": "b5b518adbaba",
+        "nome": "InsurTech BR",
+        "setor": "Insurtech",
+        "quote": "Captamos investidores estratégicos do setor financeiro graças às conexões diretas da rede Inaitec.",
+        "pessoa": "Paulo Henrique",
+        "cargo": "CEO",
+        "metricas": [
+          {
+            "_key": "e7fc3b6da337",
+            "label": "Apólices ativas",
+            "value": "+8k"
+          },
+          {
+            "_key": "6cb34e5e6e0a",
+            "label": "Sinistros digitais",
+            "value": "100%"
+          },
+          {
+            "_key": "ca93c5bd1d21",
+            "label": "Captado",
+            "value": "R$ 3,2M"
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "_key": "f8af408f04f1",
+        "q": "Preciso estar instalado no Parque Pedra Branca para participar?",
+        "a": "Não é obrigatório, mas durante o programa você precisa estar disponível para encontros presenciais semanais. Oferecemos sala privativa para a turma durante os 6 meses."
+      },
+      {
+        "_key": "2806be8f3b82",
+        "q": "Quantas startups são selecionadas por turma?",
+        "a": "Selecionamos 12 startups por turma. O programa acontece duas vezes ao ano — abril e outubro."
+      },
+      {
+        "_key": "550410a15456",
+        "q": "Como funciona o aporte de até R$ 200K?",
+        "a": "O aporte é estruturado via Fundo Anjo Pedra Branca em troca de equity (5–10%, negociado caso a caso). Não é obrigatório aceitar — você pode participar do programa sem o cheque."
+      },
+      {
+        "_key": "5b570ab72d10",
+        "q": "Quais setores vocês aceleram?",
+        "a": "Somos agnósticos por setor. Aceleramos qualquer startup tech com potencial de escala, mas temos histórico forte em healthtech, agritech, smart city e fintech."
+      },
+      {
+        "_key": "b3fa99f7b571",
+        "q": "Posso participar se minha startup ainda não tem receita?",
+        "a": "O programa é para startups em estágio de aceleração — receita ativa ou pipeline forte é critério. Para startups pré-receita, recomendamos o Impulse Inaitec ou Hub de Ideias."
+      }
+    ]
+  }
+]
