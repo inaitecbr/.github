@@ -1,6 +1,6 @@
-import { groq } from 'next-sanity'
-import { sanityFetch } from '@/sanity/lib/live'
-import type { ProgramaCard } from './programa'
+import { sanityFetch } from "@/sanity/lib/live";
+import { groq } from "next-sanity";
+import type { ProgramaCard } from "./programa";
 
 export const homeQuery = groq`
   *[_type == "home" && language == $language][0]{
@@ -82,129 +82,191 @@ export const homeQuery = groq`
         deadline,
         "imageUrl": image.asset->url
       }
+    },
+    resultados {
+      eyebrow,
+      titleStart,
+      titleHighlight,
+      ctaInstalacaoLabel,
+      yearRange,
+      ctaPartnersStart,
+      ctaPartnersHighlight,
+      items[]{
+        _key,
+        company,
+        sector,
+        quote,
+        person,
+        role,
+        "logoUrl": logo.asset->url,
+        "photoUrl": photo.asset->url,
+        metrics[]{ _key, label, value }
+      },
+      parceiros[]{
+        _key,
+        alt,
+        "imageUrl": image.asset->url
+      }
     }
   }
-`
+`;
 
 export type HomeCta = {
-  label?: string
-  href?: string
-}
+  label?: string;
+  href?: string;
+};
 
 export type HomeMetric = {
-  value?: string
-  label?: string
-}
+  value?: string;
+  label?: string;
+};
 
 export type HomeHero = {
-  videoUrl?: string
-  titleStart?: string
-  titleHighlight?: string
-  subtitle?: string
-  ctaPrimary?: HomeCta
-  ctaSecondary?: HomeCta
-  metrics?: HomeMetric[]
-}
+  videoUrl?: string;
+  titleStart?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+  ctaPrimary?: HomeCta;
+  ctaSecondary?: HomeCta;
+  metrics?: HomeMetric[];
+};
 
 export type HomeParceiroLogo = {
-  _key?: string
-  alt?: string
-  imageUrl?: string
-}
+  _key?: string;
+  alt?: string;
+  imageUrl?: string;
+};
 
 export type HomeParceiroGroup = {
-  _key?: string
-  label?: string
-  logos?: HomeParceiroLogo[]
-}
+  _key?: string;
+  label?: string;
+  logos?: HomeParceiroLogo[];
+};
 
 export type HomeParceiros = {
-  title?: string
-  titleHighlight?: string
-  groups?: HomeParceiroGroup[]
-}
+  title?: string;
+  titleHighlight?: string;
+  groups?: HomeParceiroGroup[];
+};
 
 export type HomePilarItem = {
-  _key?: string
-  label?: string
-  subtitle?: string
-  metric?: string
-  metricLabel?: string
-  desc?: string
-  tags?: string[]
-  ctaLabel?: string
-}
+  _key?: string;
+  label?: string;
+  subtitle?: string;
+  metric?: string;
+  metricLabel?: string;
+  desc?: string;
+  tags?: string[];
+  ctaLabel?: string;
+};
 
 export type HomePilares = {
-  eyebrow?: string
-  titleStart?: string
-  titleHighlight?: string
-  desc?: string
-  pillars?: HomePilarItem[]
-}
+  eyebrow?: string;
+  titleStart?: string;
+  titleHighlight?: string;
+  desc?: string;
+  pillars?: HomePilarItem[];
+};
 
 export type HomeTimelineMetric = {
-  _key?: string
-  value?: string
-  label?: string
-}
+  _key?: string;
+  value?: string;
+  label?: string;
+};
 
 export type HomeTimelineEvent = {
-  _key?: string
-  year?: string
-  title?: string
-  desc?: string
-  metrics?: HomeTimelineMetric[]
-}
+  _key?: string;
+  year?: string;
+  title?: string;
+  desc?: string;
+  metrics?: HomeTimelineMetric[];
+};
 
 export type HomeTimeline = {
-  marcoLabel?: string
-  imageAlt?: string
-  events?: HomeTimelineEvent[]
-}
+  marcoLabel?: string;
+  imageAlt?: string;
+  events?: HomeTimelineEvent[];
+};
 
 export type HomeEcossistema = {
-  eyebrow?: string
-  titleStart?: string
-  titleHighlight?: string
-  p1?: string
-  p2?: string
-  ctaLabel?: string
-  ctaHref?: string
-}
+  eyebrow?: string;
+  titleStart?: string;
+  titleHighlight?: string;
+  p1?: string;
+  p2?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+};
 
 export type HomeProgramas = {
-  eyebrow?: string
-  titleStart?: string
-  titleHighlight?: string
-  desc?: string
-  verTodosLabel?: string
-  destaques?: ProgramaCard[]
-}
+  eyebrow?: string;
+  titleStart?: string;
+  titleHighlight?: string;
+  desc?: string;
+  verTodosLabel?: string;
+  destaques?: ProgramaCard[];
+};
 
 export type HomeChamadas = {
-  eyebrow?: string
-  titleStart?: string
-  titleHighlight?: string
-  desc?: string
-  items?: ProgramaCard[]
-}
+  eyebrow?: string;
+  titleStart?: string;
+  titleHighlight?: string;
+  desc?: string;
+  items?: ProgramaCard[];
+};
+
+export type HomeResultadosCaseMetric = {
+  _key?: string;
+  label?: string;
+  value?: string;
+};
+
+export type HomeResultadosCase = {
+  _key?: string;
+  company?: string;
+  sector?: string;
+  quote?: string;
+  person?: string;
+  role?: string;
+  logoUrl?: string;
+  photoUrl?: string;
+  metrics?: HomeResultadosCaseMetric[];
+};
+
+export type HomeResultadosParceiro = {
+  _key?: string;
+  alt?: string;
+  imageUrl?: string;
+};
+
+export type HomeResultados = {
+  eyebrow?: string;
+  titleStart?: string;
+  titleHighlight?: string;
+  ctaInstalacaoLabel?: string;
+  yearRange?: string;
+  ctaPartnersStart?: string;
+  ctaPartnersHighlight?: string;
+  items?: HomeResultadosCase[];
+  parceiros?: HomeResultadosParceiro[];
+};
 
 export type HomeData = {
-  language?: string
-  hero?: HomeHero
-  parceiros?: HomeParceiros
-  ecossistema?: HomeEcossistema
-  pilares?: HomePilares
-  timeline?: HomeTimeline
-  programas?: HomeProgramas
-  chamadas?: HomeChamadas
-} | null
+  language?: string;
+  hero?: HomeHero;
+  parceiros?: HomeParceiros;
+  ecossistema?: HomeEcossistema;
+  pilares?: HomePilares;
+  timeline?: HomeTimeline;
+  programas?: HomeProgramas;
+  chamadas?: HomeChamadas;
+  resultados?: HomeResultados;
+} | null;
 
 export async function getHome({ locale }: { locale: string }) {
   return sanityFetch<HomeData>({
     query: homeQuery,
     params: { language: locale },
-    tags: ['home'],
-  })
+    tags: ["home"],
+  });
 }

@@ -1,17 +1,21 @@
-'use client'
+"use client";
 
-import InaitecWebsite from '@/components/InaitecWebsite'
-import HeroSection from './HeroSection'
-import ParceirosSection from './ParceirosSection'
-import EcossistemaSection from './EcossistemaSection'
-import PilaresSection from './PilaresSection'
-import ProgramasSection from './ProgramasSection'
-import ChamadasSection from './ChamadasSection'
-import type { HomeData } from '@/sanity/queries/home'
+import type { HomeData } from "@/sanity/queries/home";
+import ChamadasSection from "./ChamadasSection";
+import ContatoSection from "./ContatoSection";
+import CtaBannerSection from "./CtaBannerSection";
+import EcossistemaSection from "./EcossistemaSection";
+import FaqSection from "./FaqSection";
+import HeroSection from "./HeroSection";
+import NoticiasSection from "./NoticiasSection";
+import ParceirosSection from "./ParceirosSection";
+import PilaresSection from "./PilaresSection";
+import ProgramasSection from "./ProgramasSection";
+import ResultadosSection from "./ResultadosSection";
 
 type Props = {
-  data: HomeData
-}
+  data: HomeData;
+};
 
 export default function HomeClientComponent({ data }: Props) {
   return (
@@ -29,12 +33,12 @@ export default function HomeClientComponent({ data }: Props) {
           className="absolute top-[100vh] left-0 right-0 bottom-0 opacity-[0.025]"
           style={{
             backgroundImage:
-              'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
+              "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
             maskImage:
-              'linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)',
+              "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)",
             WebkitMaskImage:
-              'linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)',
+              "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)",
           }}
         />
 
@@ -49,8 +53,39 @@ export default function HomeClientComponent({ data }: Props) {
       <ProgramasSection programas={data?.programas} />
       <ChamadasSection chamadas={data?.chamadas} />
 
-      {/* Seções ainda hardcoded — migradas seção por seção */}
-      <InaitecWebsite />
+      {/* ── Light mode — Resultados + Notícias ── */}
+      <div
+        id="light-section"
+        data-theme="light"
+        className="relative z-10 bg-surface-soft overflow-hidden"
+      >
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute top-[4%] -left-[12%] w-200 h-200 rounded-full bg-brand-orange/7 blur-[160px]" />
+          <div className="absolute top-[26%] -right-[15%] w-225 h-225 rounded-full bg-brand-teal/5 blur-[180px]" />
+          <div className="absolute top-[52%] -left-[15%] w-200 h-200 rounded-full bg-[#004E69]/5 blur-[160px]" />
+          <div className="absolute top-[74%] -right-[10%] w-175 h-175 rounded-full bg-brand-orange/6 blur-[150px]" />
+          <div className="absolute top-[92%] left-[15%] w-175 h-175 rounded-full bg-brand-teal/4 blur-[160px]" />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "radial-gradient(circle, #0D2E38 1px, transparent 1px)",
+              backgroundSize: "36px 36px",
+              opacity: 0.06,
+              maskImage:
+                "linear-gradient(to bottom, transparent 0%, black 4%, black 96%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, transparent 0%, black 4%, black 96%, transparent 100%)",
+            }}
+          />
+        </div>
+        <NoticiasSection />
+        <ResultadosSection resultados={data?.resultados} />
+      </div>
+
+      {/* ── Dark mode final ── */}
+      <ContatoSection />
+      <FaqSection />
+      <CtaBannerSection />
     </main>
-  )
+  );
 }

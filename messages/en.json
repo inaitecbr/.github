@@ -188,87 +188,6 @@
       },
       "imageAlt": "Entrepreneur from the Inaitec ecosystem"
     },
-    "resultados": {
-      "eyebrow": "Real results — Resident companies",
-      "titleStart": "Companies that grew",
-      "titleHighlight": "inside the park",
-      "ctaInstalar": "Install my company",
-      "ctaPartnersStart": "Get",
-      "ctaPartnersHighlight": "exclusive ecosystem benefits",
-      "yearRange": "From 2019 to 2025",
-      "prevAria": "Previous case",
-      "nextAria": "Next case",
-      "items": [
-        {
-          "company": "NexusHealth",
-          "sector": "Healthtech",
-          "quote": "Inaitec connected us with investors and partner hospitals in record time. Based at Pedra Branca, we scaled from 3 to 40 employees in less than a year.",
-          "person": "Rodrigo Maia",
-          "role": "CEO · NexusHealth",
-          "metrics": [
-            {
-              "label": "Raised in Series A",
-              "value": "R$50M"
-            },
-            {
-              "label": "Team growth in 12 months",
-              "value": "13×"
-            }
-          ]
-        },
-        {
-          "company": "AgroSmart",
-          "sector": "Agritech",
-          "quote": "Having our office in the park gave us access to talent from UFSC and Unisul. We closed our first corporate contract 3 months after moving in.",
-          "person": "Jorge Dias",
-          "role": "Founder · AgroSmart",
-          "metrics": [
-            {
-              "label": "Producers served",
-              "value": "+200"
-            },
-            {
-              "label": "From MVP to first contract",
-              "value": "3 months"
-            }
-          ]
-        },
-        {
-          "company": "CityFlow",
-          "sector": "Smart City",
-          "quote": "The credibility of the Pedra Branca ecosystem opened doors at city halls we would never reach on our own. The park is our biggest showcase.",
-          "person": "André Luz",
-          "role": "COO · CityFlow",
-          "metrics": [
-            {
-              "label": "Cities with active contracts",
-              "value": "3"
-            },
-            {
-              "label": "Generated in public contracts",
-              "value": "R$12M"
-            }
-          ]
-        },
-        {
-          "company": "EduTech SC",
-          "sector": "Edtech",
-          "quote": "The Inaitec environment accelerated our learning curve. We found the right partners here to bring our platform to more than 50 institutions.",
-          "person": "Carla Mendes",
-          "role": "CEO · EduTech SC",
-          "metrics": [
-            {
-              "label": "Partner institutions",
-              "value": "50+"
-            },
-            {
-              "label": "Students impacted",
-              "value": "120K"
-            }
-          ]
-        }
-      ]
-    },
     "faq": {
       "eyebrow": "Frequently asked questions",
       "titleStart": "Doubts",
@@ -386,5 +305,9 @@
       "fechada": "Closed",
       "fluxo-continuo": "Continuous"
     }
+  },
+  "ResultadosSection": {
+    "prevAria": "Previous case",
+    "nextAria": "Next case"
   }
 }

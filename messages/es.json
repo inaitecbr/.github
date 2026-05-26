@@ -188,87 +188,6 @@
       },
       "imageAlt": "Emprendedor del ecosistema Inaitec"
     },
-    "resultados": {
-      "eyebrow": "Resultados reales — Empresas residentes",
-      "titleStart": "Empresas que crecieron",
-      "titleHighlight": "dentro del parque",
-      "ctaInstalar": "Instalar mi empresa",
-      "ctaPartnersStart": "Obtén",
-      "ctaPartnersHighlight": "beneficios exclusivos del ecosistema",
-      "yearRange": "De 2019 a 2025",
-      "prevAria": "Caso anterior",
-      "nextAria": "Caso siguiente",
-      "items": [
-        {
-          "company": "NexusHealth",
-          "sector": "Healthtech",
-          "quote": "Inaitec nos conectó con inversionistas y hospitales aliados en tiempo récord. Instalados en Pedra Branca, escalamos de 3 a 40 colaboradores en menos de un año.",
-          "person": "Rodrigo Maia",
-          "role": "CEO · NexusHealth",
-          "metrics": [
-            {
-              "label": "Recaudado en Serie A",
-              "value": "R$50M"
-            },
-            {
-              "label": "Crecimiento del equipo en 12 meses",
-              "value": "13×"
-            }
-          ]
-        },
-        {
-          "company": "AgroSmart",
-          "sector": "Agritech",
-          "quote": "Tener nuestra oficina en el parque nos dio acceso a talentos de la UFSC y Unisul. Cerramos nuestro primer contrato corporativo 3 meses después de instalarnos.",
-          "person": "Jorge Dias",
-          "role": "Fundador · AgroSmart",
-          "metrics": [
-            {
-              "label": "Productores atendidos",
-              "value": "+200"
-            },
-            {
-              "label": "Del MVP al primer contrato",
-              "value": "3 meses"
-            }
-          ]
-        },
-        {
-          "company": "CityFlow",
-          "sector": "Smart City",
-          "quote": "La credibilidad del ecosistema Pedra Branca nos abrió puertas en alcaldías que jamás alcanzaríamos por nuestra cuenta. El parque es nuestra mayor vitrina.",
-          "person": "André Luz",
-          "role": "COO · CityFlow",
-          "metrics": [
-            {
-              "label": "Ciudades con contratos activos",
-              "value": "3"
-            },
-            {
-              "label": "Generados en contratos públicos",
-              "value": "R$12M"
-            }
-          ]
-        },
-        {
-          "company": "EduTech SC",
-          "sector": "Edtech",
-          "quote": "El ambiente de Inaitec aceleró nuestra curva de aprendizaje. Encontramos aquí a los aliados correctos para llevar nuestra plataforma a más de 50 instituciones.",
-          "person": "Carla Mendes",
-          "role": "CEO · EduTech SC",
-          "metrics": [
-            {
-              "label": "Instituciones aliadas",
-              "value": "50+"
-            },
-            {
-              "label": "Estudiantes impactados",
-              "value": "120K"
-            }
-          ]
-        }
-      ]
-    },
     "faq": {
       "eyebrow": "Preguntas frecuentes",
       "titleStart": "Dudas",
@@ -386,5 +305,9 @@
       "fechada": "Cerrado",
       "fluxo-continuo": "Continuo"
     }
+  },
+  "ResultadosSection": {
+    "prevAria": "Caso anterior",
+    "nextAria": "Caso siguiente"
   }
 }
