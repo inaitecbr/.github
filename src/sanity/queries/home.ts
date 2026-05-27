@@ -107,6 +107,13 @@ export const homeQuery = groq`
         alt,
         "imageUrl": image.asset->url
       }
+    },
+    faq {
+      eyebrow,
+      titleStart,
+      titleHighlight,
+      desc,
+      items[]{ _key, q, a }
     }
   }
 `;
@@ -251,6 +258,20 @@ export type HomeResultados = {
   parceiros?: HomeResultadosParceiro[];
 };
 
+export type HomeFaqItem = {
+  _key?: string;
+  q?: string;
+  a?: string;
+};
+
+export type HomeFaq = {
+  eyebrow?: string;
+  titleStart?: string;
+  titleHighlight?: string;
+  desc?: string;
+  items?: HomeFaqItem[];
+};
+
 export type HomeData = {
   language?: string;
   hero?: HomeHero;
@@ -261,6 +282,7 @@ export type HomeData = {
   programas?: HomeProgramas;
   chamadas?: HomeChamadas;
   resultados?: HomeResultados;
+  faq?: HomeFaq;
 } | null;
 
 export async function getHome({ locale }: { locale: string }) {

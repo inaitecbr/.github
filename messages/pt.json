@@ -187,44 +187,6 @@
         "role": "Fundadora · AgroSmart — Acelera Pedra Branca 2025"
       },
       "imageAlt": "Empreendedor do ecossistema Inaitec"
-    },
-    "faq": {
-      "eyebrow": "Perguntas frequentes",
-      "titleStart": "Dúvidas",
-      "titleHighlight": "frequentes",
-      "desc": "Não encontrou o que procura? Fale com nossa equipe.",
-      "cta": "Entrar em contato",
-      "items": [
-        {
-          "q": "O que é o Inaitec e como ele funciona?",
-          "a": "O Inaitec é o hub de inovação e tecnologia do Parque Tecnológico Pedra Branca, em Palhoça (SC). Conectamos startups, empresas, universidades e governo por meio de programas estruturados de aceleração, inovação aberta e transferência tecnológica."
-        },
-        {
-          "q": "Como posso participar do Acelera Pedra Branca?",
-          "a": "As inscrições ocorrem por meio de editais públicos divulgados neste site e nas nossas redes sociais. O processo seletivo envolve análise de proposta, entrevistas e pitch. Fique atento às chamadas abertas."
-        },
-        {
-          "q": "Minha empresa pode se instalar no Parque Pedra Branca?",
-          "a": "Sim. O parque conta com espaços para empresas de todos os portes — do coworking ao headquarter. Entre em contato com nossa equipe para conhecer as modalidades de instalação e os benefícios do ecossistema."
-        },
-        {
-          "q": "Como funciona a inovação aberta para médias e grandes empresas?",
-          "a": "Mapeamos desafios estratégicos da sua empresa e conectamos com startups selecionadas do ecossistema para desenvolver pilotos e soluções validadas. Todo o processo é estruturado e acompanhado pela equipe do Inaitec."
-        },
-        {
-          "q": "Há editais de financiamento disponíveis para startups?",
-          "a": "Sim, operamos editais próprios e em parceria com FINEP, BNDES, prefeituras e empresas parceiras. As oportunidades vigentes estão sempre listadas na seção Chamadas Abertas do site."
-        }
-      ]
-    },
-    "ctaBanner": {
-      "eyebrow": "Pronto para começar?",
-      "titleStart": "Faça parte do maior ecossistema de",
-      "titleHighlight": "inovação urbana",
-      "titleEnd": "do Brasil.",
-      "desc": "Startups, empresas e governo em um único endereço — Pedra Branca, SC.",
-      "ctaPrimary": "Fale com o Inaitec",
-      "ctaSecondary": "Ver programas"
     }
   },
   "EcosystemAccordion": {
@@ -309,5 +271,8 @@
   "ResultadosSection": {
     "prevAria": "Caso anterior",
     "nextAria": "Próximo caso"
+  },
+  "Faq": {
+    "ctaLabel": "Entrar em contato"
   }
 }

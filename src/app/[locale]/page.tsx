@@ -1,4 +1,5 @@
 import HomeClientComponent from '@/components/home/HomeClientComponent'
+import { getCtaBanner } from '@/sanity/queries/ctaBanner'
 import { getHome } from '@/sanity/queries/home'
 
 export default async function HomePage({
@@ -7,6 +8,9 @@ export default async function HomePage({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  const data = await getHome({ locale })
-  return <HomeClientComponent data={data} />
+  const [data, ctaBanner] = await Promise.all([
+    getHome({ locale }),
+    getCtaBanner({ locale }),
+  ])
+  return <HomeClientComponent data={data} ctaBanner={ctaBanner} />
 }

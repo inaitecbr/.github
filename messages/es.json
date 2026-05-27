@@ -187,44 +187,6 @@
         "role": "Fundadora · AgroSmart — Acelera Pedra Branca 2025"
       },
       "imageAlt": "Emprendedor del ecosistema Inaitec"
-    },
-    "faq": {
-      "eyebrow": "Preguntas frecuentes",
-      "titleStart": "Dudas",
-      "titleHighlight": "frecuentes",
-      "desc": "¿No encontraste lo que buscabas? Habla con nuestro equipo.",
-      "cta": "Ponerse en contacto",
-      "items": [
-        {
-          "q": "¿Qué es Inaitec y cómo funciona?",
-          "a": "Inaitec es el hub de innovación y tecnología del Parque Tecnológico Pedra Branca, en Palhoça (SC, Brasil). Conectamos startups, empresas, universidades y gobierno mediante programas estructurados de aceleración, innovación abierta y transferencia tecnológica."
-        },
-        {
-          "q": "¿Cómo puedo participar en Acelera Pedra Branca?",
-          "a": "Las inscripciones se realizan mediante convocatorias públicas anunciadas en este sitio y en nuestras redes sociales. El proceso de selección incluye análisis de propuesta, entrevistas y pitch. Mantente atento a las convocatorias abiertas."
-        },
-        {
-          "q": "¿Mi empresa puede instalarse en el Parque Pedra Branca?",
-          "a": "Sí. El parque cuenta con espacios para empresas de todos los tamaños — desde coworking hasta sede corporativa. Ponte en contacto con nuestro equipo para conocer las modalidades de instalación y los beneficios del ecosistema."
-        },
-        {
-          "q": "¿Cómo funciona la innovación abierta para medianas y grandes empresas?",
-          "a": "Mapeamos los desafíos estratégicos de tu empresa y te conectamos con startups seleccionadas del ecosistema para desarrollar pilotos y soluciones validadas. Todo el proceso es estructurado y acompañado por el equipo de Inaitec."
-        },
-        {
-          "q": "¿Hay convocatorias de financiamiento disponibles para startups?",
-          "a": "Sí, operamos convocatorias propias y en alianza con FINEP, BNDES, alcaldías y empresas aliadas. Las oportunidades vigentes están siempre listadas en la sección Convocatorias Abiertas del sitio."
-        }
-      ]
-    },
-    "ctaBanner": {
-      "eyebrow": "¿Listo para comenzar?",
-      "titleStart": "Forma parte del mayor ecosistema de",
-      "titleHighlight": "innovación urbana",
-      "titleEnd": "de Brasil.",
-      "desc": "Startups, empresas y gobierno en una sola dirección — Pedra Branca, SC.",
-      "ctaPrimary": "Habla con Inaitec",
-      "ctaSecondary": "Ver programas"
     }
   },
   "EcosystemAccordion": {
@@ -309,5 +271,8 @@
   "ResultadosSection": {
     "prevAria": "Caso anterior",
     "nextAria": "Caso siguiente"
+  },
+  "Faq": {
+    "ctaLabel": "Ponerse en contacto"
   }
 }

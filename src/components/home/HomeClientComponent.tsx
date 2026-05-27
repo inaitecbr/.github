@@ -1,9 +1,10 @@
 "use client";
 
+import CtaBannerSection from "@/components/CtaBannerSection";
+import type { CtaBannerData } from "@/sanity/queries/ctaBanner";
 import type { HomeData } from "@/sanity/queries/home";
 import ChamadasSection from "./ChamadasSection";
 import ContatoSection from "./ContatoSection";
-import CtaBannerSection from "./CtaBannerSection";
 import EcossistemaSection from "./EcossistemaSection";
 import FaqSection from "./FaqSection";
 import HeroSection from "./HeroSection";
@@ -15,9 +16,10 @@ import ResultadosSection from "./ResultadosSection";
 
 type Props = {
   data: HomeData;
+  ctaBanner: CtaBannerData;
 };
 
-export default function HomeClientComponent({ data }: Props) {
+export default function HomeClientComponent({ data, ctaBanner }: Props) {
   return (
     <main className="relative bg-brand-navy overflow-x-clip">
       {/* ── Fundo orgânico unificado — orbs flutuantes através de todas as seções ── */}
@@ -84,8 +86,8 @@ export default function HomeClientComponent({ data }: Props) {
 
       {/* ── Dark mode final ── */}
       <ContatoSection />
-      <FaqSection />
-      <CtaBannerSection />
+      <FaqSection faq={data?.faq} />
+      <CtaBannerSection data={ctaBanner} />
     </main>
   );
 }

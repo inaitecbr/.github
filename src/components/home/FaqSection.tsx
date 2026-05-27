@@ -1,58 +1,68 @@
 "use client";
 
 import { Container } from "@/components/Section";
+import type { HomeFaq } from "@/sanity/queries/home";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function FaqSection() {
-  const t = useTranslations("Home");
+type Props = {
+  faq?: HomeFaq;
+};
+
+export default function FaqSection({ faq }: Props) {
+  const t = useTranslations("Faq");
   const [open, setOpen] = useState<number | null>(0);
-  const faqs = t.raw("faq.items") as Array<{ q: string; a: string }>;
+
+  if (!faq?.items?.length) return null;
 
   return (
     <section className="relative py-16 overflow-hidden">
       {/* Ambiente de fundo */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/2 -translate-y-1/2 -right-40 w-[600px] h-[600px] rounded-full bg-[#004E69]/30 blur-[140px]" />
+        <div className="absolute top-1/2 -translate-y-1/2 -right-40 w-150 h-150 rounded-full bg-[#004E69]/30 blur-[140px]" />
       </div>
 
       <Container className="relative">
         <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
           <div className="lg:sticky lg:top-24">
-            <div className="mb-5 inline-flex items-center gap-2">
-              <span className="block h-px w-8 bg-brand-orange" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-                {t("faq.eyebrow")}
-              </span>
-            </div>
+            {faq.eyebrow && (
+              <div className="mb-5 inline-flex items-center gap-2">
+                <span className="block h-px w-8 bg-brand-orange" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+                  {faq.eyebrow}
+                </span>
+              </div>
+            )}
             <h2 className="font-extrabold text-white text-[2.5rem] leading-[1.2] tracking-tight">
-              {t("faq.titleStart")}{" "}
-              <span className="text-brand-orange italic font-medium">
-                {t("faq.titleHighlight")}
-              </span>
+              {faq.titleStart && <>{faq.titleStart} </>}
+              {faq.titleHighlight && (
+                <span className="text-brand-orange italic font-medium">{faq.titleHighlight}</span>
+              )}
             </h2>
-            <p className="mt-4 text-white/60 text-sm leading-relaxed max-w-xs">{t("faq.desc")}</p>
+            {faq.desc && (
+              <p className="mt-4 text-white/60 text-sm leading-relaxed max-w-xs">{faq.desc}</p>
+            )}
             <Link
               href="/fale-conosco"
               className="mt-6 inline-flex items-center text-sm font-semibold text-brand-orange hover:text-[#FF9B26] transition-all"
             >
-              {t("faq.cta")}
+              {t("ctaLabel")}
             </Link>
           </div>
 
           <div>
-            {faqs.map((item, i) => {
+            {faq.items.map((item, i) => {
               const isOpen = open === i;
               const isFirst = i === 0;
-              const isLast = i === faqs.length - 1;
+              const isLast = i === (faq.items?.length ?? 0) - 1;
               return (
                 <div
-                  key={i}
+                  key={item._key ?? i}
                   className={[
-                    "border-b border-white/[0.06] last:border-b-0 transition-all duration-300",
-                    isOpen ? "bg-white/[0.02]" : "hover:bg-white/[0.015]",
+                    "border-b border-white/6 last:border-b-0 transition-all duration-300",
+                    isOpen ? "bg-white/2" : "hover:bg-white/1.5",
                     isOpen && isFirst ? "rounded-t-2xl" : "",
                     isOpen && isLast ? "rounded-b-2xl" : "",
                   ]
@@ -69,7 +79,7 @@ export default function FaqSection() {
                       {item.q}
                     </span>
                     <span
-                      className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? "bg-brand-orange text-white rotate-45 shadow-lg shadow-brand-orange/30" : "bg-white/[0.08] text-white/70 group-hover:bg-white/15 group-hover:text-white border border-white/10"}`}
+                      className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? "bg-brand-orange text-white rotate-45 shadow-lg shadow-brand-orange/30" : "bg-white/8 text-white/70 group-hover:bg-white/15 group-hover:text-white border border-white/10"}`}
                     >
                       <Plus strokeWidth={2.5} className="w-3.5 h-3.5" />
                     </span>

@@ -508,6 +508,64 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: "faq",
+      title: "FAQ — Perguntas frequentes",
+      type: "object",
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        defineField({
+          name: "eyebrow",
+          title: 'Eyebrow (ex.: "Perguntas frequentes")',
+          type: "string",
+        }),
+        defineField({
+          name: "titleStart",
+          title: "Título — primeira parte",
+          type: "string",
+        }),
+        defineField({
+          name: "titleHighlight",
+          title: "Título — destaque (itálico laranja)",
+          type: "string",
+        }),
+        defineField({
+          name: "desc",
+          title: "Descrição abaixo do título",
+          type: "text",
+          rows: 2,
+        }),
+        defineField({
+          name: "items",
+          title: "Perguntas e respostas",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              name: "faqItem",
+              fields: [
+                {
+                  name: "q",
+                  title: "Pergunta",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: "a",
+                  title: "Resposta",
+                  type: "text",
+                  rows: 4,
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+              preview: {
+                select: { title: "q", subtitle: "a" },
+              },
+            },
+          ],
+        }),
+      ],
+    }),
   ],
   preview: {
     select: {

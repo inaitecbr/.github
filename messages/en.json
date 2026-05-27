@@ -187,44 +187,6 @@
         "role": "Founder · AgroSmart — Acelera Pedra Branca 2025"
       },
       "imageAlt": "Entrepreneur from the Inaitec ecosystem"
-    },
-    "faq": {
-      "eyebrow": "Frequently asked questions",
-      "titleStart": "Doubts",
-      "titleHighlight": "answered",
-      "desc": "Didn't find what you were looking for? Talk to our team.",
-      "cta": "Get in touch",
-      "items": [
-        {
-          "q": "What is Inaitec and how does it work?",
-          "a": "Inaitec is the innovation and technology hub of Pedra Branca Technology Park, in Palhoça (SC, Brazil). We connect startups, companies, universities and government through structured programs of acceleration, open innovation and technology transfer."
-        },
-        {
-          "q": "How can I take part in Acelera Pedra Branca?",
-          "a": "Applications happen through public calls announced on this site and our social channels. The selection process includes proposal review, interviews and a pitch. Keep an eye on the open calls."
-        },
-        {
-          "q": "Can my company set up at Pedra Branca Park?",
-          "a": "Yes. The park has spaces for companies of all sizes — from coworking to headquarters. Get in touch with our team to learn about the installation options and ecosystem benefits."
-        },
-        {
-          "q": "How does open innovation work for medium and large companies?",
-          "a": "We map your company's strategic challenges and connect you with selected startups from the ecosystem to develop pilots and validated solutions. The whole process is structured and guided by the Inaitec team."
-        },
-        {
-          "q": "Are there funding opportunities available for startups?",
-          "a": "Yes, we run our own calls and partner with FINEP, BNDES, city governments and partner companies. Current opportunities are always listed in the Open Calls section of the site."
-        }
-      ]
-    },
-    "ctaBanner": {
-      "eyebrow": "Ready to start?",
-      "titleStart": "Join the largest",
-      "titleHighlight": "urban innovation",
-      "titleEnd": "ecosystem in Brazil.",
-      "desc": "Startups, companies and government at a single address — Pedra Branca, SC.",
-      "ctaPrimary": "Talk to Inaitec",
-      "ctaSecondary": "View programs"
     }
   },
   "EcosystemAccordion": {
@@ -309,5 +271,8 @@
   "ResultadosSection": {
     "prevAria": "Previous case",
     "nextAria": "Next case"
+  },
+  "Faq": {
+    "ctaLabel": "Get in touch"
   }
 }
