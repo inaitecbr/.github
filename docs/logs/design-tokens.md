@@ -693,3 +693,53 @@ Visual design tokens for the Inaitec project (colors, typography, spacing, etc.)
 - `--color-brand-orange)'
               const isAberta = p.statusKey === 'aberta' && !!p.deadline
               const tl = isAberta ? timeLeft(p.deadline!) : null`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-orange)"
+        className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+      />
+
+      <Container className="relative h-full grid lg:grid-cols-[1.1fr_1fr] gap-16 items-stretch">`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-orange)"
+        className="absolute top-20 right-0 w-96 h-96 opacity-20 pointer-events-none"
+      />
+
+      <Container className="relative">
+        <div className="max-w-2xl mb-16">
+          {historia.eyebrow && (
+            <div className="mb-5 inline-flex items-center gap-2">
+              <span className="block h-px w-8 bg-brand-orange" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
+                {historia.eyebrow}
+              </span>
+            </div>
+          )}
+          <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight">
+            {historia.titleStart && <>{historia.titleStart}{' '}</>}
+            {historia.titleHighlight && (
+              <span className="italic font-medium text-brand-orange">{historia.titleHighlight}</span>
+            )}
+            {historia.titleEnd && <>{' '}{historia.titleEnd}</>}
+          </h2>
+          {historia.desc && (
+            <p className="mt-6 text-white/65 text-base leading-relaxed">{historia.desc}</p>
+          )}
+        </div>
+
+        {/* Timeline horizontal */}
+        {historia.eventos && historia.eventos.length > 0 && (
+          <div className="relative">
+            <div className="absolute left-0 right-0 top-8 h-px bg-white/15 hidden md:block" />`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+        className="absolute -top-10 left-[5%] w-80 h-80 opacity-[0.08] pointer-events-none"
+      />
+
+      <Container className="relative py-16">
+        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-stretch">`

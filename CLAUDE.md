@@ -157,15 +157,17 @@ src/sanity/
 │   └── live.ts              → sanityFetch helper com tags
 ├── queries/
 │   ├── home.ts              → groq + getHome({ locale })
-│   ├── sobre.ts
+│   ├── ctaBanner.ts         → groq + getCtaBanner({ locale }) — componente global
 │   └── ...                  → uma query por página
-└── schemas/
-    ├── index.ts             → exporta schemaTypes
-    ├── home.ts
-    ├── programa.ts
-    └── ...
+├── schemas/
+│   ├── index.ts             → exporta schemaTypes
+│   ├── home.ts
+│   ├── programa.ts
+│   ├── ctaBanner.ts         → documento global (singleton PT/EN/ES)
+│   └── ...
+└── structure.ts             → estrutura customizada do Studio (sidebar, singletons)
 
-sanity.config.ts             → na raiz; plugins: [structureTool(), documentInternationalization(...)]
+sanity.config.ts             → na raiz; plugins: [structureTool({ structure }), documentInternationalization(...)]
 
 src/app/studio/[[...tool]]/page.tsx   → Studio embutido em /studio
 ```
@@ -260,32 +262,122 @@ Fluxo obrigatório ao criar documento com i18n:
 4. Publicar com `mcp_sanity_publish_documents`
 5. Se for um documento singleton referenciado por ID no `sanity.config.ts`, atualizar com os UUIDs reais (nunca usar IDs `__i18n_*` planejados sem confirmar que existem)
 
-**Status atual:** MCP **ainda não está configurado**. Antes da primeira criação de schema/documento, adicionar as credenciais MCP no `.claude/settings.json`.
+**Status atual:** MCP **configurado e operacional**. CLI autenticado (`sanity login` feito). Para deploy de schema, usar sempre `npx sanity@latest schema deploy` (nunca o MCP `deploy_schema` — temos Studio local).
+
+**`workspaceName` obrigatório:** Todas as chamadas MCP devem incluir `workspaceName: 'inaitec-website'` (o workspace padrão `"default"` não existe neste projeto).
+
+### CTA Banner — componente global com título por página
+
+O `ctaBanner` é um **documento Sanity global** (singleton PT/EN/ES), não um sub-objeto de página. Armazena eyebrow, desc e botões — que são iguais em todas as páginas. Cada página fornece apenas seu título via `titleOverride`.
+
+**Arquivos:**
+- Schema: `src/sanity/schemas/ctaBanner.ts`
+- Query: `src/sanity/queries/ctaBanner.ts` → `getCtaBanner({ locale })`
+- Componente compartilhado: `src/components/CtaBannerSection.tsx`
+
+**IDs dos singletons publicados:**
+| Language | ID |
+|---|---|
+| PT | `e54d7186-5a3e-4a73-9419-bab31926c7db` |
+| EN | `1f583a00-813e-4904-a904-ebb0a83e2460` |
+| ES | `4cb2c011-f5ee-4535-9add-86c38ead71b2` |
+
+**Padrão de uso em cada página:**
+
+```tsx
+// page.tsx — busca ctaBanner em paralelo com os dados da página
+const [data, ctaBanner] = await Promise.all([
+  getMinhaPage({ locale }),
+  getCtaBanner({ locale }),
+])
+return <MinhaPageClientComponent data={data} ctaBanner={ctaBanner} />
+```
+
+```tsx
+// ClientComponent.tsx
+// Sem título customizado (usa padrão do doc global):
+<CtaBannerSection data={ctaBanner} />
+
+// Com título próprio da página (só titleStart/Highlight/End mudam):
+<CtaBannerSection
+  data={ctaBanner}
+  titleOverride={data?.ctaBannerTitle}
+/>
+```
+
+**Schema por página** — quando precisar de título diferente, adicionar ao schema da página:
+
+```ts
+defineField({
+  name: 'ctaBannerTitle',
+  title: 'CTA Banner — Título personalizado',
+  description: 'Deixe vazio para usar o título padrão do CTA Banner global.',
+  type: 'object',
+  options: { collapsible: true, collapsed: true },
+  fields: [
+    defineField({ name: 'titleStart',     type: 'string' }),
+    defineField({ name: 'titleHighlight', type: 'string' }),
+    defineField({ name: 'titleEnd',       type: 'string' }),
+  ],
+})
+```
+
+**Regra:** `ctaBanner` **nunca** é sub-objeto de página. É sempre documento separado buscado via `getCtaBanner()`.
+
+---
+
+### Studio structure.ts — adicionar novas páginas
+
+A estrutura do Studio fica em `src/sanity/structure.ts`. Ao migrar uma nova página singleton:
+
+1. Adicionar o ID do documento PT em `SINGLETONS`
+2. Adicionar `S.listItem()` correspondente dentro do grupo correto
+3. Adicionar o tipo em `i18nSchemaTypes` no `sanity.config.ts`
+4. Rodar `npx sanity@latest schema deploy`
+
+**Singletons registrados:**
+
+| Singleton | ID (PT) | Schema type |
+|---|---|---|
+| Home | `08a4cb0a-f98b-4dd7-9185-8c5516c39943` | `home` |
+| CTA Banner | `e54d7186-5a3e-4a73-9419-bab31926c7db` | `ctaBanner` |
+
+---
+
+### FAQ — padrão por página
+
+O FAQ é um **sub-objeto do schema de cada página** (não um documento separado), pois cada página tem seu próprio conjunto de perguntas/respostas.
+
+Campos do objeto `faq`: `eyebrow`, `titleStart`, `titleHighlight`, `desc`, `items[]` (`q` + `a`).
+
+O link "Entrar em contato" dentro do FAQ é **microcopy** — fica em `messages/{pt,en,es}.json` na chave `Faq.ctaLabel`, com href `/fale-conosco` hardcoded no componente. Não vai para o Sanity.
+
+---
 
 ### Ordem de migração (faseada — um passo de cada vez)
 
-1. **Setup base**
-   - Configurar `.env.local` com credenciais da nova org Sanity
-   - Instalar dependências (`next-sanity`, `@sanity/image-url`, `sanity`, `@sanity/document-internationalization`, `styled-components` se necessário pelo Studio)
-   - Criar `sanity.config.ts`, `src/sanity/{client,image,lib/live}.ts`, `src/app/studio/[[...tool]]/page.tsx`
-   - Configurar Sanity MCP no `.claude/settings.json`
-2. **Home** (primeira página a migrar)
-   - Inventário de campos da Home (`InaitecWebsite.tsx` + bloco `Home` do `messages/pt.json`)
-   - Criar schema `home` (com sub-objetos: hero, parceiros, ecossistema, programas, chamadas, noticias, contato, resultados, faq, ctaBanner)
-   - Criar query `getHome`
-   - Refatorar `src/app/[locale]/page.tsx` em Server thin + `HomeClientComponent`
-   - Popular documentos PT/EN/ES via MCP + `translation.metadata`
-   - Remover bloco `Home` do `messages/*.json`
-3. **Demais páginas internas** — uma por vez, mesma sequência (Sobre, Fale Conosco, Traga sua Empresa, Banco de Talentos, Soluções)
-4. **Coleções** — Programas (com slug), Conteúdo/Posts (com autor + slug), Empresas
-5. **Globais** — Header dinâmico (se houver conteúdo editável), Footer dinâmico, CTA global
-6. **Limpeza final** — `messages/*.json` fica só com nav/microcopy; remover `src/data/*.ts` migrados
+1. ✅ **Setup base** — concluído
+2. ✅ **Home** — concluída
+   - Schemas: `hero`, `parceiros`, `ecossistema`, `timeline`, `pilares`, `programas`, `chamadas`, `resultados`, `faq`
+   - Seções ainda no código (não migradas para Sanity por decisão): `noticias` (pendente), `contato` (i18n)
+   - Bloco `Home` removido do `messages/*.json` (exceto microcopy: `Faq.ctaLabel`)
+3. ✅ **CTA Banner** — documento global criado (ver seção acima)
+4. **Demais páginas internas** — uma por vez:
+   - ✅ **Sobre** — concluída
+     - Schema: `sobre.ts` com 8 seções (hero, quemSomos, historia, lideranca, relatorio, mediaKit, estrutura, ctaFinal)
+     - IDs: PT `eb1f1e75-726c-4f5f-8a7d-d0b36e8cb530` · EN `466378bb-99df-4f48-b112-be3351a2cf34` · ES `77a982b9-5ae9-43ec-86df-80f9ae1612c1`
+     - Imagens: team photos + inaitec7/8.jpg → assets Sanity (ver `scripts/upload-sobre-images.ts`)
+     - `sobre/page.tsx` → Server thin; seções em `src/components/sobre/`; ctaFinal próprio (NÃO usa shared CtaBannerSection)
+   - Fale Conosco, Traga sua Empresa, Banco de Talentos, Soluções — pendentes
+5. **Coleções** — Programas (com slug), Conteúdo/Posts (com autor + slug), Empresas
+6. **Globais** — Header dinâmico (se houver conteúdo editável), Footer dinâmico
+7. **Limpeza final** — `messages/*.json` fica só com nav/microcopy; remover `src/data/*.ts` migrados
 
 ### Refatoração obrigatória durante a migração
 
 Páginas e componentes grandes precisam ser quebrados ao migrar:
 - `InaitecWebsite.tsx` (994l) → vira `HomeClientComponent` enxuto consumindo `data`
 - `programas/[slug]/page.tsx` (763l) → Server thin (busca programa por slug) + `ProgramaClientComponent`
-- `sobre/page.tsx` (728l) → Server thin + `SobreClientComponent`
-- Arrays inline (`VALORES`, `HISTORIA`, `CONSELHO_DELIBERATIVO`, etc.) viram campos do schema
+- ✅ `sobre/page.tsx` (728l) → Server thin + `SobreClientComponent` (concluído)
+- Arrays inline (`VALORES`, `HISTORIA`, `CONSELHO_DELIBERATIVO`, etc.) → campos do schema `sobre.ts` (concluído)
 - `src/data/programas.ts`, `src/data/empresas.ts`, `src/data/conteudo.ts` são deletados após a migração da coleção correspondente

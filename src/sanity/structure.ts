@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { DocumentsIcon, HomeIcon, RocketIcon, StarIcon } from '@sanity/icons'
+import { DocumentsIcon, HomeIcon, InfoOutlineIcon, RocketIcon, StarIcon } from '@sanity/icons'
 
 /**
  * Estrutura customizada do Studio.
@@ -15,6 +15,7 @@ import { DocumentsIcon, HomeIcon, RocketIcon, StarIcon } from '@sanity/icons'
 const SINGLETONS = {
   home: '08a4cb0a-f98b-4dd7-9185-8c5516c39943',
   ctaBanner: 'e54d7186-5a3e-4a73-9419-bab31926c7db', // versão PT — Translations para EN/ES
+  sobre: 'eb1f1e75-726c-4f5f-8a7d-d0b36e8cb530', // versão PT — Translations para EN/ES
 } as const
 
 export const structure: StructureResolver = (S) =>
@@ -36,6 +37,15 @@ export const structure: StructureResolver = (S) =>
                   S.document()
                     .documentId(SINGLETONS.home)
                     .schemaType('home'),
+                ),
+
+              S.listItem()
+                .title('Sobre')
+                .icon(InfoOutlineIcon)
+                .child(
+                  S.document()
+                    .documentId(SINGLETONS.sobre)
+                    .schemaType('sobre'),
                 ),
 
               // ── Componentes globais (usados em todas as páginas) ──────
