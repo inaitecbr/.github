@@ -17,7 +17,7 @@ export const supportedLanguages = [
 
 // Nomes dos schemas que terão suporte a i18n (PT/EN/ES via botão "Translations").
 // Adicionar aqui cada novo schema editorial conforme for criado.
-const i18nSchemaTypes: string[] = ['home', 'programa', 'ctaBanner', 'sobre']
+const i18nSchemaTypes: string[] = ['home', 'programa', 'ctaBanner', 'sobre', 'tragaSuaEmpresa']
 
 export default defineConfig({
   name: 'inaitec-website',

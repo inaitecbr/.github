@@ -341,6 +341,8 @@ A estrutura do Studio fica em `src/sanity/structure.ts`. Ao migrar uma nova pág
 |---|---|---|
 | Home | `08a4cb0a-f98b-4dd7-9185-8c5516c39943` | `home` |
 | CTA Banner | `e54d7186-5a3e-4a73-9419-bab31926c7db` | `ctaBanner` |
+| Sobre | `eb1f1e75-726c-4f5f-8a7d-d0b36e8cb530` | `sobre` |
+| Traga sua Empresa | `0bde9e07-f843-4125-b53f-1f28a35976be` | `tragaSuaEmpresa` |
 
 ---
 
@@ -368,7 +370,14 @@ O link "Entrar em contato" dentro do FAQ é **microcopy** — fica em `messages/
      - IDs: PT `eb1f1e75-726c-4f5f-8a7d-d0b36e8cb530` · EN `466378bb-99df-4f48-b112-be3351a2cf34` · ES `77a982b9-5ae9-43ec-86df-80f9ae1612c1`
      - Imagens: team photos + inaitec7/8.jpg → assets Sanity (ver `scripts/upload-sobre-images.ts`)
      - `sobre/page.tsx` → Server thin; seções em `src/components/sobre/`; ctaFinal próprio (NÃO usa shared CtaBannerSection)
-   - Fale Conosco, Traga sua Empresa, Banco de Talentos, Soluções — pendentes
+   - ✅ **Traga sua Empresa** — concluída
+     - Schema: `tragaSuaEmpresa.ts` com 6 seções (hero, perks, beneficios, infraestrutura, porQue, ctaFinal)
+     - IDs: PT `0bde9e07-f843-4125-b53f-1f28a35976be` · EN `9cf202c9-3622-44c3-9762-dee56f7f7aa7` · ES `8dda440c-74d8-4657-90b5-317882a64114`
+     - Imagens: inaitec1 (hero), inaitec8 (porQue), estrutura1/3/3-1/4 (espaços), 8 logos de perks → assets Sanity (ver `scripts/upload-traga-images.ts`)
+     - `traga-sua-empresa/page.tsx` → Server thin; seções em `src/components/traga-sua-empresa/`; ctaFinal próprio
+     - Nota: PerksSection renderiza TANTO perks (logos) QUANTO benefícios (check cards) — ambos ficam no mesmo `<section id="beneficios">` conforme layout original
+     - Nota: números dos `razoes` (porQue) são calculados por index (`String(i+1).padStart(2,'0')`) — não armazenados no Sanity
+   - Fale Conosco, Banco de Talentos, Soluções — pendentes
 5. **Coleções** — Programas (com slug), Conteúdo/Posts (com autor + slug), Empresas
 6. **Globais** — Header dinâmico (se houver conteúdo editável), Footer dinâmico
 7. **Limpeza final** — `messages/*.json` fica só com nav/microcopy; remover `src/data/*.ts` migrados
