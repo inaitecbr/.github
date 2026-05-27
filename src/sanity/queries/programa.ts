@@ -48,7 +48,16 @@ const programaFullFields = groq`
     cargo,
     metricas[]{ _key, label, value }
   },
-  faq[]{ _key, q, a }
+  faq[]{ _key, q, a },
+  empresasVinculadas[]->{
+    _id,
+    nome,
+    setor,
+    desc,
+    "logoUrl": logo.asset->url,
+    "fotoUrl": foto.asset->url,
+    fundador { nome, titulo }
+  }
 `
 
 // ─── Queries ───────────────────────────────────────────────────────
@@ -72,6 +81,28 @@ export const chamadasAbertasQuery = groq`
     select(statusKey == "aberta" => 0, 1) asc,
     deadline asc
   )
+`
+
+/** Singleton da página /programas — hero, CTA final e outros campos editoriais. */
+export const programasPageQuery = groq`
+  *[_type == "programas" && language == $language][0]{
+    hero {
+      eyebrow,
+      titleStart,
+      titleHighlight,
+      subtitle,
+      "heroImageUrl": heroImage.asset->url
+    },
+    ctaFinal {
+      eyebrow,
+      titleStart,
+      titleHighlight,
+      titleEnd,
+      desc,
+      ctaPrimary { label, href },
+      ctaSecondary { label, href }
+    }
+  }
 `
 
 // ─── Tipos ─────────────────────────────────────────────────────────
@@ -119,6 +150,16 @@ export type ProgramaCase = {
 }
 export type ProgramaFaq = { _key?: string; q?: string; a?: string }
 
+export type EmpresaVinculada = {
+  _id: string
+  nome?: string
+  setor?: string
+  desc?: string
+  logoUrl?: string
+  fotoUrl?: string
+  fundador?: { nome?: string; titulo?: string }
+}
+
 export type ProgramaFull = ProgramaCard & {
   longDesc?: string
   quickFacts?: ProgramaQuickFact[]
@@ -130,6 +171,7 @@ export type ProgramaFull = ProgramaCard & {
   stats?: ProgramaStat[]
   cases?: ProgramaCase[]
   faq?: ProgramaFaq[]
+  empresasVinculadas?: EmpresaVinculada[]
 }
 
 // ─── Fetchers ──────────────────────────────────────────────────────
@@ -155,5 +197,28 @@ export async function getChamadasAbertas({ locale }: { locale: string }) {
     query: chamadasAbertasQuery,
     params: { language: locale },
     tags: ['programa'],
+  })
+}
+
+// ─── Programas page singleton ─────────────────────────────────────
+
+export type ProgramasHero = {
+  eyebrow?: string
+  titleStart?: string
+  titleHighlight?: string
+  subtitle?: string
+  heroImageUrl?: string | null
+}
+
+export type ProgramasPageData = {
+  hero?: ProgramasHero
+  ctaFinal?: import('@/components/CtaFinalSection').CtaFinalData
+} | null
+
+export async function getProgramasPage({ locale }: { locale: string }) {
+  return sanityFetch<ProgramasPageData>({
+    query: programasPageQuery,
+    params: { language: locale },
+    tags: ['programas'],
   })
 }

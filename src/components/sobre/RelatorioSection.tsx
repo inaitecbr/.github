@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server'
 import AnimatedCounter from '@/components/AnimatedCounter'
 import { Section } from '@/components/Section'
 import type { SobreRelatorio } from '@/sanity/queries/sobre'
@@ -6,8 +7,10 @@ type Props = {
   relatorio?: SobreRelatorio
 }
 
-export default function RelatorioSection({ relatorio }: Props) {
+export default async function RelatorioSection({ relatorio }: Props) {
   if (!relatorio) return null
+
+  const t = await getTranslations('Sobre')
 
   return (
     <Section id="relatorio" padding="md" className="scroll-mt-24">
@@ -70,7 +73,7 @@ export default function RelatorioSection({ relatorio }: Props) {
 
               <div className="relative flex items-baseline justify-between mb-6">
                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange">
-                  Relatório
+                  {t('relatorioCardLabel')}
                 </span>
                 <span className="text-3xl font-extrabold text-white tracking-tight">{r.ano}</span>
               </div>
@@ -79,7 +82,7 @@ export default function RelatorioSection({ relatorio }: Props) {
               </div>
               <p className="relative text-sm text-white/55 leading-relaxed mb-6">{r.resumo}</p>
               <span className="relative inline-flex items-center text-xs font-semibold text-brand-orange group-hover:text-[#FF9B26] transition-all">
-                Baixar PDF
+                {t('relatorioDownload')}
               </span>
             </a>
           ))}

@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server'
 import { Section } from '@/components/Section'
 import type { SobreQuemSomos } from '@/sanity/queries/sobre'
 
@@ -5,8 +6,10 @@ type Props = {
   quemSomos?: SobreQuemSomos
 }
 
-export default function QuemSomosSection({ quemSomos }: Props) {
+export default async function QuemSomosSection({ quemSomos }: Props) {
   if (!quemSomos) return null
+
+  const t = await getTranslations('Sobre')
 
   return (
     <Section id="quem-somos" theme="light" padding="md" className="scroll-mt-24">
@@ -37,7 +40,7 @@ export default function QuemSomosSection({ quemSomos }: Props) {
           {quemSomos.missao && (
             <div className="rounded-2xl bg-white p-8 border border-border">
               <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-2">
-                Missão
+                {t('missaoLabel')}
               </div>
               <p className="text-lg leading-relaxed">{quemSomos.missao}</p>
             </div>
@@ -45,7 +48,7 @@ export default function QuemSomosSection({ quemSomos }: Props) {
           {quemSomos.visao && (
             <div className="rounded-2xl bg-white p-8 border border-border">
               <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-2">
-                Visão
+                {t('visaoLabel')}
               </div>
               <p className="text-lg leading-relaxed">{quemSomos.visao}</p>
             </div>
@@ -53,7 +56,7 @@ export default function QuemSomosSection({ quemSomos }: Props) {
           {quemSomos.valores && quemSomos.valores.length > 0 && (
             <div className="rounded-2xl bg-white p-8 border border-border">
               <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange mb-4">
-                Valores
+                {t('valoresLabel')}
               </div>
               <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                 {quemSomos.valores.map((v) => (

@@ -1,13 +1,21 @@
 import Link from 'next/link'
 import { Section } from '@/components/Section'
-import type { SobreCtaFinal } from '@/sanity/queries/sobre'
 
-type Props = {
-  ctaFinal?: SobreCtaFinal
-}
+// Tipo compartilhado — espelha os campos `ctaFinal` de cada schema de página
+export type CtaFinalData = {
+  eyebrow?: string
+  titleStart?: string
+  titleHighlight?: string
+  titleEnd?: string
+  desc?: string
+  ctaPrimary?: { label?: string; href?: string }
+  ctaSecondary?: { label?: string; href?: string }
+} | null
 
-export default function CtaFinalSection({ ctaFinal }: Props) {
-  if (!ctaFinal) return null
+type Props = { data?: CtaFinalData }
+
+export default function CtaFinalSection({ data }: Props) {
+  if (!data) return null
 
   return (
     <Section padding="md">
@@ -17,41 +25,41 @@ export default function CtaFinalSection({ ctaFinal }: Props) {
 
         <div className="relative grid lg:grid-cols-[1fr_auto] gap-10 items-center">
           <div>
-            {ctaFinal.eyebrow && (
+            {data.eyebrow && (
               <div className="mb-5 inline-flex items-center gap-2">
                 <span className="block h-px w-8 bg-brand-orange" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-                  {ctaFinal.eyebrow}
+                  {data.eyebrow}
                 </span>
               </div>
             )}
             <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight max-w-2xl">
-              {ctaFinal.titleStart && <>{ctaFinal.titleStart}{' '}</>}
-              {ctaFinal.titleHighlight && (
-                <span className="italic font-medium text-brand-orange">{ctaFinal.titleHighlight}</span>
+              {data.titleStart && <>{data.titleStart}{' '}</>}
+              {data.titleHighlight && (
+                <span className="italic font-medium text-brand-orange">{data.titleHighlight}</span>
               )}
-              {ctaFinal.titleEnd && ctaFinal.titleEnd}
+              {data.titleEnd && <>{' '}{data.titleEnd}</>}
             </h2>
-            {ctaFinal.desc && (
-              <p className="mt-5 text-white/70 text-base leading-relaxed max-w-xl">{ctaFinal.desc}</p>
+            {data.desc && (
+              <p className="mt-5 text-white/70 text-base leading-relaxed max-w-xl">{data.desc}</p>
             )}
           </div>
 
-          <div className="w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-            {ctaFinal.ctaPrimary?.label && (
+          <div className="w-full flex flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:shrink-0">
+            {data.ctaPrimary?.label && (
               <Link
-                href={ctaFinal.ctaPrimary.href ?? '/'}
+                href={data.ctaPrimary.href ?? '/'}
                 className="inline-flex items-center justify-center rounded-full bg-brand-orange text-white text-sm font-semibold px-7 py-4 hover:bg-[#FF9B26] hover:shadow-xl hover:shadow-brand-orange/40 transition-all duration-300 shadow-lg shadow-brand-orange/25"
               >
-                {ctaFinal.ctaPrimary.label}
+                {data.ctaPrimary.label}
               </Link>
             )}
-            {ctaFinal.ctaSecondary?.label && (
+            {data.ctaSecondary?.label && (
               <Link
-                href={ctaFinal.ctaSecondary.href ?? '/'}
+                href={data.ctaSecondary.href ?? '/'}
                 className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-white text-sm font-semibold px-7 py-4 hover:bg-white/10 hover:border-white/50 transition-all duration-300"
               >
-                {ctaFinal.ctaSecondary.label}
+                {data.ctaSecondary.label}
               </Link>
             )}
           </div>

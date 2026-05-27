@@ -3,7 +3,7 @@ import HeroSection from './HeroSection'
 import PerksSection from './PerksSection'
 import InfraestruturaSection from './InfraestruturaSection'
 import PorQueSection from './PorQueSection'
-import CtaFinalSection from './CtaFinalSection'
+import CtaFinalSection from '@/components/CtaFinalSection'
 
 type Props = { data: TragaSuaEmpresaData }
 
@@ -23,7 +23,7 @@ export default function TragaSuaEmpresaClientComponent({ data }: Props) {
       <PerksSection perks={data?.perks} beneficios={data?.beneficios} />
       <InfraestruturaSection infraestrutura={data?.infraestrutura} />
       <PorQueSection porQue={data?.porQue} />
-      <CtaFinalSection ctaFinal={data?.ctaFinal} />
+      <CtaFinalSection data={data?.ctaFinal} />
     </main>
   )
 }

@@ -343,6 +343,8 @@ A estrutura do Studio fica em `src/sanity/structure.ts`. Ao migrar uma nova pág
 | CTA Banner | `e54d7186-5a3e-4a73-9419-bab31926c7db` | `ctaBanner` |
 | Sobre | `eb1f1e75-726c-4f5f-8a7d-d0b36e8cb530` | `sobre` |
 | Traga sua Empresa | `0bde9e07-f843-4125-b53f-1f28a35976be` | `tragaSuaEmpresa` |
+| Empresas Instaladas | `b9e088f6-abe6-47fb-8513-2ee82941cbe7` | `empresasInstaladas` |
+| Programas (catálogo) | `d04849c7-4759-4bbe-bbf6-f023c04b8981` | `programas` |
 
 ---
 
@@ -353,6 +355,31 @@ O FAQ é um **sub-objeto do schema de cada página** (não um documento separado
 Campos do objeto `faq`: `eyebrow`, `titleStart`, `titleHighlight`, `desc`, `items[]` (`q` + `a`).
 
 O link "Entrar em contato" dentro do FAQ é **microcopy** — fica em `messages/{pt,en,es}.json` na chave `Faq.ctaLabel`, com href `/fale-conosco` hardcoded no componente. Não vai para o Sanity.
+
+---
+
+### i18n de componentes (labels estruturais)
+
+Labels que **não são conteúdo editorial** (não editáveis pelo cliente no Sanity), mas mudam por idioma → ficam em `messages/*.json`.
+
+**Namespaces adicionados:**
+
+| Namespace | Onde é usado | Keys principais |
+|---|---|---|
+| `Sobre` | `sobre/HeroSection`, `QuemSomosSection`, `RelatorioSection`, `LiderancaSection` | `navQuemSomos…navEstrutura`, `missaoLabel`, `visaoLabel`, `valoresLabel`, `relatorioCardLabel`, `relatorioDownload`, `fotoEmBreve` |
+| `ProgramaDetalhe` | `programas/ProgramaClientComponent` | `breadcrumb`, `publico.*`, `status*`, `cta*`, todos os eyebrows e títulos de seção estruturais da página de detalhe |
+
+**Padrão para Server Components:**
+```ts
+import { getTranslations } from 'next-intl/server'
+// componente precisa ser async:
+export default async function MinhaSection({ data }: Props) {
+  const t = await getTranslations('NomeNamespace')
+  return <div>{t('minhaKey')}</div>
+}
+```
+
+**Regra:** Texto que o cliente precisa editar → Sanity. Texto que muda por idioma mas é estrutural → i18n. Texto que é igual em todos idiomas e não muda → pode ficar no código.
 
 ---
 
@@ -377,6 +404,18 @@ O link "Entrar em contato" dentro do FAQ é **microcopy** — fica em `messages/
      - `traga-sua-empresa/page.tsx` → Server thin; seções em `src/components/traga-sua-empresa/`; ctaFinal próprio
      - Nota: PerksSection renderiza TANTO perks (logos) QUANTO benefícios (check cards) — ambos ficam no mesmo `<section id="beneficios">` conforme layout original
      - Nota: números dos `razoes` (porQue) são calculados por index (`String(i+1).padStart(2,'0')`) — não armazenados no Sanity
+   - ✅ **Empresas Instaladas** — concluída
+     - Schema: `empresasInstaladas.ts` com `hero` + `ctaFinal` (+ `language` oculto)
+     - IDs: PT `b9e088f6-abe6-47fb-8513-2ee82941cbe7` · EN/ES via plugin i18n
+     - HeroSection recebe `hero?` do Sanity; sem fallback hardcoded
+   - ✅ **Programas (catálogo)** — concluída
+     - Schema: `programas.ts` com `hero` (inclui `heroImage`) + `ctaFinal` + `language`
+     - IDs: PT `d04849c7-4759-4bbe-bbf6-f023c04b8981` · EN `72d44ab2-0ef2-4563-a416-744fca7fa9bc` · ES `0bbd6087-9387-4c3b-895a-6e2ae21626d2`
+     - HeroSection aceita `hero?` + `count` (count é dinâmico, vem dos documentos `programa`); `titleStart` suporta `{count}` como placeholder
+   - ✅ **Programa detalhe (`/programas/[slug]`)** — concluída
+     - `ProgramaClientComponent` usa `getTranslations('ProgramaDetalhe')` para todos os labels estruturais
+     - Seções condicionais: `oQueE`, `stats/quickFacts`, `paraQuem`, `beneficios`, `etapas`, `cases`, `faq` só aparecem quando Sanity tem dados (sem fallback hardcoded)
+     - `empresasVinculadas[]` referencia coleção `empresa` — prioridade sobre `cases[]` embutidos
    - Fale Conosco, Banco de Talentos, Soluções — pendentes
 5. **Coleções** — Programas (com slug), Conteúdo/Posts (com autor + slug), Empresas
 6. **Globais** — Header dinâmico (se houver conteúdo editável), Footer dinâmico

@@ -156,15 +156,6 @@ export type TragaPorQue = {
   razoes?: TragaRazaoItem[]
 }
 
-export type TragaCtaFinal = {
-  titleStart?: string
-  titleHighlight?: string
-  titleEnd?: string
-  desc?: string
-  ctaPrimary?: TragaCtaItem
-  ctaSecondary?: TragaCtaItem
-}
-
 export type TragaSuaEmpresaData = {
   language?: string
   hero?: TragaHero
@@ -172,7 +163,7 @@ export type TragaSuaEmpresaData = {
   beneficios?: TragaBeneficios
   infraestrutura?: TragaInfraestrutura
   porQue?: TragaPorQue
-  ctaFinal?: TragaCtaFinal
+  ctaFinal?: import('@/components/CtaFinalSection').CtaFinalData
 } | null
 
 export async function getTragaSuaEmpresa({ locale }: { locale: string }) {

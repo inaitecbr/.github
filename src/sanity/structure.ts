@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { DocumentsIcon, HomeIcon, InfoOutlineIcon, RocketIcon, StarIcon, ThLargeIcon } from '@sanity/icons'
+import { DocumentsIcon, HomeIcon, InfoOutlineIcon, RocketIcon, StarIcon, ThLargeIcon, UsersIcon } from '@sanity/icons'
 
 /**
  * Estrutura customizada do Studio.
@@ -17,6 +17,8 @@ const SINGLETONS = {
   ctaBanner: 'e54d7186-5a3e-4a73-9419-bab31926c7db', // versão PT — Translations para EN/ES
   sobre: 'eb1f1e75-726c-4f5f-8a7d-d0b36e8cb530', // versão PT — Translations para EN/ES
   tragaSuaEmpresa: '0bde9e07-f843-4125-b53f-1f28a35976be', // PT — Translations para EN/ES
+  empresasInstaladas: 'b9e088f6-abe6-47fb-8513-2ee82941cbe7', // PT — Translations para EN/ES
+  programas: 'd04849c7-4759-4bbe-bbf6-f023c04b8981', // PT — Translations para EN/ES
 } as const
 
 export const structure: StructureResolver = (S) =>
@@ -58,6 +60,24 @@ export const structure: StructureResolver = (S) =>
                     .schemaType('tragaSuaEmpresa'),
                 ),
 
+              S.listItem()
+                .title('Empresas Instaladas')
+                .icon(UsersIcon)
+                .child(
+                  S.document()
+                    .documentId(SINGLETONS.empresasInstaladas)
+                    .schemaType('empresasInstaladas'),
+                ),
+
+              S.listItem()
+                .title('Programas')
+                .icon(RocketIcon)
+                .child(
+                  S.document()
+                    .documentId(SINGLETONS.programas)
+                    .schemaType('programas'),
+                ),
+
               // ── Componentes globais (usados em todas as páginas) ──────
               S.listItem()
                 .title('CTA Banner')
@@ -78,5 +98,15 @@ export const structure: StructureResolver = (S) =>
           S.documentTypeList('programa')
             .title('Programas (PT)')
             .filter('_type == "programa" && language == "pt"'),
+        ),
+
+      // ── Coleção: Empresas Instaladas ──────────────────────────────────
+      S.listItem()
+        .title('Empresas Instaladas')
+        .icon(UsersIcon)
+        .child(
+          S.documentTypeList('empresa')
+            .title('Empresas')
+            .defaultOrdering([{ field: 'nome', direction: 'asc' }]),
         ),
     ])

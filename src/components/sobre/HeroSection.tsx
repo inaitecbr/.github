@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import BrandPattern from '@/components/BrandPattern'
 import { Container } from '@/components/Section'
@@ -7,8 +8,10 @@ type Props = {
   hero?: SobreHero
 }
 
-export default function HeroSection({ hero }: Props) {
+export default async function HeroSection({ hero }: Props) {
   if (!hero) return null
+
+  const t = await getTranslations('Sobre')
 
   return (
     <section className="relative z-10 min-h-[640px] lg:h-[700px] pt-[108px] pb-16 overflow-hidden">
@@ -49,23 +52,23 @@ export default function HeroSection({ hero }: Props) {
             className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] font-semibold text-white/55"
           >
             <a href="#quem-somos" className="hover:text-brand-orange transition-colors">
-              Quem somos
+              {t('navQuemSomos')}
             </a>
             <span className="block w-1 h-1 rounded-full bg-white/20" />
             <a href="#nossa-historia" className="hover:text-brand-orange transition-colors">
-              História
+              {t('navHistoria')}
             </a>
             <span className="block w-1 h-1 rounded-full bg-white/20" />
             <a href="#lideranca" className="hover:text-brand-orange transition-colors">
-              Liderança
+              {t('navLideranca')}
             </a>
             <span className="block w-1 h-1 rounded-full bg-white/20" />
             <a href="#relatorio" className="hover:text-brand-orange transition-colors">
-              Relatório
+              {t('navRelatorio')}
             </a>
             <span className="block w-1 h-1 rounded-full bg-white/20" />
             <a href="#estrutura" className="hover:text-brand-orange transition-colors">
-              Estrutura
+              {t('navEstrutura')}
             </a>
           </nav>
         </div>

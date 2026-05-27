@@ -213,21 +213,6 @@ export type SobreEstrutura = {
   items?: SobreEstruturaItem[]
 }
 
-export type SobreCtaItem = {
-  label?: string
-  href?: string
-}
-
-export type SobreCtaFinal = {
-  eyebrow?: string
-  titleStart?: string
-  titleHighlight?: string
-  titleEnd?: string
-  desc?: string
-  ctaPrimary?: SobreCtaItem
-  ctaSecondary?: SobreCtaItem
-}
-
 export type SobreData = {
   language?: string
   hero?: SobreHero
@@ -237,7 +222,7 @@ export type SobreData = {
   relatorio?: SobreRelatorio
   mediaKit?: SobreMediaKit
   estrutura?: SobreEstrutura
-  ctaFinal?: SobreCtaFinal
+  ctaFinal?: import('@/components/CtaFinalSection').CtaFinalData
 } | null
 
 // ── Fetch helper ─────────────────────────────────────────────────────────────

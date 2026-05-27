@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import { Section } from '@/components/Section'
 import type { SobreConselho, SobreLideranca, SobrePessoa } from '@/sanity/queries/sobre'
@@ -13,7 +14,15 @@ function getInitials(nome: string) {
 
 // ── Sub-componentes ───────────────────────────────────────────────────────────
 
-function PessoaCard({ pessoa, destaque = false }: { pessoa: SobrePessoa; destaque?: boolean }) {
+function PessoaCard({
+  pessoa,
+  destaque = false,
+  fotoEmBreveLabel,
+}: {
+  pessoa: SobrePessoa
+  destaque?: boolean
+  fotoEmBreveLabel: string
+}) {
   return (
     <article
       className={[
@@ -38,7 +47,7 @@ function PessoaCard({ pessoa, destaque = false }: { pessoa: SobrePessoa; destaqu
               {pessoa.nome ? getInitials(pessoa.nome) : '?'}
             </span>
             <span className="mt-3 text-[9px] font-semibold uppercase tracking-[0.25em] text-brand-navy/30">
-              Foto em breve
+              {fotoEmBreveLabel}
             </span>
           </div>
         )}
@@ -122,8 +131,11 @@ type Props = {
   lideranca?: SobreLideranca
 }
 
-export default function LiderancaSection({ lideranca }: Props) {
+export default async function LiderancaSection({ lideranca }: Props) {
   if (!lideranca) return null
+
+  const t = await getTranslations('Sobre')
+  const fotoEmBreveLabel = t('fotoEmBreve')
 
   return (
     <Section id="lideranca" theme="light" padding="md" className="scroll-mt-24">
@@ -174,7 +186,11 @@ export default function LiderancaSection({ lideranca }: Props) {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {lideranca.diretoria.map((p) => (
-              <PessoaCard key={p._key ?? p.nome} pessoa={p} />
+              <PessoaCard
+                key={p._key ?? p.nome}
+                pessoa={p}
+                fotoEmBreveLabel={fotoEmBreveLabel}
+              />
             ))}
           </div>
         </div>

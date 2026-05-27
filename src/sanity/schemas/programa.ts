@@ -295,6 +295,17 @@ export default defineType({
         },
       ],
     }),
+
+    // ─── Empresas vinculadas ao programa ───
+    defineField({
+      name: 'empresasVinculadas',
+      title: 'Empresas vinculadas (cases)',
+      description:
+        'Selecione as empresas instaladas que participaram deste programa — aparecem na seção "Empresas que passaram por aqui".',
+      type: 'array',
+      group: 'detail',
+      of: [{ type: 'reference', to: [{ type: 'empresa' }] }],
+    }),
   ],
   preview: {
     select: {

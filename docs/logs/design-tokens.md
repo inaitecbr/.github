@@ -743,3 +743,377 @@ Visual design tokens for the Inaitec project (colors, typography, spacing, etc.)
 
       <Container className="relative py-16">
         <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-stretch">`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)',
+}
+
+// ── Helpers ─────────────────────────────────────────────────────────────────
+
+function toggle<T>(list: T[], value: T): T[] {`
+- `--color-brand-orange)',
+  'Scale-up': 'var(--color-brand-teal)',`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-orange)"
+        className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+      />
+
+      <Container className="relative h-full grid lg:grid-cols-[1.1fr_1fr] gap-16 items-stretch">`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-orange)'
+                  const statusColor = p.statusKey
+                    ? STATUS_COLOR[p.statusKey]
+                    : 'var(--color-brand-teal)'`
+- `--color-brand-orange)'
+                return (
+                  <Link
+                    key={p._id}
+                    href={`/programas/${p.slug ?? ''}`}
+                    className="group flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:border-brand-orange/40 hover:bg-white/[0.07]"`
+- `--color-brand-orange)',
+  empresas: 'var(--color-brand-teal)',`
+- `--color-brand-orange)',
+}
+
+// ─── Filter options (keys, ordered) ──────────────────────────────
+
+const PUBLICO_KEYS: PublicoKey[] = ['startups', 'empresas', 'universidades', 'investidores']`
+- `--color-brand-teal)',
+  'em-breve': 'var(--color-brand-orange)',`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+          className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+          className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="max-w-2xl mb-16">
+            <div className="mb-5 inline-flex items-center gap-2">
+              <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)'
+
+  const publicoLabel = programa.publicoKey ? PUBLICO_LABEL[programa.publicoKey] : null`
+- `--color-brand-orange)',
+}
+
+const ENTRADA_LABEL: Record<EntradaKey, string> = {`
+- `--color-brand-teal)',
+  'em-breve': 'var(--color-brand-orange)',`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+          className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+          className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="max-w-2xl mb-16">
+            <div className="mb-5 inline-flex items-center gap-2">
+              <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)",
+};
+
+const ENTRADA_LABEL: Record<EntradaKey, string> = {`
+- `--color-brand-orange)";
+
+  const publicoLabel = programa.publicoKey ? PUBLICO_LABEL[programa.publicoKey] : null`
+- `--color-brand-teal)",
+  "em-breve": "var(--color-brand-orange)",`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+          className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+          className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="max-w-2xl mb-16">
+            <div className="mb-5 inline-flex items-center gap-2">
+              <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)",
+};
+
+const ENTRADA_LABEL: Record<EntradaKey, string> = {`
+- `--color-brand-orange)";
+
+  const publicoLabel = programa.publicoKey ? PUBLICO_LABEL[programa.publicoKey] : null`
+- `--color-brand-teal)",
+  "em-breve": "var(--color-brand-orange)",`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+          className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+          className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="max-w-2xl mb-16">
+            <div className="mb-5 inline-flex items-center gap-2">
+              <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)",
+};
+
+const ENTRADA_LABEL: Record<EntradaKey, string> = {`
+- `--color-brand-orange)";
+
+  const publicoLabel = programa.publicoKey ? PUBLICO_LABEL[programa.publicoKey] : null`
+- `--color-brand-teal)",
+  "em-breve": "var(--color-brand-orange)",`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+          className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+          className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="max-w-2xl mb-16">
+            <div className="mb-5 inline-flex items-center gap-2">
+              <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)",
+};
+
+const ENTRADA_LABEL: Record<EntradaKey, string> = {`
+- `--color-brand-orange)";
+
+  const publicoLabel = programa.publicoKey ? PUBLICO_LABEL[programa.publicoKey] : null`
+- `--color-brand-teal)",
+  "em-breve": "var(--color-brand-orange)",`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+          className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+          className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="max-w-2xl mb-16">
+            <div className="mb-5 inline-flex items-center gap-2">
+              <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)",
+};
+
+const ENTRADA_LABEL: Record<EntradaKey, string> = {`
+- `--color-brand-orange)";
+
+  const publicoLabel = programa.publicoKey ? PUBLICO_LABEL[programa.publicoKey] : null`
+- `--color-brand-teal)",
+  "em-breve": "var(--color-brand-orange)",`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+          className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+          className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+        />
+
+        <Container className="relative py-16">
+          <div className="max-w-2xl mb-16">
+            <div className="mb-5 inline-flex items-center gap-2">
+              <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)",
+};
+
+const ENTRADA_LABEL: Record<EntradaKey, string> = {`
+- `--color-brand-orange)";
+
+  const publicoLabel = programa.publicoKey ? PUBLICO_LABEL[programa.publicoKey] : null`
+- `--color-brand-teal)",
+  "em-breve": "var(--color-brand-orange)",`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-orange)"
+        className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+      />
+
+      <Container className="relative h-full grid lg:grid-cols-[1.1fr_1fr] gap-16 items-stretch">`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+            className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+          />
+
+          <Container className="relative py-16">
+            <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+            className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+          />
+
+          <Container className="relative py-16">
+            <div className="max-w-2xl mb-16">
+              <div className="mb-5 inline-flex items-center gap-2">
+                <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)",
+};
+
+// ─── Ícone para Quick Facts ───────────────────────────────────────
+
+function QuickFactIcon({ label }: { label: string`
+- `--color-brand-orange)";
+
+  const statusColor = programa.statusKey ? STATUS_COLOR[programa.statusKey] : accent`
+- `--color-brand-teal)",
+  "em-breve": "var(--color-brand-orange)",`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+            className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+          />
+
+          <Container className="relative py-16">
+            <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+            className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+          />
+
+          <Container className="relative py-16">
+            <div className="max-w-2xl mb-16">
+              <div className="mb-5 inline-flex items-center gap-2">
+                <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)",
+};
+
+// ─── Ícone para Quick Facts ───────────────────────────────────────
+
+function QuickFactIcon({ label }: { label: string`
+- `--color-brand-orange)";
+
+  const statusColor = programa.statusKey ? STATUS_COLOR[programa.statusKey] : accent`
+- `--color-brand-teal)",
+  "em-breve": "var(--color-brand-orange)",`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-navy)"
+            className="absolute -top-10 right-[5%] w-72 h-72 opacity-[0.06] pointer-events-none"
+          />
+
+          <Container className="relative py-16">
+            <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20">`
+- `--color-brand-navy)"
+            className="absolute top-20 right-[5%] w-80 h-80 opacity-[0.06] pointer-events-none"
+          />
+
+          <Container className="relative py-16">
+            <div className="max-w-2xl mb-16">
+              <div className="mb-5 inline-flex items-center gap-2">
+                <span className="block h-px w-8" style={{ backgroundColor: accent`
+- `--color-brand-orange)"
+          className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+        />
+
+        <Container className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">`
+- `--color-brand-orange)",
+};
+
+// ─── Ícone para Quick Facts ───────────────────────────────────────
+
+function QuickFactIcon({ label }: { label: string`
+- `--color-brand-orange)";
+
+  const statusColor = programa.statusKey ? STATUS_COLOR[programa.statusKey] : accent`
+- `--color-brand-teal)",
+  "em-breve": "var(--color-brand-orange)",`
+
+### Cores — detectados em 2026-05-27
+
+- `--color-brand-orange)"
+        className="absolute top-32 right-8 w-72 h-72 opacity-25 pointer-events-none"
+      />
+
+      <Container className="relative h-full grid lg:grid-cols-[1.1fr_1fr] gap-16 items-stretch">`

@@ -6,7 +6,7 @@ import LiderancaSection from './LiderancaSection'
 import RelatorioSection from './RelatorioSection'
 import MediaKitSection from './MediaKitSection'
 import EstruturaSection from './EstruturaSection'
-import CtaFinalSection from './CtaFinalSection'
+import CtaFinalSection from '@/components/CtaFinalSection'
 
 type Props = {
   data: SobreData
@@ -45,7 +45,7 @@ export default function SobreClientComponent({ data }: Props) {
       <RelatorioSection relatorio={data?.relatorio} />
       <MediaKitSection mediaKit={data?.mediaKit} />
       <EstruturaSection estrutura={data?.estrutura} />
-      <CtaFinalSection ctaFinal={data?.ctaFinal} />
+      <CtaFinalSection data={data?.ctaFinal} />
     </main>
   )
 }
