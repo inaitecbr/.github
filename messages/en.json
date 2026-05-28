@@ -387,6 +387,15 @@
     "ctaBack": "Back to Talent Pool",
     "ctaContact": "Talk to our team"
   },
+  "NotFound": {
+    "metaTitle": "Page not found",
+    "eyebrow": "Error 404",
+    "titleStart": "Page not",
+    "titleHighlight": "found",
+    "desc": "The page you're looking for was moved, removed or never existed. Head back home or explore Inaitec's programs.",
+    "ctaHome": "Back to home",
+    "ctaContato": "Talk to our team"
+  },
   "Login": {
     "metaTitle": "Restricted Area",
     "metaDescription": "Access the Inaitec restricted area to follow exclusive content and features by profile.",

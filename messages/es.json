@@ -387,6 +387,15 @@
     "ctaBack": "Volver al Banco de Talentos",
     "ctaContact": "Hablar con nuestro equipo"
   },
+  "NotFound": {
+    "metaTitle": "Página no encontrada",
+    "eyebrow": "Error 404",
+    "titleStart": "Página no",
+    "titleHighlight": "encontrada",
+    "desc": "La página que buscas fue movida, eliminada o nunca existió. Vuelve al inicio o explora los programas de Inaitec.",
+    "ctaHome": "Volver al inicio",
+    "ctaContato": "Hablar con el equipo"
+  },
   "Login": {
     "metaTitle": "Área Restringida",
     "metaDescription": "Accede al área restringida de Inaitec para seguir contenidos y funcionalidades exclusivas por perfil.",

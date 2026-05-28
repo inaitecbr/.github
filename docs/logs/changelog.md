@@ -1279,3 +1279,9 @@ All notable changes to the Inaitec project are documented here.
 - `2026-05-28 13:44` — **Editado**: `src/components/LayoutShell.tsx`
 - `2026-05-28 13:44` — **Editado**: `src/components/Footer.tsx`
 - `2026-05-28 13:45` — **Editado**: `src/components/Footer.tsx`
+- `2026-05-28 14:36` — **Editado**: `src/components/banco-de-talentos/BancoDeTalentosClientComponent.tsx`
+- `2026-05-28 14:44` — **Editado**: `messages/pt.json`
+- `2026-05-28 14:44` — **Editado**: `messages/en.json`
+- `2026-05-28 14:44` — **Editado**: `messages/es.json`
+- `2026-05-28 14:44` — **Criado**: `src/app/[locale]/not-found.tsx`
+- `2026-05-28 14:46` — **Criado**: `src/app/[locale]/[...rest]/page.tsx`
