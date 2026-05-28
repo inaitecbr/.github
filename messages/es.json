@@ -377,5 +377,14 @@
     "modalInvestidores": "Inversores",
     "ariaFechar": "Cerrar",
     "ariaVerDetalhes": "Ver detalles de {nome}"
+  },
+  "BancoDeTalentosVagas": {
+    "eyebrow": "Banco de Talentos · Vacantes",
+    "titleStart": "Vacantes abiertas",
+    "titleHighlight": "próximamente",
+    "desc1": "Estamos preparando el listado completo de vacantes de más de 200 empresas residentes en el Parque Pedra Branca. Pronto podrás filtrar por área, modalidad de trabajo y nivel de experiencia directamente aquí.",
+    "desc2": "Mientras tanto, adelanta tu registro en el Banco de Talentos — cuando se publiquen las vacantes, recibirás una alerta por e-mail con las que se adapten a tu perfil.",
+    "ctaBack": "Volver al Banco de Talentos",
+    "ctaContact": "Hablar con nuestro equipo"
   }
 }

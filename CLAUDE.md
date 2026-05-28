@@ -226,6 +226,17 @@ export default function HomeClientComponent({ data }: { data: HomeData }) {
 - O `[Pagina]ClientComponent.tsx` fica enxuto — só `<main>` (ou wrapper equivalente) + lista de seções + elementos decorativos que pertencem ao container (orbs, gradientes globais, etc.)
 - Nomenclatura: `<NomeDaSecao>Section.tsx` (ex.: `HeroSection`, `ParceirosSection`, `EcossistemaSection`)
 
+### Componentes compartilhados — nunca duplicar
+
+Antes de criar qualquer seção nova, verificar se já existe um componente compartilhado em `src/components/` que atenda ao caso:
+
+| Componente | Arquivo | Uso |
+|---|---|---|
+| CTA Final (dark, com gradiente laranja) | `src/components/CtaFinalSection.tsx` | CTA ao final de todas as páginas internas — recebe `data?: CtaFinalData` |
+| CTA Banner (global, com título override) | `src/components/CtaBannerSection.tsx` | Banner global com título personalizável por página |
+
+**Regra:** Nunca criar um componente `CtaFinalSection.tsx` ou `CtaBannerSection.tsx` dentro de `src/components/[pagina]/`. Sempre importar de `@/components/CtaFinalSection` ou `@/components/CtaBannerSection`.
+
 ### Regras gerais Sanity (espelha o padrão Super Terminais)
 
 - **Sempre** Server Components para fetch — nunca `useEffect` para chamar Sanity

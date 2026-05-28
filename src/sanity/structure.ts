@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { DocumentsIcon, HomeIcon, InfoOutlineIcon, RocketIcon, StarIcon, ThLargeIcon, UsersIcon } from '@sanity/icons'
+import { BellIcon, DocumentsIcon, HomeIcon, InfoOutlineIcon, PinIcon, RocketIcon, StarIcon, ThLargeIcon, UsersIcon } from '@sanity/icons'
 
 /**
  * Estrutura customizada do Studio.
@@ -19,6 +19,8 @@ const SINGLETONS = {
   tragaSuaEmpresa: '0bde9e07-f843-4125-b53f-1f28a35976be', // PT — Translations para EN/ES
   empresasInstaladas: 'b9e088f6-abe6-47fb-8513-2ee82941cbe7', // PT — Translations para EN/ES
   programas: 'd04849c7-4759-4bbe-bbf6-f023c04b8981', // PT — Translations para EN/ES
+  chamadas: '1e50f2ca-8234-4f95-9fbb-32dada5f9217', // PT — Translations para EN/ES
+  bancoDeTalentos: 'c08c4584-1d91-44ac-ab2e-12248af5afa2', // PT — Translations para EN/ES
 } as const
 
 export const structure: StructureResolver = (S) =>
@@ -76,6 +78,24 @@ export const structure: StructureResolver = (S) =>
                   S.document()
                     .documentId(SINGLETONS.programas)
                     .schemaType('programas'),
+                ),
+
+              S.listItem()
+                .title('Chamadas Abertas')
+                .icon(BellIcon)
+                .child(
+                  S.document()
+                    .documentId(SINGLETONS.chamadas)
+                    .schemaType('chamadas'),
+                ),
+
+              S.listItem()
+                .title('Banco de Talentos')
+                .icon(PinIcon)
+                .child(
+                  S.document()
+                    .documentId(SINGLETONS.bancoDeTalentos)
+                    .schemaType('bancoDeTalentos'),
                 ),
 
               // ── Componentes globais (usados em todas as páginas) ──────

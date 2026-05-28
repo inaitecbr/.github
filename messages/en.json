@@ -377,5 +377,14 @@
     "modalInvestidores": "Investors",
     "ariaFechar": "Close",
     "ariaVerDetalhes": "View details for {nome}"
+  },
+  "BancoDeTalentosVagas": {
+    "eyebrow": "Talent Pool · Jobs",
+    "titleStart": "Open positions",
+    "titleHighlight": "coming soon",
+    "desc1": "We are preparing the full listing of open positions from more than 200 resident companies at Parque Pedra Branca. Soon you'll be able to filter by area, work model, and seniority right here.",
+    "desc2": "In the meantime, get ahead by registering in the Talent Pool — as soon as positions go live, you'll receive an email alert for matching opportunities.",
+    "ctaBack": "Back to Talent Pool",
+    "ctaContact": "Talk to our team"
   }
 }

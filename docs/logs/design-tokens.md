@@ -1117,3 +1117,8 @@ function QuickFactIcon({ label }: { label: string`
       />
 
       <Container className="relative h-full grid lg:grid-cols-[1.1fr_1fr] gap-16 items-stretch">`
+
+### Cores — detectados em 2026-05-28
+
+- `--color-brand-orange)'
+                const days = p.deadline ? daysLeft(p.deadline) : null`

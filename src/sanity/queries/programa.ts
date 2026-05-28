@@ -83,6 +83,16 @@ export const chamadasAbertasQuery = groq`
   )
 `
 
+/** Todos os programas com inscrição aberta OU fluxo contínuo — página /chamadas. */
+export const chamadasListaQuery = groq`
+  *[_type == "programa" && language == $language && statusKey in ["aberta", "fluxo-continuo"]]{
+    ${programaCardFields}
+  } | order(
+    select(statusKey == "aberta" => 0, 1) asc,
+    deadline asc
+  )
+`
+
 /** Singleton da página /programas — hero, CTA final e outros campos editoriais. */
 export const programasPageQuery = groq`
   *[_type == "programas" && language == $language][0]{
@@ -195,6 +205,14 @@ export async function getProgramaBySlug({ slug, locale }: { slug: string; locale
 export async function getChamadasAbertas({ locale }: { locale: string }) {
   return sanityFetch<ProgramaCard[]>({
     query: chamadasAbertasQuery,
+    params: { language: locale },
+    tags: ['programa'],
+  })
+}
+
+export async function getChamadasLista({ locale }: { locale: string }) {
+  return sanityFetch<ProgramaCard[]>({
+    query: chamadasListaQuery,
     params: { language: locale },
     tags: ['programa'],
   })

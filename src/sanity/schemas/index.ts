@@ -1,4 +1,6 @@
 import type { SchemaTypeDefinition } from 'sanity'
+import bancoDeTalentos from './bancoDeTalentos'
+import chamadas from './chamadas'
 import ctaBanner from './ctaBanner'
 import empresa from './empresa'
 import empresasInstaladas from './empresasInstaladas'
@@ -8,4 +10,4 @@ import programas from './programas'
 import sobre from './sobre'
 import tragaSuaEmpresa from './tragaSuaEmpresa'
 
-export const schemaTypes: SchemaTypeDefinition[] = [home, programa, programas, ctaBanner, sobre, tragaSuaEmpresa, empresa, empresasInstaladas]
+export const schemaTypes: SchemaTypeDefinition[] = [home, programa, programas, chamadas, bancoDeTalentos, ctaBanner, sobre, tragaSuaEmpresa, empresa, empresasInstaladas]
