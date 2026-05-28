@@ -4,10 +4,11 @@ import chamadas from './chamadas'
 import ctaBanner from './ctaBanner'
 import empresa from './empresa'
 import empresasInstaladas from './empresasInstaladas'
+import faleConosco from './faleConosco'
 import home from './home'
 import programa from './programa'
 import programas from './programas'
 import sobre from './sobre'
 import tragaSuaEmpresa from './tragaSuaEmpresa'
 
-export const schemaTypes: SchemaTypeDefinition[] = [home, programa, programas, chamadas, bancoDeTalentos, ctaBanner, sobre, tragaSuaEmpresa, empresa, empresasInstaladas]
+export const schemaTypes: SchemaTypeDefinition[] = [home, programa, programas, chamadas, bancoDeTalentos, ctaBanner, sobre, tragaSuaEmpresa, empresa, empresasInstaladas, faleConosco]

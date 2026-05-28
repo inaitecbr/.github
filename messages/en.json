@@ -386,5 +386,39 @@
     "desc2": "In the meantime, get ahead by registering in the Talent Pool — as soon as positions go live, you'll receive an email alert for matching opportunities.",
     "ctaBack": "Back to Talent Pool",
     "ctaContact": "Talk to our team"
+  },
+  "FaleConosco": {
+    "form": {
+      "labelNome": "First name",
+      "labelSobrenome": "Last name",
+      "labelEmail": "Email",
+      "labelTelefone": "Phone",
+      "labelPerfil": "Profile",
+      "labelMensagem": "Message",
+      "placeholderNome": "John",
+      "placeholderSobrenome": "Smith",
+      "placeholderEmail": "john@company.com",
+      "placeholderTelefone": "+55 48 9 0000-0000",
+      "placeholderPerfil": "Select your profile",
+      "placeholderMensagem": "Describe how we can help...",
+      "submitLabel": "Send message",
+      "successTitle": "Message sent!",
+      "successDesc": "Our team responds within 2 business days. Keep an eye on your inbox.",
+      "successBack": "Send another message",
+      "privacyText": "By submitting this form, you agree to the processing of your data by Inaitec solely to respond to this request, in accordance with our",
+      "privacyLinkLabel": "Privacy Policy",
+      "privacyAnd": "and the LGPD (Brazilian Data Protection Law).",
+      "perfilStartup": "Startup or Small Business",
+      "perfilEmpresa": "Medium or Large Enterprise",
+      "perfilInvestidor": "Investor",
+      "perfilGoverno": "Government",
+      "perfilUniversidade": "University",
+      "perfilImprensa": "Press",
+      "perfilOutro": "Other"
+    },
+    "canalEmailLabel": "Email",
+    "canalWhatsAppLabel": "WhatsApp",
+    "canalHorarioLabel": "Hours",
+    "enderecoLabel": "Address"
   }
 }

@@ -356,6 +356,7 @@ A estrutura do Studio fica em `src/sanity/structure.ts`. Ao migrar uma nova pág
 | Traga sua Empresa | `0bde9e07-f843-4125-b53f-1f28a35976be` | `tragaSuaEmpresa` |
 | Empresas Instaladas | `b9e088f6-abe6-47fb-8513-2ee82941cbe7` | `empresasInstaladas` |
 | Programas (catálogo) | `d04849c7-4759-4bbe-bbf6-f023c04b8981` | `programas` |
+| Fale Conosco | `c7c526f3-bcee-4c16-ad06-dbb1f523b4ca` | `faleConosco` |
 
 ---
 
@@ -427,7 +428,12 @@ export default async function MinhaSection({ data }: Props) {
      - `ProgramaClientComponent` usa `getTranslations('ProgramaDetalhe')` para todos os labels estruturais
      - Seções condicionais: `oQueE`, `stats/quickFacts`, `paraQuem`, `beneficios`, `etapas`, `cases`, `faq` só aparecem quando Sanity tem dados (sem fallback hardcoded)
      - `empresasVinculadas[]` referencia coleção `empresa` — prioridade sobre `cases[]` embutidos
-   - Fale Conosco, Banco de Talentos, Soluções — pendentes
+   - ✅ **Fale Conosco** — concluída
+     - Schema: `faleConosco.ts` com 4 seções (hero, canais, endereco, faq)
+     - IDs: PT `c7c526f3-bcee-4c16-ad06-dbb1f523b4ca` · EN `20916345-e654-4626-8e39-2b49760ba40f` · ES `3f39aa79-f9d4-4f54-a30f-7d27f50ebdf4`
+     - Form permanece no código com i18n (`FaleConosco.form.*`) via `ContactForm.tsx` (`'use client'`)
+     - Canais: `iconName` string → mapeado para Lucide em `CanaisSection.tsx`
+     - Banco de Talentos, Soluções — pendentes
 5. **Coleções** — Programas (com slug), Conteúdo/Posts (com autor + slug), Empresas
 6. **Globais** — Header dinâmico (se houver conteúdo editável), Footer dinâmico
 7. **Limpeza final** — `messages/*.json` fica só com nav/microcopy; remover `src/data/*.ts` migrados

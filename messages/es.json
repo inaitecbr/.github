@@ -386,5 +386,39 @@
     "desc2": "Mientras tanto, adelanta tu registro en el Banco de Talentos — cuando se publiquen las vacantes, recibirás una alerta por e-mail con las que se adapten a tu perfil.",
     "ctaBack": "Volver al Banco de Talentos",
     "ctaContact": "Hablar con nuestro equipo"
+  },
+  "FaleConosco": {
+    "form": {
+      "labelNome": "Nombre",
+      "labelSobrenome": "Apellido",
+      "labelEmail": "Correo electrónico",
+      "labelTelefone": "Teléfono",
+      "labelPerfil": "Perfil",
+      "labelMensagem": "Mensaje",
+      "placeholderNome": "Juan",
+      "placeholderSobrenome": "García",
+      "placeholderEmail": "juan@empresa.com",
+      "placeholderTelefone": "+55 48 9 0000-0000",
+      "placeholderPerfil": "Selecciona tu perfil",
+      "placeholderMensagem": "Describe cómo podemos ayudarte...",
+      "submitLabel": "Enviar mensaje",
+      "successTitle": "¡Mensaje enviado!",
+      "successDesc": "Nuestro equipo responde en hasta 2 días hábiles. Estate atento a tu bandeja de entrada.",
+      "successBack": "Enviar otro mensaje",
+      "privacyText": "Al enviar este formulario, aceptas el tratamiento de tus datos por parte de Inaitec exclusivamente para responder a esta solicitud, conforme a nuestra",
+      "privacyLinkLabel": "Política de Privacidad",
+      "privacyAnd": "y la LGPD (Ley Brasileña de Protección de Datos).",
+      "perfilStartup": "Startup o Pequeña Empresa",
+      "perfilEmpresa": "Mediana o Grande Empresa",
+      "perfilInvestidor": "Inversionista",
+      "perfilGoverno": "Gobierno",
+      "perfilUniversidade": "Universidad",
+      "perfilImprensa": "Prensa",
+      "perfilOutro": "Otro"
+    },
+    "canalEmailLabel": "Correo",
+    "canalWhatsAppLabel": "WhatsApp",
+    "canalHorarioLabel": "Horario",
+    "enderecoLabel": "Dirección"
   }
 }

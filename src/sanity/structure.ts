@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { BellIcon, DocumentsIcon, HomeIcon, InfoOutlineIcon, PinIcon, RocketIcon, StarIcon, ThLargeIcon, UsersIcon } from '@sanity/icons'
+import { BellIcon, DocumentsIcon, EnvelopeIcon, HomeIcon, InfoOutlineIcon, PinIcon, RocketIcon, StarIcon, ThLargeIcon, UsersIcon } from '@sanity/icons'
 
 /**
  * Estrutura customizada do Studio.
@@ -21,6 +21,7 @@ const SINGLETONS = {
   programas: 'd04849c7-4759-4bbe-bbf6-f023c04b8981', // PT — Translations para EN/ES
   chamadas: '1e50f2ca-8234-4f95-9fbb-32dada5f9217', // PT — Translations para EN/ES
   bancoDeTalentos: 'c08c4584-1d91-44ac-ab2e-12248af5afa2', // PT — Translations para EN/ES
+  faleConosco: 'c7c526f3-bcee-4c16-ad06-dbb1f523b4ca', // PT — Translations para EN/ES
 } as const
 
 export const structure: StructureResolver = (S) =>
@@ -96,6 +97,15 @@ export const structure: StructureResolver = (S) =>
                   S.document()
                     .documentId(SINGLETONS.bancoDeTalentos)
                     .schemaType('bancoDeTalentos'),
+                ),
+
+              S.listItem()
+                .title('Fale Conosco')
+                .icon(EnvelopeIcon)
+                .child(
+                  S.document()
+                    .documentId(SINGLETONS.faleConosco)
+                    .schemaType('faleConosco'),
                 ),
 
               // ── Componentes globais (usados em todas as páginas) ──────
