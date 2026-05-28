@@ -1122,3 +1122,82 @@ function QuickFactIcon({ label }: { label: string`
 
 - `--color-brand-orange)'
                 const days = p.deadline ? daysLeft(p.deadline) : null`
+
+### Cores — detectados em 2026-05-28
+
+- `--color-brand-orange)',
+    icon: <Building2 strokeWidth={1.5`
+- `--color-brand-orange)',
+    items: [`
+- `--color-brand-teal)',
+    icon: <Megaphone strokeWidth={1.5`
+- `--color-brand-teal)',
+    items: [`
+
+### Cores — detectados em 2026-05-28
+
+- `--color-brand-orange)',
+    icon: <Building2 strokeWidth={1.5`
+- `--color-brand-orange)',
+    items: [`
+- `--color-brand-teal)',
+    icon: <Megaphone strokeWidth={1.5`
+- `--color-brand-teal)',
+    items: [`
+
+### Cores — detectados em 2026-05-28
+
+- `--color-brand-orange)',
+    icon: <Building2 strokeWidth={1.5`
+- `--color-brand-orange)',
+    items: [`
+- `--color-brand-teal)',
+    icon: <Megaphone strokeWidth={1.5`
+- `--color-brand-teal)',
+    items: [`
+
+### Tipografia — detectados em 2026-05-28
+
+- `--font-jakarta",
+  display: "swap",`
+
+### Tipografia — detectados em 2026-05-28
+
+- `--font-jakarta",
+  display: "swap",`
+
+### Cores — detectados em 2026-05-28
+
+- `--color-brand-orange)',
+    icon: <Building2 strokeWidth={1.5`
+- `--color-brand-orange)',
+  empresas:      'var(--color-brand-teal)',`
+- `--color-brand-teal)',
+    icon: <Megaphone strokeWidth={1.5`
+
+### Cores — detectados em 2026-05-28
+
+- `--color-brand-orange)',
+    icon: <Building2 strokeWidth={1.5`
+- `--color-brand-orange)',
+  empresas:      'var(--color-brand-teal)',`
+- `--color-brand-teal)',
+    icon: <Megaphone strokeWidth={1.5`
+
+### Cores — detectados em 2026-05-28
+
+- `--color-brand-orange)',
+    icon: <Building2 strokeWidth={1.5`
+- `--color-brand-orange)',
+  empresas:      'var(--color-brand-teal)',`
+- `--color-brand-teal)',
+    icon: <Megaphone strokeWidth={1.5`
+
+### Cores — detectados em 2026-05-28
+
+- `--color-brand-orange)',
+    icon: <Building2 strokeWidth={1.5`
+- `--color-brand-orange)',
+  empresas:      'var(--color-brand-teal)',`
+- `--color-brand-teal)',
+    icon: <Megaphone strokeWidth={1.5`

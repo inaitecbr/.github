@@ -1,24 +1,45 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import type { HeaderProgramsByPillar } from '@/sanity/queries/headerPrograms'
 
-export default function Footer() {
+const PILLAR_ORDER = ['startups', 'empresas', 'universidades', 'investidores'] as const
+
+type FooterProps = {
+  programs: HeaderProgramsByPillar
+}
+
+export default function Footer({ programs }: FooterProps) {
   const t = useTranslations('Footer')
 
+  // Pega 1 programa de cada pilar (intercala) — limite total: 5
+  const programasFooter = (() => {
+    const out: { name: string; href: string }[] = []
+    let cursor = 0
+    while (out.length < 5) {
+      let added = false
+      for (const key of PILLAR_ORDER) {
+        const item = programs[key]?.[cursor]
+        if (item?.slug && item.name) {
+          out.push({ name: item.name, href: `/programas/${item.slug}` })
+          added = true
+          if (out.length >= 5) break
+        }
+      }
+      if (!added) break
+      cursor++
+    }
+    out.push({ name: t('links.verTodos'), href: '/programas' })
+    return out
+  })()
+
   const links = {
-    programas: [
-      { name: 'Acelera Pedra Branca', href: '/programas/acelera-pedra-branca' },
-      { name: 'Impulse Inaitec', href: '/programas/impulse-inaitec' },
-      { name: 'Inovação Aberta', href: '/programas/inovacao-aberta' },
-      { name: 'Globaliza Inaitec', href: '/programas/globaliza-inaitec' },
-      { name: 'Políticas Públicas', href: '/programas/politicas-publicas' },
-      { name: t('links.verTodos'), href: '/programas' },
-    ],
+    programas: programasFooter,
     institucional: [
-      { name: t('links.quemSomos'), href: '/sobre/quem-somos' },
-      { name: t('links.nossaHistoria'), href: '/sobre/nossa-historia' },
-      { name: t('links.relatorio'), href: '/sobre/relatorio-de-atividades' },
-      { name: t('links.estrutura'), href: '/sobre/estrutura-inaitec' },
+      { name: t('links.quemSomos'), href: '/sobre#quem-somos' },
+      { name: t('links.nossaHistoria'), href: '/sobre#nossa-historia' },
+      { name: t('links.relatorio'), href: '/sobre#relatorio' },
+      { name: t('links.estrutura'), href: '/sobre#estrutura' },
     ],
     ecossistema: [
       { name: t('links.empresasInstaladas'), href: '/solucoes/empresas-instaladas' },
@@ -175,20 +196,15 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/[0.08] pt-6 flex flex-col gap-6 text-xs text-white/30 md:flex-row md:items-center md:justify-between md:gap-4">
           <span>{t('bottom.copyright', { year: new Date().getFullYear() })}</span>
-          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6">
-            <Link href="/privacidade" className="hover:text-white transition-colors">{t('bottom.privacidade')}</Link>
-            <Link href="/termos" className="hover:text-white transition-colors">{t('bottom.termos')}</Link>
-            <span className="hidden md:block h-4 w-px bg-white/10" />
-            <div className="flex items-center gap-2">
-              <span>{t('bottom.criadoPor')}</span>
-              <Image
-                src="/atomsix-signature.svg"
-                alt="Atom6 Studio"
-                width={30}
-                height={8}
-                className="opacity-40 hover:opacity-70 transition-opacity"
-              />
-            </div>
+          <div className="flex items-center gap-2">
+            <span>{t('bottom.criadoPor')}</span>
+            <Image
+              src="/atomsix-signature.svg"
+              alt="Atom6 Studio"
+              width={30}
+              height={8}
+              className="opacity-40 hover:opacity-70 transition-opacity"
+            />
           </div>
         </div>
       </div>

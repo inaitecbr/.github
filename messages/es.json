@@ -387,6 +387,31 @@
     "ctaBack": "Volver al Banco de Talentos",
     "ctaContact": "Hablar con nuestro equipo"
   },
+  "Login": {
+    "metaTitle": "Área Restringida",
+    "metaDescription": "Accede al área restringida de Inaitec para seguir contenidos y funcionalidades exclusivas por perfil.",
+    "eyebrow": "Área Restringida",
+    "heading": "Bienvenido de vuelta",
+    "subheading": "Ingresa con tu perfil, correo y contraseña para acceder a tu cuenta.",
+    "labelPerfil": "Perfil",
+    "placeholderPerfil": "Selecciona tu perfil",
+    "perfilStartup": "Startup / Pequeña empresa",
+    "perfilEmpresa": "Grande o mediana empresa",
+    "perfilInvestidor": "Inversionista",
+    "perfilUniversidade": "Universidad / Gobierno",
+    "labelEmail": "Correo electrónico",
+    "placeholderEmail": "ejemplo@empresa.com",
+    "labelSenha": "Contraseña",
+    "placeholderSenha": "Ingresa tu contraseña",
+    "btnAcessar": "Ingresar",
+    "btnEmBreve": "Próximamente",
+    "copyright": "Copyright © {year} Inaitec",
+    "privacyLink": "Política de Privacidad",
+    "imageAlt": "Profesional en entorno corporativo",
+    "testimonialText": "Seguimos convocatorias, mentorías y oportunidades del ecosistema en un solo lugar. El área restringida centraliza nuestra rutina con Inaitec.",
+    "testimonialAuthor": "Naira Oliveira",
+    "testimonialRole": "Fundadora · AgroSmart"
+  },
   "FaleConosco": {
     "form": {
       "labelNome": "Nombre",

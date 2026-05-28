@@ -7,49 +7,18 @@ import { usePathname } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
 import { useRouter, usePathname as useLocalizedPathname } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
+import type { HeaderProgramsByPillar } from '@/sanity/queries/headerPrograms'
 import { Building2, Megaphone, Users, ChevronDown, ArrowRight, Menu, X } from 'lucide-react'
 
-const programsMenu = {
-  startups: {
-    accent: 'var(--color-brand-orange)',
-    items: [
-      { name: 'Acelera Pedra Branca', href: '/programas/acelera-pedra-branca' },
-      { name: 'Impulse Inaitec', href: '/programas/impulse-inaitec' },
-      { name: 'Hub de Ideias', href: '/programas/hub-de-ideias' },
-      { name: 'Globaliza Inaitec', href: '/programas/globaliza-inaitec' },
-      { name: 'Missões Internacionais', href: '/programas/missoes-internacionais' },
-    ],
-  },
-  empresas: {
-    accent: 'var(--color-brand-teal)',
-    items: [
-      { name: 'Inovação Aberta', href: '/programas/inovacao-aberta' },
-      { name: 'Laboratório Cidade', href: '/programas/laboratorio-cidade' },
-      { name: 'Desafios Corporativos', href: '/programas/desafios-corporativos' },
-      { name: 'Emprega Palhoça', href: '/programas/emprega-palhoca' },
-    ],
-  },
-  universidades: {
-    accent: '#4A9EE0',
-    items: [
-      { name: 'Políticas Públicas', href: '/programas/politicas-publicas' },
-      { name: 'Pesquisa Aplicada', href: '/programas/pesquisa-aplicada' },
-      { name: 'Transferência Tecnológica', href: '/programas/transferencia-tecnologica' },
-      { name: 'Editais Colaborativos', href: '/programas/editais-colaborativos' },
-    ],
-  },
-  investidores: {
-    accent: '#E9A84A',
-    items: [
-      { name: 'Catalisa Inaitec', href: '/programas/catalisa-inaitec' },
-      { name: 'Deal Flow Qualificado', href: '/programas/deal-flow' },
-      { name: 'Fundo Anjo Pedra Branca', href: '/programas/fundo-anjo' },
-      { name: 'Co-investimento', href: '/programas/co-investimento' },
-    ],
-  },
+// Ordem dos pilares + cor de destaque (visual fixo). Os items vêm do Sanity.
+const PILLAR_ACCENTS = {
+  startups:      'var(--color-brand-orange)',
+  empresas:      'var(--color-brand-teal)',
+  universidades: '#4A9EE0',
+  investidores:  '#E9A84A',
 } as const
 
-type PillarKey = keyof typeof programsMenu
+const PILLAR_ORDER = ['startups', 'empresas', 'universidades', 'investidores'] as const
 
 const solucoesMenu = [
   {
@@ -84,7 +53,11 @@ const LANG_META = {
   es: { flag: '🇪🇸' },
 } as const
 
-export default function Header() {
+type HeaderProps = {
+  programs: HeaderProgramsByPillar
+}
+
+export default function Header({ programs }: HeaderProps) {
   const pathname = usePathname()
   const t = useTranslations('Header')
   const tLangs = useTranslations('Languages')
@@ -106,7 +79,7 @@ export default function Header() {
     { label: t('nav.sobre'), href: '/sobre' },
     { label: t('nav.programas'), href: '/programas', key: 'programas', hasMenu: true },
     { label: t('nav.tragaEmpresa'), href: '/traga-sua-empresa' },
-    { label: t('nav.solucoes'), href: '/solucoes', key: 'solucoes', hasMenu: true },
+    { label: t('nav.solucoes'), key: 'solucoes', hasMenu: true, noLink: true },
     { label: t('nav.conteudo'), href: '/conteudo' },
   ]
 
@@ -236,12 +209,12 @@ export default function Header() {
               onMouseEnter={() => item.hasMenu ? openMenu(item.key!) : undefined}
               onMouseLeave={() => item.hasMenu ? scheduleCloseMenu() : undefined}
             >
-              <Link
-                href={item.href ?? '#'}
-                className={`relative flex items-center gap-1 rounded-lg px-2.5 py-2 text-sm font-medium transition-colors hover:text-brand-orange ${isGlass ? 'text-white' : 'text-[#004E69]'} ${isActive(item.href, item.key) ? 'text-brand-orange' : ''}`}
-              >
-                {item.label}
-                {item.hasMenu && (
+              {item.noLink ? (
+                <button
+                  type="button"
+                  className={`relative flex items-center gap-1 rounded-lg px-2.5 py-2 text-sm font-medium transition-colors hover:text-brand-orange ${isGlass ? 'text-white' : 'text-[#004E69]'} ${isActive(undefined, item.key) ? 'text-brand-orange' : ''}`}
+                >
+                  {item.label}
                   <ChevronDown
                     strokeWidth={2.5}
                     className={[
@@ -249,14 +222,36 @@ export default function Header() {
                       activeMenu === item.key ? 'rotate-180 text-brand-orange' : 'opacity-50',
                     ].join(' ')}
                   />
-                )}
-                {isActive(item.href, item.key) && (
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute left-2.5 right-2.5 -bottom-[2px] h-[2px] rounded-full bg-brand-orange"
-                  />
-                )}
-              </Link>
+                  {isActive(undefined, item.key) && (
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute left-2.5 right-2.5 -bottom-0.5 h-0.5 rounded-full bg-brand-orange"
+                    />
+                  )}
+                </button>
+              ) : (
+                <Link
+                  href={item.href ?? '#'}
+                  className={`relative flex items-center gap-1 rounded-lg px-2.5 py-2 text-sm font-medium transition-colors hover:text-brand-orange ${isGlass ? 'text-white' : 'text-[#004E69]'} ${isActive(item.href, item.key) ? 'text-brand-orange' : ''}`}
+                >
+                  {item.label}
+                  {item.hasMenu && (
+                    <ChevronDown
+                      strokeWidth={2.5}
+                      className={[
+                        'h-3 w-3 transition-transform duration-200',
+                        activeMenu === item.key ? 'rotate-180 text-brand-orange' : 'opacity-50',
+                      ].join(' ')}
+                    />
+                  )}
+                  {isActive(item.href, item.key) && (
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute left-2.5 right-2.5 -bottom-0.5 h-0.5 rounded-full bg-brand-orange"
+                    />
+                  )}
+                </Link>
+              )}
 
               {item.key === 'programas' && activeMenu === 'programas' && (
                 <div
@@ -295,8 +290,9 @@ export default function Header() {
                     </div>
 
                     <div className="grid grid-cols-2 lg:grid-cols-4">
-                      {(Object.keys(programsMenu) as PillarKey[]).map((key, idx) => {
-                        const col = programsMenu[key]
+                      {PILLAR_ORDER.map((key, idx) => {
+                        const accent = PILLAR_ACCENTS[key]
+                        const items = programs[key] ?? []
                         return (
                           <div
                             key={key}
@@ -309,8 +305,8 @@ export default function Header() {
                             ].join(' ')}
                           >
                             <div className="mb-2 flex items-center gap-2">
-                              <span className="block h-px w-6" style={{ backgroundColor: col.accent }} />
-                              <span className="text-[9px] font-bold uppercase tracking-[0.2em]" style={{ color: col.accent }}>
+                              <span className="block h-px w-6" style={{ backgroundColor: accent }} />
+                              <span className="text-[9px] font-bold uppercase tracking-[0.2em]" style={{ color: accent }}>
                                 {t('programsMenu.pillarLabel', { n: idx + 1 })}
                               </span>
                             </div>
@@ -321,10 +317,10 @@ export default function Header() {
                               {t(`programsMenu.pillars.${key}.desc`)}
                             </p>
                             <ul className="space-y-0.5">
-                              {col.items.map((it) => (
-                                <li key={it.href}>
+                              {items.map((it) => (
+                                <li key={it.slug}>
                                   <Link
-                                    href={it.href}
+                                    href={`/programas/${it.slug}`}
                                     className={`group/item block rounded-lg px-2.5 py-1.5 transition-colors ${isGlass ? 'hover:bg-white/10' : 'hover:bg-[#F5F4EF]'}`}
                                   >
                                     <div

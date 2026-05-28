@@ -1,5 +1,6 @@
 import LayoutShell from "@/components/LayoutShell";
 import { routing } from "@/i18n/routing";
+import { getHeaderPrograms } from "@/sanity/queries/headerPrograms";
 import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -41,14 +42,17 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const messages = await getMessages();
+  const [messages, headerPrograms] = await Promise.all([
+    getMessages(),
+    getHeaderPrograms({ locale }),
+  ]);
   const htmlLang = locale === "pt" ? "pt-BR" : locale;
 
   return (
     <html lang={htmlLang} className={jakarta.variable}>
       <body suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <LayoutShell>{children}</LayoutShell>
+          <LayoutShell headerPrograms={headerPrograms}>{children}</LayoutShell>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -387,6 +387,31 @@
     "ctaBack": "Back to Talent Pool",
     "ctaContact": "Talk to our team"
   },
+  "Login": {
+    "metaTitle": "Restricted Area",
+    "metaDescription": "Access the Inaitec restricted area to follow exclusive content and features by profile.",
+    "eyebrow": "Restricted Area",
+    "heading": "Welcome back",
+    "subheading": "Sign in with your profile, email and password to access your account.",
+    "labelPerfil": "Profile",
+    "placeholderPerfil": "Select your profile",
+    "perfilStartup": "Startup / Small business",
+    "perfilEmpresa": "Large or medium enterprise",
+    "perfilInvestidor": "Investor",
+    "perfilUniversidade": "University / Government",
+    "labelEmail": "Email",
+    "placeholderEmail": "example@company.com",
+    "labelSenha": "Password",
+    "placeholderSenha": "Enter your password",
+    "btnAcessar": "Sign in",
+    "btnEmBreve": "Coming soon",
+    "copyright": "Copyright © {year} Inaitec",
+    "privacyLink": "Privacy Policy",
+    "imageAlt": "Professional in a corporate environment",
+    "testimonialText": "We follow calls, mentorships and ecosystem opportunities all in one place. The restricted area centralizes our routine with Inaitec.",
+    "testimonialAuthor": "Naira Oliveira",
+    "testimonialRole": "Founder · AgroSmart"
+  },
   "FaleConosco": {
     "form": {
       "labelNome": "First name",
