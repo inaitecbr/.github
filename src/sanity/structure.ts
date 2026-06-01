@@ -136,7 +136,8 @@ export const structure: StructureResolver = (S) =>
         .icon(UsersIcon)
         .child(
           S.documentTypeList('empresa')
-            .title('Empresas')
+            .title('Empresas (PT)')
+            .filter('_type == "empresa" && language == "pt"')
             .defaultOrdering([{ field: 'nome', direction: 'asc' }]),
         ),
     ])

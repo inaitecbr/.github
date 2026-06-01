@@ -23,6 +23,13 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'language',
+      title: 'Idioma',
+      type: 'string',
+      readOnly: true,
+      hidden: true,
+    }),
+    defineField({
       name: 'nome',
       title: 'Nome',
       type: 'string',
@@ -30,9 +37,23 @@ export default defineType({
     }),
     defineField({
       name: 'slug',
-      title: 'Slug',
+      title: 'Slug (igual em todos os idiomas)',
       type: 'slug',
-      options: { source: 'nome' },
+      options: {
+        source: 'nome',
+        // Slug deve ser único POR IDIOMA — versões PT/EN/ES da mesma empresa compartilham o slug.
+        isUnique: async (slug, context) => {
+          const { document, getClient } = context
+          const client = getClient({ apiVersion: '2024-01-01' })
+          const id = document?._id?.replace(/^drafts\./, '') ?? ''
+          const lang = (document as { language?: string } | undefined)?.language ?? 'pt'
+          const count = await client.fetch<number>(
+            'count(*[_type == $type && language == $lang && slug.current == $slug && !(_id in [$id, "drafts." + $id])])',
+            { type: document?._type ?? 'empresa', lang, slug, id },
+          )
+          return count === 0
+        },
+      },
       validation: (R) => R.required(),
     }),
     defineField({

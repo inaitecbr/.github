@@ -17,7 +17,7 @@ export default async function EmpresasInstaladasPage({ params }: Props) {
   const { locale } = await params
 
   const [empresas, pageData] = await Promise.all([
-    getEmpresas(),
+    getEmpresas({ locale }),
     getEmpresasInstaladasPage({ locale }),
   ])
 

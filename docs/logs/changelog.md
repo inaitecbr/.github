@@ -1285,3 +1285,11 @@ All notable changes to the Inaitec project are documented here.
 - `2026-05-28 14:44` — **Editado**: `messages/es.json`
 - `2026-05-28 14:44` — **Criado**: `src/app/[locale]/not-found.tsx`
 - `2026-05-28 14:46` — **Criado**: `src/app/[locale]/[...rest]/page.tsx`
+- `2026-06-01 13:40` — **Editado**: `src/sanity/schemas/empresa.ts`
+- `2026-06-01 13:40` — **Editado**: `sanity.config.ts`
+- `2026-06-01 13:40` — **Editado**: `src/sanity/structure.ts`
+- `2026-06-01 14:01` — **Editado**: `src/sanity/schemas/empresa.ts`
+- `2026-06-01 14:02` — **Criado**: `scripts/i18n-empresas.ts`
+- `2026-06-01 14:04` — **Editado**: `src/sanity/queries/empresas.ts`
+- `2026-06-01 14:04` — **Editado**: `src/sanity/queries/empresas.ts`
+- `2026-06-01 14:04` — **Editado**: `src/app/[locale]/solucoes/empresas-instaladas/page.tsx`

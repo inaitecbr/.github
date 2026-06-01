@@ -199,3 +199,19 @@ A subseção "Inscrições abertas" da Home foi refatorada para um modelo **1 he
 - **Grid uniforme 5 colunas** — perdia a sensação de "chamada principal" e o countdown ficava espremido em cada card
 - **Carrossel 3-por-vez com cards ricos (com imagem)** — preservava fidelidade visual mas exigia interação para ver todas e mantinha a imagem competindo com o countdown
 - **Lista vertical compacta** — densidade boa, mas perdia totalmente o impacto visual do countdown grande
+
+---
+
+## Correção i18n — Programas e Empresas (conteúdo EN/ES)
+
+**Contexto:** versões EN/ES de `programa` e a coleção `empresa` exibiam conteúdo em português. O conteúdo do Sanity deve vir já traduzido (i18n só cuida de labels estruturais).
+
+**Programas (já tinham i18n):** preenchidas as traduções EN/ES dos 17 programas — `name`/`desc` dos 16 simples + conteúdo rico completo do Acelera Pedra Branca (oQueE, benefícios, etapas, stats, quickFacts, FAQ, 15 cases com quotes/cargos/setores/métricas). Slug mantido igual nas 3 línguas. 34 docs publicados.
+
+**Empresas (não tinham i18n — montada a infra):**
+- Schema `empresa.ts`: adicionado campo `language` (oculto) + `isUnique` de slug por idioma.
+- `sanity.config.ts`: `empresa` adicionado a `i18nSchemaTypes`. `structure.ts`: lista filtrada por `language=='pt'`. Schema redeployado.
+- Criadas versões EN/ES dos 18 docs (IDs `<ptId>__i18n_<lang>`) + `translation.metadata`, via `scripts/i18n-empresas.ts` (o MCP não escreve campo oculto `language`).
+- Traduzidos: `desc`, `longDesc`, `status`, `fundador.titulo`, `investimento.rodada`.
+- **Mantidos idênticos nas 3 línguas:** `setor` e `estagio` — são chaves de filtro comparadas contra listas hardcoded em `CatalogoSection.tsx` (e `ESTAGIO_STATUS_COLOR`). Traduzi-las quebraria filtros e cores. Consequência conhecida: o badge/label "Estágio" mostra "Corporação" também em EN/ES. Refino futuro: i18n no componente (key→label) se o cliente quiser.
+- `empresasQuery`/`getEmpresas` passam a filtrar por `language == $locale`; `empresas-instaladas/page.tsx` passa o locale.

@@ -3,7 +3,7 @@ import { groq } from 'next-sanity'
 
 // ── Query ──────────────────────────────────────────────────────────────────
 
-export const empresasQuery = groq`*[_type == "empresa"] | order(nome asc) {
+export const empresasQuery = groq`*[_type == "empresa" && language == $language] | order(nome asc) {
   "slug": slug.current,
   nome,
   setor,
@@ -22,8 +22,12 @@ export const empresasQuery = groq`*[_type == "empresa"] | order(nome asc) {
 
 // ── Fetch ──────────────────────────────────────────────────────────────────
 
-export async function getEmpresas() {
-  return sanityFetch<EmpresaItem[]>({ query: empresasQuery, tags: ['empresa'] })
+export async function getEmpresas({ locale }: { locale: string }) {
+  return sanityFetch<EmpresaItem[]>({
+    query: empresasQuery,
+    params: { language: locale },
+    tags: ['empresa'],
+  })
 }
 
 // ── Types ──────────────────────────────────────────────────────────────────
