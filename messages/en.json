@@ -450,5 +450,55 @@
       "twitter": "X / Twitter"
     },
     "related": "Read also"
+  },
+  "Seo": {
+    "home": {
+      "title": "Innovation & Technology Hub",
+      "description": "Brazilian innovation and technology hub focused on startup acceleration, open innovation and the development of the Pedra Branca ecosystem in Palhoça, SC."
+    },
+    "sobre": {
+      "title": "About",
+      "description": "For 15 years Inaitec has operated Pedra Branca Park in Palhoça (SC): 200+ companies installed, 300+ startups accelerated and R$180M in capital mobilized. Get to know the institute."
+    },
+    "programas": {
+      "title": "Programs",
+      "description": "Explore all of Inaitec's programs — acceleration, open innovation, applied research and investment. Filter by audience, stage and entry model."
+    },
+    "bancoDeTalentos": {
+      "title": "Talent Pool",
+      "description": "Training and employability in the Inaitec ecosystem: connect to openings at 200+ companies in Pedra Branca Park or post positions to find qualified local talent."
+    },
+    "bancoDeTalentosVagas": {
+      "title": "Openings — Talent Pool",
+      "description": "Coming soon: the full listing of open positions at companies in the Inaitec ecosystem."
+    },
+    "chamadas": {
+      "title": "Open Calls",
+      "description": "All of Inaitec's open selections — programs, calls for proposals and partnerships. Find the right opportunity for your startup, company or research."
+    },
+    "faleConosco": {
+      "title": "Contact Us",
+      "description": "Get in touch with Inaitec — general support, press, corporate partnerships and support for companies installed at Pedra Branca Park."
+    },
+    "tragaSuaEmpresa": {
+      "title": "Bring your company",
+      "description": "Set up your company at Pedra Branca Park: coworking, labs, perks from 30+ tools (HubSpot, IBM Cloud, Notion, Zendesk) and tax incentives."
+    },
+    "solucoes": {
+      "title": "Solutions",
+      "description": "Benefits, international missions and much more for startups and companies."
+    },
+    "empresasInstaladas": {
+      "title": "Installed Companies",
+      "description": "Meet the 200+ startups, scale-ups and corporations based at Pedra Branca Park — the largest urban innovation hub in southern Brazil."
+    },
+    "conteudo": {
+      "title": "Content",
+      "description": "News, success stories, achievements and events from the Inaitec ecosystem — the innovation hub at Pedra Branca Park."
+    },
+    "login": {
+      "title": "Sign in",
+      "description": "Access your account in the Inaitec ecosystem."
+    }
   }
 }

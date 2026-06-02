@@ -450,5 +450,55 @@
       "twitter": "X / Twitter"
     },
     "related": "Leia também"
+  },
+  "Seo": {
+    "home": {
+      "title": "Hub de Inovação e Tecnologia",
+      "description": "Hub brasileiro de inovação e tecnologia focado em aceleração de startups, inovação aberta e desenvolvimento do ecossistema Pedra Branca em Palhoça, SC."
+    },
+    "sobre": {
+      "title": "Sobre",
+      "description": "Há 15 anos o Inaitec opera o Parque Pedra Branca, em Palhoça (SC): +200 empresas instaladas, +300 startups aceleradas e R$ 180M em capital movimentado. Conheça o instituto."
+    },
+    "programas": {
+      "title": "Programas",
+      "description": "Conheça todos os programas do Inaitec — aceleração, inovação aberta, pesquisa aplicada e investimento. Filtre por público, estágio e modelo de entrada."
+    },
+    "bancoDeTalentos": {
+      "title": "Banco de Talentos",
+      "description": "Capacitação e empregabilidade no ecossistema Inaitec: conecte-se a vagas em mais de 200 empresas do Parque Pedra Branca ou anuncie posições para encontrar talentos locais qualificados."
+    },
+    "bancoDeTalentosVagas": {
+      "title": "Vagas — Banco de Talentos",
+      "description": "Em breve, a listagem completa de vagas abertas nas empresas do ecossistema Inaitec."
+    },
+    "chamadas": {
+      "title": "Chamadas Abertas",
+      "description": "Todas as seleções abertas do Inaitec — programas, editais e parcerias. Encontre a oportunidade certa para sua startup, empresa ou pesquisa."
+    },
+    "faleConosco": {
+      "title": "Fale Conosco",
+      "description": "Entre em contato com o Inaitec — atendimento geral, imprensa, parcerias corporativas e suporte a empresas instaladas no Parque Pedra Branca."
+    },
+    "tragaSuaEmpresa": {
+      "title": "Traga sua empresa",
+      "description": "Instale sua empresa no Parque Pedra Branca: coworking, laboratórios, perks de mais de 30 ferramentas (HubSpot, IBM Cloud, Notion, Zendesk) e incentivos fiscais."
+    },
+    "solucoes": {
+      "title": "Soluções",
+      "description": "Benefícios, missões internacionais e muito mais para startups e empresas."
+    },
+    "empresasInstaladas": {
+      "title": "Empresas Instaladas",
+      "description": "Conheça as +200 startups, scale-ups e corporações residentes no Parque Pedra Branca — o maior hub urbano de inovação do Sul do Brasil."
+    },
+    "conteudo": {
+      "title": "Conteúdo",
+      "description": "Notícias, cases de sucesso, conquistas e eventos do ecossistema Inaitec — o hub de inovação do Parque Pedra Branca."
+    },
+    "login": {
+      "title": "Entrar",
+      "description": "Acesse sua conta no ecossistema Inaitec."
+    }
   }
 }

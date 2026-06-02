@@ -1,8 +1,20 @@
 import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Soluções',
-  description: 'Benefícios, missões internacionais e muito mais para startups e empresas.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'Seo' })
+  return buildMetadata({
+    locale,
+    path: '/solucoes',
+    title: t('solucoes.title'),
+    description: t('solucoes.description'),
+  })
 }
 
 export default function SolucoesPage() {

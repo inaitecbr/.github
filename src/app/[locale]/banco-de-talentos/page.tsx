@@ -1,12 +1,22 @@
 import type { Metadata } from 'next'
-import { getLocale } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import { getBancoDeTalentos } from '@/sanity/queries/bancoDeTalentos'
+import { buildMetadata } from '@/lib/seo'
 import BancoDeTalentosClientComponent from '@/components/banco-de-talentos/BancoDeTalentosClientComponent'
 
-export const metadata: Metadata = {
-  title: 'Banco de Talentos',
-  description:
-    'Capacitação e empregabilidade no ecossistema Inaitec: conecte-se a vagas em mais de 200 empresas do Parque Pedra Branca ou anuncie posições para encontrar talentos locais qualificados.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'Seo' })
+  return buildMetadata({
+    locale,
+    path: '/banco-de-talentos',
+    title: t('bancoDeTalentos.title'),
+    description: t('bancoDeTalentos.description'),
+  })
 }
 
 export default async function BancoDeTalentosPage() {

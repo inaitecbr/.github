@@ -1201,3 +1201,13 @@ function QuickFactIcon({ label }: { label: string`
   empresas:      'var(--color-brand-teal)',`
 - `--color-brand-teal)',
     icon: <Megaphone strokeWidth={1.5`
+
+### Tipografia — detectados em 2026-06-02
+
+- `--font-jakarta",
+  display: "swap",`
+
+### Tipografia — detectados em 2026-06-02
+
+- `--font-jakarta",
+  display: "swap",`

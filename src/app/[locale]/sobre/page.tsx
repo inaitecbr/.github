@@ -1,11 +1,22 @@
 import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { getSobre } from '@/sanity/queries/sobre'
+import { buildMetadata } from '@/lib/seo'
 import SobreClientComponent from '@/components/sobre/SobreClientComponent'
 
-export const metadata: Metadata = {
-  title: 'Sobre',
-  description:
-    'Há 15 anos o Inaitec opera o Parque Pedra Branca, em Palhoça (SC): +200 empresas instaladas, +300 startups aceleradas e R$ 180M em capital movimentado. Conheça o instituto.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'Seo' })
+  return buildMetadata({
+    locale,
+    path: '/sobre',
+    title: t('sobre.title'),
+    description: t('sobre.description'),
+  })
 }
 
 type Props = {

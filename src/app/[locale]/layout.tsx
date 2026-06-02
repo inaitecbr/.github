@@ -6,6 +6,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
+import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -17,6 +18,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     template: "%s | Inaitec",
     default: "Inaitec — Hub de Inovação e Tecnologia",

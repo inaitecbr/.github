@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import Dropdown from '@/components/Dropdown'
+import { buildMetadata } from '@/lib/seo'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -11,10 +12,13 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'Login' })
-  return {
+  return buildMetadata({
+    locale,
+    path: '/login',
     title: t('metaTitle'),
     description: t('metaDescription'),
-  }
+    noindex: true,
+  })
 }
 
 export default async function LoginPage({ params }: Props) {

@@ -1,12 +1,23 @@
 import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { getEmpresas } from '@/sanity/queries/empresas'
 import { getEmpresasInstaladasPage } from '@/sanity/queries/empresasInstaladas'
+import { buildMetadata } from '@/lib/seo'
 import EmpresasInstaladasClientComponent from '@/components/empresas-instaladas/EmpresasInstaladasClientComponent'
 
-export const metadata: Metadata = {
-  title: 'Empresas Instaladas',
-  description:
-    'Conheça as +200 startups, scale-ups e corporações residentes no Parque Pedra Branca — o maior hub urbano de inovação do Sul do Brasil.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'Seo' })
+  return buildMetadata({
+    locale,
+    path: '/solucoes/empresas-instaladas',
+    title: t('empresasInstaladas.title'),
+    description: t('empresasInstaladas.description'),
+  })
 }
 
 type Props = {

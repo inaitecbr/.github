@@ -3,11 +3,21 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { Container } from '@/components/Section'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Vagas — Banco de Talentos',
-  description:
-    'Em breve, a listagem completa de vagas abertas nas empresas do ecossistema Inaitec.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'Seo' })
+  return buildMetadata({
+    locale,
+    path: '/banco-de-talentos/vagas',
+    title: t('bancoDeTalentosVagas.title'),
+    description: t('bancoDeTalentosVagas.description'),
+  })
 }
 
 export default async function VagasPage() {

@@ -9,6 +9,7 @@ import CtaBannerSection from '@/components/CtaBannerSection'
 import { getPost, getPostSlugs } from '@/sanity/queries/posts'
 import { getCtaBanner } from '@/sanity/queries/ctaBanner'
 import { urlFor } from '@/sanity/image'
+import { buildMetadata } from '@/lib/seo'
 import { formatPostDate } from '@/lib/formatPostDate'
 
 type Props = { params: Promise<{ slug: string; locale: string }> }
@@ -22,7 +23,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params
   const post = await getPost({ slug, locale })
   if (!post) return {}
-  return { title: post.title, description: post.excerpt }
+  const image = post.mainImage
+    ? urlFor(post.mainImage).width(1200).height(630).fit('crop').url()
+    : undefined
+  return buildMetadata({
+    locale,
+    path: `/conteudo/${post.slug}`,
+    title: post.title,
+    description: post.excerpt,
+    image,
+  })
 }
 
 export default async function ArtigoPage({ params }: Props) {
