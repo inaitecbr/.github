@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { BellIcon, DocumentsIcon, EnvelopeIcon, HomeIcon, InfoOutlineIcon, PinIcon, RocketIcon, StarIcon, ThLargeIcon, UsersIcon } from '@sanity/icons'
+import { BellIcon, DocumentsIcon, DocumentTextIcon, EnvelopeIcon, HomeIcon, InfoOutlineIcon, PinIcon, RocketIcon, StarIcon, ThLargeIcon, UsersIcon } from '@sanity/icons'
 
 /**
  * Estrutura customizada do Studio.
@@ -14,6 +14,7 @@ import { BellIcon, DocumentsIcon, EnvelopeIcon, HomeIcon, InfoOutlineIcon, PinIc
 
 const SINGLETONS = {
   home: '08a4cb0a-f98b-4dd7-9185-8c5516c39943',
+  portalConteudo: 'portal-conteudo-pt', // PT — Translations para EN/ES
   ctaBanner: 'e54d7186-5a3e-4a73-9419-bab31926c7db', // versão PT — Translations para EN/ES
   sobre: 'eb1f1e75-726c-4f5f-8a7d-d0b36e8cb530', // versão PT — Translations para EN/ES
   tragaSuaEmpresa: '0bde9e07-f843-4125-b53f-1f28a35976be', // PT — Translations para EN/ES
@@ -108,6 +109,15 @@ export const structure: StructureResolver = (S) =>
                     .schemaType('faleConosco'),
                 ),
 
+              S.listItem()
+                .title('Portal de Conteúdo')
+                .icon(DocumentTextIcon)
+                .child(
+                  S.document()
+                    .documentId(SINGLETONS.portalConteudo)
+                    .schemaType('portalConteudo'),
+                ),
+
               // ── Componentes globais (usados em todas as páginas) ──────
               S.listItem()
                 .title('CTA Banner')
@@ -139,5 +149,16 @@ export const structure: StructureResolver = (S) =>
             .title('Empresas (PT)')
             .filter('_type == "empresa" && language == "pt"')
             .defaultOrdering([{ field: 'nome', direction: 'asc' }]),
+        ),
+
+      // ── Coleção: Notícias / Conteúdo (lista PT — Translations no editor) ─
+      S.listItem()
+        .title('Notícias')
+        .icon(DocumentTextIcon)
+        .child(
+          S.documentTypeList('post')
+            .title('Notícias (PT)')
+            .filter('_type == "post" && language == "pt"')
+            .defaultOrdering([{ field: 'publishedAt', direction: 'desc' }]),
         ),
     ])

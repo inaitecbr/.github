@@ -215,3 +215,19 @@ A subseção "Inscrições abertas" da Home foi refatorada para um modelo **1 he
 - Traduzidos: `desc`, `longDesc`, `status`, `fundador.titulo`, `investimento.rodada`.
 - **Mantidos idênticos nas 3 línguas:** `setor` e `estagio` — são chaves de filtro comparadas contra listas hardcoded em `CatalogoSection.tsx` (e `ESTAGIO_STATUS_COLOR`). Traduzi-las quebraria filtros e cores. Consequência conhecida: o badge/label "Estágio" mostra "Corporação" também em EN/ES. Refino futuro: i18n no componente (key→label) se o cliente quiser.
 - `empresasQuery`/`getEmpresas` passam a filtrar por `language == $locale`; `empresas-instaladas/page.tsx` passa o locale.
+
+---
+
+## Migração de Notícias — site antigo → Sanity (coleção `post`)
+
+**Contexto:** o Portal de Conteúdo (`/conteudo`) usava 14 notícias mockadas em `src/data/conteudo.ts`. As notícias reais estavam só no site antigo (`inaitec.com.br/noticias` — CMS PHP custom, sem API). Migradas via scraping da parte pública.
+
+**Schema:** criada coleção `post` (`src/sanity/schemas/post.ts`) com i18n (`document-internationalization`, PT padrão + Translations EN/ES). Campo `body` em **Portable Text rico** — cliente edita H1–H4, negrito, itálico, sublinhado, listas, citação, links e imagens inline no Studio. Campos: title, slug, category (default "Notícias"), mainImage, publishedAt, excerpt, author (string opcional), featured, body, legacyId, legacyUrl. Registrado em `schemas/index.ts`, `sanity.config.ts` (i18n) e `structure.ts` (coleção "Notícias", lista PT).
+
+**Script:** `scripts/migrate-noticias.ts` (+ `scripts/README-noticias.md`). Scraping educado (delay 1s + retry/backoff), HTML→Portable Text via `@sanity/block-tools`+`jsdom`, upload de assets com dedup por URL, `createOrReplace` com `_id` estável `noticia-{id}` (idempotente), modo `--dry-run`/`--only`/`--limit`. Seletores validados no HTML cru: título via `og:title`, capa = 1ª `img[alt="blog-post-image"]`, data = `dd/mm/aaaa` (h2 após capa), corpo recortado entre a capa e `.blog-section.division` (relacionados descartados). Byline "por <Nome>" → campo `author` (removido do corpo); título duplicado no 1º parágrafo removido.
+
+**Resultado:** 58 documentos PT importados (IDs `noticia-88`..`noticia-186`), todos com capa + corpo; 9 com autor; destaque = `noticia-186` (mais recente). 58 `translation.metadata` criados. Artigos da fonte não têm imagens inline (só capa).
+
+**Frontend religado ao Sanity:** `conteudo/page.tsx` (server, `getPosts`) → `ConteudoHub` (props); `conteudo/[slug]/page.tsx` (server, `getPost` + relacionados) renderiza o corpo com `src/components/PortableTextRenderer.tsx`. Queries em `src/sanity/queries/posts.ts`. **Removidos:** `src/data/conteudo.ts` (mock) e a rota `/conteudo/autor/[slug]` (autor virou string simples, sem foto/bio). Build OK (215 páginas).
+
+**Pendente (opcional):** a seção de notícias da Home (`src/components/home/NoticiasSection.tsx`) ainda usa itens fixos do `messages/*.json` — não foi religada ao Sanity nesta etapa.

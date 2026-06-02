@@ -117,40 +117,7 @@
       "titleStart": "Notícias",
       "titleHighlight": "recentes",
       "verTodas": "Ver todas as notícias",
-      "readTime": "{min} min de leitura",
-      "lerArtigo": "Ler artigo completo",
-      "items": [
-        {
-          "date": "18 Abril · 2026",
-          "category": "Aceleração",
-          "title": "Acelera Pedra Branca 2026 recebe mais de 500 inscrições em duas semanas",
-          "readTime": "3 min de leitura"
-        },
-        {
-          "date": "12 Abril · 2026",
-          "category": "Inovação aberta",
-          "title": "Celesc e Inaitec firmam parceria para pilotos de rede elétrica inteligente",
-          "readTime": "5 min de leitura"
-        },
-        {
-          "date": "05 Abril · 2026",
-          "category": "Ecossistema",
-          "title": "Parque Tecnológico Pedra Branca atinge 200 empresas instaladas em 2026",
-          "readTime": "4 min de leitura"
-        },
-        {
-          "date": "28 Março · 2026",
-          "category": "Comunidade",
-          "title": "Meetup Inaitec reúne fundadores e investidores em noite de conexões no Pedra Branca",
-          "readTime": "3 min de leitura"
-        },
-        {
-          "date": "21 Março · 2026",
-          "category": "Investimento",
-          "title": "Fundo de venture capital seleciona 6 startups do ecossistema Pedra Branca para rodada semente",
-          "readTime": "4 min de leitura"
-        }
-      ]
+      "lerArtigo": "Ler artigo completo"
     },
     "contato": {
       "eyebrow": "Fale conosco",
@@ -454,5 +421,34 @@
     "canalWhatsAppLabel": "WhatsApp",
     "canalHorarioLabel": "Horário",
     "enderecoLabel": "Endereço"
+  },
+  "Conteudo": {
+    "search": {
+      "placeholder": "Buscar conteúdo...",
+      "button": "Buscar"
+    },
+    "filters": {
+      "all": "Todos",
+      "news": "Notícias",
+      "cases": "Cases",
+      "achievements": "Conquistas",
+      "events": "Eventos"
+    },
+    "grid": {
+      "searchResults": "Resultados da busca",
+      "latestPosts": "Últimas publicações",
+      "loadMore": "Carregar mais",
+      "showing": "Mostrando {visible} de {total}",
+      "noResults": "Nenhum resultado encontrado."
+    }
+  },
+  "ConteudoArtigo": {
+    "breadcrumb": "Portal de Conteúdo",
+    "share": {
+      "title": "Compartilhar",
+      "linkedin": "LinkedIn",
+      "twitter": "X / Twitter"
+    },
+    "related": "Leia também"
   }
 }

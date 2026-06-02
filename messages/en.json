@@ -117,40 +117,7 @@
       "titleStart": "Recent",
       "titleHighlight": "news",
       "verTodas": "View all news",
-      "readTime": "{min} min read",
-      "lerArtigo": "Read full article",
-      "items": [
-        {
-          "date": "April 18, 2026",
-          "category": "Acceleration",
-          "title": "Acelera Pedra Branca 2026 receives more than 500 applications in two weeks",
-          "readTime": "3 min read"
-        },
-        {
-          "date": "April 12, 2026",
-          "category": "Open innovation",
-          "title": "Celesc and Inaitec partner to pilot smart grid initiatives",
-          "readTime": "5 min read"
-        },
-        {
-          "date": "April 5, 2026",
-          "category": "Ecosystem",
-          "title": "Pedra Branca Technology Park reaches 200 resident companies in 2026",
-          "readTime": "4 min read"
-        },
-        {
-          "date": "March 28, 2026",
-          "category": "Community",
-          "title": "Inaitec meetup brings founders and investors together for a night of connections at Pedra Branca",
-          "readTime": "3 min read"
-        },
-        {
-          "date": "March 21, 2026",
-          "category": "Investment",
-          "title": "Venture capital fund selects 6 startups from the Pedra Branca ecosystem for seed round",
-          "readTime": "4 min read"
-        }
-      ]
+      "lerArtigo": "Read full article"
     },
     "contato": {
       "eyebrow": "Contact us",
@@ -454,5 +421,34 @@
     "canalWhatsAppLabel": "WhatsApp",
     "canalHorarioLabel": "Hours",
     "enderecoLabel": "Address"
+  },
+  "Conteudo": {
+    "search": {
+      "placeholder": "Search content...",
+      "button": "Search"
+    },
+    "filters": {
+      "all": "All",
+      "news": "News",
+      "cases": "Cases",
+      "achievements": "Achievements",
+      "events": "Events"
+    },
+    "grid": {
+      "searchResults": "Search results",
+      "latestPosts": "Latest posts",
+      "loadMore": "Load more",
+      "showing": "Showing {visible} of {total}",
+      "noResults": "No results found."
+    }
+  },
+  "ConteudoArtigo": {
+    "breadcrumb": "Content Hub",
+    "share": {
+      "title": "Share",
+      "linkedin": "LinkedIn",
+      "twitter": "X / Twitter"
+    },
+    "related": "Read also"
   }
 }

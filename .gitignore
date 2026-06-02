@@ -46,3 +46,6 @@ pnpm-debug.log*
 # TypeScript
 next-env.d.ts
 .vercel
+
+# Dump local do scraping de notícias (dry-run)
+scripts/.noticias-dump/

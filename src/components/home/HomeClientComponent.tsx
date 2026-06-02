@@ -3,6 +3,7 @@
 import CtaBannerSection from "@/components/CtaBannerSection";
 import type { CtaBannerData } from "@/sanity/queries/ctaBanner";
 import type { HomeData } from "@/sanity/queries/home";
+import type { PostListItem } from "@/sanity/queries/posts";
 import ChamadasSection from "./ChamadasSection";
 import ContatoSection from "./ContatoSection";
 import EcossistemaSection from "./EcossistemaSection";
@@ -17,9 +18,10 @@ import ResultadosSection from "./ResultadosSection";
 type Props = {
   data: HomeData;
   ctaBanner: CtaBannerData;
+  posts?: PostListItem[];
 };
 
-export default function HomeClientComponent({ data, ctaBanner }: Props) {
+export default function HomeClientComponent({ data, ctaBanner, posts }: Props) {
   return (
     <main className="relative bg-brand-navy overflow-x-clip">
       {/* ── Fundo orgânico unificado — orbs flutuantes através de todas as seções ── */}
@@ -80,7 +82,7 @@ export default function HomeClientComponent({ data, ctaBanner }: Props) {
             }}
           />
         </div>
-        <NoticiasSection />
+        <NoticiasSection posts={posts} />
         <ResultadosSection resultados={data?.resultados} />
       </div>
 
