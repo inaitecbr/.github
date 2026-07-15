@@ -16,6 +16,7 @@
     "@sanity/client": "^7.22.1",
     "@sanity/document-internationalization": "^6.2.0",
     "@sanity/image-url": "^2.1.1",
+    "@sanity/language-filter": "^5.0.9",
     "@sanity/vision": "^5.26.0",
     "@tailwindcss/container-queries": "^0.1.1",
     "cheerio": "^1.2.0",
