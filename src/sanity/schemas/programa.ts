@@ -48,6 +48,8 @@ export default defineType({
       type: 'string',
       readOnly: true,
       hidden: true,
+      // "+" da lista do Studio cria a versão PT; EN/ES via botão Translations.
+      initialValue: 'pt',
     }),
 
     // ─── Catálogo (card + filtros) ───
@@ -304,7 +306,9 @@ export default defineType({
         'Selecione as empresas instaladas que participaram deste programa — aparecem na seção "Empresas que passaram por aqui".',
       type: 'array',
       group: 'detail',
-      of: [{ type: 'reference', to: [{ type: 'empresa' }] }],
+      // weak: true — o vínculo não bloqueia a exclusão da empresa no Studio;
+      // a query filtra referências órfãs.
+      of: [{ type: 'reference', to: [{ type: 'empresa' }], weak: true }],
     }),
   ],
   preview: {

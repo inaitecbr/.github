@@ -49,10 +49,10 @@ const programaFullFields = groq`
     metricas[]{ _key, label, value }
   },
   faq[]{ _key, q, a },
-  empresasVinculadas[]->{
+  "empresasVinculadas": empresasVinculadas[defined(@->_id)]->{
     _id,
     nome,
-    setor,
+    "setor": coalesce(setor->nome, setor),
     desc,
     "logoUrl": logo.asset->url,
     "fotoUrl": foto.asset->url,

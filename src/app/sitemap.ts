@@ -6,7 +6,7 @@ import type { MetadataRoute } from "next";
 
 /**
  * Rotas estáticas indexáveis por locale.
- * Exclui: /login, /design-system, /studio (e qualquer rota com noindex).
+ * Exclui: /design-system, /studio (e qualquer rota com noindex).
  */
 const STATIC_ROUTES = [
   "", // home

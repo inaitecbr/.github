@@ -11,7 +11,7 @@ type Props = {
 
 export default function HeroSection({ hero }: Props) {
   return (
-    <section className="relative h-dvh w-full overflow-hidden z-10">
+    <section className="relative min-h-dvh w-full overflow-hidden z-10 flex flex-col">
       {hero?.videoUrl && (
         <video
           src={hero.videoUrl}
@@ -27,7 +27,7 @@ export default function HeroSection({ hero }: Props) {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.5))] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_52%,rgba(13,46,56,0.55)_0%,transparent_100%)] pointer-events-none" />
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-[68px] pb-32">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pt-[100px] pb-12">
         {(hero?.titleStart || hero?.titleHighlight) && (
           <h1 className="font-extrabold text-white text-display-3xl leading-[0.95] tracking-tight max-w-5xl drop-shadow-xl">
             {hero?.titleStart}
@@ -69,7 +69,7 @@ export default function HeroSection({ hero }: Props) {
       </div>
 
       {hero?.metrics && hero.metrics.length > 0 && (
-        <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-brand-navy/50 backdrop-blur-md">
+        <div className="relative z-10 border-t border-white/10 bg-brand-navy/50 backdrop-blur-md">
           <Container className="py-6 grid grid-cols-2 gap-y-6 md:grid-cols-4 md:gap-y-0 md:divide-x md:divide-white/10">
             {hero.metrics.map((m, i) => (
               <div

@@ -20,10 +20,10 @@ const PILLAR_ACCENTS = {
 
 const PILLAR_ORDER = ['startups', 'empresas', 'universidades', 'investidores'] as const
 
+// Nomes e descrições vêm do i18n (Header.solucoesMenu.items.<key>)
 const solucoesMenu = [
   {
     key: 'empresas-instaladas',
-    name: 'Empresas Instaladas',
     href: '/solucoes/empresas-instaladas',
     metric: '+200',
     accent: 'var(--color-brand-orange)',
@@ -31,7 +31,6 @@ const solucoesMenu = [
   },
   {
     key: 'chamadas',
-    name: 'Chamadas Abertas',
     href: '/chamadas',
     metric: '8',
     accent: 'var(--color-brand-teal)',
@@ -39,7 +38,6 @@ const solucoesMenu = [
   },
   {
     key: 'banco-de-talentos',
-    name: 'Banco de Talentos',
     href: '/banco-de-talentos',
     metric: '2k+',
     accent: '#4A9EE0',
@@ -47,11 +45,31 @@ const solucoesMenu = [
   },
 ] as const
 
-const LANG_META = {
-  pt: { flag: '🇧🇷' },
-  en: { flag: '🇺🇸' },
-  es: { flag: '🇪🇸' },
-} as const
+// Bandeiras em SVG inline — emoji de bandeira não renderiza no Windows
+function FlagIcon({ code, className = 'w-[18px] h-[13px]' }: { code: string; className?: string }) {
+  return (
+    <svg viewBox="0 0 20 14" aria-hidden="true" className={`${className} shrink-0 rounded-[2px]`}>
+      {code === 'en' ? (
+        <>
+          <rect width="20" height="14" fill="#B22234" />
+          <path d="M0 3h20M0 7h20M0 11h20" stroke="#FFFFFF" strokeWidth="2" />
+          <rect width="9" height="7" fill="#3C3B6E" />
+        </>
+      ) : code === 'es' ? (
+        <>
+          <rect width="20" height="14" fill="#AA151B" />
+          <rect y="3.5" width="20" height="7" fill="#F1BF00" />
+        </>
+      ) : (
+        <>
+          <rect width="20" height="14" fill="#009B3A" />
+          <path d="M10 1.5 18.5 7 10 12.5 1.5 7Z" fill="#FEDF00" />
+          <circle cx="10" cy="7" r="3" fill="#002776" />
+        </>
+      )}
+    </svg>
+  )
+}
 
 type HeaderProps = {
   programs: HeaderProgramsByPillar
@@ -134,7 +152,6 @@ export default function Header({ programs }: HeaderProps) {
     }
   }, [])
 
-  const currentFlag = LANG_META[locale as keyof typeof LANG_META]?.flag ?? LANG_META.pt.flag
 
   const isActive = (href?: string, key?: string) => {
     if (href) return pathname === href || pathname.startsWith(href + '/')
@@ -385,7 +402,7 @@ export default function Header({ programs }: HeaderProps) {
                           </div>
                           <div className="relative flex-1">
                             <div className={`text-[13px] font-bold leading-tight mb-1.5 transition-colors ${isGlass ? 'text-white' : 'text-brand-navy'}`}>
-                              {it.name}
+                              {t(`solucoesMenu.items.${it.key}.name`)}
                             </div>
                             <p className={`text-[11px] leading-relaxed ${isGlass ? 'text-white/45' : 'text-brand-navy/50'}`}>
                               {t(`solucoesMenu.items.${it.key}.desc`)}
@@ -417,15 +434,6 @@ export default function Header({ programs }: HeaderProps) {
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
-            href="/login"
-            className={[
-              'inline-flex items-center text-sm font-semibold transition-all',
-              isGlass ? 'text-white hover:text-brand-orange' : 'text-brand-navy hover:text-brand-orange',
-            ].join(' ')}
-          >
-            {t('cta.login')}
-          </Link>
-          <Link
             href="/fale-conosco"
             className={[
               'group inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition-all',
@@ -451,9 +459,7 @@ export default function Header({ programs }: HeaderProps) {
                   : 'border border-brand-navy/20 text-brand-navy hover:border-brand-orange hover:text-brand-orange',
               ].join(' ')}
             >
-              <span className="text-base leading-none" aria-hidden="true">
-                {currentFlag}
-              </span>
+              <FlagIcon code={locale} />
               <span>{locale.toUpperCase()}</span>
               <ChevronDown
                 strokeWidth={2}
@@ -479,9 +485,7 @@ export default function Header({ programs }: HeaderProps) {
                         : 'text-white/80 hover:bg-white/5'
                     }`}
                   >
-                    <span className="text-base leading-none" aria-hidden="true">
-                      {LANG_META[code].flag}
-                    </span>
+                    <FlagIcon code={code} />
                     <span>{tLangs(code)}</span>
                   </button>
                 ))}
@@ -539,7 +543,7 @@ export default function Header({ programs }: HeaderProps) {
                             className="py-2.5 text-sm text-brand-navy hover:text-brand-orange transition-colors"
                             onClick={() => setMobileOpen(false)}
                           >
-                            {sub.name}
+                            {t(`solucoesMenu.items.${sub.key}.name`)}
                           </Link>
                         ))}
                       </div>
@@ -567,13 +571,6 @@ export default function Header({ programs }: HeaderProps) {
             {/* CTAs */}
             <div className="mt-6 flex flex-col gap-3">
               <Link
-                href="/login"
-                className="inline-flex w-full items-center justify-center rounded-full border border-brand-navy/15 px-5 py-3 text-sm font-semibold text-brand-navy transition-colors hover:border-brand-orange hover:text-brand-orange"
-                onClick={() => setMobileOpen(false)}
-              >
-                {t('cta.login')}
-              </Link>
-              <Link
                 href="/fale-conosco"
                 className="inline-flex w-full items-center justify-center rounded-full bg-brand-navy px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/20"
                 onClick={() => setMobileOpen(false)}
@@ -600,9 +597,7 @@ export default function Header({ programs }: HeaderProps) {
                         : 'border-brand-navy/15 text-[#4B6472] hover:border-brand-navy/30 hover:text-brand-navy'
                     }`}
                   >
-                    <span className="text-sm leading-none" aria-hidden="true">
-                      {LANG_META[code].flag}
-                    </span>
+                    <FlagIcon code={code} className="w-4 h-[11px]" />
                     {code}
                   </button>
                 ))}

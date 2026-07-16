@@ -10,7 +10,8 @@ import portalConteudo from './portalConteudo'
 import post from './post'
 import programa from './programa'
 import programas from './programas'
+import setor from './setor'
 import sobre from './sobre'
 import tragaSuaEmpresa from './tragaSuaEmpresa'
 
-export const schemaTypes: SchemaTypeDefinition[] = [home, programa, programas, chamadas, bancoDeTalentos, ctaBanner, sobre, tragaSuaEmpresa, empresa, empresasInstaladas, faleConosco, post, portalConteudo]
+export const schemaTypes: SchemaTypeDefinition[] = [home, programa, programas, chamadas, bancoDeTalentos, ctaBanner, sobre, tragaSuaEmpresa, empresa, empresasInstaladas, setor, faleConosco, post, portalConteudo]

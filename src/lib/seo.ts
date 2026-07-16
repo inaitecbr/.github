@@ -44,7 +44,7 @@ type BuildMetadataArgs = {
   description?: string
   /** caminho ou URL de imagem OG; default = logo */
   image?: string
-  /** não indexar (login, design-system, etc.) */
+  /** não indexar (design-system, etc.) */
   noindex?: boolean
 }
 

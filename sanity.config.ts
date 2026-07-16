@@ -32,6 +32,11 @@ export default defineConfig({
           documentInternationalization({
             supportedLanguages: supportedLanguages.map(({ id, title }) => ({ id, title })),
             schemaTypes: i18nSchemaTypes,
+            // Sem templates por idioma no menu "+" das listas: criar um doc
+            // "English empresa" solto não vincula ao PT e some da listagem.
+            // Fluxo correto: "+" cria a versão PT (initialValue no campo
+            // language) e EN/ES nascem pelo botão "Translations" do editor.
+            addTemplates: false,
           }),
         ]
       : []),

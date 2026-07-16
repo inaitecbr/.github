@@ -212,7 +212,19 @@ export default defineType({
         defineField({ name: 'titleHighlight', type: 'string', title: 'Título (destaque itálico)' }),
         defineField({ name: 'desc', type: 'text', title: 'Descrição', rows: 3 }),
         defineField({ name: 'ctaLabel', type: 'string', title: 'Label do botão' }),
-        defineField({ name: 'ctaHref', type: 'string', title: 'URL do download' }),
+        defineField({
+          name: 'ctaFile',
+          type: 'file',
+          title: 'Arquivo do mídia kit (.zip)',
+          description: 'Envie o arquivo aqui — o botão passa a baixá-lo. Tem prioridade sobre a URL abaixo.',
+          options: { accept: '.zip' },
+        }),
+        defineField({
+          name: 'ctaHref',
+          type: 'string',
+          title: 'URL do download (alternativa)',
+          description: 'Usada apenas se nenhum arquivo for enviado acima.',
+        }),
       ],
     }),
 

@@ -25,7 +25,7 @@ export default function HomeClientComponent({ data, ctaBanner, posts }: Props) {
   return (
     <main className="relative bg-brand-navy overflow-x-clip">
       {/* ── Fundo orgânico unificado — orbs flutuantes através de todas as seções ── */}
-      <div className="pointer-events-none absolute inset-0 z-0">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-[110vh] left-[-10%] w-[1100px] h-[1100px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />
         <div className="absolute top-[310vh] right-[-10%] w-[1100px] h-[1100px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />
         <div className="absolute top-[520vh] left-[20%] w-[1100px] h-[1100px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />

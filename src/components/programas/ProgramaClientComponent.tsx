@@ -14,6 +14,7 @@ import type {
   PublicoKey,
   StatusKey,
 } from "@/sanity/queries/programa";
+import { effectiveStatusKey } from "@/lib/programa-status";
 import { Check, Clock, DollarSign, Info, MapPin, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -79,17 +80,20 @@ export default async function ProgramaClientComponent({ programa }: Props) {
 
   const accent = "var(--color-brand-orange)";
 
-  const statusColor = programa.statusKey ? STATUS_COLOR[programa.statusKey] : accent;
-  const isAberta = programa.statusKey === "aberta";
+  // Status efetivo — "aberta" com deadline vencido é tratada como "fechada"
+  const statusKey = effectiveStatusKey(programa);
+
+  const statusColor = statusKey ? STATUS_COLOR[statusKey] : accent;
+  const isAberta = statusKey === "aberta";
   const hasDeadline = isAberta && !!programa.deadline;
 
   // CTA label por status — via i18n
   const ctaPrimario =
-    programa.statusKey === "aberta"
+    statusKey === "aberta"
       ? t('ctaAberta')
-      : programa.statusKey === "em-breve"
+      : statusKey === "em-breve"
         ? t('ctaEmBreve')
-        : programa.statusKey === "fechada"
+        : statusKey === "fechada"
           ? t('ctaFechada')
           : t('ctaFluxo');
 
@@ -130,13 +134,13 @@ export default async function ProgramaClientComponent({ programa }: Props) {
   const showEtapas = etapas.length > 0
 
   // Labels de status via i18n
-  const statusLabel = programa.statusKey
+  const statusLabel = statusKey
     ? ({
         aberta: t('statusAberta'),
         'em-breve': t('statusEmBreve'),
         fechada: t('statusFechada'),
         'fluxo-continuo': t('statusFluxo'),
-      } as Record<StatusKey, string>)[programa.statusKey]
+      } as Record<StatusKey, string>)[statusKey]
     : null
 
   // Publicokey label — reutiliza o namespace Programa já existente
@@ -153,8 +157,8 @@ export default async function ProgramaClientComponent({ programa }: Props) {
         />
       )}
 
-      {/* ── Fundo orgânico ─────────────────────────────────────────── */}
-      <div className="pointer-events-none absolute inset-0 z-0">
+      {/* ── Fundo orgânico — overflow-hidden impede que os orbs estiquem a página além do footer ── */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-[40vh] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />
         <div className="absolute top-[180vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-brand-teal/[0.06] blur-[160px]" />
         <div className="absolute top-[320vh] left-[15%] w-[900px] h-[900px] rounded-full bg-brand-orange/[0.08] blur-[160px]" />
@@ -624,31 +628,31 @@ export default async function ProgramaClientComponent({ programa }: Props) {
               <div className="mb-5 inline-flex items-center gap-2">
                 <span className="block h-px w-8 bg-brand-orange" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
-                  {programa.statusKey === "aberta"
+                  {statusKey === "aberta"
                     ? t('ctaEyebrowAberta')
-                    : programa.statusKey === "em-breve"
+                    : statusKey === "em-breve"
                       ? t('ctaEyebrowEmBreve')
-                      : programa.statusKey === "fechada"
+                      : statusKey === "fechada"
                         ? t('ctaEyebrowFechada')
                         : t('ctaEyebrowFluxo')}
                 </span>
               </div>
               <h2 className="font-extrabold text-white text-display-xl leading-[1.2] tracking-tight max-w-2xl">
-                {programa.statusKey === "aberta" && `${t('ctaTituloAberta')} `}
-                {programa.statusKey === "em-breve" && `${t('ctaTituloEmBreve')} `}
-                {programa.statusKey === "fechada" && `${t('ctaTituloFechada')} `}
-                {programa.statusKey === "fluxo-continuo" && `${t('ctaTituloFluxo')} `}
+                {statusKey === "aberta" && `${t('ctaTituloAberta')} `}
+                {statusKey === "em-breve" && `${t('ctaTituloEmBreve')} `}
+                {statusKey === "fechada" && `${t('ctaTituloFechada')} `}
+                {statusKey === "fluxo-continuo" && `${t('ctaTituloFluxo')} `}
                 <span className="italic font-medium text-brand-orange">
-                  {programa.statusKey === "fechada"
+                  {statusKey === "fechada"
                     ? t('ctaDestaqueAlternativo')
                     : t('ctaDestaque')}
                 </span>
               </h2>
               <p className="mt-5 text-white/70 text-base leading-relaxed max-w-xl">
-                {programa.statusKey === "aberta" && t('ctaDescAberta')}
-                {programa.statusKey === "em-breve" && t('ctaDescEmBreve')}
-                {programa.statusKey === "fechada" && t('ctaDescFechada')}
-                {programa.statusKey === "fluxo-continuo" && t('ctaDescFluxo')}
+                {statusKey === "aberta" && t('ctaDescAberta')}
+                {statusKey === "em-breve" && t('ctaDescEmBreve')}
+                {statusKey === "fechada" && t('ctaDescFechada')}
+                {statusKey === "fluxo-continuo" && t('ctaDescFluxo')}
               </p>
 
               {/* Status badge */}

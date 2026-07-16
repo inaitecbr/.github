@@ -6,7 +6,7 @@ import { groq } from 'next-sanity'
 export const empresasQuery = groq`*[_type == "empresa" && language == $language] | order(nome asc) {
   "slug": slug.current,
   nome,
-  setor,
+  "setor": coalesce(setor->nome, setor),
   estagio,
   fundada,
   desc,

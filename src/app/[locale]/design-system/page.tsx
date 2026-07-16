@@ -877,7 +877,7 @@ export default function DesignSystemPage() {
                 ['info', 'var(--color-brand-orange)', 'Inscrições do próximo ciclo abrem em 12 de junho.'],
                 ['success', 'var(--color-brand-teal)', 'Sua candidatura foi recebida com sucesso.'],
                 ['warning', '#F5C84B', 'Seu perfil ainda está incompleto — finalize para concorrer.'],
-                ['danger', '#F87171', 'Sessão expirada. Faça login novamente.'],
+                ['danger', '#F87171', 'Não foi possível enviar sua mensagem. Tente novamente.'],
               ].map(([type, color, msg]) => (
                 <div
                   key={type as string}

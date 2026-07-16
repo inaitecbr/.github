@@ -118,7 +118,6 @@ Hub privado sem fins lucrativos que governa o **Parque Tecnológico Pedra Branca
 ├── /banco-de-talentos                → Explicativa + link externo
 │   └── /banco-de-talentos/vagas      → Lista de vagas
 ├── /fale-conosco                     → Form com perfil (P0)
-├── /login                            → Área restrita (split-screen premium)
 └── /design-system                    → Manual de marca interativo (oculto da navegação)
 ```
 
@@ -131,11 +130,11 @@ Hub privado sem fins lucrativos que governa o **Parque Tecnológico Pedra Branca
 
 ### 5.3 Header — navegação final
 ```
-Logo | Programas ▾ | Soluções ▾ | Portal de Conteúdo | Traga sua Empresa | Login | Fale Conosco (CTA)
+Logo | Programas ▾ | Soluções ▾ | Portal de Conteúdo | Traga sua Empresa | Fale Conosco (CTA)
 ```
 - **Megamenu Programas** com 3 colunas (Startups / Empresas / Governo) + link "Sobre os Programas".
 - **Soluções ▾**: Empresas Instaladas, Chamadas Abertas, Banco de Talentos.
-- **Login** adicionado ao header em 2026-05-11 (decisão registrada).
+- **Login** adicionado ao header em 2026-05-11 e **removido em 2026-07-15** — área restrita fora do escopo (ver 8.2).
 
 ---
 
@@ -221,14 +220,13 @@ Cobertura: cores, tipografia, espaçamento, radius, sombras, botões (dark/light
 - Aplicada nos pontos de destaque (Home, cards de programa/chamada, conteúdo relacionado).
 - Centralizada em `src/data/programas.ts` — propaga para vitrine e página individual.
 
-### 8.2 Botão e página de Login (2026-05-11)
-- Botão "Fazer login" no header (desktop + mobile) → rota `/login`.
-- Layout split-screen "premium" com campos `Perfil`, `E-mail`, `Senha`, `Acessar`.
-- Componentes reescritos seguindo tokens do `/design-system`: labels uppercase com `tracking-[0.2em]`, `border-white/15`, foco `border-[#FA8400]`, botão disabled em `bg-white/10 text-white/40`.
+### 8.2 Botão e página de Login (2026-05-11) — **REMOVIDO em 2026-07-15**
+- Página `/login` e botão "Fazer login" no header **removidos do projeto** — não haverá área restrita/autenticação no escopo atual (a página era placeholder, botão "Acessar" desabilitado).
+- Removidos também: chaves i18n (`Header.cta.login`, namespace `Login`, `Seo.login`) e referências em `robots.ts`/`sitemap.ts`.
 
 ### 8.3 Componente `<Dropdown>` unificado (2026-05-11)
 - Criado `src/components/Dropdown.tsx` (botão custom + popover, **sem `<select>` nativo**).
-- Aplicado em `/login`; integra com `<form>` via `<input type="hidden">`.
+- Integra com `<form>` via `<input type="hidden">` (usado em `/fale-conosco` e `/design-system`).
 - Fecha em click-outside + ESC. ARIA correto (`role="listbox"`, `aria-selected`).
 - Substitui qualquer `<select>` nativo no projeto.
 
@@ -363,7 +361,6 @@ Síntese dos PDFs em [docs/inputs/](inputs/) e como cada um informou as decisõe
 | `/banco-de-talentos` | ✅ Explicativa | — |
 | `/banco-de-talentos/vagas` | ✅ Lista de vagas | — |
 | `/fale-conosco` | ✅ Form com perfil | — |
-| `/login` | ✅ Split-screen premium | `Dropdown.tsx` |
 | `/design-system` | ✅ Manual interativo (oculto) | `LayoutShell.tsx` |
 
 ### 12.3 Infra técnica

@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { BellIcon, DocumentsIcon, DocumentTextIcon, EnvelopeIcon, HomeIcon, InfoOutlineIcon, PinIcon, RocketIcon, StarIcon, ThLargeIcon, UsersIcon } from '@sanity/icons'
+import { BellIcon, DocumentsIcon, DocumentTextIcon, EnvelopeIcon, HomeIcon, InfoOutlineIcon, PinIcon, RocketIcon, StarIcon, TagIcon, ThLargeIcon, UsersIcon } from '@sanity/icons'
 
 /**
  * Estrutura customizada do Studio.
@@ -148,6 +148,16 @@ export const structure: StructureResolver = (S) =>
           S.documentTypeList('empresa')
             .title('Empresas (PT)')
             .filter('_type == "empresa" && language == "pt"')
+            .defaultOrdering([{ field: 'nome', direction: 'asc' }]),
+        ),
+
+      // ── Coleção: Setores (compartilhados pelos 3 idiomas) ─────────────
+      S.listItem()
+        .title('Setores')
+        .icon(TagIcon)
+        .child(
+          S.documentTypeList('setor')
+            .title('Setores')
             .defaultOrdering([{ field: 'nome', direction: 'asc' }]),
         ),
 

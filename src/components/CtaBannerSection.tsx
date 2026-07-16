@@ -25,7 +25,7 @@ export default function CtaBannerSection({ data, titleOverride }: Props) {
   return (
     <Section padding="md">
       <div
-        className="relative rounded-2xl overflow-hidden px-8 py-10 sm:px-12 sm:py-12 md:px-16 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8 ring-1 ring-white/15 shadow-2xl shadow-black/30"
+        className="relative rounded-2xl overflow-hidden px-5 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 flex flex-col md:flex-row items-center justify-between gap-8 ring-1 ring-white/15 shadow-2xl shadow-black/30"
         style={{
           background: "linear-gradient(135deg, #144556 0%, #0F3441 45%, #0D2E38 100%)",
         }}

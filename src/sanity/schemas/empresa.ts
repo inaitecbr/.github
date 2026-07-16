@@ -1,18 +1,5 @@
 import { defineField, defineType } from 'sanity'
 
-const SETORES = [
-  'AgTech',
-  'FinTech',
-  'HealthTech',
-  'EdTech',
-  'RetailTech',
-  'B2B SaaS',
-  'CleanTech',
-  'LogTech',
-  'GovTech',
-  'Cibersegurança',
-] as const
-
 const ESTAGIOS = ['Startup', 'Scale-up', 'Corporação'] as const
 
 const STATUSES = ['Ativa', 'Em expansão', 'Recém-investida'] as const
@@ -28,6 +15,9 @@ export default defineType({
       type: 'string',
       readOnly: true,
       hidden: true,
+      // Sem isso, empresas criadas pelo "+" da lista do Studio nascem sem
+      // idioma e somem da listagem (que filtra language == "pt").
+      initialValue: 'pt',
     }),
     defineField({
       name: 'nome',
@@ -59,8 +49,9 @@ export default defineType({
     defineField({
       name: 'setor',
       title: 'Setor',
-      type: 'string',
-      options: { list: SETORES.map((s) => ({ title: s, value: s })) },
+      description: 'Setores são gerenciados na seção "Setores" do Studio — adicione novos por lá.',
+      type: 'reference',
+      to: [{ type: 'setor' }],
       validation: (R) => R.required(),
     }),
     defineField({
@@ -138,7 +129,7 @@ export default defineType({
     }),
   ],
   preview: {
-    select: { title: 'nome', subtitle: 'setor', media: 'logo' },
+    select: { title: 'nome', subtitle: 'setor.nome', media: 'logo' },
   },
   orderings: [
     { title: 'Nome A→Z', name: 'nomeAsc', by: [{ field: 'nome', direction: 'asc' }] },

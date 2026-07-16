@@ -9,6 +9,7 @@ import { Section } from '@/components/Section'
 import type { HomeChamadas } from '@/sanity/queries/home'
 import type { ProgramaCard, PublicoKey } from '@/sanity/queries/programa'
 import { PUBLICO_COLORS } from '@/lib/programa-config'
+import { isChamadaExpirada } from '@/lib/programa-status'
 
 type Props = {
   chamadas?: HomeChamadas
@@ -38,7 +39,8 @@ function formatDeadline(iso: string, locale: string) {
 export default function ChamadasSection({ chamadas }: Props) {
   const t = useTranslations('ChamadasAbertasDestaque')
   const locale = useLocale()
-  const items: ProgramaCard[] = chamadas?.items ?? []
+  // Chamadas "abertas" com prazo vencido saem da vitrine — dão lugar às ativas
+  const items: ProgramaCard[] = (chamadas?.items ?? []).filter((p) => !isChamadaExpirada(p))
   const [hero, ...secondary] = items
   const trackRef = useRef<HTMLDivElement>(null)
   const [canPrev, setCanPrev] = useState(false)
