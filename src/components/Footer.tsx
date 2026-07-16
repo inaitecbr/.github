@@ -83,7 +83,7 @@ export default function Footer({ programs }: FooterProps) {
   return (
     <footer className="bg-brand-navy">
       <div className="px-[clamp(1.25rem,4vw+0.5rem,6.75rem)] pt-14 pb-10">
-        <div className="mb-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+        <div className="mb-10 rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-8">
           <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <div className="mb-2 text-[10px] font-bold uppercase tracking-widest text-brand-orange">
@@ -104,11 +104,11 @@ export default function Footer({ programs }: FooterProps) {
               <input
                 type="email"
                 placeholder={t('newsletter.emailPlaceholder')}
-                className="h-11 min-w-[260px] rounded-full border border-white/15 bg-white/[0.04] px-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-brand-orange/60"
+                className="h-11 w-full min-w-0 sm:w-auto sm:min-w-[260px] rounded-full border border-white/15 bg-white/[0.04] px-4 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-brand-orange/60"
               />
               <button
                 type="submit"
-                className="h-11 rounded-full bg-brand-orange px-6 text-sm font-semibold text-white transition-all hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-brand-orange/25"
+                className="h-11 shrink-0 rounded-full bg-brand-orange px-6 text-sm font-semibold text-white transition-all hover:bg-[#FF9B26] hover:shadow-lg hover:shadow-brand-orange/25"
               >
                 {t('newsletter.submit')}
               </button>

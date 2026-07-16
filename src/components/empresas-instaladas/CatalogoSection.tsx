@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useMemo, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { ArrowRight, ChevronDown, Search, X } from 'lucide-react'
 import SidebarFilter from '@/components/SidebarFilter'
 import { Section } from '@/components/Section'
@@ -10,19 +11,6 @@ import { urlFor } from '@/sanity/image'
 import type { EmpresaItem } from '@/sanity/queries/empresas'
 
 // ── Constantes ──────────────────────────────────────────────────────────────
-
-const SETORES = [
-  'AgTech',
-  'FinTech',
-  'HealthTech',
-  'EdTech',
-  'RetailTech',
-  'B2B SaaS',
-  'CleanTech',
-  'LogTech',
-  'GovTech',
-  'Cibersegurança',
-] as const
 
 const ESTAGIOS = ['Startup', 'Scale-up', 'Corporação'] as const
 
@@ -103,6 +91,13 @@ export default function CatalogoSection({ empresas }: Props) {
     return { setor, estagio }
   }, [empresas, setores])
 
+  // Setores derivados do catálogo (gerenciados no Sanity) — só aparecem
+  // os que têm ao menos uma empresa
+  const setoresDisponiveis = useMemo(
+    () => Object.keys(contagens.setor).sort((a, b) => a.localeCompare(b, 'pt')),
+    [contagens.setor],
+  )
+
   const searchInput = (
     <div className="relative">
       <Search
@@ -123,7 +118,7 @@ export default function CatalogoSection({ empresas }: Props) {
     <>
       <SidebarFilter
         label="Setor"
-        options={SETORES}
+        options={setoresDisponiveis}
         active={setores}
         onChange={(v) => setSetores((prev) => toggle(prev, v))}
         counts={contagens.setor}
@@ -259,10 +254,10 @@ export default function CatalogoSection({ empresas }: Props) {
         </div>
       </div>
 
-      {/* ── Modal de detalhe ─────────────────────────────────────────────── */}
-      {selected && (
+      {/* ── Modal de detalhe — portal no body para ficar acima de header/CTA ── */}
+      {selected && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 overflow-y-auto"
+          className="fixed inset-0 z-100 flex items-center justify-center px-4 py-6 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-labelledby="empresa-modal-title"
@@ -345,8 +340,8 @@ export default function CatalogoSection({ empresas }: Props) {
               </div>
             </div>
 
-            {/* Linha de info — grade de 6 */}
-            <div className="border-t border-neutral-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-neutral-200">
+            {/* Linha de info — flex-wrap: blocos sobrando na última linha esticam a largura toda */}
+            <div className="border-t border-neutral-200 flex flex-wrap gap-px bg-neutral-200">
               {[
                 selected.fundador?.titulo && selected.fundador?.nome
                   ? { label: selected.fundador.titulo, value: selected.fundador.nome }
@@ -372,7 +367,10 @@ export default function CatalogoSection({ empresas }: Props) {
               ]
                 .filter(Boolean)
                 .map((info) => (
-                  <div key={info!.label} className="bg-white px-8 md:px-10 py-6">
+                  <div
+                    key={info!.label}
+                    className="grow basis-full sm:basis-[calc(50%-1px)] md:basis-[calc(33.333%-1px)] bg-white px-8 md:px-10 py-6"
+                  >
                     <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange">
                       {info!.label}
                     </p>
@@ -386,7 +384,8 @@ export default function CatalogoSection({ empresas }: Props) {
                 ))}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </Section>
   )

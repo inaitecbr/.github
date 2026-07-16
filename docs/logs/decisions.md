@@ -7,6 +7,136 @@ Register of key architectural, design, and product decisions made throughout the
 
 ---
 
+## Header: nomes do submenu Soluções via i18n + Conteúdo: paddings responsivos
+**Data:** 2026-07-15
+**Responsável:** Eduardo Junior
+
+### Decisões
+- **Header / submenu Soluções**: os `name` hardcoded em PT no array `solucoesMenu` (usados no dropdown desktop e no submenu mobile) migraram para i18n — nova chave `Header.solucoesMenu.items.<key>.name` nos 3 idiomas, reutilizando as traduções já usadas no Footer (EN "Resident Companies"/"Open Calls"/"Talent Bank"; ES "Empresas Residentes"/"Convocatorias Abiertas"/"Banco de Talentos").
+- **ConteudoHub (blog)**: paddings escalonados no mobile — card destaque `p-10 lg:p-16` → `p-6 sm:p-8 lg:p-16` (espaçamentos internos idem), cards do grid `p-6` → `p-5`. Desktop preservado.
+- **"Ler artigo completo"** no card destaque estava hardcoded em PT → nova chave `Conteudo.grid.readArticle` nos 3 idiomas.
+
+---
+
+## Studio: criação de traduções só pelo botão Translations (addTemplates: false)
+**Data:** 2026-07-15
+**Responsável:** Eduardo Junior
+
+### Problema
+O menu "+" das listas de coleção (Empresas, Programas, Notícias) exibia um template por idioma ("Português empresa", "English empresa"…) gerado pelo plugin de i18n. Criar por ali gera um documento **solto** — sem vínculo `translation.metadata` com a versão PT — e invisível na listagem (filtrada por `language == "pt"`).
+
+### Decisão
+- `documentInternationalization({ addTemplates: false })` no `sanity.config.ts` — remove os templates por idioma do "+". O botão **Translations** não depende deles (cria as traduções via transação, duplicando o doc de origem e vinculando o metadata).
+- `initialValue: 'pt'` no campo `language` de `programa` e `post` (empresa já tinha) — o "+" das listas cria a versão PT diretamente.
+- **Fluxo canônico para coleções**: "+" cria o doc PT → abrir o doc → botão Translations (globo) → criar EN/ES.
+
+---
+
+## sanityFetch com ISR em produção (revalidate: 60)
+**Data:** 2026-07-15
+**Responsável:** Eduardo Junior
+
+`sanityFetch` (src/sanity/lib/live.ts) passou a usar `next: { revalidate: 60 }` em produção — item já previsto no CLAUDE.md, antecipado após um `ConnectTimeoutError` transitório no `apicdn.sanity.io` derrubar `/en/conteudo` com 500 em dev. Com ISR, quedas passageiras do Sanity servem cache em vez de erro. Em dev permanece `cache: 'no-store'` para refletir conteúdo na hora.
+
+---
+
+## Setores como documentos Sanity + exclusão de empresas desbloqueada
+**Data:** 2026-07-15
+**Responsável:** Eduardo Junior
+
+### Decisões
+- **Setor vira documento (`setor`)**: antes era string com lista fixa no schema (`SETORES` hardcoded) — o cliente não conseguia adicionar/remover setores. Agora há a seção "Setores" no Studio; `empresa.setor` é `reference` para `setor`. Setores são compartilhados pelos 3 idiomas (nomes tipo "FinTech" não são traduzidos). Excluir um setor ainda referenciado por empresas é bloqueado pelo Sanity (precisa reatribuir antes) — comportamento desejado.
+- **Migração de dados via MCP**: 10 docs `setor` criados e publicados; 56 empresas publicadas (PT/EN/ES) migradas de string→reference e republicadas. Queries usam `coalesce(setor->nome, setor)` para tolerar docs legados com string.
+- **Frontend deriva setores dos dados**: `SETORES` hardcoded removido de `empresas-instaladas/CatalogoSection.tsx`; a sidebar lista os setores presentes no catálogo (ordenados pt-BR). Setor novo criado no Studio aparece automaticamente.
+- **Remoção de empresa desbloqueada**: `programa.empresasVinculadas` agora usa `weak: true` (vínculo não impede exclusão); a query `programaFullFields` filtra referências órfãs com `empresasVinculadas[defined(@->_id)]->`. Nenhum programa tinha vínculos, então não houve migração de refs.
+- **`empresa.language` com `initialValue: 'pt'`**: empresas criadas pelo "+" da lista nasciam sem idioma e sumiam da listagem do Studio (filtro `language == "pt"`) e do site.
+
+### Pendências / anomalias de dados encontradas (decisão do cliente)
+- **Schema deploy pendente**: sessão do CLI expirada — rodar `sanity login` e depois `npx sanity schema deploy`.
+- `drafts.aab46139…` (AgroSense PT) tem draft com **nome apagado** — setor já migrado no draft; publicado segue via fallback string. Não publicar sem restaurar o nome.
+- `09bc56cf…` "Contadoria Digital" **publicada sem language** (invisível no site e no Studio) — duplicata de `f27846a7…` (PT). Candidata a exclusão.
+- `drafts.1472ba22…` (Contadoria) e `drafts.3b7c55f8…` (Brasilrad) — drafts órfãos sem language, duplicatas de docs publicados. Candidatos a exclusão.
+- `9e8b6604…` PT virou "Brasilrad" mas as traduções EN/ES continuam sendo "CivicData" (GovTech) — inconsistência editorial a resolver.
+
+---
+
+## Modal de empresa: blocos de info esticam na última linha + Hero mobile sem sobreposição
+**Data:** 2026-07-15
+**Responsável:** Eduardo Junior
+
+### Decisões
+- **Modal (empresas instaladas)**: a grade de info (CEO, investimento, status, estágio, fundada, investidores) trocou `grid-cols` fixo por `flex flex-wrap` com `grow` + `basis` responsivo — blocos que sobram sozinhos (ou em dupla) na última linha esticam a largura total.
+- **Hero da Home**: faixa de métricas saiu do overlay `absolute bottom-0` e entrou no fluxo (`section` vira `min-h-dvh flex flex-col`, conteúdo `flex-1`) — no mobile a faixa 2×2 não cobre mais os CTAs "Descubra o Inaitec"/"Ver todos os programas", em qualquer altura de viewport.
+
+---
+
+## Status efetivo de chamadas — deadline vencido nunca exibe "aberta"
+**Data:** 2026-07-15
+**Responsável:** Eduardo Junior
+
+### Problema
+O `statusKey` dos programas é editado manualmente no Studio e fica defasado quando o `deadline` vence: a Home exibia chamadas encerradas com countdown zerado e "Encerra em breve", e a página de detalhe (ex.: Inovação Aberta) mostrava "Inscrições abertas" com prazo zerado.
+
+### Decisão
+Criado helper compartilhado [src/lib/programa-status.ts](../../src/lib/programa-status.ts) (`isChamadaExpirada` / `effectiveStatusKey`): chamada `aberta` com `deadline <= now` é tratada como `fechada` em toda a UI, sem depender de atualização manual no CMS. O conteúdo no Sanity **não** foi alterado — o dado editorial continua como o cliente deixou; o site deriva o status na renderização.
+
+### Aplicação
+- **Home / ChamadasSection:** chamadas vencidas saem da vitrine (dão lugar às ativas; hero passa a ser a próxima chamada ativa).
+- **Programa detalhe / ProgramaClientComponent:** status efetivo controla CTA, badge, sticky bar, countdown e bloco de CTA final (vira "Esta turma já fechou." / "Ficar na lista").
+- **/chamadas / ChamadasLista:** vencidas não são listadas.
+- **/programas / CatalogoSection:** badge e filtro de status usam o status efetivo (vencida conta/aparece como "Fechado").
+
+---
+
+## Rodada de correções de UI (filtros, modal, orbs, bandeiras, placeholders)
+**Data:** 2026-07-15
+**Responsável:** Eduardo Junior
+
+### Decisões
+- **Empresas Instaladas — filtro de setor:** setores sem nenhuma empresa no catálogo (ex.: GovTech) são **omitidos** da sidebar (`setoresDisponiveis` derivado das contagens em `CatalogoSection.tsx`).
+- **Empresas Instaladas — modal:** modal de detalhe renderizado via `createPortal(document.body)` com `z-100`, acima do Header (`z-50`) e do CTA — antes ficava preso no stacking context da `Section`.
+- **Bloco branco pós-footer:** os orbs decorativos (`top-[320vh]` etc.) em wrapper `absolute inset-0` sem clip esticavam o scroll além do footer em páginas curtas. Adicionado `overflow-hidden` ao wrapper de fundo em todos os ClientComponents de página (programa detalhe, programas, sobre, traga-sua-empresa, banco-de-talentos, fale-conosco, home).
+- **Seletor de idioma:** emojis de bandeira (🇧🇷🇺🇸🇪🇸) não renderizam no Windows — substituídos por `FlagIcon` (SVG inline) no `Header.tsx`; `LANG_META` removido.
+- **Home / Vamos Conversar:** placeholders do form alinhados ao Fale Conosco (PT "João"/"Silva", EN "John"/"Smith", ES "Juan"/"García").
+
+### ✅ Concluído em 2026-07-15 (conteúdo Sanity corrigido e publicado via MCP)
+Endereço correto em todo o site: **Avenida das Águias — Av. Pedra Branca, 231, Palhoça - SC, 88137-280**.
+
+**Execução (2026-07-15):** os 9 documentos (tragaSuaEmpresa, sobre, faleConosco × PT/EN/ES) foram patchados e publicados conforme a spec abaixo. No `faleConosco`, o `endereco.complemento` também tinha CEP errado (88137-272) — corrigido para 88137-280, mantendo o bairro (Cidade/Ciudad Universitária Pedra Branca). No `sobre`, EN/ES mantiveram o sufixo de país ("Brazil"/"Brasil") na última linha. Validado que `home` e `empresasInstaladas` não possuem campos de endereço nos schemas.
+
+Alterar **somente** os campos abaixo (nada além disso), nas **3 versões de idioma** de cada documento (PT/EN/ES — localizar EN/ES via `translation.metadata`), usando `workspaceName: 'inaitec-website'` e publicando ao final:
+
+1. **`tragaSuaEmpresa`** (PT `0bde9e07-f843-4125-b53f-1f28a35976be` · EN `9cf202c9-3622-44c3-9762-dee56f7f7aa7` · ES `8dda440c-74d8-4657-90b5-317882a64114`)
+   - `infraestrutura.localizacao.endereco` → endereço correto (hoje tem "Rua Cel. Pedro Benedet, 1056", que fica em Criciúma)
+   - `infraestrutura.localizacao.ctaHref` (botão "Ver no Google Maps", hoje aponta pro mirante das capivaras) → `https://www.google.com/maps/search/?api=1&query=Av.+Pedra+Branca,+231,+Palho%C3%A7a+-+SC,+88137-280`
+2. **`sobre`** (PT `eb1f1e75-726c-4f5f-8a7d-d0b36e8cb530` · EN `466378bb-99df-4f48-b112-be3351a2cf34` · ES `77a982b9-5ae9-43ec-86df-80f9ae1612c1`)
+   - `estrutura.enderecoLinhas` (string com `\n` entre linhas; hoje tem "Av. Pedra Branca, 25", que dá no estacionamento da Unisul) → ex.: `Avenida das Águias — Av. Pedra Branca, 231\nPalhoça - SC, 88137-280`
+3. **`faleConosco`** (PT `c7c526f3-bcee-4c16-ad06-dbb1f523b4ca` · EN `20916345-e654-4626-8e39-2b49760ba40f` · ES `3f39aa79-f9d4-4f54-a30f-7d27f50ebdf4`)
+   - `endereco.logradouro` → endereço correto (verificar também `endereco.complemento`)
+   - `endereco.mapaEmbedUrl` → embed do endereço correto, ex.: `https://www.google.com/maps?q=Av.+Pedra+Branca,+231,+Palho%C3%A7a+-+SC,+88137-280&output=embed`
+
+Antes de patchar, consultar os valores atuais dos campos via query para confirmar que só esses estão errados; conferir também se o singleton **`empresasInstaladas`** ou a **Home** exibem endereço em algum campo (não deveria, mas validar).
+
+---
+
+## Remoção da página de Login / Área Restrita
+**Data:** 2026-07-15
+**Responsável:** Eduardo Junior
+
+### Decisão
+Remover completamente a funcionalidade de login do projeto — a página `/login`, os links "Fazer login" no Header (desktop e mobile), as chaves de tradução (`Header.cta.login`, namespace `Login`, `Seo.login`) nos 3 idiomas e as referências em `robots.ts`, `sitemap.ts` e `seo.ts`.
+
+### Rationale
+- O site não terá área restrita/autenticação no escopo atual; a página existia apenas como placeholder (botão "Acessar" desabilitado, "Em breve").
+- Manter a rota e os links criaria expectativa de funcionalidade inexistente.
+
+### Escopo da remoção
+- Deletado: `src/app/[locale]/login/page.tsx`
+- Editados: `Header.tsx`, `messages/{pt,en,es}.json`, `robots.ts`, `sitemap.ts`, `lib/seo.ts`, `design-system/page.tsx` (texto de exemplo do alerta danger)
+- Mantido: `Dropdown.tsx` (ainda usado por ContactForm e design-system)
+
+---
+
 ## Mudança de Stack: Next.js 15 + Tailwind CSS v4
 **Data:** 2026-04-07
 **Responsável:** João Felipe (Dev)

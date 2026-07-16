@@ -8,7 +8,6 @@
       "conteudo": "Content Hub"
     },
     "cta": {
-      "login": "Sign in",
       "contato": "Contact Us",
       "menu": "Menu",
       "selectLanguage": "Select language"
@@ -48,14 +47,17 @@
       "footerCta": "Talk to our team",
       "items": {
         "empresas-instaladas": {
+          "name": "Resident Companies",
           "desc": "Meet the 200+ companies and startups residing in Pedra Branca Park.",
           "metricLabel": "companies"
         },
         "chamadas": {
+          "name": "Open Calls",
           "desc": "Open calls and innovation opportunities with active applications.",
           "metricLabel": "active calls"
         },
         "banco-de-talentos": {
+          "name": "Talent Bank",
           "desc": "Jobs and qualified professionals from the Inaitec ecosystem.",
           "metricLabel": "registered"
         }
@@ -133,8 +135,8 @@
         "perfil": "Profile"
       },
       "placeholders": {
-        "nome": "First name",
-        "sobrenome": "Last name",
+        "nome": "John",
+        "sobrenome": "Smith",
         "email": "your@email.com",
         "telefone": "+55 (48) 9 0000-0000",
         "mensagem": "How can we help?"
@@ -363,31 +365,6 @@
     "ctaHome": "Back to home",
     "ctaContato": "Talk to our team"
   },
-  "Login": {
-    "metaTitle": "Restricted Area",
-    "metaDescription": "Access the Inaitec restricted area to follow exclusive content and features by profile.",
-    "eyebrow": "Restricted Area",
-    "heading": "Welcome back",
-    "subheading": "Sign in with your profile, email and password to access your account.",
-    "labelPerfil": "Profile",
-    "placeholderPerfil": "Select your profile",
-    "perfilStartup": "Startup / Small business",
-    "perfilEmpresa": "Large or medium enterprise",
-    "perfilInvestidor": "Investor",
-    "perfilUniversidade": "University / Government",
-    "labelEmail": "Email",
-    "placeholderEmail": "example@company.com",
-    "labelSenha": "Password",
-    "placeholderSenha": "Enter your password",
-    "btnAcessar": "Sign in",
-    "btnEmBreve": "Coming soon",
-    "copyright": "Copyright © {year} Inaitec",
-    "privacyLink": "Privacy Policy",
-    "imageAlt": "Professional in a corporate environment",
-    "testimonialText": "We follow calls, mentorships and ecosystem opportunities all in one place. The restricted area centralizes our routine with Inaitec.",
-    "testimonialAuthor": "Naira Oliveira",
-    "testimonialRole": "Founder · AgroSmart"
-  },
   "FaleConosco": {
     "form": {
       "labelNome": "First name",
@@ -438,6 +415,7 @@
       "searchResults": "Search results",
       "latestPosts": "Latest posts",
       "loadMore": "Load more",
+      "readArticle": "Read full article",
       "showing": "Showing {visible} of {total}",
       "noResults": "No results found."
     }
@@ -495,10 +473,6 @@
     "conteudo": {
       "title": "Content",
       "description": "News, success stories, achievements and events from the Inaitec ecosystem — the innovation hub at Pedra Branca Park."
-    },
-    "login": {
-      "title": "Sign in",
-      "description": "Access your account in the Inaitec ecosystem."
     }
   }
 }

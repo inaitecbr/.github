@@ -13,7 +13,7 @@ export default function FaleConoscoClientComponent({ data }: Props) {
     <main className="relative bg-brand-navy overflow-x-clip">
 
       {/* Fundo orgânico */}
-      <div className="pointer-events-none absolute inset-0 z-0">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-[20vh] left-[-10%] w-[900px] h-[900px] rounded-full bg-brand-orange/[0.09] blur-[160px]" />
       </div>
 

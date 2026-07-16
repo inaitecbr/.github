@@ -9,6 +9,7 @@ import type {
   PublicoKey,
   StatusKey,
 } from "@/sanity/queries/programa";
+import { effectiveStatusKey } from "@/lib/programa-status";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -88,11 +89,17 @@ function toggle<T>(list: T[], value: T): T[] {
 
 type Props = { programas: ProgramaCard[] };
 
-export default function CatalogoSection({ programas }: Props) {
+export default function CatalogoSection({ programas: programasProp }: Props) {
   const [publicos, setPublicos] = useState<PublicoKey[]>([]);
   const [estagios, setEstagios] = useState<EstagioKey[]>([]);
   const [entradas, setEntradas] = useState<EntradaKey[]>([]);
   const [statuses, setStatuses] = useState<StatusKey[]>([]);
+
+  // Status efetivo — "aberta" com deadline vencido vira "fechada" (badge e filtro)
+  const programas = useMemo(
+    () => programasProp.map((p) => ({ ...p, statusKey: effectiveStatusKey(p) })),
+    [programasProp],
+  );
 
   const filtrados = useMemo(
     () =>

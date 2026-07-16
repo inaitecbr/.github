@@ -8,7 +8,6 @@
       "conteudo": "Portal de Conteúdo"
     },
     "cta": {
-      "login": "Fazer login",
       "contato": "Fale Conosco",
       "menu": "Menu",
       "selectLanguage": "Selecionar idioma"
@@ -48,14 +47,17 @@
       "footerCta": "Falar com a equipe",
       "items": {
         "empresas-instaladas": {
+          "name": "Empresas Instaladas",
           "desc": "Conheça as +200 empresas e startups residentes no Parque Pedra Branca.",
           "metricLabel": "empresas"
         },
         "chamadas": {
+          "name": "Chamadas Abertas",
           "desc": "Editais e oportunidades de inovação com inscrições vigentes.",
           "metricLabel": "editais ativos"
         },
         "banco-de-talentos": {
+          "name": "Banco de Talentos",
           "desc": "Vagas e profissionais qualificados do ecossistema Inaitec.",
           "metricLabel": "cadastrados"
         }
@@ -133,8 +135,8 @@
         "perfil": "Perfil"
       },
       "placeholders": {
-        "nome": "Primeiro nome",
-        "sobrenome": "Último nome",
+        "nome": "João",
+        "sobrenome": "Silva",
         "email": "seu@email.com",
         "telefone": "+55 (48) 9 0000-0000",
         "mensagem": "Como podemos ajudar?"
@@ -363,31 +365,6 @@
     "ctaHome": "Voltar para a home",
     "ctaContato": "Falar com a equipe"
   },
-  "Login": {
-    "metaTitle": "Área Restrita",
-    "metaDescription": "Acesse a área restrita do Inaitec para acompanhar conteúdos e funcionalidades exclusivas por perfil.",
-    "eyebrow": "Área Restrita",
-    "heading": "Bem-vindo de volta",
-    "subheading": "Entre com seu perfil, e-mail e senha para acessar sua conta.",
-    "labelPerfil": "Perfil",
-    "placeholderPerfil": "Selecione seu perfil",
-    "perfilStartup": "Startup / Pequena empresa",
-    "perfilEmpresa": "Grande ou média empresa",
-    "perfilInvestidor": "Investidor",
-    "perfilUniversidade": "Universidade / Governo",
-    "labelEmail": "E-mail",
-    "placeholderEmail": "exemplo@empresa.com",
-    "labelSenha": "Senha",
-    "placeholderSenha": "Digite sua senha",
-    "btnAcessar": "Acessar",
-    "btnEmBreve": "Em breve",
-    "copyright": "Copyright © {year} Inaitec",
-    "privacyLink": "Política de Privacidade",
-    "imageAlt": "Profissional em ambiente corporativo",
-    "testimonialText": "Acompanhamos chamadas, mentorias e oportunidades do ecossistema em um só lugar. A área restrita centraliza nossa rotina com o Inaitec.",
-    "testimonialAuthor": "Naira Oliveira",
-    "testimonialRole": "Fundadora · AgroSmart"
-  },
   "FaleConosco": {
     "form": {
       "labelNome": "Nome",
@@ -438,6 +415,7 @@
       "searchResults": "Resultados da busca",
       "latestPosts": "Últimas publicações",
       "loadMore": "Carregar mais",
+      "readArticle": "Ler artigo completo",
       "showing": "Mostrando {visible} de {total}",
       "noResults": "Nenhum resultado encontrado."
     }
@@ -495,10 +473,6 @@
     "conteudo": {
       "title": "Conteúdo",
       "description": "Notícias, cases de sucesso, conquistas e eventos do ecossistema Inaitec — o hub de inovação do Parque Pedra Branca."
-    },
-    "login": {
-      "title": "Entrar",
-      "description": "Acesse sua conta no ecossistema Inaitec."
     }
   }
 }

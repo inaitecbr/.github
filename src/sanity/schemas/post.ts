@@ -20,6 +20,8 @@ export default defineType({
       type: 'string',
       readOnly: true,
       hidden: true,
+      // "+" da lista do Studio cria a versão PT; EN/ES via botão Translations.
+      initialValue: 'pt',
     }),
     defineField({
       name: 'title',

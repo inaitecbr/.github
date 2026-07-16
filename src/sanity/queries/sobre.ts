@@ -64,7 +64,8 @@ export const sobreQuery = groq`
       titleHighlight,
       desc,
       ctaLabel,
-      ctaHref
+      // Arquivo enviado tem prioridade; "?dl=" força download com o nome original
+      "ctaHref": coalesce(ctaFile.asset->url + "?dl=", ctaHref)
     },
     estrutura {
       eyebrow,

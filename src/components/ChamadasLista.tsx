@@ -6,6 +6,7 @@ import { ChevronDown } from 'lucide-react'
 import SidebarFilter from '@/components/SidebarFilter'
 import { Section } from '@/components/Section'
 import { PUBLICO_COLORS } from '@/lib/programa-config'
+import { isChamadaExpirada } from '@/lib/programa-status'
 import type { ProgramaCard, PublicoKey, EntradaKey } from '@/sanity/queries/programa'
 
 type Prazo = 'urgente' | 'mes' | 'continuo'
@@ -72,10 +73,16 @@ function matchesPrazo(deadline: string | null | undefined, prazo: Prazo, endOfMo
 
 type Props = { programas: ProgramaCard[] }
 
-export default function ChamadasLista({ programas }: Props) {
+export default function ChamadasLista({ programas: programasProp }: Props) {
   const [publicos, setPublicos] = useState<PublicoKey[]>([])
   const [entradas, setEntradas] = useState<EntradaKey[]>([])
   const [prazos, setPrazos] = useState<Prazo[]>([])
+
+  // Chamadas "abertas" com prazo vencido não são listadas
+  const programas = useMemo(
+    () => programasProp.filter((p) => !isChamadaExpirada(p)),
+    [programasProp],
+  )
 
   const endOfMonth = useMemo(() => {
     const d = new Date()

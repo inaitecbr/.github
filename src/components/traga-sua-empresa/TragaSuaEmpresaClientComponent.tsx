@@ -12,7 +12,7 @@ export default function TragaSuaEmpresaClientComponent({ data }: Props) {
     <main className="relative bg-brand-navy overflow-x-clip">
 
       {/* ── Fundo orgânico ─────────────────────────────────────────────── */}
-      <div className="pointer-events-none absolute inset-0 z-0">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-[40vh] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-brand-orange/[0.10] blur-[160px]" />
         <div className="absolute top-[170vh] right-[-15%] w-[1100px] h-[1100px] rounded-full bg-brand-teal/[0.06] blur-[160px]" />
         <div className="absolute top-[300vh] left-[15%] w-[900px] h-[900px] rounded-full bg-brand-orange/[0.08] blur-[160px]" />
