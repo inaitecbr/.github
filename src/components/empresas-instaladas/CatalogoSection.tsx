@@ -102,14 +102,14 @@ export default function CatalogoSection({ empresas }: Props) {
     <div className="relative">
       <Search
         strokeWidth={2}
-        className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/30"
+        className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-brand-navy/30"
       />
       <input
         type="text"
         placeholder="Buscar empresa..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-full pl-9 pr-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-white text-[12px] placeholder:text-white/30 focus:outline-none focus:border-brand-orange/50 transition-colors"
+        className="w-full pl-9 pr-4 py-2 rounded-full bg-white border border-border text-brand-navy text-[12px] placeholder:text-brand-navy/30 focus:outline-none focus:border-brand-orange/50 transition-colors"
       />
     </div>
   )
@@ -122,7 +122,6 @@ export default function CatalogoSection({ empresas }: Props) {
         active={setores}
         onChange={(v) => setSetores((prev) => toggle(prev, v))}
         counts={contagens.setor}
-        theme="dark"
       />
       <SidebarFilter
         label="Estágio"
@@ -130,21 +129,20 @@ export default function CatalogoSection({ empresas }: Props) {
         active={estagios}
         onChange={(v) => setEstagios((prev) => toggle(prev, v))}
         counts={contagens.estagio}
-        theme="dark"
       />
     </>
   )
 
   return (
-    <Section padding="md" className="bg-brand-navy">
+    <Section theme="light" padding="md">
       <div className="grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-12 items-start">
 
         {/* ── Sidebar de filtros ────────────────────────────────────────── */}
         <aside className="lg:sticky lg:top-[88px]">
           {/* Mobile: collapse */}
-          <details className="lg:hidden rounded-2xl bg-white/[0.04] border border-white/10 overflow-hidden group">
+          <details className="lg:hidden rounded-2xl bg-white border border-border overflow-hidden group">
             <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none">
-              <span className="text-sm font-semibold text-white inline-flex items-center gap-2">
+              <span className="text-sm font-semibold text-brand-navy inline-flex items-center gap-2">
                 Filtros
                 {filtrosAtivos > 0 && (
                   <span className="inline-flex items-center justify-center min-w-[20px] h-5 rounded-full bg-brand-orange text-white text-[10px] font-bold px-1.5">
@@ -154,10 +152,10 @@ export default function CatalogoSection({ empresas }: Props) {
               </span>
               <ChevronDown
                 strokeWidth={2.5}
-                className="w-4 h-4 text-white/50 transition-transform group-open:rotate-180"
+                className="w-4 h-4 text-brand-navy/50 transition-transform group-open:rotate-180"
               />
             </summary>
-            <div className="px-5 pb-5 pt-3 flex flex-col gap-4 border-t border-white/10">
+            <div className="px-5 pb-5 pt-3 flex flex-col gap-4 border-t border-border">
               {searchInput}
               {filterGroups}
               {filtrosAtivos > 0 && (
@@ -174,11 +172,11 @@ export default function CatalogoSection({ empresas }: Props) {
           {/* Desktop: sidebar visível */}
           <div className="hidden lg:block">
             <div className="flex items-baseline justify-between mb-5">
-              <span className="text-lg font-extrabold text-white tracking-tight">Filtros</span>
+              <span className="text-lg font-extrabold text-brand-navy tracking-tight">Filtros</span>
               <button
                 onClick={limparFiltros}
                 disabled={filtrosAtivos === 0}
-                className="text-[12px] font-semibold text-white/45 hover:text-brand-orange disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-white/45 transition-colors"
+                className="text-[12px] font-semibold text-brand-navy/45 hover:text-brand-orange disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-brand-navy/45 transition-colors"
               >
                 Limpar tudo
               </button>
@@ -191,12 +189,12 @@ export default function CatalogoSection({ empresas }: Props) {
         {/* ── Grid principal ────────────────────────────────────────────── */}
         <div>
           {/* Contador */}
-          <div className="flex items-baseline justify-between mb-6 pb-4 border-b border-white/10">
-            <h2 className="text-base font-bold text-white">
+          <div className="flex items-baseline justify-between mb-6 pb-4 border-b border-brand-navy/10">
+            <h2 className="text-base font-bold text-brand-navy">
               <span className="text-brand-orange">{filtered.length}</span>{' '}
               empresa{filtered.length === 1 ? '' : 's'}
             </h2>
-            <span className="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/45">
+            <span className="text-[11px] uppercase tracking-[0.2em] font-semibold text-brand-navy/45">
               Catálogo completo
             </span>
           </div>
@@ -214,9 +212,9 @@ export default function CatalogoSection({ empresas }: Props) {
                     type="button"
                     onClick={() => setSelected(empresa)}
                     aria-label={`Ver detalhes de ${empresa.nome}`}
-                    className="group relative flex items-center justify-center h-[180px] rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+                    className="group relative flex items-center justify-center h-[180px] rounded-2xl border border-border bg-white overflow-hidden transition-all duration-300 hover:border-brand-orange/40 hover:shadow-xl hover:shadow-brand-navy/10 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
                   >
-                    <span className="absolute top-4 right-5 text-[10px] font-bold uppercase tracking-[0.18em] text-white/30 transition-colors duration-300 group-hover:text-white/55">
+                    <span className="absolute top-4 right-5 text-[10px] font-bold uppercase tracking-[0.18em] text-brand-navy/35 transition-colors duration-300 group-hover:text-brand-navy/60">
                       {empresa.setor}
                     </span>
 
@@ -226,26 +224,26 @@ export default function CatalogoSection({ empresas }: Props) {
                         alt={`Logo ${empresa.nome}`}
                         width={180}
                         height={48}
-                        className="max-h-12 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-200"
+                        className="max-h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-200"
                       />
                     ) : (
-                      <span className="text-white/60 font-bold text-lg">{empresa.nome}</span>
+                      <span className="text-brand-navy/70 font-bold text-lg">{empresa.nome}</span>
                     )}
                   </button>
                 )
               })}
             </div>
           ) : (
-            <div className="rounded-2xl border border-dashed border-white/15 bg-white/[0.02] p-12 text-center">
-              <div className="text-lg font-bold text-white mb-2">
+            <div className="rounded-2xl border border-dashed border-brand-navy/15 bg-white/50 p-12 text-center">
+              <div className="text-lg font-bold text-brand-navy mb-2">
                 Sem empresas pra essa combinação.
               </div>
-              <p className="text-sm text-white/60 mb-6 max-w-md mx-auto">
+              <p className="text-sm text-brand-navy/60 mb-6 max-w-md mx-auto">
                 Ajuste algum filtro ou explore o catálogo completo.
               </p>
               <button
                 onClick={limparFiltros}
-                className="inline-flex items-center rounded-full border border-white/20 bg-white/5 text-white text-sm font-semibold px-5 py-3 hover:border-brand-orange hover:text-brand-orange transition-all"
+                className="inline-flex items-center rounded-full border border-brand-navy/15 bg-white text-brand-navy text-sm font-semibold px-5 py-3 hover:border-brand-orange hover:text-brand-orange transition-all"
               >
                 Limpar filtros
               </button>
