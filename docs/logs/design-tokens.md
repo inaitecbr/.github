@@ -1211,3 +1211,25 @@ function QuickFactIcon({ label }: { label: string`
 
 - `--font-jakarta",
   display: "swap",`
+
+### Cores — detectados em 2026-07-22
+
+- `--color-brand-navy)',
+}
+
+// ── Helpers ─────────────────────────────────────────────────────────────────
+
+function toggle<T>(list: T[], value: T): T[] {`
+- `--color-brand-orange)',
+  'Scale-up': 'var(--color-brand-teal)',`
+
+### Cores — detectados em 2026-07-22
+
+- `--color-brand-navy)',
+}
+
+// ── Helpers ─────────────────────────────────────────────────────────────────
+
+function toggle<T>(list: T[], value: T): T[] {`
+- `--color-brand-orange)',
+  'Scale-up': 'var(--color-brand-teal)',`

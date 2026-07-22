@@ -1369,3 +1369,7 @@ All notable changes to the Inaitec project are documented here.
 - `2026-06-02 16:58` — **Editado**: `src/app/[locale]/page.tsx`
 - `2026-06-02 16:58` — **Editado**: `src/app/[locale]/login/page.tsx`
 - `2026-06-02 16:59` — **Criado**: `src/app/[locale]/design-system/layout.tsx`
+- `2026-07-22 19:05` — **Editado**: `src/sanity/schemas/home.ts`
+- `2026-07-22 19:15` — **Editado**: `src/components/home/HeroSection.tsx`
+- `2026-07-22 19:17` — **Editado**: `src/components/empresas-instaladas/CatalogoSection.tsx`
+- `2026-07-22 19:17` — **Editado**: `src/components/empresas-instaladas/CatalogoSection.tsx`

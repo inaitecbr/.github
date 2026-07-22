@@ -277,7 +277,7 @@ export default function CatalogoSection({ empresas }: Props) {
             </button>
 
             {/* Linha 1 — Info + Foto */}
-            <div className="grid md:grid-cols-2">
+            <div className={selected.foto?.asset?._ref ? 'grid md:grid-cols-2' : ''}>
               {/* Coluna esquerda — info */}
               <div className="px-8 md:px-10 py-10 flex flex-col">
                 {/* Logo */}
@@ -320,9 +320,9 @@ export default function CatalogoSection({ empresas }: Props) {
                 </div>
               </div>
 
-              {/* Coluna direita — foto */}
-              <div className="relative min-h-[320px] md:min-h-[420px] bg-neutral-100">
-                {selected.foto?.asset?._ref && (
+              {/* Coluna direita — foto (só renderiza se houver foto) */}
+              {selected.foto?.asset?._ref && (
+                <div className="relative min-h-[320px] md:min-h-[420px] bg-neutral-100">
                   <Image
                     src={urlFor(selected.foto).width(800).height(840).fit('crop').url()}
                     alt={
@@ -334,8 +334,8 @@ export default function CatalogoSection({ empresas }: Props) {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                )}
-              </div>
+                </div>
+              )}
             </div>
 
             {/* Linha de info — flex-wrap: blocos sobrando na última linha esticam a largura toda */}

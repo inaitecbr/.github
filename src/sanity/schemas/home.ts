@@ -65,7 +65,7 @@ export default defineType({
         }),
         defineField({
           name: "metrics",
-          title: "Métricas (4 itens)",
+          title: "Métricas (5 itens)",
           type: "array",
           of: [
             {
@@ -79,7 +79,7 @@ export default defineType({
               },
             },
           ],
-          validation: (Rule) => Rule.max(4),
+          validation: (Rule) => Rule.max(5),
         }),
       ],
     }),

@@ -70,7 +70,7 @@ export default function HeroSection({ hero }: Props) {
 
       {hero?.metrics && hero.metrics.length > 0 && (
         <div className="relative z-10 border-t border-white/10 bg-brand-navy/50 backdrop-blur-md">
-          <Container className="py-6 grid grid-cols-2 gap-y-6 md:grid-cols-4 md:gap-y-0 md:divide-x md:divide-white/10">
+          <Container className="py-6 grid grid-cols-2 gap-y-6 md:grid-cols-5 md:gap-y-0 md:divide-x md:divide-white/10">
             {hero.metrics.map((m, i) => (
               <div
                 key={`${m.label ?? ''}-${i}`}
